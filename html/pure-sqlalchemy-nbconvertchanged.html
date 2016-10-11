@@ -22,8 +22,14 @@ $(document).ready(function(){
 	    var myCodeMirror = CodeMirror(this, {
 		value: $code,
 		mode: 'python',
-		lineNumbers: false,
-		readOnly: true
+		//lineNumbers: false,
+		readOnly: true,
+
+                lineNumbers: true,
+                lineWrapping: true,
+                htmlMode: true,
+                matchClosing: true,       
+                indentWithTabs: true,
 	    });
 
 	});
