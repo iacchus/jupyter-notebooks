@@ -5,6 +5,28 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.19.0/codemirror.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.19.0/mode/python/python.js"></script>
+
+<script>
+$(document).ready(function(){
+	$('.code').each(function() {
+
+	    var $this = $(this),
+		$code = $this.html();
+
+	    $this.empty();
+
+	    var myCodeMirror = CodeMirror(this, {
+		value: $code,
+		mode: 'python',
+		lineNumbers: !$this.is('.inline'),
+		readOnly: true
+	    });
+
+	});
+});
+</script>
 
 
 
@@ -40,27 +62,7 @@ div#notebook {
 <link rel="stylesheet" href="custom.css">
 
 <!-- Loading mathjax macro -->
-<!-- Load mathjax -->
-    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
-    <!-- MathJax configuration -->
-    <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
-            processEscapes: true,
-            processEnvironments: true
-        },
-        // Center justify equations in code and markdown cells. Elsewhere
-        // we use CSS to left justify single line equations in code cells.
-        displayAlign: 'center',
-        "HTML-CSS": {
-            styles: {'.MathJax_Display': {"margin": 0}},
-            linebreaks: { automatic: true }
-        }
-    });
-    </script>
-    <!-- End of mathjax configuration --></head>
+</head>
 <body>
   <div tabindex="-1" id="notebook" class="border-box-sizing">
     <div class="container" id="notebook-container">
@@ -80,7 +82,7 @@ div#notebook {
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
-    <div class="input_area">
+    <div class="input_area code">
 import sqlalchemy as sqla
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
@@ -93,7 +95,7 @@ from sqlalchemy.orm import sessionmaker
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
-    <div class="input_area">
+    <div class="input_area code">
 engine = sqla.create_engine('sqlite:///users-ipynb.sqlite3', echo=True)
 Base = declarative_base()
 Session = sessionmaker(bind=engine)
@@ -119,7 +121,7 @@ class MyUserAPI:
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
-    <div class="input_area">
+    <div class="input_area code">
 my_user_api = MyUserAPI()
 </div>
 </div>
@@ -130,7 +132,7 @@ my_user_api = MyUserAPI()
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
-    <div class="input_area">
+    <div class="input_area code">
 my_user2 = my_user_api.Users(username='mercurio',password='myp455t00')
 </div>
 </div>
@@ -141,7 +143,7 @@ my_user2 = my_user_api.Users(username='mercurio',password='myp455t00')
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
-    <div class="input_area">
+    <div class="input_area code">
 Base.metadata.create_all(engine)
 </div>
 </div>
@@ -182,7 +184,7 @@ CREATE TABLE users (
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
-    <div class="input_area">
+    <div class="input_area code">
 session = Session()
 
 
@@ -195,7 +197,7 @@ session = Session()
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
-    <div class="input_area">
+    <div class="input_area code">
 session.add(my_user2)
 
 </div>
@@ -207,7 +209,7 @@ session.add(my_user2)
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
-    <div class="input_area">
+    <div class="input_area code">
 session.commit()
 </div>
 </div>
@@ -235,7 +237,7 @@ session.commit()
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[24]:</div>
 <div class="inner_cell">
-    <div class="input_area">
+    <div class="input_area code">
 user_queried = session.query(my_user_api.Users).first()
 </div>
 </div>
@@ -263,7 +265,7 @@ FROM users
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[25]:</div>
 <div class="inner_cell">
-    <div class="input_area">
+    <div class="input_area code">
 user_queried.username
 </div>
 </div>
@@ -290,7 +292,7 @@ user_queried.username
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[26]:</div>
 <div class="inner_cell">
-    <div class="input_area">
+    <div class="input_area code">
 user_queried.password
 </div>
 </div>
@@ -317,7 +319,7 @@ user_queried.password
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
-    <div class="input_area">
+    <div class="input_area code">
 #!pip install pandas
 # commented as we don't want it to be executed again in jupyter
 </div>
@@ -329,7 +331,7 @@ user_queried.password
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[31]:</div>
 <div class="inner_cell">
-    <div class="input_area">
+    <div class="input_area code">
 # http://stackoverflow.com/questions/36028759/how-to-open-and-convert-sqlite-database-to-pandas-dataframe
 
 import sqlite3
@@ -347,7 +349,7 @@ df = pd.read_sql_query("SELECT * FROM users", cnx)
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[32]:</div>
 <div class="inner_cell">
-    <div class="input_area">
+    <div class="input_area code">
 df
 </div>
 </div>
@@ -392,7 +394,7 @@ df
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
-    <div class="input_area">
+    <div class="input_area code">
 
 </div>
 </div>
