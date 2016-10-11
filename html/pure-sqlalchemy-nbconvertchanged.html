@@ -22,7 +22,7 @@ $(document).ready(function(){
 	    var myCodeMirror = CodeMirror(this, {
 		value: $code,
 		mode: 'python',
-		lineNumbers: !$this.is('.inline'),
+		lineNumbers: false,
 		readOnly: true
 	    });
 
@@ -61,6 +61,8 @@ div#notebook {
 </style>
 
 <!-- Custom stylesheet, it must be in the same directory as the html file -->
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.19.0/codemirror.css">
 <link rel="stylesheet" href="custom.css">
 
 <!-- Loading mathjax macro -->
