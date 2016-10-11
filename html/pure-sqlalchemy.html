@@ -3,10 +3,25 @@
 <head><meta charset="utf-8" />
 <title>pure-sqlalchemy</title>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.19.0/codemirror.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.19.0/mode/python/python.js"></script>
+<script>
+$(document).ready(function(){
+	$('.code').each(function() {
+
+	    var $this = $(this),
+		$code = $this.html();
+
+	    $this.empty();
+
+	    var myCodeMirror = CodeMirror(this, {
+		value: $code,
+		mode: 'python',
+		lineNumbers: !$this.is('.inline'),
+		readOnly: true
+	    });
+
+	});
+});
+</script>
 
 
 
@@ -385,23 +400,8 @@ df
   </div>
 </body>
 
-<script>
-$(document).ready(function(){
-	$('.code').each(function() {
-
-	    var $this = $(this),
-		$code = $this.html();
-
-	    $this.empty();
-
-	    var myCodeMirror = CodeMirror(this, {
-		value: $code,
-		mode: 'python',
-		lineNumbers: !$this.is('.inline'),
-		readOnly: true
-	    });
-
-	});
-});
-</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.19.0/codemirror.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.19.0/mode/python/python.js"></script>
 </html>
