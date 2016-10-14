@@ -9,6 +9,8 @@ Repository for some of my notebooks / experiments with python
 
 We are using this git pre-commit hook to generate the index for the exported  HTML files:
 
+### pre-commit (git hook)
+
 ```python
 #!/usr/bin/env python
 
@@ -36,4 +38,17 @@ print(file_contents)
 with open(index_filename,'w') as fd:
     fd.write(file_contents)
     fd.close()
+```
+
+### post-commit (git hook)
+
+```sh
+#!/usr/bin/env bash
+
+if grep 'Untracked' <<< $(git status); then
+	git add .
+	git commit -a -m 'redoing commit from gits post-commit hook.'
+else
+	:
+fi
 ```
