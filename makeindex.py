@@ -24,5 +24,3 @@ print(file_contents)
 with open(index_filename,'w') as fd:
     fd.write(file_contents)
     fd.close()
-
-
