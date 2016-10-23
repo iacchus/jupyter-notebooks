@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8" />
+<title>fingerboard-000</title>
+
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>-->
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.19.0/codemirror.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.19.0/mode/python/python.js"></script>
+
+<script>
+$(document).ready(function(){
+	$('.code').each(function() {
+
+	    var $this = $(this),
+		$code = $this.html().trim();
+
+	    $this.empty();
+
+	    var myCodeMirror = CodeMirror(this, {
+		value: $code,
+		mode: 'python',
+		lineNumbers: false,
+		readOnly: true,
+                lineWrapping: true,
+                htmlMode: true,
+                matchClosing: true,       
+                indentWithTabs: true,
+	    });
+
+	});
+});
+</script>
+
+
+
+<style type="text/css">
+/* Overrides of notebook CSS for static HTML export */
+body {
+  overflow: visible;
+  padding: 8px;
+}
+
+div#notebook {
+  overflow: visible;
+  border-top: none;
+}
+
+@media print {
+  div.cell {
+    display: block;
+    page-break-inside: avoid;
+  } 
+  div.output_wrapper { 
+    display: block;
+    page-break-inside: avoid; 
+  }
+  div.output { 
+    display: block;
+    page-break-inside: avoid; 
+  }
+}
+</style>
+
+<!-- Custom stylesheet, it must be in the same directory as the html file -->
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.19.0/codemirror.css">
+<link rel="stylesheet" href="https://iacchus.github.io/jupyter-ipython-themes/custom.css">
+
+<!-- Loading mathjax macro -->
+</head>
+<body>
+  <div tabindex="-1" id="notebook" class="border-box-sizing">
+    <div class="container" id="notebook-container">
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><a href="http://pythonhosted.org/svgwrite/">http://pythonhosted.org/svgwrite/</a></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="inner_cell">
+    <div class="input_area code">
+from music21 import *
+
+import svgwrite as sw
+
+from IPython.display import display, HTML, Image
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[52]:</div>
+<div class="inner_cell">
+    <div class="input_area code">
+def y_by_line(line_num, line_height):
+    return (line_num) * line_height
+
+svg_attrs = {
+    'font-family': 'Inconsolata, monospace',
+    'font-weight': 'bold',
+}
+
+
+cell_attrs = {
+    'fill':'#fff',
+    'stroke':'#666',
+    'stroke-width':'1',
+}
+
+circ_attrs = {
+    'fill':'#fff',
+    'stroke':'#666',
+    'stroke-width':'1',
+}
+
+text_attrs = {
+    'font-family': '"Inconsolata", monospace',
+    'alignment-baseline' : 'middle',
+    'text-anchor' : 'middle',
+}
+
+string_num = 4
+string_notes = 18
+
+width = 820
+cell_width = width/18
+cell_height = (cell_width/3)*2
+height = cell_height*4
+
+dwg = sw.Drawing(profile='full', size=("{}".format(width), "{}".format(height)), **svg_attrs)
+sc = scale.ChromaticScale()
+nts = [ sc.getPitches('e4','a5'),
+        sc.getPitches('a3','d5'),
+        sc.getPitches('d3','g4'),
+        sc.getPitches('g2','c4'),
+       ]
+
+for string in range(string_num):
+    string_y = y_by_line(string, cell_height)
+    
+    for note in range(string_notes):
+        cell_start_x = note*cell_width
+        cell_start_y = string_y
+        cell_middle_x = cell_start_x + (cell_width/2)
+        cell_middle_y = cell_start_y + (cell_height/2)
+        circle_radius = ((cell_height/2)/10) * 8
+        
+        grp = sw.container.Group()
+        svg_els = [
+            sw.shapes.Rect(insert=(cell_start_x, cell_start_y), size=(cell_width, cell_height), **cell_attrs),
+            sw.shapes.Circle(center=(cell_middle_x, cell_middle_y), r=circle_radius, **circ_attrs),
+            sw.text.Text(nts[string][note].unicodeName, insert=(cell_middle_x, cell_middle_y), **text_attrs),
+        ]
+        
+        for element in svg_els:
+            grp.add(element)
+            
+        dwg.add(grp)
+
+display(HTML(dwg.tostring()))
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+
+<div class="output_html rendered_html output_subarea ">
+<svg baseProfile="full" font-family="Inconsolata, monospace" font-weight="bold" height="121.48148148148148" version="1.1" width="820" xmlns="http://www.w3.org/2000/svg" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xlink="http://www.w3.org/1999/xlink"><defs /><g><rect fill="#fff" height="30.37037037037037" stroke="#666" stroke-width="1" width="45.55555555555556" x="0.0" y="0.0" /><circle cx="22.77777777777778" cy="15.185185185185185" fill="#fff" r="12.148148148148149" stroke="#666" stroke-width="1" /><text alignment-baseline="middle" font-family="&quot;Inconsolata&quot;, monospace" text-anchor="middle" x="22.77777777777778" y="15.185185185185185">E</text></g><g><rect fill="#fff" height="30.37037037037037" stroke="#666" stroke-width="1" width="45.55555555555556" x="45.55555555555556" y="0.0" /><circle cx="68.33333333333334" cy="15.185185185185185" fill="#fff" r="12.148148148148149" stroke="#666" stroke-width="1" /><text alignment-baseline="middle" font-family="&quot;Inconsolata&quot;, monospace" text-anchor="middle" x="68.33333333333334" y="15.185185185185185">F</text></g><g><rect fill="#fff" height="30.37037037037037" stroke="#666" stroke-width="1" width="45.55555555555556" x="91.11111111111111" y="0.0" /><circle cx="113.88888888888889" cy="15.185185185185185" fill="#fff" r="12.148148148148149" stroke="#666" stroke-width="1" /><text alignment-baseline="middle" font-family="&quot;Inconsolata&quot;, monospace" text-anchor="middle" x="113.88888888888889" y="15.185185185185185">F♯</text></g><g><rect fill="#fff" height="30.37037037037037" stroke="#666" stroke-width="1" width="45.55555555555556" x="136.66666666666669" y="0.0" /><circle cx="159.44444444444446" cy="15.185185185185185" fill="#fff" r="12.148148148148149" stroke="#666" stroke-width="1" /><text alignment-baseline="middle" font-family="&quot;Inconsolata&quot;, monospace" text-anchor="middle" x="159.44444444444446" y="15.185185185185185">G</text></g><g><rect fill="#fff" height="30.37037037037037" stroke="#666" stroke-width="1" width="45.55555555555556" x="182.22222222222223" y="0.0" /><circle cx="205.0" cy="15.185185185185185" fill="#fff" r="12.148148148148149" stroke="#666" stroke-width="1" /><text alignment-baseline="middle" font-family="&quot;Inconsolata&quot;, monospace" text-anchor="middle" x="205.0" y="15.185185185185185">A♭</text></g><g><rect fill="#fff" height="30.37037037037037" stroke="#666" stroke-width="1" width="45.55555555555556" x="227.77777777777777" y="0.0" /><circle cx="250.55555555555554" cy="15.185185185185185" fill="#fff" r="12.148148148148149" stroke="#666" stroke-width="1" /><text alignment-baseline="middle" font-family="&quot;Inconsolata&quot;, monospace" text-anchor="middle" x="250.55555555555554" y="15.185185185185185">A</text></g><g><rect fill="#fff" height="30.37037037037037" stroke="#666" stroke-width="1" width="45.55555555555556" x="273.33333333333337" y="0.0" /><circle cx="296.11111111111114" cy="15.185185185185185" fill="#fff" r="12.148148148148149" stroke="#666" stroke-width="1" /><text alignment-baseline="middle" font-family="&quot;Inconsolata&quot;, monospace" text-anchor="middle" x="296.11111111111114" y="15.185185185185185">B♭</text></g><g><rect fill="#fff" height="30.37037037037037" stroke="#666" stroke-width="1" width="45.55555555555556" x="318.8888888888889" y="0.0" /><circle cx="341.6666666666667" cy="15.185185185185185" fill="#fff" r="12.148148148148149" stroke="#666" stroke-width="1" /><text alignment-baseline="middle" font-family="&quot;Inconsolata&quot;, monospace" text-anchor="middle" x="341.6666666666667" y="15.185185185185185">B</text></g><g><rect fill="#fff" height="30.37037037037037" stroke="#666" stroke-width="1" width="45.55555555555556" x="364.44444444444446" y="0.0" /><circle cx="387.22222222222223" cy="15.185185185185185" fill="#fff" r="12.148148148148149" stroke="#666" stroke-width="1" /><text alignment-baseline="middle" font-family="&quot;Inconsolata&quot;, monospace" text-anchor="middle" x="387.22222222222223" y="15.185185185185185">C</text></g><g><rect fill="#fff" height="30.37037037037037" stroke="#666" stroke-width="1" width="45.55555555555556" x="410.0" y="0.0" /><circle cx="432.77777777777777" cy="15.185185185185185" fill="#fff" r="12.148148148148149" stroke="#666" stroke-width="1" /><text alignment-baseline="middle" font-family="&quot;Inconsolata&quot;, monospace" text-anchor="middle" x="432.77777777777777" y="15.185185185185185">C♯</text></g><g><rect fill="#fff" height="30.37037037037037" stroke="#666" stroke-width="1" width="45.55555555555556" x="455.55555555555554" y="0.0" /><circle cx="478.3333333333333" cy="15.185185185185185" fill="#fff" r="12.148148148148149" stroke="#666" stroke-width="1" /><text alignment-baseline="middle" font-family="&quot;Inconsolata&quot;, monospace" text-anchor="middle" x="478.3333333333333" y="15.185185185185185">D</text></g><g><rect fill="#fff" height="30.37037037037037" stroke="#666" stroke-width="1" width="45.55555555555556" x="501.11111111111114" y="0.0" /><circle cx="523.8888888888889" cy="15.185185185185185" fill="#fff" r="12.148148148148149" stroke="#666" stroke-width="1" /><text alignment-baseline="middle" font-family="&quot;Inconsolata&quot;, monospace" text-anchor="middle" x="523.8888888888889" y="15.185185185185185">E♭</text></g><g><rect fill="#fff" height="30.37037037037037" stroke="#666" stroke-width="1" width="45.55555555555556" x="546.6666666666667" y="0.0" /><circle cx="569.4444444444446" cy="15.185185185185185" fill="#fff" r="12.148148148148149" stroke="#666" stroke-width="1" /><text alignment-baseline="middle" font-family="&quot;Inconsolata&quot;, monospace" text-anchor="middle" x="569.4444444444446" y="15.185185185185185">E</text></g><g><rect fill="#fff" height="30.37037037037037" stroke="#666" stroke-width="1" width="45.55555555555556" x="592.2222222222223" y="0.0" /><circle cx="615.0000000000001" cy="15.185185185185185" fill="#fff" r="12.148148148148149" stroke="#666" stroke-width="1" /><text alignment-baseline="middle" font-family="&quot;Inconsolata&quot;, monospace" text-anchor="middle" x="615.0000000000001" y="15.185185185185185">F</text></g><g><rect fill="#fff" height="30.37037037037037" stroke="#666" stroke-width="1" width="45.55555555555556" x="637.7777777777778" y="0.0" /><circle cx="660.5555555555557" cy="15.185185185185185" fill="#fff" r="12.148148148148149" stroke="#666" stroke-width="1" /><text alignment-baseline="middle" font-family="&quot;Inconsolata&quot;, monospace" text-anchor="middle" x="660.5555555555557" y="15.185185185185185">F♯</text></g><g><rect fill="#fff" height="30.37037037037037" stroke="#666" stroke-width="1" width="45.55555555555556" x="683.3333333333334" y="0.0" /><circle cx="706.1111111111112" cy="15.185185185185185" fill="#fff" r="12.148148148148149" stroke="#666" stroke-width="1" /><text alignment-baseline="middle" font-family="&quot;Inconsolata&quot;, monospace" text-anchor="middle" x="706.1111111111112" y="15.185185185185185">G</text></g><g><rect fill="#fff" height="30.37037037037037" stroke="#666" stroke-width="1" width="45.55555555555556" x="728.8888888888889" y="0.0" /><circle cx="751.6666666666667" cy="15.185185185185185" fill="#fff" r="12.148148148148149" stroke="#666" stroke-width="1" /><text alignment-baseline="middle" font-family="&quot;Inconsolata&quot;, monospace" text-anchor="middle" x="751.6666666666667" y="15.185185185185185">A♭</text></g><g><rect fill="#fff" height="30.37037037037037" stroke="#666" stroke-width="1" width="45.55555555555556" x="774.4444444444445" y="0.0" /><circle cx="797.2222222222223" cy="15.185185185185185" fill="#fff" r="12.148148148148149" stroke="#666" stroke-width="1" /><text alignment-baseline="middle" font-family="&quot;Inconsolata&quot;, monospace" text-anchor="middle" x="797.2222222222223" y="15.185185185185185">A</text></g><g><rect fill="#fff" height="30.37037037037037" stroke="#666" stroke-width="1" width="45.55555555555556" x="0.0" y="30.37037037037037" /><circle cx="22.77777777777778" cy="45.55555555555556" fill="#fff" r="12.148148148148149" stroke="#666" stroke-width="1" /><text alignment-baseline="middle" font-family="&quot;Inconsolata&quot;, monospace" text-anchor="middle" x="22.77777777777778" y="45.55555555555556">A</text></g><g><rect fill="#fff" height="30.37037037037037" stroke="#666" stroke-width="1" width="45.55555555555556" x="45.55555555555556" y="30.37037037037037" /><circle cx="68.33333333333334" cy="45.55555555555556" fill="#fff" r="12.148148148148149" stroke="#666" stroke-width="1" /><text alignment-baseline="middle" font-family="&quot;Inconsolata&quot;, monospace" text-anchor="middle" x="68.33333333333334" y="45.55555555555556">B♭</text></g><g><rect fill="#fff" height="30.37037037037037" stroke="#666" stroke-width="1" width="45.55555555555556" x="91.11111111111111" y="30.37037037037037" /><circle cx="113.88888888888889" cy="45.55555555555556" fill="#fff" r="12.148148148148149" stroke="#666" stroke-width="1" /><text alignment-baseline="middle" font-family="&quot;Inconsolata&quot;, monospace" text-anchor="middle" x="113.88888888888889" y="45.55555555555556">B</text></g><g><rect fill="#fff" height="30.37037037037037" stroke="#666" stroke-width="1" width="45.55555555555556" x="136.66666666666669" y="30.37037037037037" /><circle cx="159.44444444444446" cy="45.55555555555556" fill="#fff" r="12.148148148148149" stroke="#666" stroke-width="1" /><text alignment-baseline="middle" font-family="&quot;Inconsolata&quot;, monospace" text-anchor="middle" x="159.44444444444446" y="45.55555555555556">C</text></g><g><rect fill="#fff" height="30.37037037037037" stroke="#666" stroke-width="1" width="45.55555555555556" x="182.22222222222223" y="30.37037037037037" /><circle cx="205.0" cy="45.55555555555556" fill="#fff" r="12.148148148148149" stroke="#666" stroke-width="1" /><text alignment-baseline="middle" font-family="&quot;Inconsolata&quot;, monospace" text-anchor="middle" x="205.0" y="45.55555555555556">C♯</text></g><g><rect fill="#fff" height="30.37037037037037" stroke="#666" stroke-width="1" width="45.55555555555556" x="227.77777777777777" y="30.37037037037037" /><circle cx="250.55555555555554" cy="45.55555555555556" fill="#fff" r="12.148148148148149" stroke="#666" stroke-width="1" /><text alignment-baseline="middle" font-family="&quot;Inconsolata&quot;, monospace" text-anchor="middle" x="250.55555555555554" y="45.55555555555556">D</text></g><g><rect fill="#fff" height="30.37037037037037" stroke="#666" stroke-width="1" width="45.55555555555556" x="273.33333333333337" y="30.37037037037037" /><circle cx="296.11111111111114" cy="45.55555555555556" fill="#fff" r="12.148148148148149" stroke="#666" stroke-width="1" /><text alignment-baseline="middle" font-family="&quot;Inconsolata&quot;, monospace" text-anchor="middle" x="296.11111111111114" y="45.55555555555556">E♭</text></g><g><rect fill="#fff" height="30.37037037037037" stroke="#666" stroke-width="1" width="45.55555555555556" x="318.8888888888889" y="30.37037037037037" /><circle cx="341.6666666666667" cy="45.55555555555556" fill="#fff" r="12.148148148148149" stroke="#666" stroke-width="1" /><text alignment-baseline="middle" font-family="&quot;Inconsolata&quot;, monospace" text-anchor="middle" x="341.6666666666667" y="45.55555555555556">E</text></g><g><rect fill="#fff" height="30.37037037037037" stroke="#666" stroke-width="1" width="45.55555555555556" x="364.44444444444446" y="30.37037037037037" /><circle cx="387.22222222222223" cy="45.55555555555556" fill="#fff" r="12.148148148148149" stroke="#666" stroke-width="1" /><text alignment-baseline="middle" font-family="&quot;Inconsolata&quot;, monospace" text-anchor="middle" x="387.22222222222223" y="45.55555555555556">F</text></g><g><rect fill="#fff" height="30.37037037037037" stroke="#666" stroke-width="1" width="45.55555555555556" x="410.0" y="30.37037037037037" /><circle cx="432.77777777777777" cy="45.55555555555556" fill="#fff" r="12.148148148148149" stroke="#666" stroke-width="1" /><text alignment-baseline="middle" font-family="&quot;Inconsolata&quot;, monospace" text-anchor="middle" x="432.77777777777777" y="45.55555555555556">F♯</text></g><g><rect fill="#fff" height="30.37037037037037" stroke="#666" stroke-width="1" width="45.55555555555556" x="455.55555555555554" y="30.37037037037037" /><circle cx="478.3333333333333" cy="45.55555555555556" fill="#fff" r="12.148148148148149" stroke="#666" stroke-width="1" /><text alignment-baseline="middle" font-family="&quot;Inconsolata&quot;, monospace" text-anchor="middle" x="478.3333333333333" y="45.55555555555556">G</text></g><g><rect fill="#fff" height="30.37037037037037" stroke="#666" stroke-width="1" width="45.55555555555556" x="501.11111111111114" y="30.37037037037037" /><circle cx="523.8888888888889" cy="45.55555555555556" fill="#fff" r="12.148148148148149" stroke="#666" stroke-width="1" /><text alignment-baseline="middle" font-family="&quot;Inconsolata&quot;, monospace" text-anchor="middle" x="523.8888888888889" y="45.55555555555556">A♭</text></g><g><rect fill="#fff" height="30.37037037037037" stroke="#666" stroke-width="1" width="45.55555555555556" x="546.6666666666667" y="30.37037037037037" /><circle cx="569.4444444444446" cy="45.55555555555556" fill="#fff" r="12.148148148148149" stroke="#666" stroke-width="1" /><text alignment-baseline="middle" font-family="&quot;Inconsolata&quot;, monospace" text-anchor="middle" x="569.4444444444446" y="45.55555555555556">A</text></g><g><rect fill="#fff" height="30.37037037037037" stroke="#666" stroke-width="1" width="45.55555555555556" x="592.2222222222223" y="30.37037037037037" /><circle cx="615.0000000000001" cy="45.55555555555556" fill="#fff" r="12.148148148148149" stroke="#666" stroke-width="1" /><text alignment-baseline="middle" font-family="&quot;Inconsolata&quot;, monospace" text-anchor="middle" x="615.0000000000001" y="45.55555555555556">B♭</text></g><g><rect fill="#fff" height="30.37037037037037" stroke="#666" stroke-width="1" width="45.55555555555556" x="637.7777777777778" y="30.37037037037037" /><circle cx="660.5555555555557" cy="45.55555555555556" fill="#fff" r="12.148148148148149" stroke="#666" stroke-width="1" /><text alignment-baseline="middle" font-family="&quot;Inconsolata&quot;, monospace" text-anchor="middle" x="660.5555555555557" y="45.55555555555556">B</text></g><g><rect fill="#fff" height="30.37037037037037" stroke="#666" stroke-width="1" width="45.55555555555556" x="683.3333333333334" y="30.37037037037037" /><circle cx="706.1111111111112" cy="45.55555555555556" fill="#fff" r="12.148148148148149" stroke="#666" stroke-width="1" /><text alignment-baseline="middle" font-family="&quot;Inconsolata&quot;, monospace" text-anchor="middle" x="706.1111111111112" y="45.55555555555556">C</text></g><g><rect fill="#fff" height="30.37037037037037" stroke="#666" stroke-width="1" width="45.55555555555556" x="728.8888888888889" y="30.37037037037037" /><circle cx="751.6666666666667" cy="45.55555555555556" fill="#fff" r="12.148148148148149" stroke="#666" stroke-width="1" /><text alignment-baseline="middle" font-family="&quot;Inconsolata&quot;, monospace" text-anchor="middle" x="751.6666666666667" y="45.55555555555556">C♯</text></g><g><rect fill="#fff" height="30.37037037037037" stroke="#666" stroke-width="1" width="45.55555555555556" x="774.4444444444445" y="30.37037037037037" /><circle cx="797.2222222222223" cy="45.55555555555556" fill="#fff" r="12.148148148148149" stroke="#666" stroke-width="1" /><text alignment-baseline="middle" font-family="&quot;Inconsolata&quot;, monospace" text-anchor="middle" x="797.2222222222223" y="45.55555555555556">D</text></g><g><rect fill="#fff" height="30.37037037037037" stroke="#666" stroke-width="1" width="45.55555555555556" x="0.0" y="60.74074074074074" /><circle cx="22.77777777777778" cy="75.92592592592592" fill="#fff" r="12.148148148148149" stroke="#666" stroke-width="1" /><text alignment-baseline="middle" font-family="&quot;Inconsolata&quot;, monospace" text-anchor="middle" x="22.77777777777778" y="75.92592592592592">D</text></g><g><rect fill="#fff" height="30.37037037037037" stroke="#666" stroke-width="1" width="45.55555555555556" x="45.55555555555556" y="60.74074074074074" /><circle cx="68.33333333333334" cy="75.92592592592592" fill="#fff" r="12.148148148148149" stroke="#666" stroke-width="1" /><text alignment-baseline="middle" font-family="&quot;Inconsolata&quot;, monospace" text-anchor="middle" x="68.33333333333334" y="75.92592592592592">E♭</text></g><g><rect fill="#fff" height="30.37037037037037" stroke="#666" stroke-width="1" width="45.55555555555556" x="91.11111111111111" y="60.74074074074074" /><circle cx="113.88888888888889" cy="75.92592592592592" fill="#fff" r="12.148148148148149" stroke="#666" stroke-width="1" /><text alignment-baseline="middle" font-family="&quot;Inconsolata&quot;, monospace" text-anchor="middle" x="113.88888888888889" y="75.92592592592592">E</text></g><g><rect fill="#fff" height="30.37037037037037" stroke="#666" stroke-width="1" width="45.55555555555556" x="136.66666666666669" y="60.74074074074074" /><circle cx="159.44444444444446" cy="75.92592592592592" fill="#fff" r="12.148148148148149" stroke="#666" stroke-width="1" /><text alignment-baseline="middle" font-family="&quot;Inconsolata&quot;, monospace" text-anchor="middle" x="159.44444444444446" y="75.92592592592592">F</text></g><g><rect fill="#fff" height="30.37037037037037" stroke="#666" stroke-width="1" width="45.55555555555556" x="182.22222222222223" y="60.74074074074074" /><circle cx="205.0" cy="75.92592592592592" fill="#fff" r="12.148148148148149" stroke="#666" stroke-width="1" /><text alignment-baseline="middle" font-family="&quot;Inconsolata&quot;, monospace" text-anchor="middle" x="205.0" y="75.92592592592592">F♯</text></g><g><rect fill="#fff" height="30.37037037037037" stroke="#666" stroke-width="1" width="45.55555555555556" x="227.77777777777777" y="60.74074074074074" /><circle cx="250.55555555555554" cy="75.92592592592592" fill="#fff" r="12.148148148148149" stroke="#666" stroke-width="1" /><text alignment-baseline="middle" font-family="&quot;Inconsolata&quot;, monospace" text-anchor="middle" x="250.55555555555554" y="75.92592592592592">G</text></g><g><rect fill="#fff" height="30.37037037037037" stroke="#666" stroke-width="1" width="45.55555555555556" x="273.33333333333337" y="60.74074074074074" /><circle cx="296.11111111111114" cy="75.92592592592592" fill="#fff" r="12.148148148148149" stroke="#666" stroke-width="1" /><text alignment-baseline="middle" font-family="&quot;Inconsolata&quot;, monospace" text-anchor="middle" x="296.11111111111114" y="75.92592592592592">G♯</text></g><g><rect fill="#fff" height="30.37037037037037" stroke="#666" stroke-width="1" width="45.55555555555556" x="318.8888888888889" y="60.74074074074074" /><circle cx="341.6666666666667" cy="75.92592592592592" fill="#fff" r="12.148148148148149" stroke="#666" stroke-width="1" /><text alignment-baseline="middle" font-family="&quot;Inconsolata&quot;, monospace" text-anchor="middle" x="341.6666666666667" y="75.92592592592592">A</text></g><g><rect fill="#fff" height="30.37037037037037" stroke="#666" stroke-width="1" width="45.55555555555556" x="364.44444444444446" y="60.74074074074074" /><circle cx="387.22222222222223" cy="75.92592592592592" fill="#fff" r="12.148148148148149" stroke="#666" stroke-width="1" /><text alignment-baseline="middle" font-family="&quot;Inconsolata&quot;, monospace" text-anchor="middle" x="387.22222222222223" y="75.92592592592592">B♭</text></g><g><rect fill="#fff" height="30.37037037037037" stroke="#666" stroke-width="1" width="45.55555555555556" x="410.0" y="60.74074074074074" /><circle cx="432.77777777777777" cy="75.92592592592592" fill="#fff" r="12.148148148148149" stroke="#666" stroke-width="1" /><text alignment-baseline="middle" font-family="&quot;Inconsolata&quot;, monospace" text-anchor="middle" x="432.77777777777777" y="75.92592592592592">B</text></g><g><rect fill="#fff" height="30.37037037037037" stroke="#666" stroke-width="1" width="45.55555555555556" x="455.55555555555554" y="60.74074074074074" /><circle cx="478.3333333333333" cy="75.92592592592592" fill="#fff" r="12.148148148148149" stroke="#666" stroke-width="1" /><text alignment-baseline="middle" font-family="&quot;Inconsolata&quot;, monospace" text-anchor="middle" x="478.3333333333333" y="75.92592592592592">C</text></g><g><rect fill="#fff" height="30.37037037037037" stroke="#666" stroke-width="1" width="45.55555555555556" x="501.11111111111114" y="60.74074074074074" /><circle cx="523.8888888888889" cy="75.92592592592592" fill="#fff" r="12.148148148148149" stroke="#666" stroke-width="1" /><text alignment-baseline="middle" font-family="&quot;Inconsolata&quot;, monospace" text-anchor="middle" x="523.8888888888889" y="75.92592592592592">C♯</text></g><g><rect fill="#fff" height="30.37037037037037" stroke="#666" stroke-width="1" width="45.55555555555556" x="546.6666666666667" y="60.74074074074074" /><circle cx="569.4444444444446" cy="75.92592592592592" fill="#fff" r="12.148148148148149" stroke="#666" stroke-width="1" /><text alignment-baseline="middle" font-family="&quot;Inconsolata&quot;, monospace" text-anchor="middle" x="569.4444444444446" y="75.92592592592592">D</text></g><g><rect fill="#fff" height="30.37037037037037" stroke="#666" stroke-width="1" width="45.55555555555556" x="592.2222222222223" y="60.74074074074074" /><circle cx="615.0000000000001" cy="75.92592592592592" fill="#fff" r="12.148148148148149" stroke="#666" stroke-width="1" /><text alignment-baseline="middle" font-family="&quot;Inconsolata&quot;, monospace" text-anchor="middle" x="615.0000000000001" y="75.92592592592592">E♭</text></g><g><rect fill="#fff" height="30.37037037037037" stroke="#666" stroke-width="1" width="45.55555555555556" x="637.7777777777778" y="60.74074074074074" /><circle cx="660.5555555555557" cy="75.92592592592592" fill="#fff" r="12.148148148148149" stroke="#666" stroke-width="1" /><text alignment-baseline="middle" font-family="&quot;Inconsolata&quot;, monospace" text-anchor="middle" x="660.5555555555557" y="75.92592592592592">E</text></g><g><rect fill="#fff" height="30.37037037037037" stroke="#666" stroke-width="1" width="45.55555555555556" x="683.3333333333334" y="60.74074074074074" /><circle cx="706.1111111111112" cy="75.92592592592592" fill="#fff" r="12.148148148148149" stroke="#666" stroke-width="1" /><text alignment-baseline="middle" font-family="&quot;Inconsolata&quot;, monospace" text-anchor="middle" x="706.1111111111112" y="75.92592592592592">F</text></g><g><rect fill="#fff" height="30.37037037037037" stroke="#666" stroke-width="1" width="45.55555555555556" x="728.8888888888889" y="60.74074074074074" /><circle cx="751.6666666666667" cy="75.92592592592592" fill="#fff" r="12.148148148148149" stroke="#666" stroke-width="1" /><text alignment-baseline="middle" font-family="&quot;Inconsolata&quot;, monospace" text-anchor="middle" x="751.6666666666667" y="75.92592592592592">F♯</text></g><g><rect fill="#fff" height="30.37037037037037" stroke="#666" stroke-width="1" width="45.55555555555556" x="774.4444444444445" y="60.74074074074074" /><circle cx="797.2222222222223" cy="75.92592592592592" fill="#fff" r="12.148148148148149" stroke="#666" stroke-width="1" /><text alignment-baseline="middle" font-family="&quot;Inconsolata&quot;, monospace" text-anchor="middle" x="797.2222222222223" y="75.92592592592592">G</text></g><g><rect fill="#fff" height="30.37037037037037" stroke="#666" stroke-width="1" width="45.55555555555556" x="0.0" y="91.11111111111111" /><circle cx="22.77777777777778" cy="106.2962962962963" fill="#fff" r="12.148148148148149" stroke="#666" stroke-width="1" /><text alignment-baseline="middle" font-family="&quot;Inconsolata&quot;, monospace" text-anchor="middle" x="22.77777777777778" y="106.2962962962963">G</text></g><g><rect fill="#fff" height="30.37037037037037" stroke="#666" stroke-width="1" width="45.55555555555556" x="45.55555555555556" y="91.11111111111111" /><circle cx="68.33333333333334" cy="106.2962962962963" fill="#fff" r="12.148148148148149" stroke="#666" stroke-width="1" /><text alignment-baseline="middle" font-family="&quot;Inconsolata&quot;, monospace" text-anchor="middle" x="68.33333333333334" y="106.2962962962963">G♯</text></g><g><rect fill="#fff" height="30.37037037037037" stroke="#666" stroke-width="1" width="45.55555555555556" x="91.11111111111111" y="91.11111111111111" /><circle cx="113.88888888888889" cy="106.2962962962963" fill="#fff" r="12.148148148148149" stroke="#666" stroke-width="1" /><text alignment-baseline="middle" font-family="&quot;Inconsolata&quot;, monospace" text-anchor="middle" x="113.88888888888889" y="106.2962962962963">A</text></g><g><rect fill="#fff" height="30.37037037037037" stroke="#666" stroke-width="1" width="45.55555555555556" x="136.66666666666669" y="91.11111111111111" /><circle cx="159.44444444444446" cy="106.2962962962963" fill="#fff" r="12.148148148148149" stroke="#666" stroke-width="1" /><text alignment-baseline="middle" font-family="&quot;Inconsolata&quot;, monospace" text-anchor="middle" x="159.44444444444446" y="106.2962962962963">B♭</text></g><g><rect fill="#fff" height="30.37037037037037" stroke="#666" stroke-width="1" width="45.55555555555556" x="182.22222222222223" y="91.11111111111111" /><circle cx="205.0" cy="106.2962962962963" fill="#fff" r="12.148148148148149" stroke="#666" stroke-width="1" /><text alignment-baseline="middle" font-family="&quot;Inconsolata&quot;, monospace" text-anchor="middle" x="205.0" y="106.2962962962963">B</text></g><g><rect fill="#fff" height="30.37037037037037" stroke="#666" stroke-width="1" width="45.55555555555556" x="227.77777777777777" y="91.11111111111111" /><circle cx="250.55555555555554" cy="106.2962962962963" fill="#fff" r="12.148148148148149" stroke="#666" stroke-width="1" /><text alignment-baseline="middle" font-family="&quot;Inconsolata&quot;, monospace" text-anchor="middle" x="250.55555555555554" y="106.2962962962963">C</text></g><g><rect fill="#fff" height="30.37037037037037" stroke="#666" stroke-width="1" width="45.55555555555556" x="273.33333333333337" y="91.11111111111111" /><circle cx="296.11111111111114" cy="106.2962962962963" fill="#fff" r="12.148148148148149" stroke="#666" stroke-width="1" /><text alignment-baseline="middle" font-family="&quot;Inconsolata&quot;, monospace" text-anchor="middle" x="296.11111111111114" y="106.2962962962963">C♯</text></g><g><rect fill="#fff" height="30.37037037037037" stroke="#666" stroke-width="1" width="45.55555555555556" x="318.8888888888889" y="91.11111111111111" /><circle cx="341.6666666666667" cy="106.2962962962963" fill="#fff" r="12.148148148148149" stroke="#666" stroke-width="1" /><text alignment-baseline="middle" font-family="&quot;Inconsolata&quot;, monospace" text-anchor="middle" x="341.6666666666667" y="106.2962962962963">D</text></g><g><rect fill="#fff" height="30.37037037037037" stroke="#666" stroke-width="1" width="45.55555555555556" x="364.44444444444446" y="91.11111111111111" /><circle cx="387.22222222222223" cy="106.2962962962963" fill="#fff" r="12.148148148148149" stroke="#666" stroke-width="1" /><text alignment-baseline="middle" font-family="&quot;Inconsolata&quot;, monospace" text-anchor="middle" x="387.22222222222223" y="106.2962962962963">E♭</text></g><g><rect fill="#fff" height="30.37037037037037" stroke="#666" stroke-width="1" width="45.55555555555556" x="410.0" y="91.11111111111111" /><circle cx="432.77777777777777" cy="106.2962962962963" fill="#fff" r="12.148148148148149" stroke="#666" stroke-width="1" /><text alignment-baseline="middle" font-family="&quot;Inconsolata&quot;, monospace" text-anchor="middle" x="432.77777777777777" y="106.2962962962963">E</text></g><g><rect fill="#fff" height="30.37037037037037" stroke="#666" stroke-width="1" width="45.55555555555556" x="455.55555555555554" y="91.11111111111111" /><circle cx="478.3333333333333" cy="106.2962962962963" fill="#fff" r="12.148148148148149" stroke="#666" stroke-width="1" /><text alignment-baseline="middle" font-family="&quot;Inconsolata&quot;, monospace" text-anchor="middle" x="478.3333333333333" y="106.2962962962963">F</text></g><g><rect fill="#fff" height="30.37037037037037" stroke="#666" stroke-width="1" width="45.55555555555556" x="501.11111111111114" y="91.11111111111111" /><circle cx="523.8888888888889" cy="106.2962962962963" fill="#fff" r="12.148148148148149" stroke="#666" stroke-width="1" /><text alignment-baseline="middle" font-family="&quot;Inconsolata&quot;, monospace" text-anchor="middle" x="523.8888888888889" y="106.2962962962963">F♯</text></g><g><rect fill="#fff" height="30.37037037037037" stroke="#666" stroke-width="1" width="45.55555555555556" x="546.6666666666667" y="91.11111111111111" /><circle cx="569.4444444444446" cy="106.2962962962963" fill="#fff" r="12.148148148148149" stroke="#666" stroke-width="1" /><text alignment-baseline="middle" font-family="&quot;Inconsolata&quot;, monospace" text-anchor="middle" x="569.4444444444446" y="106.2962962962963">G</text></g><g><rect fill="#fff" height="30.37037037037037" stroke="#666" stroke-width="1" width="45.55555555555556" x="592.2222222222223" y="91.11111111111111" /><circle cx="615.0000000000001" cy="106.2962962962963" fill="#fff" r="12.148148148148149" stroke="#666" stroke-width="1" /><text alignment-baseline="middle" font-family="&quot;Inconsolata&quot;, monospace" text-anchor="middle" x="615.0000000000001" y="106.2962962962963">G♯</text></g><g><rect fill="#fff" height="30.37037037037037" stroke="#666" stroke-width="1" width="45.55555555555556" x="637.7777777777778" y="91.11111111111111" /><circle cx="660.5555555555557" cy="106.2962962962963" fill="#fff" r="12.148148148148149" stroke="#666" stroke-width="1" /><text alignment-baseline="middle" font-family="&quot;Inconsolata&quot;, monospace" text-anchor="middle" x="660.5555555555557" y="106.2962962962963">A</text></g><g><rect fill="#fff" height="30.37037037037037" stroke="#666" stroke-width="1" width="45.55555555555556" x="683.3333333333334" y="91.11111111111111" /><circle cx="706.1111111111112" cy="106.2962962962963" fill="#fff" r="12.148148148148149" stroke="#666" stroke-width="1" /><text alignment-baseline="middle" font-family="&quot;Inconsolata&quot;, monospace" text-anchor="middle" x="706.1111111111112" y="106.2962962962963">B♭</text></g><g><rect fill="#fff" height="30.37037037037037" stroke="#666" stroke-width="1" width="45.55555555555556" x="728.8888888888889" y="91.11111111111111" /><circle cx="751.6666666666667" cy="106.2962962962963" fill="#fff" r="12.148148148148149" stroke="#666" stroke-width="1" /><text alignment-baseline="middle" font-family="&quot;Inconsolata&quot;, monospace" text-anchor="middle" x="751.6666666666667" y="106.2962962962963">B</text></g><g><rect fill="#fff" height="30.37037037037037" stroke="#666" stroke-width="1" width="45.55555555555556" x="774.4444444444445" y="91.11111111111111" /><circle cx="797.2222222222223" cy="106.2962962962963" fill="#fff" r="12.148148148148149" stroke="#666" stroke-width="1" /><text alignment-baseline="middle" font-family="&quot;Inconsolata&quot;, monospace" text-anchor="middle" x="797.2222222222223" y="106.2962962962963">C</text></g></svg>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="inner_cell">
+    <div class="input_area code">
+sc = scale.ChromaticScale('g2')
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[46]:</div>
+<div class="inner_cell">
+    <div class="input_area code">
+# E: e4 - a5
+# A: a3 - d5
+# D: d3 - g4
+# G: g2 - c4
+nts = [  sc.getPitches('e4','a5'),
+ sc.getPitches('a3','d5'),
+ sc.getPitches('d3','g4'),
+sc.getPitches('g2','c4'),
+       ]
+
+import pprint
+pprint.pprint(nts)
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[[&lt;music21.pitch.Pitch E4&gt;,
+  &lt;music21.pitch.Pitch F4&gt;,
+  &lt;music21.pitch.Pitch F#4&gt;,
+  &lt;music21.pitch.Pitch G4&gt;,
+  &lt;music21.pitch.Pitch A-4&gt;,
+  &lt;music21.pitch.Pitch A4&gt;,
+  &lt;music21.pitch.Pitch B-4&gt;,
+  &lt;music21.pitch.Pitch B4&gt;,
+  &lt;music21.pitch.Pitch C5&gt;,
+  &lt;music21.pitch.Pitch C#5&gt;,
+  &lt;music21.pitch.Pitch D5&gt;,
+  &lt;music21.pitch.Pitch E-5&gt;,
+  &lt;music21.pitch.Pitch E5&gt;,
+  &lt;music21.pitch.Pitch F5&gt;,
+  &lt;music21.pitch.Pitch F#5&gt;,
+  &lt;music21.pitch.Pitch G5&gt;,
+  &lt;music21.pitch.Pitch A-5&gt;,
+  &lt;music21.pitch.Pitch A5&gt;],
+ [&lt;music21.pitch.Pitch A3&gt;,
+  &lt;music21.pitch.Pitch B-3&gt;,
+  &lt;music21.pitch.Pitch B3&gt;,
+  &lt;music21.pitch.Pitch C4&gt;,
+  &lt;music21.pitch.Pitch C#4&gt;,
+  &lt;music21.pitch.Pitch D4&gt;,
+  &lt;music21.pitch.Pitch E-4&gt;,
+  &lt;music21.pitch.Pitch E4&gt;,
+  &lt;music21.pitch.Pitch F4&gt;,
+  &lt;music21.pitch.Pitch F#4&gt;,
+  &lt;music21.pitch.Pitch G4&gt;,
+  &lt;music21.pitch.Pitch A-4&gt;,
+  &lt;music21.pitch.Pitch A4&gt;,
+  &lt;music21.pitch.Pitch B-4&gt;,
+  &lt;music21.pitch.Pitch B4&gt;,
+  &lt;music21.pitch.Pitch C5&gt;,
+  &lt;music21.pitch.Pitch C#5&gt;,
+  &lt;music21.pitch.Pitch D5&gt;],
+ [&lt;music21.pitch.Pitch D3&gt;,
+  &lt;music21.pitch.Pitch E-3&gt;,
+  &lt;music21.pitch.Pitch E3&gt;,
+  &lt;music21.pitch.Pitch F3&gt;,
+  &lt;music21.pitch.Pitch F#3&gt;,
+  &lt;music21.pitch.Pitch G3&gt;,
+  &lt;music21.pitch.Pitch A-3&gt;,
+  &lt;music21.pitch.Pitch A3&gt;,
+  &lt;music21.pitch.Pitch B-3&gt;,
+  &lt;music21.pitch.Pitch B3&gt;,
+  &lt;music21.pitch.Pitch C4&gt;,
+  &lt;music21.pitch.Pitch C#4&gt;,
+  &lt;music21.pitch.Pitch D4&gt;,
+  &lt;music21.pitch.Pitch E-4&gt;,
+  &lt;music21.pitch.Pitch E4&gt;,
+  &lt;music21.pitch.Pitch F4&gt;,
+  &lt;music21.pitch.Pitch F#4&gt;,
+  &lt;music21.pitch.Pitch G4&gt;],
+ [&lt;music21.pitch.Pitch G2&gt;,
+  &lt;music21.pitch.Pitch A-2&gt;,
+  &lt;music21.pitch.Pitch A2&gt;,
+  &lt;music21.pitch.Pitch B-2&gt;,
+  &lt;music21.pitch.Pitch B2&gt;,
+  &lt;music21.pitch.Pitch C3&gt;,
+  &lt;music21.pitch.Pitch C#3&gt;,
+  &lt;music21.pitch.Pitch D3&gt;,
+  &lt;music21.pitch.Pitch E-3&gt;,
+  &lt;music21.pitch.Pitch E3&gt;,
+  &lt;music21.pitch.Pitch F3&gt;,
+  &lt;music21.pitch.Pitch F#3&gt;,
+  &lt;music21.pitch.Pitch G3&gt;,
+  &lt;music21.pitch.Pitch A-3&gt;,
+  &lt;music21.pitch.Pitch A3&gt;,
+  &lt;music21.pitch.Pitch B-3&gt;,
+  &lt;music21.pitch.Pitch B3&gt;,
+  &lt;music21.pitch.Pitch C4&gt;]]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area code">
+
+</div>
+</div>
+</div>
+
+</div>
+    </div>
+  </div>
+</body>
+
+</html>
