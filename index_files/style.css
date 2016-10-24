@@ -24,3 +24,35 @@ a:hover {
     padding-left: 5px;
     transition: padding-left .5s ease;
 }
+
+#page-container {
+    width: 800px;
+    margin: 0 auto;
+}
+
+#files {
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+#files-title {
+    #border: 1px solid #ccc;
+    padding: 2px 7px;
+    background-color: #336;
+    color: #fff;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    text-align: center;
+
+}
+
+#files > a {
+    padding: 2px 5px;
+    display: inline-block;
+}
+
+#files a:hover {
+    color: #669;
+    padding-left: 10px;
+    transition: padding-left .5s ease;
+}
