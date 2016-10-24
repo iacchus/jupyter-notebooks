@@ -70,3 +70,13 @@ a:hover {
     padding-left: 10px;
     transition: padding-left .2s ease;
 }
+
+.featherlight-content {
+    width: 90%;
+    height: 80%;
+}
+
+iframe.featherlight-inner {
+    width: 100%;
+    height: 100%;
+}
