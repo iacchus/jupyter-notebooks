@@ -54,6 +54,10 @@ a:hover {
     background-color: #eee;
 }
 
+#files > a:before {
+    content: '\2192    ';
+}
+
 #files > a {
     padding: 4px 5px;
     display: inline-block;
