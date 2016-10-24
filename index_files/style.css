@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css?family=Abril+Fatface|Fredericka+the+Great|Slabo+27px');
+
+h1
+{
+font-family: 'Fredericka the Great', serif;
+font-weight: normal;
+}
+
+body{
+    font-family: 'Slabo 27px';
+}
+
