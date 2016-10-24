@@ -36,17 +36,18 @@ a:hover {
 
 #files {
     border: 1px solid #ccc;
+    border-top: none;
     border-radius: 3px;
 }
 
 #files-title {
-    #border: 1px solid #ccc;
     padding: 4px 7px;
-    background-color: #336;
+    background-color: #669;
     color: #fff;
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
     text-align: center;
+    text-shadow: 1px 1px #333;
 
 }
 
