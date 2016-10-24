@@ -1,8 +1,21 @@
 #!/usr/bin/env python
 
 import glob
+import os
+#from os.path import isfile, getmtime
+#import datetime
 
 index_filename = "index.html"
+
+# lets's first convert all ipynb which it's more recent than it's html
+## some day maybe?
+#ipynb_files = glob.glob('*.ipynb',recursive=False)
+
+#for nbook in ipynb_files:
+#    if isfile
+
+nbconvert_command = "nbconvert *.ipynb --to html --output-dir html/ --template full"
+os.system(nbconvert_command)
 
 html_files = glob.glob('html/**/**.html',recursive=True)
 
