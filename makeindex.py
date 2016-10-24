@@ -26,17 +26,25 @@ index_files = str()
 
 print("Writing index file listing..")
 for file in html_files:
-    index_files += "<a href='{0}'>{0}</a><br/>\n".format(file)
+    index_files += "<a href='{0}' data-featherlight='iframe'>{0}</a><br/>\n".format(file)
 
 file_contents = """
 <!DOCTYPE html>
 <html lang="en">
   <head>
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
+
     <title>Iacchi Mercurii' Jupyter Notebooks</title>
+
+    <link href="index_files/featherlight.min.css" type="text/css" rel="stylesheet" />
     <link rel="stylesheet" href="index_files/style.css">
+
     <!--<script src="script.js"></script>-->
+    <script src="index_files/jquery-latest.js"></script>
+    <script src="index_files/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
   </head>
   <body>
     <div id="page-container">
