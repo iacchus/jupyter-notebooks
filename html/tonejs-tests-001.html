@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8" />
+<title>tonejs-tests-001</title>
+
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>-->
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.19.0/codemirror.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.19.0/mode/python/python.js"></script>
+
+<script>
+$(document).ready(function(){
+	$('.code').each(function() {
+
+	    var $this = $(this),
+		$code = $this.html().trim();
+
+	    $this.empty();
+
+	    var myCodeMirror = CodeMirror(this, {
+		value: $code,
+		mode: 'python',
+		lineNumbers: false,
+		readOnly: true,
+                lineWrapping: true,
+                htmlMode: true,
+                matchClosing: true,       
+                indentWithTabs: true,
+	    });
+
+	});
+});
+</script>
+
+
+
+<style type="text/css">
+/* Overrides of notebook CSS for static HTML export */
+body {
+  overflow: visible;
+  padding: 8px;
+}
+
+div#notebook {
+  overflow: visible;
+  border-top: none;
+}
+
+@media print {
+  div.cell {
+    display: block;
+    page-break-inside: avoid;
+  } 
+  div.output_wrapper { 
+    display: block;
+    page-break-inside: avoid; 
+  }
+  div.output { 
+    display: block;
+    page-break-inside: avoid; 
+  }
+}
+</style>
+
+<!-- Custom stylesheet, it must be in the same directory as the html file -->
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.19.0/codemirror.css">
+<link rel="stylesheet" href="https://iacchus.github.io/jupyter-ipython-themes/custom.css">
+
+<!-- Loading mathjax macro -->
+</head>
+<body>
+  <div tabindex="-1" id="notebook" class="border-box-sizing">
+    <div class="container" id="notebook-container">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="inner_cell">
+    <div class="input_area code">
+%%javascript
+
+//$('head').append("<script src='http://cdn.tonejs.org/latest/Tone.js?_=1476421023464'></script>")
+
+//$.getScript('http://cdn.tonejs.org/latest/Tone.js')
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+
+
+
+<div id="91e79ae4-efdc-4f80-8b08-f75f20ef0107"></div>
+<div class="output_subarea output_javascript ">
+<script type="text/javascript">
+var element = $('#91e79ae4-efdc-4f80-8b08-f75f20ef0107');
+
+$('head').append("<script src='http://cdn.tonejs.org/latest/Tone.js?_=1476421023464'></script>")
+
+//$.getScript('http://cdn.tonejs.org/latest/Tone.js')
+</script>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="inner_cell">
+    <div class="input_area code">
+%%js
+
+//create a synth and connect it to the master output (your speakers)
+var synth = new Tone.Synth().toMaster();
+
+//play a middle 'C' for the duration of an 8th note
+synth.triggerAttackRelease("C4", "8n");
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+
+
+
+<div id="e8d43afc-97b1-497a-8008-5fd79a5df9ae"></div>
+<div class="output_subarea output_javascript ">
+<script type="text/javascript">
+var element = $('#e8d43afc-97b1-497a-8008-5fd79a5df9ae');
+
+//create a synth and connect it to the master output (your speakers)
+var synth = new Tone.Synth().toMaster();
+
+//play a middle 'C' for the duration of an 8th note
+synth.triggerAttackRelease("C4", "8n");
+</script>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[56]:</div>
+<div class="inner_cell">
+    <div class="input_area code">
+%%js
+
+/*require.config({
+    //make a path to the Tone.js/Tone directory
+    //then include the sources as they are below
+    paths : {
+        "Tone" : "http://cdn.tonejs.org/latest/Tone",
+    }
+});*/
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+
+
+
+<div id="3e04d951-6f78-42aa-91f0-afcb1696a312"></div>
+<div class="output_subarea output_javascript ">
+<script type="text/javascript">
+var element = $('#3e04d951-6f78-42aa-91f0-afcb1696a312');
+
+/*require.config({
+    //make a path to the Tone.js/Tone directory
+    //then include the sources as they are below
+    paths : {
+        "Tone" : "http://cdn.tonejs.org/latest/Tone",
+    }
+});*/
+</script>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[57]:</div>
+<div class="inner_cell">
+    <div class="input_area code">
+%%js
+
+/*require(["Tone"], 
+function(Tone){
+        //window.Tone = Tone
+    var synth = new Tone.Synth().toMaster();
+    synth.triggerAttackRelease("C4", "8n");
+});*/
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+
+
+
+<div id="74c2c8ee-65ef-4e53-8c80-7f2c8c20fdc5"></div>
+<div class="output_subarea output_javascript ">
+<script type="text/javascript">
+var element = $('#74c2c8ee-65ef-4e53-8c80-7f2c8c20fdc5');
+
+/*require(["Tone"], 
+function(Tone){
+        //window.Tone = Tone
+    var synth = new Tone.Synth().toMaster();
+    synth.triggerAttackRelease("C4", "8n");
+});*/
+</script>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="inner_cell">
+    <div class="input_area code">
+%%javascript
+require.config({
+  paths: {
+      d3: '//cdnjs.cloudflare.com/ajax/libs/d3/3.4.8/d3.min'
+  }
+});
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+
+
+
+<div id="f020740f-93fc-4d0b-b43b-e0b2185aeec1"></div>
+<div class="output_subarea output_javascript ">
+<script type="text/javascript">
+var element = $('#f020740f-93fc-4d0b-b43b-e0b2185aeec1');
+require.config({
+  paths: {
+      d3: '//cdnjs.cloudflare.com/ajax/libs/d3/3.4.8/d3.min'
+  }
+});
+</script>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[28]:</div>
+<div class="inner_cell">
+    <div class="input_area code">
+%%js
+
+require(['d3'],function(d3){window.d3 = d3;})
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+
+
+
+<div id="63860765-2895-43d7-9707-e1c50b9459e9"></div>
+<div class="output_subarea output_javascript ">
+<script type="text/javascript">
+var element = $('#63860765-2895-43d7-9707-e1c50b9459e9');
+
+require(['d3'],function(d3){window.d3 = d3;})
+</script>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[30]:</div>
+<div class="inner_cell">
+    <div class="input_area code">
+%%js
+
+d3.select()
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+
+
+
+<div id="bdce47a5-541a-468d-92c0-2dead7b8c720"></div>
+<div class="output_subarea output_javascript ">
+<script type="text/javascript">
+var element = $('#bdce47a5-541a-468d-92c0-2dead7b8c720');
+
+d3.select()
+</script>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[35]:</div>
+<div class="inner_cell">
+    <div class="input_area code">
+%%js
+
+Tone
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+
+
+
+<div id="ba42641c-5439-4255-a581-3621df98de60"></div>
+<div class="output_subarea output_javascript ">
+<script type="text/javascript">
+var element = $('#ba42641c-5439-4255-a581-3621df98de60');
+
+Tone
+</script>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[49]:</div>
+<div class="inner_cell">
+    <div class="input_area code">
+%%js
+
+//require(['Tone'],function(Tone){window.Tone = Tone; return self;})
+
+//this works
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+
+
+
+<div id="e04be4fd-7021-48bb-a2f5-6e8b4a95470f"></div>
+<div class="output_subarea output_javascript ">
+<script type="text/javascript">
+var element = $('#e04be4fd-7021-48bb-a2f5-6e8b4a95470f');
+
+require(['Tone'],function(Tone){window.Tone = Tone; return self;})
+</script>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="inner_cell">
+    <div class="input_area code">
+%%js
+
+Tone
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+
+
+
+<div id="d8f08884-721e-4ca2-87ae-4be9efb53989"></div>
+<div class="output_subarea output_javascript ">
+<script type="text/javascript">
+var element = $('#d8f08884-721e-4ca2-87ae-4be9efb53989');
+
+Tone
+</script>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="inner_cell">
+    <div class="input_area code">
+%%js
+
+window.Tone = require(['Tone'])
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+
+
+
+<div id="e4aa5911-8ae8-4aa6-8840-5b1f6ef9c2af"></div>
+<div class="output_subarea output_javascript ">
+<script type="text/javascript">
+var element = $('#e4aa5911-8ae8-4aa6-8840-5b1f6ef9c2af');
+
+window.Tone = require(['Tone'])
+</script>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="inner_cell">
+    <div class="input_area code">
+%%js
+
+Tone
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+
+
+
+<div id="44d316d9-9f6e-4e39-9964-274a1232bf67"></div>
+<div class="output_subarea output_javascript ">
+<script type="text/javascript">
+var element = $('#44d316d9-9f6e-4e39-9964-274a1232bf67');
+
+Tone
+</script>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area code">
+%%js
+
+window.Tone
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area code">
+
+</div>
+</div>
+</div>
+
+</div>
+    </div>
+  </div>
+</body>
+
+</html>

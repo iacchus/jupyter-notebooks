@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8" />
-<title>plim-table-test</title>
+<title>snapsvg-table-tests-000</title>
 
 <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>-->
 <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>-->
@@ -80,56 +80,19 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Plim-(Python-Slim)-Table-test">Plim (Python Slim) Table test<a class="anchor-link" href="#Plim-(Python-Slim)-Table-test">&#182;</a></h1><p>We are trying methods of programatically create HTML tables, some use python loops, d3.js library. Here we are trying to implement <code>plim</code>.</p>
-<p><a href="http://plim.readthedocs.io/en/latest/">http://plim.readthedocs.io/en/latest/</a></p>
+<p><a href="https://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.4.1/snap.svg-min.js">https://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.4.1/snap.svg-min.js</a></p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[61]:</div>
 <div class="inner_cell">
     <div class="input_area code">
-import plim
+%%javascript
 
-from IPython.display import display, HTML
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
-<div class="inner_cell">
-    <div class="input_area code">
-table_slim = """
-table
-    tr
-        th um
-        th dois
-        th tres
-    tr
-        td first one
-        td second one
-        td third one
-    tr
-        td second row
-        td second row too
-        td also second row
-"""
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
-<div class="inner_cell">
-    <div class="input_area code">
-plim.preprocessor(table_slim)
+$.getScript('https://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.4.1/snap.svg-min.js')
 </div>
 </div>
 </div>
@@ -138,11 +101,17 @@ plim.preprocessor(table_slim)
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[9]:</div>
+<div class="output_area"><div class="prompt"></div>
 
 
-<div class="output_text output_subarea output_execute_result">
-<pre>&#39;&lt;table&gt;&lt;tr&gt;&lt;th&gt;um&lt;/th&gt;&lt;th&gt;dois&lt;/th&gt;&lt;th&gt;tres&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;first one&lt;/td&gt;&lt;td&gt;second one&lt;/td&gt;&lt;td&gt;third one&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;second row&lt;/td&gt;&lt;td&gt;second row too&lt;/td&gt;&lt;td&gt;also second row&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&#39;</pre>
+
+<div id="7d0f19a0-ca2f-4bb5-91f3-0b6094894d3b"></div>
+<div class="output_subarea output_javascript ">
+<script type="text/javascript">
+var element = $('#7d0f19a0-ca2f-4bb5-91f3-0b6094894d3b');
+
+$.getScript('https://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.4.1/snap.svg-min.js')
+</script>
 </div>
 
 </div>
@@ -153,12 +122,12 @@ plim.preprocessor(table_slim)
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="prompt input_prompt">In&nbsp;[48]:</div>
 <div class="inner_cell">
     <div class="input_area code">
-table_html = plim.preprocessor(table_slim)
+%%html
 
-HTML(table_html)
+<div id="svgout"></div>
 </div>
 </div>
 </div>
@@ -167,10 +136,60 @@ HTML(table_html)
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[11]:</div>
+<div class="output_area"><div class="prompt"></div>
 
-<div class="output_html rendered_html output_subarea output_execute_result">
-<table><tr><th>um</th><th>dois</th><th>tres</th></tr><tr><td>first one</td><td>second one</td><td>third one</td></tr><tr><td>second row</td><td>second row too</td><td>also second row</td></tr></table>
+<div class="output_html rendered_html output_subarea ">
+
+<div id="svgout"></div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[62]:</div>
+<div class="inner_cell">
+    <div class="input_area code">
+%%js
+
+s = Snap("#svgout"); 
+s.attr({ viewBox: "0 0 600 600" });
+
+//lets draw 2 rects at position 100,100 and then reposition them
+
+var r = s.rect(100,100,100,100,20,20).attr({ stroke: '#123456', 'strokeWidth': 20, fill: 'red', 'opacity': 0.2 });
+
+var t = s.text(0,50,'The svg element is set for 100% width, 100% height and has a viewBox')
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+
+
+
+<div id="28b6afbf-62f6-47bb-bdfd-6f745675adbc"></div>
+<div class="output_subarea output_javascript ">
+<script type="text/javascript">
+var element = $('#28b6afbf-62f6-47bb-bdfd-6f745675adbc');
+
+s = Snap("#svgout"); 
+s.attr({ viewBox: "0 0 600 600" });
+
+//lets draw 2 rects at position 100,100 and then reposition them
+
+var r = s.rect(100,100,100,100,20,20).attr({ stroke: '#123456', 'strokeWidth': 20, fill: 'red', 'opacity': 0.2 });
+
+var t = s.text(0,50,'The svg element is set for 100% width, 100% height and has a viewBox')
+</script>
 </div>
 
 </div>
@@ -184,31 +203,7 @@ HTML(table_html)
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area code">
-import plim
 
-from IPython.display import display, HTML
-
-
-table_slim = """
-table
-    tr
-        th um
-        th dois
-        th tres
-    tr
-        td first one
-        td second one
-        td third one
-    tr
-        td second row
-        td second row too
-        td also second row
-"""
-
-
-table_html = plim.preprocessor(table_slim)
-
-HTML(table_html)
 </div>
 </div>
 </div>

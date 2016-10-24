@@ -132,7 +132,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[54]:</div>
+<div class="prompt input_prompt">In&nbsp;[76]:</div>
 <div class="inner_cell">
     <div class="input_area code">
 from music21 import *
@@ -147,7 +147,7 @@ import base64
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[55]:</div>
+<div class="prompt input_prompt">In&nbsp;[77]:</div>
 <div class="inner_cell">
     <div class="input_area code">
 def circleOfFifths():
@@ -187,7 +187,7 @@ def circleOfFifths():
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[74]:</div>
+<div class="prompt input_prompt">In&nbsp;[78]:</div>
 <div class="inner_cell">
     <div class="input_area code">
 def returnScale(tonic='c', mode='major', ownKey=False):
@@ -264,7 +264,7 @@ def returnScale(tonic='c', mode='major', ownKey=False):
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[57]:</div>
+<div class="prompt input_prompt">In&nbsp;[79]:</div>
 <div class="inner_cell">
     <div class="input_area code">
 #my_data = returnScale(scale_data)
@@ -304,7 +304,7 @@ def generate_table_array(scale_data):
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[72]:</div>
+<div class="prompt input_prompt">In&nbsp;[80]:</div>
 <div class="inner_cell">
     <div class="input_area code">
 def array_to_htmltable(data):
@@ -346,7 +346,7 @@ table style='float: left;'
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[59]:</div>
+<div class="prompt input_prompt">In&nbsp;[81]:</div>
 <div class="inner_cell">
     <div class="input_area code">
 Fifths = circleOfFifths()
@@ -360,7 +360,7 @@ Fifths
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[59]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[81]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -385,35 +385,17 @@ Fifths
 </div>
 
 </div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[73]:</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
 <div class="inner_cell">
-    <div class="input_area code">
-scale_data = returnScale('c','maior',ownKey=True)
-table_array = generate_table_array(scale_data)
-html_table = array_to_htmltable(table_array)
-
-display(HTML(html_table))
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt"></div>
-
-<div class="output_html rendered_html output_subarea ">
-<table style="float: left;"><tr><caption>0 C major</caption></tr><tr><caption style="padding:0;"><img src='data:image/png;charset=utf-8;base64,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' /></caption></tr><tr><td>P1</td><td>M2</td><td>M3</td><td>P4</td><td>P5</td><td>M6</td><td>M7</td><td>P1</td></tr><tr><td>P1</td><td>M2</td><td>M2</td><td>m2</td><td>M2</td><td>M2</td><td>M2</td><td>P1</td></tr></table>
-</div>
-
-</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="scale_data-=-returnScale('c','maior',ownKey=True)">scale_data = returnScale('c','maior',ownKey=True)<a class="anchor-link" href="#scale_data-=-returnScale('c','maior',ownKey=True)">&#182;</a></h1><p>table_array = generate_table_array(scale_data)
+html_table = array_to_htmltable(table_array)</p>
+<p>display(HTML(html_table))</p>
 
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">

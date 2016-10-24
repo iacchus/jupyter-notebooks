@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8" />
+<title>music21-developing-returnscale</title>
+
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>-->
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.19.0/codemirror.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.19.0/mode/python/python.js"></script>
+
+<script>
+$(document).ready(function(){
+	$('.code').each(function() {
+
+	    var $this = $(this),
+		$code = $this.html().trim();
+
+	    $this.empty();
+
+	    var myCodeMirror = CodeMirror(this, {
+		value: $code,
+		mode: 'python',
+		lineNumbers: false,
+		readOnly: true,
+                lineWrapping: true,
+                htmlMode: true,
+                matchClosing: true,       
+                indentWithTabs: true,
+	    });
+
+	});
+});
+</script>
+
+
+
+<style type="text/css">
+/* Overrides of notebook CSS for static HTML export */
+body {
+  overflow: visible;
+  padding: 8px;
+}
+
+div#notebook {
+  overflow: visible;
+  border-top: none;
+}
+
+@media print {
+  div.cell {
+    display: block;
+    page-break-inside: avoid;
+  } 
+  div.output_wrapper { 
+    display: block;
+    page-break-inside: avoid; 
+  }
+  div.output { 
+    display: block;
+    page-break-inside: avoid; 
+  }
+}
+</style>
+
+<!-- Custom stylesheet, it must be in the same directory as the html file -->
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.19.0/codemirror.css">
+<link rel="stylesheet" href="https://iacchus.github.io/jupyter-ipython-themes/custom.css">
+
+<!-- Loading mathjax macro -->
+</head>
+<body>
+  <div tabindex="-1" id="notebook" class="border-box-sizing">
+    <div class="container" id="notebook-container">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="inner_cell">
+    <div class="input_area code">
+from music21 import *
+from IPython.display import display, HTML, Image, Audio
+import plim
+import base64
+#from music21.common.pathTools import relativepath as m21_jupyter_relpath
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="inner_cell">
+    <div class="input_area code">
+def circleOfFifths():
+    fifths = []
+
+    fifthsScale = scale.CyclicalScale('c4', 'p5')
+    
+    for p in fifthsScale.getPitches('c4', 'c11'):
+        
+        if key.pitchToSharps(p,'major') <= 7:
+            MAJOR = str(p.simplifyEnharmonic().name)
+            MINOR = str(key.Key(MAJOR, 'major').relative.tonic.simplifyEnharmonic().name).lower()
+
+        else:
+            MAJOR = str(p.getEnharmonic().simplifyEnharmonic().name)
+            MINOR = str(key.Key(MAJOR, 'major').relative.tonic.simplifyEnharmonic().name).lower()
+        
+        fifths.append( [ MAJOR, MINOR ] )
+
+        #fifths.append(p.simplifyEnharmonic())
+        
+    return fifths
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="inner_cell">
+    <div class="input_area code">
+sc = scale.MajorScale('c')
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="inner_cell">
+    <div class="input_area code">
+pitches = sc.getPitches()
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="inner_cell">
+    <div class="input_area code">
+pitches
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[5]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[&lt;music21.pitch.Pitch C4&gt;,
+ &lt;music21.pitch.Pitch D4&gt;,
+ &lt;music21.pitch.Pitch E4&gt;,
+ &lt;music21.pitch.Pitch F4&gt;,
+ &lt;music21.pitch.Pitch G4&gt;,
+ &lt;music21.pitch.Pitch A4&gt;,
+ &lt;music21.pitch.Pitch B4&gt;,
+ &lt;music21.pitch.Pitch C5&gt;]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[44]:</div>
+<div class="inner_cell">
+    <div class="input_area code">
+def returnScale2(tonic='c', mode='major', ownKey = False):
+    
+    modes = [ 'ionian','dorian','phrygian',
+              'lydian','mixolydian','aeolian',
+              'locrian','major','minor']
+    
+    if not mode in modes: mode = 'major'
+        
+    if mode == 'ionian': mode = 'major'
+    if mode == 'aeolian': mode = 'minor'
+
+    tonic_pitch = pitch.Pitch(tonic)
+    #key_enharmonic = tonic_pitch.getEnharmonic().simplifyEnharmonic().name
+    key_enharmonic = tonic_pitch
+    scale_sharps = key.pitchToSharps(key_enharmonic, mode)
+
+    #    myfunc = eval("scale.{0}Scale".format(mode.capitalize()))
+    scale_func = getattr(scale, "{0}Scale".format(mode.capitalize()))
+    real_scale = scale_func(key_enharmonic)
+    pitches = real_scale.getPitches()
+
+    scale_name = real_scale.name
+    absolute_intervals = []
+    relative_intervals = []
+    myKeySig = key.KeySignature(scale_sharps)
+    
+    mystream = stream.Stream()
+    
+    if ownKey:
+        mystream.append(myKeySig)
+
+    for cur_pitch in pitches:
+        mynote = note.Note(cur_pitch)
+
+        cur_degree = real_scale.getScaleDegreeFromPitch(cur_pitch)
+        
+        #previous_or_tonic = real_scale.next(cur_pitch, 'descending') if cur_pitch != real_scale.tonic else real_scale.tonic
+
+        #absolute_interval = interval.notesToInterval(cur_pitch, mynote).directedName
+        #relative_interval = interval.notesToInterval(pitches[(x-1 if x>0 else 0)], mynote).directedName
+        #relative_interval = interval.notesToInterval(previous_or_tonic, mynote).directedName
+
+        absolute_interval = real_scale.intervalBetweenDegrees(1,cur_degree).name
+        relative_interval = real_scale.intervalBetweenDegrees((cur_degree-1 if cur_degree>1else 1), cur_degree).name
+        
+        absolute_intervals.append(absolute_interval)
+        relative_intervals.append(relative_interval)
+        
+        mynote.addLyric(absolute_interval)
+        mynote.addLyric(relative_interval)
+        
+        mystream.append(mynote)
+        
+    filename = mystream.write()
+        
+    return {
+        'scalename': scale_name,
+        'stream' : mystream,
+        'filename': filename,
+        'ai' : absolute_intervals,
+        'ri' : relative_intervals
+    }
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[45]:</div>
+<div class="inner_cell">
+    <div class="input_area code">
+returnScale2()
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[45]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>{&#39;ai&#39;: [&#39;P1&#39;, &#39;M2&#39;, &#39;M3&#39;, &#39;P4&#39;, &#39;P5&#39;, &#39;M6&#39;, &#39;M7&#39;, &#39;P1&#39;],
+ &#39;filename&#39;: &#39;/home/iacchus/git-stuff/jupyter-venv/scratchdir/tmp1jz02i8r.ly.png&#39;,
+ &#39;ri&#39;: [&#39;P1&#39;, &#39;M2&#39;, &#39;M2&#39;, &#39;m2&#39;, &#39;M2&#39;, &#39;M2&#39;, &#39;M2&#39;, &#39;P1&#39;],
+ &#39;scalename&#39;: &#39;C major&#39;,
+ &#39;stream&#39;: &lt;music21.stream.Stream 0x7fd21beb31d0&gt;}</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[36]:</div>
+<div class="inner_cell">
+    <div class="input_area code">
+sc = scale.MajorScale('c')
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[37]:</div>
+<div class="inner_cell">
+    <div class="input_area code">
+sc.getScaleDegreeFromPitch('a5')
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[37]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>6</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[38]:</div>
+<div class="inner_cell">
+    <div class="input_area code">
+sc.intervalBetweenDegrees(1,4)
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[38]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;music21.interval.Interval P4&gt;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area code">
+
+</div>
+</div>
+</div>
+
+</div>
+    </div>
+  </div>
+</body>
+
+</html>

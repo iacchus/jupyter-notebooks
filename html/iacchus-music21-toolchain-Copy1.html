@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8" />
+<title>iacchus-music21-toolchain-Copy1</title>
+
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>-->
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.19.0/codemirror.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.19.0/mode/python/python.js"></script>
+
+<script>
+$(document).ready(function(){
+	$('.code').each(function() {
+
+	    var $this = $(this),
+		$code = $this.html().trim();
+
+	    $this.empty();
+
+	    var myCodeMirror = CodeMirror(this, {
+		value: $code,
+		mode: 'python',
+		lineNumbers: false,
+		readOnly: true,
+                lineWrapping: true,
+                htmlMode: true,
+                matchClosing: true,       
+                indentWithTabs: true,
+	    });
+
+	});
+});
+</script>
+
+
+
+<style type="text/css">
+/* Overrides of notebook CSS for static HTML export */
+body {
+  overflow: visible;
+  padding: 8px;
+}
+
+div#notebook {
+  overflow: visible;
+  border-top: none;
+}
+
+@media print {
+  div.cell {
+    display: block;
+    page-break-inside: avoid;
+  } 
+  div.output_wrapper { 
+    display: block;
+    page-break-inside: avoid; 
+  }
+  div.output { 
+    display: block;
+    page-break-inside: avoid; 
+  }
+}
+</style>
+
+<!-- Custom stylesheet, it must be in the same directory as the html file -->
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.19.0/codemirror.css">
+<link rel="stylesheet" href="https://iacchus.github.io/jupyter-ipython-themes/custom.css">
+
+<!-- Loading mathjax macro -->
+</head>
+<body>
+  <div tabindex="-1" id="notebook" class="border-box-sizing">
+    <div class="container" id="notebook-container">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="inner_cell">
+    <div class="input_area code">
+from music21 import *
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="inner_cell">
+    <div class="input_area code">
+from IPython.display import display, Image, Audio, HTML
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="inner_cell">
+    <div class="input_area code">
+greekModes = [ 'ionian', 'dorian', 'phrygian',
+'lydian', 'mixolydian', 'aeolian', 'locrian' ]
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="inner_cell">
+    <div class="input_area code">
+def circleOfFifths():
+    fifths = []
+
+    fifthsScale = scale.CyclicalScale('c4', 'p5')
+    
+    for p in fifthsScale.getPitches('c4', 'c11'):
+        
+        MAJOR = str(p.simplifyEnharmonic().name)
+        MAJOR_EN = str(p.getEnharmonic().simplifyEnharmonic().name)
+        MINOR = str(key.Key(MAJOR, 'major').relative.tonic.simplifyEnharmonic().name).lower()
+        MINOR_EN = str(key.Key(MAJOR_EN, 'major').relative.tonic.simplifyEnharmonic().name).lower()
+
+        if MAJOR == MAJOR_EN:
+            major = MAJOR
+        else:
+            major = "{0} or {1}".format(MAJOR, MAJOR_EN)
+            
+        if MINOR == MINOR_EN:
+            minor = MINOR
+        else:
+            minor = "{0} or {1}".format(MINOR, MINOR_EN)
+        fifths.append( [ major, minor ] )
+
+        #fifths.append(p.simplifyEnharmonic())
+        
+    return fifths
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="inner_cell">
+    <div class="input_area code">
+def returnScale(tonic='c', mode='major', ownKey = False):
+    
+    modes = [ 'ionian','dorian','phrygian',
+              'lydian','mixolydian','aeolian',
+              'locrian','major','minor']
+    
+    if mode in modes:
+        if mode == 'ionian':
+            mode = 'major'
+        elif mode == 'aeolian':
+            mode = 'minor'
+    else:
+        mymode = 'major'
+        
+    myfunc = eval("scale.{0}Scale".format(mode.capitalize()))
+    pitches = myfunc(tonic).getPitches()
+
+    scaleSharps = key.pitchToSharps(tonic, mode)
+    myKeySig = key.KeySignature(scaleSharps)
+    
+    mystream = stream.Stream()
+    
+    if ownKey:
+        mystream.append(myKeySig)
+
+    for x in range(0, len(pitches)):
+        mynote = note.Note(pitches[x])
+
+        mynote.addLyric(interval.notesToInterval(pitches[0], mynote).directedName)
+        mynote.addLyric(interval.notesToInterval(pitches[(x-1 if x>0 else 0)], mynote).directedName)
+        
+        mystream.append(mynote)
+        
+    return mystream
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="inner_cell">
+    <div class="input_area code">
+def returnTriads(tonic='c', mode='major', ownKey = False):
+    
+    modes = [ 'ionian','dorian','phrygian',
+              'lydian','mixolydian','aeolian',
+              'locrian','major','minor']
+    
+    if mode in modes:
+        if mode == 'ionian':
+            mode = 'major'
+        elif mode == 'aeolian':
+            mode = 'minor'
+    else:
+        mymode = 'major'
+        
+    myfunc = eval("scale.{0}Scale".format(mode.capitalize()))
+    #pitches = myfunc(tonic).getPitches()
+
+    pitches = myfunc(tonic).getChord(tonic+"4",tonic+"6").pitches
+    scaleSharps = key.pitchToSharps(tonic, mode)
+    myKeySig = key.KeySignature(scaleSharps)
+    
+    mystream = stream.Stream()
+    
+    myduration = duration.Duration("whole")
+    
+    if ownKey:
+        mystream.append(myKeySig)
+        
+    for x in range(0,8):
+        mychord = chord.Chord([ pitches[x], pitches[x+2], pitches[x+4] ], duration=myduration)
+        mychord.addLyric(roman.romanNumeralFromChord(mychord,key.Key(tonic,mode)).figure)
+        mychord.addLyric(harmony.chordSymbolFigureFromChord(mychord))
+        
+        mystream.append(mychord)
+        
+    return mystream
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="inner_cell">
+    <div class="input_area code">
+def midiStream(mystream):
+
+    try:
+        if myAudio:
+            pass
+    except:
+        from IPython.display import Audio as myAudio
+    
+    mymidi_filename = mystream.write('midi')
+    
+    return myAudio(filename=mymidi_filename)
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="inner_cell">
+    <div class="input_area code">
+circleOfFifths()
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[8]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[[&#39;C&#39;, &#39;a&#39;],
+ [&#39;G&#39;, &#39;e&#39;],
+ [&#39;D&#39;, &#39;b&#39;],
+ [&#39;A&#39;, &#39;f#&#39;],
+ [&#39;E&#39;, &#39;c#&#39;],
+ [&#39;B&#39;, &#39;g#&#39;],
+ [&#39;F# or G-&#39;, &#39;d# or e-&#39;],
+ [&#39;C# or D-&#39;, &#39;a# or b-&#39;],
+ [&#39;G# or A-&#39;, &#39;f&#39;],
+ [&#39;D# or E-&#39;, &#39;c&#39;],
+ [&#39;A# or B-&#39;, &#39;g&#39;],
+ [&#39;F&#39;, &#39;d&#39;],
+ [&#39;C&#39;, &#39;a&#39;]]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="inner_cell">
+    <div class="input_area code">
+triads = returnTriads('D','aeolian',True).write()
+Image(filename=triads)
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[9]:</div>
+
+
+<div class="output_png output_subarea output_execute_result">
+<img src="data:image/png;base64,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
+"
+>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[39]:</div>
+<div class="inner_cell">
+    <div class="input_area code">
+def returnScale2(tonic='c', mode='major', ownKey = False):
+    
+    modes = [ 'ionian','dorian','phrygian',
+              'lydian','mixolydian','aeolian',
+              'locrian','major','minor']
+    
+    if not mode in modes:
+        mode = 'major'
+        
+    if mode == 'ionian': mode = 'major'
+    if mode == 'aeolian': mode = 'minor'
+
+        
+    tonic_pitch = pitch.Pitch(tonic)
+    key_enharmonic = tonic_pitch.getEnharmonic().simplifyEnharmonic().name
+    scaleSharps = key.pitchToSharps(key_enharmonic, mode)
+
+    #    myfunc = eval("scale.{0}Scale".format(mode.capitalize()))
+    scale_func = getattr(scale, "{0}Scale".format(mode.capitalize()))
+    pitches = scale_func(key_enharmonic).getPitches()
+
+        
+    myKeySig = key.KeySignature(scaleSharps)
+    
+    mystream = stream.Stream()
+    
+    if ownKey:
+        mystream.append(myKeySig)
+
+    for x in range(0, len(pitches)):
+        mynote = note.Note(pitches[x])
+
+        mynote.addLyric(interval.notesToInterval(pitches[0], mynote).directedName)
+        mynote.addLyric(interval.notesToInterval(pitches[(x-1 if x>0 else 0)], mynote).directedName)
+        
+        mystream.append(mynote)
+        
+    return mystream
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="inner_cell">
+    <div class="input_area code">
+filenm = returnScale2('A',mode='major',ownKey=True).write()
+
+Image(filename=filenm)
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[11]:</div>
+
+
+<div class="output_png output_subarea output_execute_result">
+<img src="data:image/png;base64,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
+gg==
+"
+>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[40]:</div>
+<div class="inner_cell">
+    <div class="input_area code">
+filenm = returnScale2('g#',mode='major',ownKey=True).write()
+
+Image(filename=filenm)
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[40]:</div>
+
+
+<div class="output_png output_subarea output_execute_result">
+<img src="data:image/png;base64,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
+"
+>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[27]:</div>
+<div class="inner_cell">
+    <div class="input_area code">
+freak=key.Key('g#','major')
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[30]:</div>
+<div class="inner_cell">
+    <div class="input_area code">
+dir(freak)
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[30]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[&#39;_DOC_ATTR&#39;,
+ &#39;_DOC_ORDER&#39;,
+ &#39;__class__&#39;,
+ &#39;__deepcopy__&#39;,
+ &#39;__delattr__&#39;,
+ &#39;__dict__&#39;,
+ &#39;__dir__&#39;,
+ &#39;__doc__&#39;,
+ &#39;__eq__&#39;,
+ &#39;__format__&#39;,
+ &#39;__ge__&#39;,
+ &#39;__getattribute__&#39;,
+ &#39;__getstate__&#39;,
+ &#39;__gt__&#39;,
+ &#39;__hash__&#39;,
+ &#39;__init__&#39;,
+ &#39;__le__&#39;,
+ &#39;__lt__&#39;,
+ &#39;__module__&#39;,
+ &#39;__ne__&#39;,
+ &#39;__new__&#39;,
+ &#39;__reduce__&#39;,
+ &#39;__reduce_ex__&#39;,
+ &#39;__repr__&#39;,
+ &#39;__setattr__&#39;,
+ &#39;__setstate__&#39;,
+ &#39;__sizeof__&#39;,
+ &#39;__str__&#39;,
+ &#39;__subclasshook__&#39;,
+ &#39;__weakref__&#39;,
+ &#39;_abstract&#39;,
+ &#39;_activeSite&#39;,
+ &#39;_activeSiteStoredOffset&#39;,
+ &#39;_adjacencySearch&#39;,
+ &#39;_alteredPitches&#39;,
+ &#39;_alteredPitchesCached&#39;,
+ &#39;_attributesChanged&#39;,
+ &#39;_classListCacheDict&#39;,
+ &#39;_classListFullyQualifiedCacheDict&#39;,
+ &#39;_classSetCacheDict&#39;,
+ &#39;_deepcopySubclassable&#39;,
+ &#39;_derivation&#39;,
+ &#39;_duration&#39;,
+ &#39;_getActiveSite&#39;,
+ &#39;_getAlteredPitches&#39;,
+ &#39;_getDerivation&#39;,
+ &#39;_getDuration&#39;,
+ &#39;_getMeasureOffset&#39;,
+ &#39;_getMeasureOffsetOrMeterModulusOffset&#39;,
+ &#39;_getOffset&#39;,
+ &#39;_getPriority&#39;,
+ &#39;_getQuarterLength&#39;,
+ &#39;_getSeconds&#39;,
+ &#39;_getSharps&#39;,
+ &#39;_getTimeSignatureForBeat&#39;,
+ &#39;_humdrumSolfegSyllables&#39;,
+ &#39;_mode&#39;,
+ &#39;_naiveOffset&#39;,
+ &#39;_priority&#39;,
+ &#39;_reprText&#39;,
+ &#39;_reprTextLine&#39;,
+ &#39;_setActiveSite&#39;,
+ &#39;_setDerivation&#39;,
+ &#39;_setDuration&#39;,
+ &#39;_setOffset&#39;,
+ &#39;_setPriority&#39;,
+ &#39;_setQuarterLength&#39;,
+ &#39;_setSeconds&#39;,
+ &#39;_setSharps&#39;,
+ &#39;_sharps&#39;,
+ &#39;_solfegSyllables&#39;,
+ &#39;_strDescription&#39;,
+ &#39;_tonalCertainityCorrelationCoefficient&#39;,
+ &#39;abstract&#39;,
+ &#39;accidentalByStep&#39;,
+ &#39;activeSite&#39;,
+ &#39;alteredPitches&#39;,
+ &#39;alternateInterpretations&#39;,
+ &#39;asKey&#39;,
+ &#39;beat&#39;,
+ &#39;beatDuration&#39;,
+ &#39;beatStr&#39;,
+ &#39;beatStrength&#39;,
+ &#39;boundRange&#39;,
+ &#39;chord&#39;,
+ &#39;classSet&#39;,
+ &#39;classSortOrder&#39;,
+ &#39;classes&#39;,
+ &#39;containerHierarchy&#39;,
+ &#39;contextSites&#39;,
+ &#39;correlationCoefficient&#39;,
+ &#39;derivation&#39;,
+ &#39;derive&#39;,
+ &#39;deriveAll&#39;,
+ &#39;deriveByDegree&#39;,
+ &#39;deriveRanked&#39;,
+ &#39;duration&#39;,
+ &#39;extractPitchList&#39;,
+ &#39;findMissing&#39;,
+ &#39;getAllContextsByClass&#39;,
+ &#39;getChord&#39;,
+ &#39;getContextByClass&#39;,
+ &#39;getDegreeMaxUnique&#39;,
+ &#39;getDominant&#39;,
+ &#39;getLeadingTone&#39;,
+ &#39;getOffsetBySite&#39;,
+ &#39;getOffsetInHierarchy&#39;,
+ &#39;getParallelMajor&#39;,
+ &#39;getParallelMinor&#39;,
+ &#39;getPitches&#39;,
+ &#39;getRelativeMajor&#39;,
+ &#39;getRelativeMinor&#39;,
+ &#39;getScalaData&#39;,
+ &#39;getScale&#39;,
+ &#39;getScaleDegreeAndAccidentalFromPitch&#39;,
+ &#39;getScaleDegreeFromPitch&#39;,
+ &#39;getSpannerSites&#39;,
+ &#39;getTonic&#39;,
+ &#39;groups&#39;,
+ &#39;hideObjectOnPrint&#39;,
+ &#39;id&#39;,
+ &#39;informSites&#39;,
+ &#39;intervalBetweenDegrees&#39;,
+ &#39;isClassOrSubclass&#39;,
+ &#39;isConcrete&#39;,
+ &#39;isNext&#39;,
+ &#39;isStream&#39;,
+ &#39;match&#39;,
+ &#39;measureNumber&#39;,
+ &#39;mergeAttributes&#39;,
+ &#39;mode&#39;,
+ &#39;name&#39;,
+ &#39;next&#39;,
+ &#39;offset&#39;,
+ &#39;parallel&#39;,
+ &#39;pitchFromDegree&#39;,
+ &#39;pitches&#39;,
+ &#39;pitchesFromScaleDegrees&#39;,
+ &#39;previous&#39;,
+ &#39;priority&#39;,
+ &#39;purgeLocations&#39;,
+ &#39;purgeOrphans&#39;,
+ &#39;quarterLength&#39;,
+ &#39;relative&#39;,
+ &#39;romanNumeral&#39;,
+ &#39;seconds&#39;,
+ &#39;setOffsetBySite&#39;,
+ &#39;sharps&#39;,
+ &#39;show&#39;,
+ &#39;sites&#39;,
+ &#39;solfeg&#39;,
+ &#39;sortTuple&#39;,
+ &#39;splitAtDurations&#39;,
+ &#39;splitAtQuarterLength&#39;,
+ &#39;splitByQuarterLengths&#39;,
+ &#39;tonalCertainty&#39;,
+ &#39;tonic&#39;,
+ &#39;tonicPitchNameWithCase&#39;,
+ &#39;transpose&#39;,
+ &#39;tune&#39;,
+ &#39;type&#39;,
+ &#39;write&#39;,
+ &#39;xPosition&#39;]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[34]:</div>
+<div class="inner_cell">
+    <div class="input_area code">
+freak.getPitches()[0].simplifyEnharmonic()
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[34]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;music21.pitch.Pitch G#4&gt;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area code">
+
+</div>
+</div>
+</div>
+
+</div>
+    </div>
+  </div>
+</body>
+
+</html>

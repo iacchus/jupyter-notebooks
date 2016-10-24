@@ -3,20 +3,31 @@
 <head><meta charset="utf-8" />
 <title>pure-sqlalchemy</title>
 
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>-->
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.19.0/codemirror.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.19.0/mode/python/python.js"></script>
+
 <script>
 $(document).ready(function(){
 	$('.code').each(function() {
 
 	    var $this = $(this),
-		$code = $this.html();
+		$code = $this.html().trim();
 
 	    $this.empty();
 
 	    var myCodeMirror = CodeMirror(this, {
 		value: $code,
 		mode: 'python',
-		lineNumbers: !$this.is('.inline'),
-		readOnly: true
+		lineNumbers: false,
+		readOnly: true,
+                lineWrapping: true,
+                htmlMode: true,
+                matchClosing: true,       
+                indentWithTabs: true,
 	    });
 
 	});
@@ -54,7 +65,9 @@ div#notebook {
 </style>
 
 <!-- Custom stylesheet, it must be in the same directory as the html file -->
-<link rel="stylesheet" href="custom.css">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.19.0/codemirror.css">
+<link rel="stylesheet" href="https://iacchus.github.io/jupyter-ipython-themes/custom.css">
 
 <!-- Loading mathjax macro -->
 </head>
@@ -400,8 +413,4 @@ df
   </div>
 </body>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.19.0/codemirror.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.19.0/mode/python/python.js"></script>
 </html>

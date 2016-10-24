@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8" />
-<title>plim-table-test</title>
+<title>svgwrite-tests-000</title>
 
 <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>-->
 <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>-->
@@ -80,45 +80,19 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Plim-(Python-Slim)-Table-test">Plim (Python Slim) Table test<a class="anchor-link" href="#Plim-(Python-Slim)-Table-test">&#182;</a></h1><p>We are trying methods of programatically create HTML tables, some use python loops, d3.js library. Here we are trying to implement <code>plim</code>.</p>
-<p><a href="http://plim.readthedocs.io/en/latest/">http://plim.readthedocs.io/en/latest/</a></p>
+<p>Documentation: <a href="http://pythonhosted.org/svgwrite/">http://pythonhosted.org/svgwrite/</a></p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area code">
-import plim
+import svgwrite
 
-from IPython.display import display, HTML
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
-<div class="inner_cell">
-    <div class="input_area code">
-table_slim = """
-table
-    tr
-        th um
-        th dois
-        th tres
-    tr
-        td first one
-        td second one
-        td third one
-    tr
-        td second row
-        td second row too
-        td also second row
-"""
+from IPython.display import display, HTML, Image, SVG
 </div>
 </div>
 </div>
@@ -129,7 +103,15 @@ table
 <div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area code">
-plim.preprocessor(table_slim)
+fname = 'test.svg'
+
+dwg = svgwrite.Drawing(fname, profile='full')
+dwg.add(dwg.line((0, 0), (100, 75), stroke=svgwrite.rgb(10, 10, 16, '%')))
+dwg.add(dwg.text('Test', insert=(0, 29)))
+
+        
+dwg.save()
+SVG(filename=fname)
 </div>
 </div>
 </div>
@@ -140,37 +122,8 @@ plim.preprocessor(table_slim)
 
 <div class="output_area"><div class="prompt output_prompt">Out[9]:</div>
 
-
-<div class="output_text output_subarea output_execute_result">
-<pre>&#39;&lt;table&gt;&lt;tr&gt;&lt;th&gt;um&lt;/th&gt;&lt;th&gt;dois&lt;/th&gt;&lt;th&gt;tres&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;first one&lt;/td&gt;&lt;td&gt;second one&lt;/td&gt;&lt;td&gt;third one&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;second row&lt;/td&gt;&lt;td&gt;second row too&lt;/td&gt;&lt;td&gt;also second row&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&#39;</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
-<div class="inner_cell">
-    <div class="input_area code">
-table_html = plim.preprocessor(table_slim)
-
-HTML(table_html)
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt output_prompt">Out[11]:</div>
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<table><tr><th>um</th><th>dois</th><th>tres</th></tr><tr><td>first one</td><td>second one</td><td>third one</td></tr><tr><td>second row</td><td>second row too</td><td>also second row</td></tr></table>
+<div class="output_svg output_subarea output_execute_result">
+<svg baseProfile="full" height="100%" version="1.1" width="100%" xmlns="http://www.w3.org/2000/svg" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xlink="http://www.w3.org/1999/xlink"><defs/><line stroke="rgb(10%,10%,16%)" x1="0" x2="100" y1="0" y2="75"/><text x="0" y="29">Test</text></svg>
 </div>
 
 </div>
@@ -184,31 +137,7 @@ HTML(table_html)
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area code">
-import plim
 
-from IPython.display import display, HTML
-
-
-table_slim = """
-table
-    tr
-        th um
-        th dois
-        th tres
-    tr
-        td first one
-        td second one
-        td third one
-    tr
-        td second row
-        td second row too
-        td also second row
-"""
-
-
-table_html = plim.preprocessor(table_slim)
-
-HTML(table_html)
 </div>
 </div>
 </div>

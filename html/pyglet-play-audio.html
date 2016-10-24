@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8" />
-<title>tonejs-tests-final</title>
+<title>pyglet-play-audio</title>
 
 <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>-->
 <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>-->
@@ -75,102 +75,31 @@ div#notebook {
   <div tabindex="-1" id="notebook" class="border-box-sizing">
     <div class="container" id="notebook-container">
 
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Tone.js">Tone.js<a class="anchor-link" href="#Tone.js">&#182;</a></h1><p>This is how to include <a href="https://github.com/Tonejs/Tone.js"><code>tone.js</code></a> in an jupyter notebook.</p>
-
-</div>
-</div>
-</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area code">
-%%js
-
-require.config({
-    paths : {
-        "Tone" : "http://cdn.tonejs.org/latest/Tone",
-    }
-});
-
-require(['Tone'],function(Tone){window.Tone = Tone;})
+import pyglet
 </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt"></div>
-
-
-
-<div id="bdc41b29-84ce-4174-a55a-8289c513a917"></div>
-<div class="output_subarea output_javascript ">
-<script type="text/javascript">
-var element = $('#bdc41b29-84ce-4174-a55a-8289c513a917');
-
-require.config({
-    paths : {
-        "Tone" : "http://cdn.tonejs.org/latest/Tone",
-    }
-});
-
-require(['Tone'],function(Tone){window.Tone = Tone;})
-</script>
-</div>
-
-</div>
-
 </div>
 </div>
 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area code">
-%%js
+import pyglet
 
-//create a synth and connect it to the master output (your speakers)
-var synth = new Tone.Synth().toMaster();
+music = pyglet.media.load('/home/iacchus/git-stuff/jupyter-venv/output.mp3')
+music.play()
 
-//play a middle 'C' for the duration of an 8th note
-synth.triggerAttackRelease("C4", "8n");
-</div>
-</div>
-</div>
+pyglet.app.run()
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt"></div>
-
-
-
-<div id="3adfd241-870b-408f-9708-a20d3141e634"></div>
-<div class="output_subarea output_javascript ">
-<script type="text/javascript">
-var element = $('#3adfd241-870b-408f-9708-a20d3141e634');
-
-//create a synth and connect it to the master output (your speakers)
-var synth = new Tone.Synth().toMaster();
-
-//play a middle 'C' for the duration of an 8th note
-synth.triggerAttackRelease("C4", "8n");
-</script>
-</div>
 
 </div>
-
 </div>
 </div>
 

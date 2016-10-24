@@ -132,7 +132,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area code">
 from music21 import *
@@ -140,6 +140,7 @@ from IPython.display import display, HTML, Image, Audio
 import plim
 import base64
 #from music21.common.pathTools import relativepath as m21_jupyter_relpath
+import svgwrite as sw
 </div>
 </div>
 </div>
@@ -147,7 +148,7 @@ import base64
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area code">
 def circleOfFifths():
@@ -187,7 +188,7 @@ def circleOfFifths():
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area code">
 def returnScale(tonic='c', mode='major', ownKey=False):
@@ -261,7 +262,7 @@ def returnScale(tonic='c', mode='major', ownKey=False):
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area code">
 #my_data = returnScale(scale_data)
@@ -301,7 +302,7 @@ def generate_table_array(scale_data):
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area code">
 def array_to_htmltable(data):
@@ -343,7 +344,7 @@ table style='float: left;'
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area code">
 Fifths = circleOfFifths()
@@ -357,7 +358,7 @@ Fifths
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[6]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[8]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -384,7 +385,7 @@ Fifths
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area code">
 returnScale('c','mixolydian')
@@ -396,15 +397,15 @@ returnScale('c','mixolydian')
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[7]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[9]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
 <pre>{&#39;ai&#39;: [[&#39;P1&#39;], [&#39;M2&#39;], [&#39;M3&#39;], [&#39;P4&#39;], [&#39;P5&#39;], [&#39;M6&#39;], [&#39;m7&#39;], [&#39;P1&#39;]],
- &#39;filename&#39;: &#39;/home/iacchus/git-stuff/jupyter-venv/scratchdir/tmpafwti0_1.ly.png&#39;,
+ &#39;filename&#39;: &#39;/home/iacchus/git-stuff/jupyter-venv/scratchdir/tmpj4pqhjy7.ly.png&#39;,
  &#39;ri&#39;: [[&#39;P1&#39;], [&#39;M2&#39;], [&#39;M2&#39;], [&#39;m2&#39;], [&#39;M2&#39;], [&#39;M2&#39;], [&#39;m2&#39;], [&#39;P1&#39;]],
  &#39;scalename&#39;: &#39;C mixolydian&#39;,
- &#39;stream&#39;: &lt;music21.stream.Stream 0x7f90907fb7f0&gt;}</pre>
+ &#39;stream&#39;: &lt;music21.stream.Stream 0x7f6f9c52c0b8&gt;}</pre>
 </div>
 
 </div>
@@ -415,7 +416,7 @@ returnScale('c','mixolydian')
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area code">
 # http://web.mit.edu/music21/doc/moduleReference/moduleScale.html#music21.scale.ConcreteScale.pitchesFromScaleDegrees
@@ -437,7 +438,7 @@ sc = scale.MajorScale('b-')
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[30]:</div>
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area code">
 def scale_table(tonic='c', mode='major', ownKey=False):
@@ -453,7 +454,7 @@ def scale_table(tonic='c', mode='major', ownKey=False):
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[31]:</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area code">
 HTML(scale_table('d','mixolydian',True))
@@ -465,10 +466,173 @@ HTML(scale_table('d','mixolydian',True))
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[31]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[13]:</div>
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <table style="float: left;"><tr><caption>D mixolydian</caption></tr><tr><caption style="padding:0;"><img src='data:image/png;charset=utf-8;base64,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' /></caption></tr><tr><td>P1</td><td>M2</td><td>M3</td><td>P4</td><td>P5</td><td>M6</td><td>m7</td><td>P1</td></tr><tr><td>P1</td><td>M2</td><td>M2</td><td>m2</td><td>M2</td><td>M2</td><td>m2</td><td>P1</td></tr></table>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="inner_cell">
+    <div class="input_area code">
+sc = returnScale()
+
+sc
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[16]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>{&#39;ai&#39;: [[&#39;P1&#39;], [&#39;M2&#39;], [&#39;M3&#39;], [&#39;P4&#39;], [&#39;P5&#39;], [&#39;M6&#39;], [&#39;M7&#39;], [&#39;P1&#39;]],
+ &#39;filename&#39;: &#39;/home/iacchus/git-stuff/jupyter-venv/scratchdir/tmpsb4dez3a.ly.png&#39;,
+ &#39;ri&#39;: [[&#39;P1&#39;], [&#39;M2&#39;], [&#39;M2&#39;], [&#39;m2&#39;], [&#39;M2&#39;], [&#39;M2&#39;], [&#39;M2&#39;], [&#39;P1&#39;]],
+ &#39;scalename&#39;: &#39;C major&#39;,
+ &#39;stream&#39;: &lt;music21.stream.Stream 0x7f6f9c52e470&gt;}</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="inner_cell">
+    <div class="input_area code">
+def y_by_line(line_num, line_height):
+    return (line_num-1) * line_height
+
+svg_attrs = {
+    'font-family': 'Inconsolata, monospace',
+#    'shape-rendering':'optimizeQuality',
+
+}
+background_attrs = {
+    'stroke':'#000',
+    'fill':'#99a',
+    'stroke-width':'1',
+}
+
+title_attrs = {
+    'fill':'#336',
+    'stroke':'#000',
+    'stroke-width':'1',
+}
+
+cell_rect_attrs = {
+    'fill':'#fff',
+    'stroke':'#666',
+    'stroke-width':'1',
+}
+cell_text_attrs = {
+    #'fill':'#fff',
+    #'stroke':'#333',
+    #'stroke-width':'1',
+    'alignment-baseline' : 'middle',
+    'text-anchor' : 'middle',
+    'font-weight' : 'bold',
+}
+# sizes in px
+
+line_height = 32
+
+table_width = 440
+table_height = line_height*6
+
+cell_width = table_width/8
+
+dwg = sw.Drawing(profile='full', size=("{}".format(table_width),"{}".format(table_height)), **svg_attrs)
+
+# why not beutiful background right now;
+background = sw.shapes.Rect(insert=(0,0), size=(table_width, table_height), **background_attrs)
+dwg.add(background)
+
+table_title = sw.shapes.Rect(insert=(0,0), size=(table_width, line_height), **title_attrs)
+dwg.add(table_title)
+
+array = [1,2,3,4,5,6,7,8]
+array2 = ["I","II","III","IV","V","VI","VII","VIII"]
+
+for idx,item in enumerate(sc['ai']):
+    
+    x = idx * cell_width
+    y = y_by_line(line_num=5, line_height=line_height)
+    
+    v_center = (line_height/2) + y
+    h_center = (cell_width/2) + x
+    
+    cell_group = sw.container.Group()
+    
+    group_els = [
+        sw.shapes.Rect(insert=(x, y), size=(cell_width, line_height), **cell_rect_attrs),
+        sw.text.Text(item, insert=(h_center, v_center), **cell_text_attrs)
+    ]
+    
+    for element in group_els:
+        cell_group.add(element)
+        
+    dwg.add(cell_group)
+    
+for idx,item in enumerate(sc['ri']):
+    x = idx * cell_width
+    y = y_by_line(line_num=6, line_height=line_height)
+
+    v_center = (line_height/2) + y
+    h_center = (cell_width/2) + x
+    
+    cell_group = sw.container.Group()
+    
+    group_els = [
+        sw.shapes.Rect(insert=(x, y), size=(cell_width, line_height), **cell_rect_attrs),
+        sw.text.Text(item, insert=(h_center, v_center), **cell_text_attrs)
+    ]
+    
+    for element in group_els:
+        cell_group.add(element)
+        
+    dwg.add(cell_group)
+
+svg_data = dwg.tostring()
+
+print(svg_data)
+
+HTML(svg_data)
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>&lt;svg baseProfile=&#34;full&#34; font-family=&#34;Inconsolata, monospace&#34; height=&#34;192&#34; version=&#34;1.1&#34; width=&#34;440&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; xmlns:ev=&#34;http://www.w3.org/2001/xml-events&#34; xmlns:xlink=&#34;http://www.w3.org/1999/xlink&#34;&gt;&lt;defs /&gt;&lt;rect fill=&#34;#99a&#34; height=&#34;192&#34; stroke=&#34;#000&#34; stroke-width=&#34;1&#34; width=&#34;440&#34; x=&#34;0&#34; y=&#34;0&#34; /&gt;&lt;rect fill=&#34;#336&#34; height=&#34;32&#34; stroke=&#34;#000&#34; stroke-width=&#34;1&#34; width=&#34;440&#34; x=&#34;0&#34; y=&#34;0&#34; /&gt;&lt;g&gt;&lt;rect fill=&#34;#fff&#34; height=&#34;32&#34; stroke=&#34;#666&#34; stroke-width=&#34;1&#34; width=&#34;55.0&#34; x=&#34;0.0&#34; y=&#34;128&#34; /&gt;&lt;text alignment-baseline=&#34;middle&#34; font-weight=&#34;bold&#34; text-anchor=&#34;middle&#34; x=&#34;27.5&#34; y=&#34;144.0&#34;&gt;[&#39;P1&#39;]&lt;/text&gt;&lt;/g&gt;&lt;g&gt;&lt;rect fill=&#34;#fff&#34; height=&#34;32&#34; stroke=&#34;#666&#34; stroke-width=&#34;1&#34; width=&#34;55.0&#34; x=&#34;55.0&#34; y=&#34;128&#34; /&gt;&lt;text alignment-baseline=&#34;middle&#34; font-weight=&#34;bold&#34; text-anchor=&#34;middle&#34; x=&#34;82.5&#34; y=&#34;144.0&#34;&gt;[&#39;M2&#39;]&lt;/text&gt;&lt;/g&gt;&lt;g&gt;&lt;rect fill=&#34;#fff&#34; height=&#34;32&#34; stroke=&#34;#666&#34; stroke-width=&#34;1&#34; width=&#34;55.0&#34; x=&#34;110.0&#34; y=&#34;128&#34; /&gt;&lt;text alignment-baseline=&#34;middle&#34; font-weight=&#34;bold&#34; text-anchor=&#34;middle&#34; x=&#34;137.5&#34; y=&#34;144.0&#34;&gt;[&#39;M3&#39;]&lt;/text&gt;&lt;/g&gt;&lt;g&gt;&lt;rect fill=&#34;#fff&#34; height=&#34;32&#34; stroke=&#34;#666&#34; stroke-width=&#34;1&#34; width=&#34;55.0&#34; x=&#34;165.0&#34; y=&#34;128&#34; /&gt;&lt;text alignment-baseline=&#34;middle&#34; font-weight=&#34;bold&#34; text-anchor=&#34;middle&#34; x=&#34;192.5&#34; y=&#34;144.0&#34;&gt;[&#39;P4&#39;]&lt;/text&gt;&lt;/g&gt;&lt;g&gt;&lt;rect fill=&#34;#fff&#34; height=&#34;32&#34; stroke=&#34;#666&#34; stroke-width=&#34;1&#34; width=&#34;55.0&#34; x=&#34;220.0&#34; y=&#34;128&#34; /&gt;&lt;text alignment-baseline=&#34;middle&#34; font-weight=&#34;bold&#34; text-anchor=&#34;middle&#34; x=&#34;247.5&#34; y=&#34;144.0&#34;&gt;[&#39;P5&#39;]&lt;/text&gt;&lt;/g&gt;&lt;g&gt;&lt;rect fill=&#34;#fff&#34; height=&#34;32&#34; stroke=&#34;#666&#34; stroke-width=&#34;1&#34; width=&#34;55.0&#34; x=&#34;275.0&#34; y=&#34;128&#34; /&gt;&lt;text alignment-baseline=&#34;middle&#34; font-weight=&#34;bold&#34; text-anchor=&#34;middle&#34; x=&#34;302.5&#34; y=&#34;144.0&#34;&gt;[&#39;M6&#39;]&lt;/text&gt;&lt;/g&gt;&lt;g&gt;&lt;rect fill=&#34;#fff&#34; height=&#34;32&#34; stroke=&#34;#666&#34; stroke-width=&#34;1&#34; width=&#34;55.0&#34; x=&#34;330.0&#34; y=&#34;128&#34; /&gt;&lt;text alignment-baseline=&#34;middle&#34; font-weight=&#34;bold&#34; text-anchor=&#34;middle&#34; x=&#34;357.5&#34; y=&#34;144.0&#34;&gt;[&#39;M7&#39;]&lt;/text&gt;&lt;/g&gt;&lt;g&gt;&lt;rect fill=&#34;#fff&#34; height=&#34;32&#34; stroke=&#34;#666&#34; stroke-width=&#34;1&#34; width=&#34;55.0&#34; x=&#34;385.0&#34; y=&#34;128&#34; /&gt;&lt;text alignment-baseline=&#34;middle&#34; font-weight=&#34;bold&#34; text-anchor=&#34;middle&#34; x=&#34;412.5&#34; y=&#34;144.0&#34;&gt;[&#39;P1&#39;]&lt;/text&gt;&lt;/g&gt;&lt;g&gt;&lt;rect fill=&#34;#fff&#34; height=&#34;32&#34; stroke=&#34;#666&#34; stroke-width=&#34;1&#34; width=&#34;55.0&#34; x=&#34;0.0&#34; y=&#34;160&#34; /&gt;&lt;text alignment-baseline=&#34;middle&#34; font-weight=&#34;bold&#34; text-anchor=&#34;middle&#34; x=&#34;27.5&#34; y=&#34;176.0&#34;&gt;[&#39;P1&#39;]&lt;/text&gt;&lt;/g&gt;&lt;g&gt;&lt;rect fill=&#34;#fff&#34; height=&#34;32&#34; stroke=&#34;#666&#34; stroke-width=&#34;1&#34; width=&#34;55.0&#34; x=&#34;55.0&#34; y=&#34;160&#34; /&gt;&lt;text alignment-baseline=&#34;middle&#34; font-weight=&#34;bold&#34; text-anchor=&#34;middle&#34; x=&#34;82.5&#34; y=&#34;176.0&#34;&gt;[&#39;M2&#39;]&lt;/text&gt;&lt;/g&gt;&lt;g&gt;&lt;rect fill=&#34;#fff&#34; height=&#34;32&#34; stroke=&#34;#666&#34; stroke-width=&#34;1&#34; width=&#34;55.0&#34; x=&#34;110.0&#34; y=&#34;160&#34; /&gt;&lt;text alignment-baseline=&#34;middle&#34; font-weight=&#34;bold&#34; text-anchor=&#34;middle&#34; x=&#34;137.5&#34; y=&#34;176.0&#34;&gt;[&#39;M2&#39;]&lt;/text&gt;&lt;/g&gt;&lt;g&gt;&lt;rect fill=&#34;#fff&#34; height=&#34;32&#34; stroke=&#34;#666&#34; stroke-width=&#34;1&#34; width=&#34;55.0&#34; x=&#34;165.0&#34; y=&#34;160&#34; /&gt;&lt;text alignment-baseline=&#34;middle&#34; font-weight=&#34;bold&#34; text-anchor=&#34;middle&#34; x=&#34;192.5&#34; y=&#34;176.0&#34;&gt;[&#39;m2&#39;]&lt;/text&gt;&lt;/g&gt;&lt;g&gt;&lt;rect fill=&#34;#fff&#34; height=&#34;32&#34; stroke=&#34;#666&#34; stroke-width=&#34;1&#34; width=&#34;55.0&#34; x=&#34;220.0&#34; y=&#34;160&#34; /&gt;&lt;text alignment-baseline=&#34;middle&#34; font-weight=&#34;bold&#34; text-anchor=&#34;middle&#34; x=&#34;247.5&#34; y=&#34;176.0&#34;&gt;[&#39;M2&#39;]&lt;/text&gt;&lt;/g&gt;&lt;g&gt;&lt;rect fill=&#34;#fff&#34; height=&#34;32&#34; stroke=&#34;#666&#34; stroke-width=&#34;1&#34; width=&#34;55.0&#34; x=&#34;275.0&#34; y=&#34;160&#34; /&gt;&lt;text alignment-baseline=&#34;middle&#34; font-weight=&#34;bold&#34; text-anchor=&#34;middle&#34; x=&#34;302.5&#34; y=&#34;176.0&#34;&gt;[&#39;M2&#39;]&lt;/text&gt;&lt;/g&gt;&lt;g&gt;&lt;rect fill=&#34;#fff&#34; height=&#34;32&#34; stroke=&#34;#666&#34; stroke-width=&#34;1&#34; width=&#34;55.0&#34; x=&#34;330.0&#34; y=&#34;160&#34; /&gt;&lt;text alignment-baseline=&#34;middle&#34; font-weight=&#34;bold&#34; text-anchor=&#34;middle&#34; x=&#34;357.5&#34; y=&#34;176.0&#34;&gt;[&#39;M2&#39;]&lt;/text&gt;&lt;/g&gt;&lt;g&gt;&lt;rect fill=&#34;#fff&#34; height=&#34;32&#34; stroke=&#34;#666&#34; stroke-width=&#34;1&#34; width=&#34;55.0&#34; x=&#34;385.0&#34; y=&#34;160&#34; /&gt;&lt;text alignment-baseline=&#34;middle&#34; font-weight=&#34;bold&#34; text-anchor=&#34;middle&#34; x=&#34;412.5&#34; y=&#34;176.0&#34;&gt;[&#39;P1&#39;]&lt;/text&gt;&lt;/g&gt;&lt;/svg&gt;
+</pre>
+</div>
+</div>
+
+<div class="output_area"><div class="prompt output_prompt">Out[19]:</div>
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<svg baseProfile="full" font-family="Inconsolata, monospace" height="192" version="1.1" width="440" xmlns="http://www.w3.org/2000/svg" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xlink="http://www.w3.org/1999/xlink"><defs /><rect fill="#99a" height="192" stroke="#000" stroke-width="1" width="440" x="0" y="0" /><rect fill="#336" height="32" stroke="#000" stroke-width="1" width="440" x="0" y="0" /><g><rect fill="#fff" height="32" stroke="#666" stroke-width="1" width="55.0" x="0.0" y="128" /><text alignment-baseline="middle" font-weight="bold" text-anchor="middle" x="27.5" y="144.0">['P1']</text></g><g><rect fill="#fff" height="32" stroke="#666" stroke-width="1" width="55.0" x="55.0" y="128" /><text alignment-baseline="middle" font-weight="bold" text-anchor="middle" x="82.5" y="144.0">['M2']</text></g><g><rect fill="#fff" height="32" stroke="#666" stroke-width="1" width="55.0" x="110.0" y="128" /><text alignment-baseline="middle" font-weight="bold" text-anchor="middle" x="137.5" y="144.0">['M3']</text></g><g><rect fill="#fff" height="32" stroke="#666" stroke-width="1" width="55.0" x="165.0" y="128" /><text alignment-baseline="middle" font-weight="bold" text-anchor="middle" x="192.5" y="144.0">['P4']</text></g><g><rect fill="#fff" height="32" stroke="#666" stroke-width="1" width="55.0" x="220.0" y="128" /><text alignment-baseline="middle" font-weight="bold" text-anchor="middle" x="247.5" y="144.0">['P5']</text></g><g><rect fill="#fff" height="32" stroke="#666" stroke-width="1" width="55.0" x="275.0" y="128" /><text alignment-baseline="middle" font-weight="bold" text-anchor="middle" x="302.5" y="144.0">['M6']</text></g><g><rect fill="#fff" height="32" stroke="#666" stroke-width="1" width="55.0" x="330.0" y="128" /><text alignment-baseline="middle" font-weight="bold" text-anchor="middle" x="357.5" y="144.0">['M7']</text></g><g><rect fill="#fff" height="32" stroke="#666" stroke-width="1" width="55.0" x="385.0" y="128" /><text alignment-baseline="middle" font-weight="bold" text-anchor="middle" x="412.5" y="144.0">['P1']</text></g><g><rect fill="#fff" height="32" stroke="#666" stroke-width="1" width="55.0" x="0.0" y="160" /><text alignment-baseline="middle" font-weight="bold" text-anchor="middle" x="27.5" y="176.0">['P1']</text></g><g><rect fill="#fff" height="32" stroke="#666" stroke-width="1" width="55.0" x="55.0" y="160" /><text alignment-baseline="middle" font-weight="bold" text-anchor="middle" x="82.5" y="176.0">['M2']</text></g><g><rect fill="#fff" height="32" stroke="#666" stroke-width="1" width="55.0" x="110.0" y="160" /><text alignment-baseline="middle" font-weight="bold" text-anchor="middle" x="137.5" y="176.0">['M2']</text></g><g><rect fill="#fff" height="32" stroke="#666" stroke-width="1" width="55.0" x="165.0" y="160" /><text alignment-baseline="middle" font-weight="bold" text-anchor="middle" x="192.5" y="176.0">['m2']</text></g><g><rect fill="#fff" height="32" stroke="#666" stroke-width="1" width="55.0" x="220.0" y="160" /><text alignment-baseline="middle" font-weight="bold" text-anchor="middle" x="247.5" y="176.0">['M2']</text></g><g><rect fill="#fff" height="32" stroke="#666" stroke-width="1" width="55.0" x="275.0" y="160" /><text alignment-baseline="middle" font-weight="bold" text-anchor="middle" x="302.5" y="176.0">['M2']</text></g><g><rect fill="#fff" height="32" stroke="#666" stroke-width="1" width="55.0" x="330.0" y="160" /><text alignment-baseline="middle" font-weight="bold" text-anchor="middle" x="357.5" y="176.0">['M2']</text></g><g><rect fill="#fff" height="32" stroke="#666" stroke-width="1" width="55.0" x="385.0" y="160" /><text alignment-baseline="middle" font-weight="bold" text-anchor="middle" x="412.5" y="176.0">['P1']</text></g></svg>
 </div>
 
 </div>
