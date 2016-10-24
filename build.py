@@ -72,4 +72,8 @@ with open(index_filename,'w') as fd:
     fd.write(file_contents)
     fd.close()
 
+git_commands = "git add .; git commit -a -m 'autocommit from build.py!'; git push"
+print("Running git commands {}..".format(git_commands))
+os.system(git_commands)
+
 print("Done..")

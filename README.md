@@ -7,4 +7,4 @@ Repository for some of my notebooks / experiments with python
 
 ## Creating the index.html
 
-we are using [makeindex.py](makeindex.py) to generate the index.html
+we are using [build.py](build.py) to generate the index.html
