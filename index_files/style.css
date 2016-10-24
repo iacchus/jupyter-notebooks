@@ -1,14 +1,18 @@
 @import url('https://fonts.googleapis.com/css?family=Abril+Fatface|Fredericka+the+Great|Slabo+27px');
 
-h1
-{
-font-family: 'Fredericka the Great', serif;
-font-weight: normal;
+* {
+    box-sizing: border-box;
 }
 
 body{
     font-family: 'Slabo 27px';
     font-size: 18px;
+}
+
+h1
+{
+font-family: 'Fredericka the Great', serif;
+font-weight: normal;
 }
 
 a {
@@ -46,9 +50,14 @@ a:hover {
 
 }
 
+#files > a:nth-child(4n) {
+    background-color: #ccc;
+}
+
 #files > a {
     padding: 2px 5px;
     display: inline-block;
+    width: 100%
 }
 
 #files a:hover {
