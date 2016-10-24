@@ -39,12 +39,19 @@ file_contents = """
     <!--<script src="script.js"></script>-->
   </head>
   <body>
-  <h1>Index of Jupyter Notebooks exported to html</h1>
+    <div id="page-container">
+      <h1>Index of Jupyter Notebooks exported to html</h1>
 
-From the repository <a href="https://github.com/iacchus/jupyter-venv/">https://github.com/iacchus/jupyter-venv/</a><br/><br/>
+      <div id="presentation">
+        From the repository <a href="https://github.com/iacchus/jupyter-venv/">https://github.com/iacchus/jupyter-venv/</a><br/><br/>
+      </div>
 
+      <div id="files">
+        <div id="files-title">Browse files..</div>
 {0}
-</body>
+      </div> 
+    </div>
+  </body>
 </html>
 """.format(index_files)
 
