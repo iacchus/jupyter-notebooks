@@ -41,7 +41,7 @@ a:hover {
 
 #files-title {
     #border: 1px solid #ccc;
-    padding: 2px 7px;
+    padding: 4px 7px;
     background-color: #336;
     color: #fff;
     border-top-left-radius: 3px;
@@ -51,11 +51,11 @@ a:hover {
 }
 
 #files > a:nth-child(4n) {
-    background-color: #ccc;
+    background-color: #eee;
 }
 
 #files > a {
-    padding: 2px 5px;
+    padding: 4px 5px;
     display: inline-block;
     width: 100%
 }
