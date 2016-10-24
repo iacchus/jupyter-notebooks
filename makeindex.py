@@ -21,6 +21,7 @@ index_filename = "index.html"
 
 print("Listing html files..")
 html_files = glob.glob('html/**/**.html',recursive=True)
+html_files.sort()
 
 index_files = str()
 
