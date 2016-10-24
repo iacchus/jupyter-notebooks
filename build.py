@@ -64,7 +64,7 @@ file_contents = """
 </html>
 """.format(index_files)
 
-print(file_contents)
+#print(file_contents)
 
 print("Writing index file '{}'..".format(index_filename))
 
