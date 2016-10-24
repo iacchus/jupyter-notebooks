@@ -11,22 +11,22 @@ body{
 
 h1
 {
-font-family: 'Fredericka the Great', serif;
-font-weight: normal;
+    font-family: 'Fredericka the Great', serif;
+    font-weight: normal;
 }
 
 a {
     color: #333;
     text-decoration: none;
     padding-left: 0;
-    transition: padding-left .5s ease;
+    transition: padding-left .2s ease;
 
 }
 
 a:hover {
     color: #669;
     padding-left: 5px;
-    transition: padding-left .5s ease;
+    transition: padding-left .2s ease;
 }
 
 #page-container {
@@ -65,8 +65,8 @@ a:hover {
     width: 100%
 }
 
-#files a:hover {
+#files > a:hover {
     color: #669;
     padding-left: 10px;
-    transition: padding-left .5s ease;
+    transition: padding-left .2s ease;
 }
