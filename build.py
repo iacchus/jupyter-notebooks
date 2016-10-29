@@ -52,7 +52,7 @@ file_contents = """
       <h1>Index of Jupyter Notebooks exported to html</h1>
 
       <div id="presentation">
-        From the repository <a href="https://github.com/iacchus/jupyter-venv/">https://github.com/iacchus/jupyter-venv/</a><br/><br/>
+        From the repository <a href="https://github.com/iacchus/jupyter-notebooks/">https://github.com/iacchus/jupyter-notebooks/</a><br/><br/>
       </div>
 
       <div id="files">
