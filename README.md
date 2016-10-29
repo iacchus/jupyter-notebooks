@@ -3,7 +3,7 @@ Repository for some of my notebooks / experiments with python
 
 ## See html index
 
-<a href='https://iacchus.github.io/jupyter-venv/'>https://iacchus.github.io/jupyter-venv/</a>
+<a href='https://iacchus.github.io/jupyter-notebooks/'>https://iacchus.github.io/jupyter-notebooks/</a>
 
 ## Creating the index.html
 
