@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8" />
+<title>iacchus-music21-toolchain</title>
+
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>-->
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.19.0/codemirror.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.19.0/mode/python/python.js"></script>
+
+<script>
+$(document).ready(function(){
+	$('.code').each(function() {
+
+	    var $this = $(this),
+		$code = $this.html().trim();
+
+	    $this.empty();
+
+	    var myCodeMirror = CodeMirror(this, {
+		value: $code,
+		mode: 'python',
+		lineNumbers: false,
+		readOnly: true,
+                lineWrapping: true,
+                htmlMode: true,
+                matchClosing: true,       
+                indentWithTabs: true,
+	    });
+
+	});
+});
+</script>
+
+
+
+<style type="text/css">
+/* Overrides of notebook CSS for static HTML export */
+body {
+  overflow: visible;
+  padding: 8px;
+}
+
+div#notebook {
+  overflow: visible;
+  border-top: none;
+}
+
+@media print {
+  div.cell {
+    display: block;
+    page-break-inside: avoid;
+  } 
+  div.output_wrapper { 
+    display: block;
+    page-break-inside: avoid; 
+  }
+  div.output { 
+    display: block;
+    page-break-inside: avoid; 
+  }
+}
+</style>
+
+<!-- Custom stylesheet, it must be in the same directory as the html file -->
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.19.0/codemirror.css">
+<link rel="stylesheet" href="https://iacchus.github.io/jupyter-ipython-themes/custom.css">
+
+<!-- Loading mathjax macro -->
+</head>
+<body>
+  <div tabindex="-1" id="notebook" class="border-box-sizing">
+    <div class="container" id="notebook-container">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="inner_cell">
+    <div class="input_area code">
+from music21 import *
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="inner_cell">
+    <div class="input_area code">
+from IPython.display import Image, Audio, HTML
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="inner_cell">
+    <div class="input_area code">
+greekModes = [ 'ionian', 'dorian', 'phrygian',
+'lydian', 'mixolydian', 'aeolian', 'locrian' ]
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="inner_cell">
+    <div class="input_area code">
+def circleOfFifths():
+    fifths = []
+
+    fifthsScale = scale.CyclicalScale('c4', 'p5')
+    
+    for p in fifthsScale.getPitches('c4', 'c11'):
+        
+        MAJOR = str(p.simplifyEnharmonic().name)
+        MAJOR_EN = str(p.getEnharmonic().simplifyEnharmonic().name)
+        MINOR = str(key.Key(MAJOR, 'major').relative.tonic.simplifyEnharmonic().name).lower()
+        MINOR_EN = str(key.Key(MAJOR_EN, 'major').relative.tonic.simplifyEnharmonic().name).lower()
+
+        if MAJOR == MAJOR_EN:
+            major = MAJOR
+        else:
+            major = "{0} or {1}".format(MAJOR, MAJOR_EN)
+            
+        if MINOR == MINOR_EN:
+            minor = MINOR
+        else:
+            minor = "{0} or {1}".format(MINOR, MINOR_EN)
+        fifths.append( [ major, minor ] )
+
+        #fifths.append(p.simplifyEnharmonic())
+        
+    return fifths
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="inner_cell">
+    <div class="input_area code">
+def returnScale(tonic='c', mode='major', ownKey = False):
+    
+    modes = [ 'ionian','dorian','phrygian',
+              'lydian','mixolydian','aeolian',
+              'locrian','major','minor']
+    
+    if mode in modes:
+        if mode == 'ionian':
+            mode = 'major'
+        elif mode == 'aeolian':
+            mode = 'minor'
+    else:
+        mymode = 'major'
+        
+    myfunc = eval("scale.{0}Scale".format(mode.capitalize()))
+    pitches = myfunc(tonic).getPitches()
+
+    scaleSharps = key.pitchToSharps(tonic, mode)
+    myKeySig = key.KeySignature(scaleSharps)
+    
+    mystream = stream.Stream()
+    
+    if ownKey:
+        mystream.append(myKeySig)
+
+    for x in range(0, len(pitches)):
+        mynote = note.Note(pitches[x])
+
+        mynote.addLyric(interval.notesToInterval(pitches[0], mynote).directedName)
+        mynote.addLyric(interval.notesToInterval(pitches[(x-1 if x>0 else 0)], mynote).directedName)
+        
+        mystream.append(mynote)
+        
+    return mystream
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="inner_cell">
+    <div class="input_area code">
+def returnTriads(tonic='c', mode='major', ownKey = False):
+    
+    modes = [ 'ionian','dorian','phrygian',
+              'lydian','mixolydian','aeolian',
+              'locrian','major','minor']
+    
+    if mode in modes:
+        if mode == 'ionian':
+            mode = 'major'
+        elif mode == 'aeolian':
+            mode = 'minor'
+    else:
+        mymode = 'major'
+        
+    myfunc = eval("scale.{0}Scale".format(mode.capitalize()))
+    #pitches = myfunc(tonic).getPitches()
+
+    pitches = myfunc(tonic).getChord(tonic+"4",tonic+"6").pitches
+    scaleSharps = key.pitchToSharps(tonic, mode)
+    myKeySig = key.KeySignature(scaleSharps)
+    
+    mystream = stream.Stream()
+    
+    myduration = duration.Duration("whole")
+    
+    if ownKey:
+        mystream.append(myKeySig)
+        
+    for x in range(0,8):
+        mychord = chord.Chord([ pitches[x], pitches[x+2], pitches[x+4] ], duration=myduration)
+        mychord.addLyric(roman.romanNumeralFromChord(mychord,key.Key(tonic,mode)).figure)
+        mychord.addLyric(harmony.chordSymbolFigureFromChord(mychord))
+        
+        mystream.append(mychord)
+        
+    return mystream
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="inner_cell">
+    <div class="input_area code">
+def midiStream(mystream):
+
+    try:
+        if myAudio:
+            pass
+    except:
+        from IPython.display import Audio as myAudio
+    
+    mymidi_filename = mystream.write('midi')
+    
+    return myAudio(filename=mymidi_filename)
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="inner_cell">
+    <div class="input_area code">
+circleOfFifths()
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[10]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[[&#39;C&#39;, &#39;a&#39;],
+ [&#39;G&#39;, &#39;e&#39;],
+ [&#39;D&#39;, &#39;b&#39;],
+ [&#39;A&#39;, &#39;f#&#39;],
+ [&#39;E&#39;, &#39;c#&#39;],
+ [&#39;B&#39;, &#39;g#&#39;],
+ [&#39;F# or G-&#39;, &#39;d# or e-&#39;],
+ [&#39;C# or D-&#39;, &#39;a# or b-&#39;],
+ [&#39;G# or A-&#39;, &#39;f&#39;],
+ [&#39;D# or E-&#39;, &#39;c&#39;],
+ [&#39;A# or B-&#39;, &#39;g&#39;],
+ [&#39;F&#39;, &#39;d&#39;],
+ [&#39;C&#39;, &#39;a&#39;]]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="inner_cell">
+    <div class="input_area code">
+triads = returnTriads('D','aeolian',True).write()
+Image(filename=triads)
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[19]:</div>
+
+
+<div class="output_png output_subarea output_execute_result">
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAhcAAABrCAIAAABLxDeMAAAWaklEQVR4nO2dMYzb5PvH3/urSC0S
+lX0VbcXS2lfKAqpqR+2EGOwMsLDEYUJMceYyOLcwIsW3tDAg2Td2SzIhIZDiQyoSQ09xOoBEaZtc
+GQ56i527IrWoiPyHB96f6+RyjhPnfZ17PsPJ8TnO10/evM/7Pu/zvu/KcDgkCIIgCJKK/2MtAEEQ
+BMkx6EUQBEGQ9KAXQRAEQdKDXgRBEARJD3oRBEEQJD3oRRAEQZD0oBdBEARB0oNeBEEQBEkPehEE
+QRAkPehFEARBkPTM04v0+/0wDOd4QwRBEIRz5uZFfN9XVdUwjHndEEEQBOGflbmsxuj7vq7rg8GA
+EOI4jmmas98TQRAEoTSbzU6nEw35qKpaLBZ1XWcrbD5eRFXVbrcLx5Ik9fv92e+JIAiCEEKazaZp
+moPBoFKpuK5LCPF93zRNqHUlSWo2m6qqspI3h4iWbdvUhRBCdnZ24DkRBEGQGXFdt1wuQ6SnWq3C
+SVVVPc+TJIkQsrOzUygUPM9jpXAOfRFZlnd2dgghgiCsr68TQhqNhu/7c1CHIAiSJXyGiaLRnWlR
+FGXB1e+sXsT3/UKhQAgRBMHzPPCQxWKx1+vJsjwnkQiCIHOG5zAR+DY4/uKLL/766y84LpfLFy9e
+pJc9fvy40WjA8VtvvfXhhx8SQgqFwqKznIaz4TgO3KfRaMCZIAgIIfV6fcY7IwiCZAStuAghnU6H
+ng+CAMJEQLvdZigSiEotlUqH/Yuh1FnHRXq9HiFE0zTq/URRhC9mxjsjCIJkRK1Wo8fRDocoinTs
+gRASraZZYZpmo9EQBIEQ0mq1DMOA9KUwDEGeJEmdTodhCO7EXO4StTuE5DBNC0GOJ3yONEzA87yo
+NobJTodhGIZhGJ9++umPP/74ww8/wCACIeTNN9+0bduyLLbyZo1owQNEz9A43Yx3RhAkX9Amc6VS
+gTOdTkdRFKgQoMnMViGF/zBRFM4NOwcvIghC7AwhJHYSQZDlJkcjDQCtmsGR9Hq94XAYBAHUzsyr
+Zgr/hj0iR6vf70+ODN6/f//u3buffPIJPeM4zv7+/oULFz766KMJbzy2DAaD58+fnz9/nrWQo3n+
+/PmTJ0+iOSHcsvRS79+//+TJk/39/efPn8OZc+fOXbx4MetHfvz48fnz50+ePHnkldFUoliM5e7d
+u3fu3IFjmko0d5JLjfL999/v7u7u7+//888/cEYUxcuXL1+/fj0Djf8ylVS2hn3y5Imu6x9//PGE
+a44YFxFFsVgsTrjgzJkzX3/9Nb3mm2++2d/fJ4Rcv3598huPLZubmw8fPpz8rXBCt9v98ssv2+02
+ayFHs8RS79y5c+vWrT///PODDz74/PPPCSEPHjy4devW9vb29vb2+fPnP/vss8uXL2ektlgs2rZN
+gycT+Oqrr2hld+bMmehbzpw5Qyu7c+fOZVQzJJcKRA1748YN8p9hHz58+Mcff/z666/ZGXYqqWwN
+a1nWyZMnj6ivZuzLQF5vEATDl3tYSTqDpVIpFpE8DliWpWkaaxWJgJqOtYpELKtU5tGM5DdnPtIw
+1c3ZGja11MUbVtM0y7ImXzNrpq8oipIkweT7Wq0Gk9g1TUuS5xCGIa4kjyATwITUjEDDzpE5ZPrq
+ut7pdMIw3NzchDOwDgqCcE6+clIxITUj0LAzMofVGAuFQrPZpL7dsiw+f4QIQmk2m6IolsvlMAyb
+zabnebZth2G4sbFRLBZlWeZkITjbtulxrF0cnZIVbT4zBKx68+bNK1eu7O3tBUHQbrclSdre3q7V
+avxYlaBh58vsgTOYvg4oigJjJEnQNC0vIwRzBMdFsiBHgw3TWpVtQmpyO+RoCAdgaNippLI1bJJx
+kSMyfX3fjwYQR3nx4sW9e/eePn1KCDlx4sTVq1dPnz494foosOpZ8pwKysHBwd9//00Iee211155
+5ZVp386WR48eHRwcpHjqxRMEwb179zRNm+pde3t7T58+ffbs2YsXL+DM6dOnV1dXV1dXM9D4L1NJ
+vXPnDpQfQkjsLY8fP6atorNnz77zzjvz1UnSWvXBgwf7+/vPnj2jP9hXX3319ddfzzrTd2tr6+rV
+q0m+O7ZWJdNIjcLEsFNJZWvYbrd77dq17777btJFM3qqUqlEb0UXZEz+3qlytIIggEmOlUrFsizL
+skqlkmVZyXs/PLDEfRGGM2ynkkpboGSkBRdNwM0ogTBHVh1O02pma9XhDH2RxRt2KqlsDZukLzKT
+F6lUKlGHBF3C5IAnSHhxp9OB7lvsLe12O1/pwsvqRXIUJmKbOpkjqw4x0xczfTP1ItEHqFQqkiQ5
+jjPVHabyIrSNEO15OI4Djnraj2bIsnqRaIsp9q96vX7Yz2Be5GiwIUdWHU5Z3+VlCGfI2rDTVvoM
+DZvhfJHoeAns8WIYRorV4MMwNAxjZWVlZWVlwgCM67owiCIIAqw8D9RqNdhIki4BuaxAFpxhGPp/
+1Go1hntkTiYmjM/UyTAMb9y4ce3aNUidXF1dXVtbO3HihG3b/X6fQ81o1YzIi2EbjYZlWWEYmqap
+6zrUBu12m71h0zko2jOgSVngLae6CaQ51+v1TqcDnvYw/0xHX2KtePoUeWndD6fvi+RlsCFHYaIh
+WjUxU908L0M4Q9aGzfQrmy9ZRbRoj08QBDoWAkuhTFVKLMtSFAWOYYjlMLm0Nxerf+l0m2WNaOVo
+sGGYnzARWjU5ye2QoyEcIC+ZvmzJKtOXZp6tra1F8+G2t7chofPUqVOnTp2acFsgmvP6yy+//P77
+77EbUra2tuBAFMVYjuzBwQEhJHl6cRQmOalTZfpiTmpCMNM3I5Y+0xcqAahGgAVUAumkMiGTTF/a
+4og2qB3HiTY3CCGKohyZ+Etb5UEQCIIgCMJhObv0tvOKXDHsek/VF8Gc1IRgpm9GjJroMHKX6cuQ
+HEnNZHSdDqHTxbJM06xWq7AOI6Xb7ZbLZdM0k9zTNE1RFD3Pi46cR4kW0NlxXbdcLsOwPF3hQFVV
+z/PAF+7s7BQKBR7GrnO0TgNaNQvQqkgOmNY1QSOIjmdEiwsU61inZIIfg3ERTdNKpdLkmYOHja5H
+b5X8Edgm+aUeXSd8DzZgpm8WUjHTNyOpbMmR1Ez6IpBxWy6X4SUUZUVRer1ev9+XJMm27V6vR8e9
+NzY2oi2R0bupqgprjU34ULr7ythFx8IwTN0Wy0uSX76yJ9GqWZAXq/KbkIpkxLSuCd4FjhTysqLj
+GbAkCRzTbsphrqzX69Xr9YSfO3bWITDV7MUh6yQ/zPTNQGmeBhtyZNVhrlrNKDULMsn0hewLqMrh
+9xD9jFgVCRfT8NcsHLYCiuM4tCJIDsOuN2b6MpeKVk1Ojuo7lJoFmWT6QkouzeTb2tq6cOHCpUuX
+4GUQBD/99NN7770HL/f29n7++WcykvmXjhcvXvz222+7u7tnz56FpXyfPXt26tQp+unTwiR7EjN9
+s2DpM32ZJKSSXOWkotQsyDDTlzrSUqkU7WrALzAadEr3KZNp/0fq1Xwx0zcJyxomypdV2TJqIm5B
+qVmQyei6aZqCINAf2/r6erfbpUl+siwLghAbA59LRyQKXUtq8pj8YWD2ZBagVRHkeJJmNUbTNF3X
+ha2qVVV1HGd9fZ1ODVFVlXoRqDJohhUnRGN00aQRURSjFUesfmGCaZq0gd9qtQzDgGouDEOQBw18
+HrYoRqsiyPEkjRexbVuWZV3XwZGYptnpdNbW1uC/sixD7hYhBFZuTzj3kAl5yZ7EnNT5gjmpCDIv
+Uq4MD9UEdSSqqtKmqCiK0BdxXbfVarmumy7ulB35CmjAZJqbN29euXJlb28vCIJ2uy1J0vb2dq1W
+k2V57ByaxZMvqwKGYdi27UWwbRu7IAgyFSm9CF2wRJblWq0WrcgKhQLsGlKtVh3HMQxjTlLnRo4C
+GjkabMiRVREEmSNp1vSNsru7u7u7+/Tp09j5N9544+LFi0lW9mUIk5zU3d3dZ8+eJcxOZpuTenBw
+8OjRo4RJyRQmOanppDIhR1IJId1u99KlS+nWzF4wKDULHj169O67796+fXvCNUd4kYSEYUi7I/1+
+v1qtzuW22dFsNk3THAwGsFEjIcT3fdM0YX0XSZKazSYPkXFRFKEjQghpt9vRhrzneTRtoVQqNZvN
+xctDEATJJG89o9vOC+bb6SSH+QIYCIIgk0k5LkL+a86bpjlhsUU+wZxUBEGQeZEyolWr1TY2NuAY
+phnKsvy/m67MJ1CWEXkMEzWbzU6nE81iUFW1WCyi/0AQhDEp+i90OgglOkUetrGaV18pCzBMhCAI
+Mi/SRLQmT1DwfT+2URVvYJgIQRBkXqQMPa2srERfRuNCMFMdEp84B8NECIIgM5LSixiG0Wq1FEWB
+EWk6tRDGFXq9XnSYBEEQBFlWUnoRWGhIlmWYwQ4nfd/Xdd00zehiGAiCIMgSkz6Zyvd9WNLOMAxR
+FPv9fqvVsiwLXQiCIMjxYaaU3DAMYWgBuibVahUDWQiCIMcKrid2LAyY78Lb2sOjqjjU2e/3Y9Mz
+YeZmwpMMmx0cGjMvuK4La7iNBh7Glgf4lqOzfd9++23YS3v0skwVJpRXLBZlWY5d+f7773/77bfZ
+aU4Ob0U3/dz1pcH3/UKhwNsmKKOq+NQJeJ63sbERSwFPfnLx8GxM/lFVtd/v03nHo7iuO/Zbhm+f
+rnaRXWGYrDChvLEKmRdgHosuy8kqfBAEQalUchyHtZCXGFXFp07Asizy8uTTqU4uHp6NmQvgezzs
+v/V6nRBSqVRG36VpWuwmGRWGCQoTyhurkHkB5rDonmDlvfhBFEV+VjqhjKriU2dOQWNmimma6+vr
+m5ubtm1HAy/9fr9cLjMUBnAubzIcFl2MaOWbfr/veR7sOIkgi2dsCRRFsVKpkJdnH4dh6Hne4kMx
+owq5krcEHHcvUqvVVFVdWVmZvBnXghlVNXomDEOYndNut1VVzcViAZwQM2atVltZWVlZWdF1HWoc
++C8PG8xQ+BTpuq5hGI7jrK6uxn5B0KhvNBrRixdfRx+mkBN508JnfXXcI1q2bYdhmOk2fCkYVTV6
+xjRNujlYsViErBJcuyUJMWNCGs/GxobrurIsy7Js23a9XudhH2IKnyLpAkK2ba+vrxcKBbqMha7r
+kiR1u13f98HVNRqNxbd1DlPIibxp4bO+Ou59EUIIPwlzUUZVxVJ+W60W9RlwwMOGKHkhZl5IRIZB
+V0JIo9GI7jTDCRyKpAKgFR9t2pOX07uhKl98z2mCQh7kpYDD+gq9SC4ZTTTUNK3VajERswTIslyp
+VJrNJkTPYV0G1qLicCiSVrtQtcU6RlBxg2BWPm+CQh7kLQfoRXIJDqfPnXK5PBgMXNd1XZfbRB3O
+RcaayTCIPRgMms1ms9lk7vPIywo5lJdT0IvkktHxj62trVKpxETMcqDruqIojuM0Gg1uR1l5Exnb
+LXs0IgSurlqt6rrOJBQzWSFzecsBepFcoqpqdENf6Kdjl3xGqtXqzs4OV2tLjMKVSDoUB+PSoyUQ
+BrHJf/X14pmskLm8JYH1tEfGOI6jKAohRBCE2LRVhoyqGj0TBIGmaZqmWZYlSRKruaydTkfTNFqc
+NE3rdDrJTzLRPOFLFwSB/52SeRCpaVqj0dA0rVKpTC6B9XpdkqTYyQUUhoQKx8obq/D27dvMCzCf
+9RWuxphv+v0+LKjMQ8t0CaB5nzzDg0iqwfd9mLp02JVhGIZhuPhVCxMqZCVvmUAvgiAIgqQHx0UQ
+BEGQ9KAXQRAEQdKDXgRBEARJD3oRBEEQJD3oRRAEQZD0LPmavp7ntdvt6JlCoSCKIqyKyomkKGtr
+a6NzkqObRZfLZZrlydv2yykebZH4vt9oNPr9vizLxWJR1/Vms6mqKp9Znp7n+b7P1QLgRzJaAFZX
+VyENnXlq8gRGC4Zt24u3PIeVVUKORV+k2WzS7ZQ7nQ5syCHLMsPNk6OSAN/3NzY2YquiAqIoFotF
+2EearqDF4/bLhJBxjwZbVY99tIVRq9UMw1hbW6tWq4VCoV6vG4ZRLpdjK2Twg+M4dPnefBEtAEEQ
+NBqNQqGg6zqfi7/FCga8XF9fZ6WHw8rqaFhPe1wEMOM0Ot03CAJFUQRBYDV9elTS8Ki9rOG/9C0c
+br8MjH20UqnEcKptpVIRBKHX68UkjerkhCAI4OfJ4fd7JKMFAIru6D7nzIGCEQQBPQM1A8OKkcPK
+6kiORV9kFFEUbdseDAacLOQJC2FN1QKC7Zc57IvEgEeD3XWYCHBdd3Nz0zTNWFjAdV1BEJhIOhLX
+dcHJse3AzYtisUhGFkZkDi0YsYV+YUMwfnpOvFVWoxxTL0II0XVdEISdnZ3RriKEpA97mQXwMxNF
+EdpBUXzfn3Y/u8XrnwA8mizLrCoRiAuBjCiiKB72s2RuQMdxbNuWJGlra2uy3ZhLTQ4/A3gAjDWO
+FgxYopErM06orAgPZYB1Z2gRjI2x0POWZdE1zizLUhQFjiuVCvQl4bL5BmSikqCaG70G1luEZdcU
+RYlGYEAnCB5G1mhbmP4ZH21hdDodKOfRqAWl1+tBmIsrA7bbbfgssF4sEMSV1LHEfm4QeuUtINPr
+9SYUjEajEYt/LowjK6shf2UAvci/XwxkR9CyDj9gSZKiL+cYpIaPVhQFFqYeW9VCNBkE0Now+uOk
+4hevf8ZHWxg06SXhlTwYsFKpwAfBVxwL3HMldSy0AEDrB45ZVcqHkbxgLJgkldWQszJwfCNaYzFN
+E1IS4a+u63AAww+0/TIvbNvu9/uVSmXsfzc2NjRNo3pim1CNjQ8sWP8EJj8aW3zf11+GRgCYGzAM
+QzrcFd2Mb/RK5lInY9s2hFZ6vZ6qqmtra/nKWs4FnJSBY+1FYABtbW3tsAtoTZ1pSBdG8wDP8yAO
+DmMh0Sz7FDnji9E/geijMYEaLTpYKsvy+vq6qqpbW1twfJhtF29A13UHg8HKf2xubpLIVksTYP5d
+H4Ysy67rKoqysbEx7QjfKF6EWe5Df1ljh51gw4VZ7j93jqysCLsycKy9SLfbJeN2n10woihC8IoQ
+ArOf2OqZI9FHY4IsyxBYi443iqKo6zrNaOBqt1THcWLjB5IkdbtdrgZ7UwAWnjApNQm1Wq0eAbYv
+TK0Hom1jDes4Dm8G56SyGsvx9SJQBC3L4mFeKE0upLELaCtFPUpOvQvz7gjkT4+mzM5Yo2WB53mj
+07xhk9ck3RH+mdyUPhKIklFmTHOHgjFaDOBnyFVaLVeV1SjH1It4nler1RRFYThJNUa/3zdNczAY
+QKsNYuI0wOX7fqvVYq0xl5imWalUNjc3o01X3/c5nC8y1lVAXdlsNvmZwTAtrutubW0pisLV9CbD
+MEYLRhiGtVqNn2qBcFlZxVnMID4rHMehWyVLkgQblUPubDSBgWbOSZIUTfyNvZzLXsdRSXBDmsoS
++0Zimb4QGoLto2OSFql/qkfjZ+q14ziSJIEZS6USZLPAjtzDxRaAsXQ6HerSojuEw4bh1KTRr57t
+dz2WsWVbEAQw+9icWuZEC0alUlEUhVWhTVhZDTkorjFwx1zeOXJfayQ5YEwaNcI9txEgVjCQqUAv
+giAIgqTnmI6LIAiCIHMBvQiCIAiSHvQiCIIgSHrQiyAIgiDpQS+CIAiCpAe9CIIgCJIe9CIIgiBI
+etCLIAiCIOlBL4IgCIKk5/8BSGeXAiLa9SQAAAAASUVORK5CYII=
+"
+>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="inner_cell">
+    <div class="input_area code">
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area code">
+
+</div>
+</div>
+</div>
+
+</div>
+    </div>
+  </div>
+</body>
+
+</html>

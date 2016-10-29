@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8" />
+<title>ideas-thesession-scraper</title>
+
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>-->
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.19.0/codemirror.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.19.0/mode/python/python.js"></script>
+
+<script>
+$(document).ready(function(){
+	$('.code').each(function() {
+
+	    var $this = $(this),
+		$code = $this.html().trim();
+
+	    $this.empty();
+
+	    var myCodeMirror = CodeMirror(this, {
+		value: $code,
+		mode: 'python',
+		lineNumbers: false,
+		readOnly: true,
+                lineWrapping: true,
+                htmlMode: true,
+                matchClosing: true,       
+                indentWithTabs: true,
+	    });
+
+	});
+});
+</script>
+
+
+
+<style type="text/css">
+/* Overrides of notebook CSS for static HTML export */
+body {
+  overflow: visible;
+  padding: 8px;
+}
+
+div#notebook {
+  overflow: visible;
+  border-top: none;
+}
+
+@media print {
+  div.cell {
+    display: block;
+    page-break-inside: avoid;
+  } 
+  div.output_wrapper { 
+    display: block;
+    page-break-inside: avoid; 
+  }
+  div.output { 
+    display: block;
+    page-break-inside: avoid; 
+  }
+}
+</style>
+
+<!-- Custom stylesheet, it must be in the same directory as the html file -->
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.19.0/codemirror.css">
+<link rel="stylesheet" href="https://iacchus.github.io/jupyter-ipython-themes/custom.css">
+
+<!-- Loading mathjax macro -->
+</head>
+<body>
+  <div tabindex="-1" id="notebook" class="border-box-sizing">
+    <div class="container" id="notebook-container">
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="The-Session-Scraper">The Session Scraper<a class="anchor-link" href="#The-Session-Scraper">&#182;</a></h1><ul>
+<li><a href="https://thesession.org/">The Session</a></li>
+<li><a href="http://docs.python-guide.org/en/latest/scenarios/scrape/">HTML Scraping—The Hitchhiker's Guide to Python</a></li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="inner_cell">
+    <div class="input_area code">
+from lxml import html
+import requests
+
+from IPython.display import display, HTML
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Search">Search<a class="anchor-link" href="#Search">&#182;</a></h2><h3 id="Xpaths:">Xpaths:<a class="anchor-link" href="#Xpaths:">&#182;</a></h3><p>Result links: <code>//div[@id="results"]/ol/li/a</code></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="inner_cell">
+    <div class="input_area code">
+# https://thesession.org/tunes/search?type=jig&mode=Eminor&q=butterfly
+#xpaths
+
+def get_search(sc_name='butterfly', sc_type='', sc_mode=''):
+    #makeuri = "https://thesession.org/tunes/search?type={0}&mode={1}&q={2}".format(sc_type, sc_mode, sc_name)
+    makeuri = "https://thesession.org/tunes/search?type={0}&mode={1}&q={2}".format(sc_type, sc_mode, sc_name)
+    
+    return requests.get(makeuri)
+
+page = get_search('morrisons')
+tree = html.fromstring(page.content)
+
+tree.xpath('//div[@id="results"]/ol/li/a/text()')
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[2]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[&#39;James Morrisons&#39;,
+ &#39;(An Tri Is A Rian)&#39;,
+ &#39;Morrison’s&#39;,
+ &#39;Morrison’s Favourite&#39;,
+ &#39;Ian Morrison’s&#39;,
+ &#39;Tom Morrison’s Maggie&#39;]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Tunes">Tunes<a class="anchor-link" href="#Tunes">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="inner_cell">
+    <div class="input_area code">
+# https://thesession.org/tunes/10
+
+def get_tune(tune_id):
+    makeuri = "https://thesession.org/tunes/{}".format(tune_id)
+    
+    return requests.get(makeuri)
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="inner_cell">
+    <div class="input_area code">
+page = get_tune('10')
+tree = html.fromstring(page.content)
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="inner_cell">
+    <div class="input_area code">
+tree
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[5]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;Element html at 0x7f982a862ea8&gt;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="inner_cell">
+    <div class="input_area code">
+nds = tree.xpath('//*[@class="setting"]')
+
+nds
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[14]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[&lt;Element div at 0x7f982a849958&gt;,
+ &lt;Element div at 0x7f982a8787c8&gt;,
+ &lt;Element div at 0x7f982a8784a8&gt;,
+ &lt;Element div at 0x7f982a878688&gt;,
+ &lt;Element div at 0x7f982a878408&gt;,
+ &lt;Element div at 0x7f982a8786d8&gt;]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="inner_cell">
+    <div class="input_area code">
+nds[0].findall(path='//*[@class="abc"]/text()')
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[20]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;Element div at 0x7f982a849958&gt;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area code">
+! pip install scrapy
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Collecting scrapy
+  Downloading Scrapy-1.2.0-py2.py3-none-any.whl (294kB)
+    100% |████████████████████████████████| 296kB 160kB/s 
+Collecting queuelib (from scrapy)
+  Downloading queuelib-1.4.2-py2.py3-none-any.whl
+Requirement already satisfied (use --upgrade to upgrade): six&gt;=1.5.2 in ./venv/lib/python3.5/site-packages (from scrapy)
+Collecting w3lib&gt;=1.15.0 (from scrapy)
+  Downloading w3lib-1.15.0-py2.py3-none-any.whl
+Collecting Twisted&gt;=10.0.0 (from scrapy)
+  Downloading Twisted-16.4.1.tar.bz2 (3.0MB)
+    100% |████████████████████████████████| 3.0MB 58kB/s 
+Collecting PyDispatcher&gt;=2.0.5 (from scrapy)
+  Downloading PyDispatcher-2.0.5.tar.gz
+Requirement already satisfied (use --upgrade to upgrade): lxml in ./venv/lib/python3.5/site-packages (from scrapy)
+Collecting cssselect&gt;=0.9 (from scrapy)
+  Downloading cssselect-0.9.2-py2.py3-none-any.whl
+Collecting pyOpenSSL (from scrapy)
+  Downloading pyOpenSSL-16.2.0-py2.py3-none-any.whl (43kB)
+    100% |████████████████████████████████| 51kB 204kB/s 
+Collecting parsel&gt;=0.9.3 (from scrapy)
+  Downloading parsel-1.0.3-py2.py3-none-any.whl
+Collecting service-identity (from scrapy)
+  Downloading service_identity-16.0.0-py2.py3-none-any.whl
+Collecting zope.interface&gt;=4.0.2 (from Twisted&gt;=10.0.0-&gt;scrapy)
+  Downloading zope.interface-4.3.2.tar.gz (143kB)
+    100% |████████████████████████████████| 143kB 208kB/s 
+Collecting cryptography&gt;=1.3.4 (from pyOpenSSL-&gt;scrapy)
+  Downloading cryptography-1.5.2.tar.gz (400kB)
+    38% |████████████▎                   | 153kB 319kB/s eta 0:00:01</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area code">
+
+</div>
+</div>
+</div>
+
+</div>
+    </div>
+  </div>
+</body>
+
+</html>
