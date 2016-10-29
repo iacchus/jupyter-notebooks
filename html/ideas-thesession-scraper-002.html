@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8" />
-<title>ideas-thesession-scraper</title>
+<title>ideas-thesession-scraper-002</title>
 
 <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>-->
 <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>-->
@@ -332,6 +332,60 @@ nds[0].text_content()
 <pre>&#39;\nX: 1\nT: The Butterfly\nR: slip jig\n\nM: 9/8\nL: 1/8\nK: Emin\n|:B2E G2E F3|B2E G2E FED|B2E G2E F3|B2d d2B AFD:|\r|:B2d e2f g3|B2d g2e dBA|B2d e2f g2a|b2a g2e dBA:|\r|:B3 B2A G2A|B3 BAB dBA|B3 B2A G2A|B2d g2e dBA:|\n\n&#39;</pre>
 </div>
 
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="inner_cell">
+    <div class="input_area code">
+from lxml import html
+import requests
+
+from IPython.display import display, HTML
+
+def remove_empty(teh_string):
+    newlist=list()
+    the_list = teh_string.split('\n')
+    
+    for nonempty in the_list: 
+        if nonempty:
+            newlist.append(nonempty)
+    
+    return "\n".join(newlist)
+
+def get_tune(tune_id):
+    makeuri = "https://thesession.org/tunes/{}".format(tune_id)
+    
+    page = requests.get(makeuri)
+    tree = html.fromstring(page.content)
+    nds = tree.xpath('//*[@class="notes"]')
+
+    tune_list = list()
+    for tune in nds:
+        tune_list.append(remove_empty(tune.text_content()))
+        
+    return { 'tunes':tune_list, 'count': len(tune_list) }
+
+HEY = get_tune(1)
+print(HEY)
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>{&#39;count&#39;: 10, &#39;tunes&#39;: [&#34;X: 1\nT: Cooley&#39;s\nR: reel\nM: 4/4\nL: 1/8\nK: Edor\n|:D2|EBBA B2 EB|B2 AB dBAG|FDAD BDAD|FDAD dAFD|\nEBBA B2 EB|B2 AB defg|afec dBAF|DEFD E2:|\n|:gf|eB B2 efge|eB B2 gedB|A2 FA DAFA|A2 FA defg|\neB B2 eBgB|eB B2 defg|afec dBAF|DEFD E2:|&#34;, &#34;X: 2\nT: Cooley&#39;s\nR: reel\nM: 4/4\nL: 1/8\nK: Emin\n|:F|CGGC G2 CG|G2 FG BGFE|(3DCB, FB, GB,FB,|DB,DF BFDB,|\rCGGC G2 CG|G2 FG Bcde|fdcd BGFB|B,CDF C3:|\r|:d|cG ~G2 cede| cG ~G2 ecBG|(3FGF DF B,FDF|GFDF Bcde|\rcG ~G2 cede| cG ~G2 Bcde| fdcd BGFB| B,CDF C3:|&#34;, &#34;X: 3\nT: Cooley&#39;s\nR: reel\nM: 4/4\nL: 1/8\nK: Emin\n|:D2|EBBA B2 EB|B2 AB dBAG|FDAD BDAD|FDAD dAFD|\rEBBA B2 EB|B2 AB defg|afef dBAF|DEFD E2:|\r|:gf|eB ~B2 eBgB|eB ~B2 {a}gedB|A2 FA DFAB|BA FA defg|\reB ~B2 eBgB|eB B2 defg|afef dBAF|DEFD E2:|&#34;, &#39;X: 4\nT: Cooley\&#39;s\nR: reel\nM: 4/4\nL: 1/8\nK: Edor\nD |: EBBA &#34;slide&#34;B3 B | B2 AB dBAD | (3FED AD BDAD | (3FED A=c BAFD |\nEBBA &#34;slide&#34; B3 B | B2 AB defg | afec dBAF |1 EGFD E3 D :|2 EGFD E3 d ||\n|: eB (3BBB efgf | eB (3BBB fedB | (3ABA FB (3ABA FB | ADFA Bcdf |\neB (3BBB efgf | eB (3BBB fedB | (3ABA FB dfec | dBAF EFGB :|\n|: eB (3BBB eBfB | eB (3BBB fedc | BE (3EEE BEdE | BE (3BBB BAFB |\neB (3BBB eBfB | eB (3BBB fecA | d3 e fdec | dBAF EFGB :|&#39;, &#34;X: 5\nT: Cooley&#39;s\nR: reel\nM: 4/4\nL: 1/8\nK: Edor\neBBA ~B2B2|~B2AB dBAG|FDAD BDAD|EDFA BAFB|\neBBA ~B2Bc|B2AB defA|~A2eA dBAF|1DEFD ~E2E2:|2DEFD ~e2e2||\neB~B2 eBgB|eB~B2 gedB|A2FA DAFA|~A2FA Beed|\ne2~A2 eage|dBAB defA|~A2e2 dBAF|1DEfd ~e2e2:|2DEFD ~E2E2||&#34;, &#34;X: 6\nT: Cooley&#39;s\nR: reel\nM: 4/4\nL: 1/8\nK: Emin\nA | EBBE B2 EB | ~B2 AB dBAG | (3FED AD BDAD | FDFA dAFD |\nEBBE B2 EB | ~B2 AB defg | afef dBAd | DEFA E3 :|\nf | eB ~B2 egfg | eB ~B2 gedB | (3ABA FA DAFA | BAFA defg |\neB ~B2 egfg | eB ~B2 defg | afef dBAd | DEFA E3 :|&#34;, &#39;X: 7\nT: Cooley\&#39;s\nR: reel\nM: 4/4\nL: 1/8\nK: Edor\nD|&#34;Em&#34;EB{=c}BA B2 EB|&#34;Em&#34;{=c}B2 AB dBAG|&#34;D&#34;F/E/D AD BDAD|&#34;D&#34;F/E/D AD {=c}BAGF|\n&#34;Em&#34;EB{=c}BA B2 EB|&#34;Em&#34;{=c}B2 AB defg|&#34;D&#34;{b}afec dBAF|[1&#34;D&#34;DEFD &#34;Em&#34;E3:|[2&#34;D&#34;DEFD &#34;Em&#34;E2||\n|gf|&#34;Em&#34;eB {B/d/B/A/}B2 eBgf|&#34;Em&#34;eB {B/d/B/A/}B2 gedB|&#34;D&#34;A/A/A FA DAFA|&#34;D&#34;A/A/A FA defg|\n&#34;Em&#34;eB {B/d/B/A/}B2 eBgf|&#34;Em&#34;eB {B/d/B/A/}B2 defg|&#34;D&#34;{b}afec dBAF|[1&#34;D&#34;DEFD &#34;Em&#34;E2:|[2&#34;D&#34;DEFD &#34;Em&#34;E3|]&#39;, &#34;X: 8\nT: Cooley&#39;s\nR: reel\nM: 4/4\nL: 1/8\nK: Edor\n|: D |EBBA B2- BA | ~B2 AB dBAG | FDAD BDAG | F/E/D FA dAFD |\nEB-BA B2 BA | B/c/B AB defg | afef dBAF | DEFD E3 :|\n|: f |eB ~B2 eBfB | eB ~B2 gedB | A/B/A FA DAFA | ~A2 FA defd |\neB B/c/B eBgf | eB ~B2 defg | afef dBAF | DE F/E/D E3 :|&#34;, &#34;X: 9\nT: Cooley&#39;s\nR: reel\nM: 4/4\nL: 1/8\nK: Edor\n|:D2|EBBA B2 EB|B2 AB dBAG|FED AD BDAD|FEDAD BAGF|\nEBBA B2 EB|B2 AB defg|afec dBAF|DEFD E2:|\n|:gf|eB B2 efge|eB B2 gedB|A2 FA DAFA|A2 FA defg|\neB B2 eBgF|eB B2 defg|afec dBAF|DEFD E2:|&#34;, &#34;X: 10\nT: Cooley&#39;s\nR: reel\nM: 4/4\nL: 1/8\nK: Edor\n|:D2|EBBA B2 EB|B2 AB dBAF|DF F2 A3B|AF F2 dBAF|\nEBBA B2 EB|B2 AB defg|afec dBAF|DEFD E2:|\n|:gf|eB B2 egfg|eB B2 gedB|A2 FA DAFA|A2 FA defg|\neB B2 egfg|eB B2 defg|afec dBAF|DEFD E2:|&#34;]}
+</pre>
+</div>
 </div>
 
 </div>
