@@ -19,14 +19,15 @@ a {
     color: #333;
     text-decoration: none;
     padding-left: 0;
-    transition: padding-left .2s ease;
+    //transition: padding-left .2s ease;
 
 }
 
 a:hover {
     color: #669;
-    padding-left: 5px;
-    transition: padding-left .2s ease;
+    //padding-left: 5px;
+    //transition: padding-left .2s ease;
+    text-decoration: underline;
 }
 
 #github-fork {
