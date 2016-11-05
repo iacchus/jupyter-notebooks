@@ -37,7 +37,7 @@ file_contents = """
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
 
-    <title>Iacchi Mercurii' Jupyter Notebooks</title>
+    <title>Iacchus Mercurius Jupyter Notebooks</title>
 
     <link href="index_files/featherlight.min.css" type="text/css" rel="stylesheet" />
     <link rel="stylesheet" href="index_files/style.css">
@@ -48,6 +48,7 @@ file_contents = """
 
   </head>
   <body>
+    <a href="https://github.com/iacchus/jupyter-notebooks/"><img id="github-fork" src="index_files/github-corner-right.svg" /></a>
     <div id="page-container">
       <h1>Index of Jupyter Notebooks exported to html</h1>
 

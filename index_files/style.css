@@ -29,6 +29,13 @@ a:hover {
     transition: padding-left .2s ease;
 }
 
+#github-fork {
+    width: 90px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
 #page-container {
     width: 800px;
     margin: 0 auto;
