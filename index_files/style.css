@@ -13,6 +13,7 @@ h1
 {
     font-family: 'Oswald', serif;
     font-size: 26px;
+    text-align: center;
 }
 
 a {
@@ -64,7 +65,7 @@ a:hover {
 }
 
 #files > a:before {
-    content: '\2192    ';
+    //content: '\2192    ';
 }
 
 #files > a {
