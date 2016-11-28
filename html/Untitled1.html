@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8" />
-<title>tonejs-tests-final</title>
+<title>Untitled1</title>
 
 <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>-->
 <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>-->
@@ -75,30 +75,23 @@ div#notebook {
   <div tabindex="-1" id="notebook" class="border-box-sizing">
     <div class="container" id="notebook-container">
 
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Tone.js">Tone.js<a class="anchor-link" href="#Tone.js">&#182;</a></h1><p>This is how to include <a href="https://github.com/Tonejs/Tone.js"><code>tone.js</code></a> in an jupyter notebook.</p>
+    <div class="input_area code">
+import MidiFile3
+</div>
+</div>
+</div>
 
-</div>
-</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area code">
-%%js
-
-require.config({
-    paths : {
-        "Tone" : "http://cdn.tonejs.org/latest/Tone",
-    }
-});
-
-require(['Tone'],function(Tone){window.Tone = Tone;})
+dir(MidiFile3)
 </div>
 </div>
 </div>
@@ -107,23 +100,32 @@ require(['Tone'],function(Tone){window.Tone = Tone;})
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area"><div class="prompt output_prompt">Out[2]:</div>
 
 
-
-<div id="5a74674f-fa52-48f7-aeaa-bced4f86b315"></div>
-<div class="output_subarea output_javascript ">
-<script type="text/javascript">
-var element = $('#5a74674f-fa52-48f7-aeaa-bced4f86b315');
-
-require.config({
-    paths : {
-        "Tone" : "http://cdn.tonejs.org/latest/Tone",
-    }
-});
-
-require(['Tone'],function(Tone){window.Tone = Tone;})
-</script>
+<div class="output_text output_subarea output_execute_result">
+<pre>[&#39;GenericEvent&#39;,
+ &#39;MIDIEvent&#39;,
+ &#39;MIDIFile&#39;,
+ &#39;MIDIHeader&#39;,
+ &#39;MIDITrack&#39;,
+ &#39;TICKSPERBEAT&#39;,
+ &#39;__builtins__&#39;,
+ &#39;__cached__&#39;,
+ &#39;__doc__&#39;,
+ &#39;__file__&#39;,
+ &#39;__loader__&#39;,
+ &#39;__name__&#39;,
+ &#39;__package__&#39;,
+ &#39;__spec__&#39;,
+ &#39;controllerEventTypes&#39;,
+ &#39;frequencyTransform&#39;,
+ &#39;math&#39;,
+ &#39;readVarLength&#39;,
+ &#39;returnFrequency&#39;,
+ &#39;struct&#39;,
+ &#39;sys&#39;,
+ &#39;writeVarLength&#39;]</pre>
 </div>
 
 </div>
@@ -134,43 +136,18 @@ require(['Tone'],function(Tone){window.Tone = Tone;})
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area code">
-%%js
-
-//create a synth and connect it to the master output (your speakers)
-var synth = new Tone.Synth().toMaster();
-
-//play a middle 'C' for the duration of an 8th note
-synth.triggerAttackRelease("C4", "8n");
+MyMIDI = MidiFile3.MIDIFile(1)
+track = 0
+channel = 0
+pitch = 60
+time = 0
+duration = 10
+volume = 100
+MyMIDI.addNote(track,channel,pitch,time,duration,volume)
 </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt"></div>
-
-
-
-<div id="344d12c3-fb46-4684-baf5-a98252c59911"></div>
-<div class="output_subarea output_javascript ">
-<script type="text/javascript">
-var element = $('#344d12c3-fb46-4684-baf5-a98252c59911');
-
-//create a synth and connect it to the master output (your speakers)
-var synth = new Tone.Synth().toMaster();
-
-//play a middle 'C' for the duration of an 8th note
-synth.triggerAttackRelease("C4", "8n");
-</script>
-</div>
-
-</div>
-
 </div>
 </div>
 

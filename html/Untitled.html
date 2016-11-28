@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8" />
+<title>Untitled</title>
+
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>-->
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.19.0/codemirror.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.19.0/mode/python/python.js"></script>
+
+<script>
+$(document).ready(function(){
+	$('.code').each(function() {
+
+	    var $this = $(this),
+		$code = $this.html().trim();
+
+	    $this.empty();
+
+	    var myCodeMirror = CodeMirror(this, {
+		value: $code,
+		mode: 'python',
+		lineNumbers: false,
+		readOnly: true,
+                lineWrapping: true,
+                htmlMode: true,
+                matchClosing: true,       
+                indentWithTabs: true,
+	    });
+
+	});
+});
+</script>
+
+
+
+<style type="text/css">
+/* Overrides of notebook CSS for static HTML export */
+body {
+  overflow: visible;
+  padding: 8px;
+}
+
+div#notebook {
+  overflow: visible;
+  border-top: none;
+}
+
+@media print {
+  div.cell {
+    display: block;
+    page-break-inside: avoid;
+  } 
+  div.output_wrapper { 
+    display: block;
+    page-break-inside: avoid; 
+  }
+  div.output { 
+    display: block;
+    page-break-inside: avoid; 
+  }
+}
+</style>
+
+<!-- Custom stylesheet, it must be in the same directory as the html file -->
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.19.0/codemirror.css">
+<link rel="stylesheet" href="https://iacchus.github.io/jupyter-ipython-themes/custom.css">
+
+<!-- Loading mathjax macro -->
+</head>
+<body>
+  <div tabindex="-1" id="notebook" class="border-box-sizing">
+    <div class="container" id="notebook-container">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="inner_cell">
+    <div class="input_area code">
+from configobj import ConfigObj
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="inner_cell">
+    <div class="input_area code">
+cfg = """
+title = major scale
+
+    ["exercise1"]
+    key=la major
+
+    ["exercicio 2"]
+    key = c major
+"""
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="inner_cell">
+    <div class="input_area code">
+hey = ConfigObj(cfg.split('\n'))
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="inner_cell">
+    <div class="input_area code">
+dir(hey)
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[19]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[&#39;BOM&#39;,
+ &#39;__class__&#39;,
+ &#39;__contains__&#39;,
+ &#39;__delattr__&#39;,
+ &#39;__delitem__&#39;,
+ &#39;__dict__&#39;,
+ &#39;__dir__&#39;,
+ &#39;__doc__&#39;,
+ &#39;__eq__&#39;,
+ &#39;__format__&#39;,
+ &#39;__ge__&#39;,
+ &#39;__getattribute__&#39;,
+ &#39;__getitem__&#39;,
+ &#39;__gt__&#39;,
+ &#39;__hash__&#39;,
+ &#39;__init__&#39;,
+ &#39;__iter__&#39;,
+ &#39;__le__&#39;,
+ &#39;__len__&#39;,
+ &#39;__lt__&#39;,
+ &#39;__module__&#39;,
+ &#39;__ne__&#39;,
+ &#39;__new__&#39;,
+ &#39;__reduce__&#39;,
+ &#39;__reduce_ex__&#39;,
+ &#39;__repr__&#39;,
+ &#39;__setattr__&#39;,
+ &#39;__setitem__&#39;,
+ &#39;__setstate__&#39;,
+ &#39;__sizeof__&#39;,
+ &#39;__str__&#39;,
+ &#39;__subclasshook__&#39;,
+ &#39;__weakref__&#39;,
+ &#39;_a_to_u&#39;,
+ &#39;_bools&#39;,
+ &#39;_created&#39;,
+ &#39;_decode&#39;,
+ &#39;_decode_element&#39;,
+ &#39;_get_single_quote&#39;,
+ &#39;_get_triple_quote&#39;,
+ &#39;_handle_bom&#39;,
+ &#39;_handle_comment&#39;,
+ &#39;_handle_configspec&#39;,
+ &#39;_handle_error&#39;,
+ &#39;_handle_value&#39;,
+ &#39;_initialise&#39;,
+ &#39;_inspec&#39;,
+ &#39;_interpolate&#39;,
+ &#39;_keyword&#39;,
+ &#39;_listvalueexp&#39;,
+ &#39;_load&#39;,
+ &#39;_match_depth&#39;,
+ &#39;_multi_line_double&#39;,
+ &#39;_multi_line_single&#39;,
+ &#39;_multiline&#39;,
+ &#39;_nolistvalue&#39;,
+ &#39;_original_configspec&#39;,
+ &#39;_parse&#39;,
+ &#39;_quote&#39;,
+ &#39;_sectionmarker&#39;,
+ &#39;_set_configspec&#39;,
+ &#39;_single_line_double&#39;,
+ &#39;_single_line_single&#39;,
+ &#39;_str&#39;,
+ &#39;_triple_quote&#39;,
+ &#39;_unquote&#39;,
+ &#39;_valueexp&#39;,
+ &#39;_write_line&#39;,
+ &#39;_write_marker&#39;,
+ &#39;as_bool&#39;,
+ &#39;as_float&#39;,
+ &#39;as_int&#39;,
+ &#39;as_list&#39;,
+ &#39;clear&#39;,
+ &#39;comments&#39;,
+ &#39;configspec&#39;,
+ &#39;copy&#39;,
+ &#39;create_empty&#39;,
+ &#39;default_encoding&#39;,
+ &#39;default_values&#39;,
+ &#39;defaults&#39;,
+ &#39;depth&#39;,
+ &#39;dict&#39;,
+ &#39;encoding&#39;,
+ &#39;extra_values&#39;,
+ &#39;file_error&#39;,
+ &#39;filename&#39;,
+ &#39;final_comment&#39;,
+ &#39;fromkeys&#39;,
+ &#39;get&#39;,
+ &#39;indent_type&#39;,
+ &#39;initial_comment&#39;,
+ &#39;inline_comments&#39;,
+ &#39;interpolation&#39;,
+ &#39;items&#39;,
+ &#39;iteritems&#39;,
+ &#39;iterkeys&#39;,
+ &#39;itervalues&#39;,
+ &#39;keys&#39;,
+ &#39;list_values&#39;,
+ &#39;main&#39;,
+ &#39;merge&#39;,
+ &#39;name&#39;,
+ &#39;newlines&#39;,
+ &#39;parent&#39;,
+ &#39;pop&#39;,
+ &#39;popitem&#39;,
+ &#39;raise_errors&#39;,
+ &#39;reload&#39;,
+ &#39;rename&#39;,
+ &#39;reset&#39;,
+ &#39;restore_default&#39;,
+ &#39;restore_defaults&#39;,
+ &#39;scalars&#39;,
+ &#39;sections&#39;,
+ &#39;setdefault&#39;,
+ &#39;stringify&#39;,
+ &#39;unrepr&#39;,
+ &#39;update&#39;,
+ &#39;validate&#39;,
+ &#39;values&#39;,
+ &#39;walk&#39;,
+ &#39;write&#39;,
+ &#39;write_empty_values&#39;]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="inner_cell">
+    <div class="input_area code">
+dict(hey)
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[8]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>{}</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="inner_cell">
+    <div class="input_area code">
+hey['title']
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[20]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&#39;major scale&#39;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="inner_cell">
+    <div class="input_area code">
+hey.sections
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[24]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[&#39;exercise1&#39;, &#39;exercicio 2&#39;]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area code">
+
+</div>
+</div>
+</div>
+
+</div>
+    </div>
+  </div>
+</body>
+
+</html>

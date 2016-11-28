@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8" />
+<title>midi-mingus-fluidsynth</title>
+
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>-->
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.19.0/codemirror.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.19.0/mode/python/python.js"></script>
+
+<script>
+$(document).ready(function(){
+	$('.code').each(function() {
+
+	    var $this = $(this),
+		$code = $this.html().trim();
+
+	    $this.empty();
+
+	    var myCodeMirror = CodeMirror(this, {
+		value: $code,
+		mode: 'python',
+		lineNumbers: false,
+		readOnly: true,
+                lineWrapping: true,
+                htmlMode: true,
+                matchClosing: true,       
+                indentWithTabs: true,
+	    });
+
+	});
+});
+</script>
+
+
+
+<style type="text/css">
+/* Overrides of notebook CSS for static HTML export */
+body {
+  overflow: visible;
+  padding: 8px;
+}
+
+div#notebook {
+  overflow: visible;
+  border-top: none;
+}
+
+@media print {
+  div.cell {
+    display: block;
+    page-break-inside: avoid;
+  } 
+  div.output_wrapper { 
+    display: block;
+    page-break-inside: avoid; 
+  }
+  div.output { 
+    display: block;
+    page-break-inside: avoid; 
+  }
+}
+</style>
+
+<!-- Custom stylesheet, it must be in the same directory as the html file -->
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.19.0/codemirror.css">
+<link rel="stylesheet" href="https://iacchus.github.io/jupyter-ipython-themes/custom.css">
+
+<!-- Loading mathjax macro -->
+</head>
+<body>
+  <div tabindex="-1" id="notebook" class="border-box-sizing">
+    <div class="container" id="notebook-container">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="inner_cell">
+    <div class="input_area code">
+>>> from mingus.midi import fluidsynth
+>>> fluidsynth.init('/usr/share/sounds/sf2/FluidR3_GM.sf2',"alsa")
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">ImportError</span>                               Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-1-b7781e77d2c8&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span><span class="ansi-green-fg">from</span> mingus<span class="ansi-blue-fg">.</span>midi <span class="ansi-green-fg">import</span> fluidsynth
+<span class="ansi-green-intense-fg ansi-bold">      2</span> fluidsynth<span class="ansi-blue-fg">.</span>init<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#39;/usr/share/sounds/sf2/FluidR3_GM.sf2&#39;</span><span class="ansi-blue-fg">,</span><span class="ansi-blue-fg">&#34;alsa&#34;</span><span class="ansi-blue-fg">)</span>
+
+<span class="ansi-green-fg">/home/iacchus/git-stuff/jupyter-venv/venv/lib/python3.5/site-packages/mingus/midi/fluidsynth.py</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-intense-fg ansi-bold">     32</span> &#34;&#34;&#34;
+<span class="ansi-green-intense-fg ansi-bold">     33</span> 
+<span class="ansi-green-fg">---&gt; 34</span><span class="ansi-red-fg"> </span><span class="ansi-green-fg">from</span> mingus<span class="ansi-blue-fg">.</span>midi<span class="ansi-blue-fg">.</span>sequencer <span class="ansi-green-fg">import</span> Sequencer
+<span class="ansi-green-intense-fg ansi-bold">     35</span> <span class="ansi-green-fg">from</span> mingus<span class="ansi-blue-fg">.</span>containers<span class="ansi-blue-fg">.</span>instrument <span class="ansi-green-fg">import</span> MidiInstrument
+<span class="ansi-green-intense-fg ansi-bold">     36</span> <span class="ansi-green-fg">import</span> pyfluidsynth <span class="ansi-green-fg">as</span> fs
+
+<span class="ansi-green-fg">/home/iacchus/git-stuff/jupyter-venv/venv/lib/python3.5/site-packages/mingus/midi/sequencer.py</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-intense-fg ansi-bold">     29</span> &#34;&#34;&#34;
+<span class="ansi-green-intense-fg ansi-bold">     30</span> 
+<span class="ansi-green-fg">---&gt; 31</span><span class="ansi-red-fg"> </span><span class="ansi-green-fg">from</span> mingus<span class="ansi-blue-fg">.</span>containers<span class="ansi-blue-fg">.</span>instrument <span class="ansi-green-fg">import</span> MidiInstrument
+<span class="ansi-green-intense-fg ansi-bold">     32</span> 
+<span class="ansi-green-intense-fg ansi-bold">     33</span> <span class="ansi-green-fg">class</span> Sequencer<span class="ansi-blue-fg">(</span>object<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
+
+<span class="ansi-green-fg">/home/iacchus/git-stuff/jupyter-venv/venv/lib/python3.5/site-packages/mingus/containers/instrument.py</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-intense-fg ansi-bold">     18</span> <span class="ansi-red-fg">#    along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.</span>
+<span class="ansi-green-intense-fg ansi-bold">     19</span> 
+<span class="ansi-green-fg">---&gt; 20</span><span class="ansi-red-fg"> </span><span class="ansi-green-fg">from</span> mingus<span class="ansi-blue-fg">.</span>containers<span class="ansi-blue-fg">.</span>note <span class="ansi-green-fg">import</span> Note
+<span class="ansi-green-intense-fg ansi-bold">     21</span> <span class="ansi-green-fg">from</span> mt_exceptions <span class="ansi-green-fg">import</span> UnexpectedObjectError
+<span class="ansi-green-intense-fg ansi-bold">     22</span> 
+
+<span class="ansi-green-fg">/home/iacchus/git-stuff/jupyter-venv/venv/lib/python3.5/site-packages/mingus/containers/note.py</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-intense-fg ansi-bold">     18</span> <span class="ansi-red-fg">#    along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.</span>
+<span class="ansi-green-intense-fg ansi-bold">     19</span> 
+<span class="ansi-green-fg">---&gt; 20</span><span class="ansi-red-fg"> </span><span class="ansi-green-fg">from</span> mingus<span class="ansi-blue-fg">.</span>core <span class="ansi-green-fg">import</span> notes<span class="ansi-blue-fg">,</span> intervals
+<span class="ansi-green-intense-fg ansi-bold">     21</span> <span class="ansi-green-fg">from</span> mt_exceptions <span class="ansi-green-fg">import</span> NoteFormatError
+<span class="ansi-green-intense-fg ansi-bold">     22</span> <span class="ansi-green-fg">from</span> math <span class="ansi-green-fg">import</span> log
+
+<span class="ansi-green-fg">/home/iacchus/git-stuff/jupyter-venv/venv/lib/python3.5/site-packages/mingus/core/intervals.py</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-intense-fg ansi-bold">     32</span> &#34;&#34;&#34;
+<span class="ansi-green-intense-fg ansi-bold">     33</span> 
+<span class="ansi-green-fg">---&gt; 34</span><span class="ansi-red-fg"> </span><span class="ansi-green-fg">import</span> notes
+<span class="ansi-green-intense-fg ansi-bold">     35</span> <span class="ansi-green-fg">import</span> keys
+<span class="ansi-green-intense-fg ansi-bold">     36</span> 
+
+<span class="ansi-red-fg">ImportError</span>: No module named &#39;notes&#39;</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area code">
+
+</div>
+</div>
+</div>
+
+</div>
+    </div>
+  </div>
+</body>
+
+</html>

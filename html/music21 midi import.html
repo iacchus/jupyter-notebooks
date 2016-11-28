@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8" />
+<title>music21 midi import</title>
+
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>-->
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.19.0/codemirror.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.19.0/mode/python/python.js"></script>
+
+<script>
+$(document).ready(function(){
+	$('.code').each(function() {
+
+	    var $this = $(this),
+		$code = $this.html().trim();
+
+	    $this.empty();
+
+	    var myCodeMirror = CodeMirror(this, {
+		value: $code,
+		mode: 'python',
+		lineNumbers: false,
+		readOnly: true,
+                lineWrapping: true,
+                htmlMode: true,
+                matchClosing: true,       
+                indentWithTabs: true,
+	    });
+
+	});
+});
+</script>
+
+
+
+<style type="text/css">
+/* Overrides of notebook CSS for static HTML export */
+body {
+  overflow: visible;
+  padding: 8px;
+}
+
+div#notebook {
+  overflow: visible;
+  border-top: none;
+}
+
+@media print {
+  div.cell {
+    display: block;
+    page-break-inside: avoid;
+  } 
+  div.output_wrapper { 
+    display: block;
+    page-break-inside: avoid; 
+  }
+  div.output { 
+    display: block;
+    page-break-inside: avoid; 
+  }
+}
+</style>
+
+<!-- Custom stylesheet, it must be in the same directory as the html file -->
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.19.0/codemirror.css">
+<link rel="stylesheet" href="https://iacchus.github.io/jupyter-ipython-themes/custom.css">
+
+<!-- Loading mathjax macro -->
+</head>
+<body>
+  <div tabindex="-1" id="notebook" class="border-box-sizing">
+    <div class="container" id="notebook-container">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="inner_cell">
+    <div class="input_area code">
+from music21 import *
+
+from IPython.display import HTML, Image, Audio
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="inner_cell">
+    <div class="input_area code">
+Allemanda = converter.parse('vp1-1al.mid')
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="inner_cell">
+    <div class="input_area code">
+Allemanda.write()
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">LilyTranslateException</span>                    Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-4-f1d8253469a4&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>Allemanda<span class="ansi-blue-fg">.</span>write<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
+
+<span class="ansi-green-fg">/home/iacchus/git-stuff/jupyter-venv/venv/lib/python3.5/site-packages/music21/stream/__init__.py</span> in <span class="ansi-cyan-fg">write</span><span class="ansi-blue-fg">(self, *args, **kwargs)</span>
+<span class="ansi-green-intense-fg ansi-bold">    248</span>         <span class="ansi-green-fg">if</span> self<span class="ansi-blue-fg">.</span>isSorted <span class="ansi-green-fg">is</span> <span class="ansi-green-fg">False</span> <span class="ansi-green-fg">and</span> self<span class="ansi-blue-fg">.</span>autoSort<span class="ansi-blue-fg">:</span>
+<span class="ansi-green-intense-fg ansi-bold">    249</span>             self<span class="ansi-blue-fg">.</span>sort<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-fg">--&gt; 250</span><span class="ansi-red-fg">         </span><span class="ansi-green-fg">return</span> super<span class="ansi-blue-fg">(</span>Stream<span class="ansi-blue-fg">,</span> self<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">.</span>write<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">*</span>args<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">**</span>kwargs<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    251</span> 
+<span class="ansi-green-intense-fg ansi-bold">    252</span> 
+
+<span class="ansi-green-fg">/home/iacchus/git-stuff/jupyter-venv/venv/lib/python3.5/site-packages/music21/base.py</span> in <span class="ansi-cyan-fg">write</span><span class="ansi-blue-fg">(self, fmt, fp, **keywords)</span>
+<span class="ansi-green-intense-fg ansi-bold">   2512</span>         scClass <span class="ansi-blue-fg">=</span> common<span class="ansi-blue-fg">.</span>findSubConverterForFormat<span class="ansi-blue-fg">(</span>regularizedConverterFormat<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">   2513</span>         formatWriter <span class="ansi-blue-fg">=</span> scClass<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-fg">-&gt; 2514</span><span class="ansi-red-fg">         </span><span class="ansi-green-fg">return</span> formatWriter<span class="ansi-blue-fg">.</span>write<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">,</span> regularizedConverterFormat<span class="ansi-blue-fg">,</span> fp<span class="ansi-blue-fg">,</span> subformats<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">**</span>keywords<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">   2515</span> 
+<span class="ansi-green-intense-fg ansi-bold">   2516</span> 
+
+<span class="ansi-green-fg">/home/iacchus/git-stuff/jupyter-venv/venv/lib/python3.5/site-packages/music21/converter/subConverters.py</span> in <span class="ansi-cyan-fg">write</span><span class="ansi-blue-fg">(self, obj, fmt, fp, subformats, **keywords)</span>
+<span class="ansi-green-intense-fg ansi-bold">    380</span> 
+<span class="ansi-green-intense-fg ansi-bold">    381</span>         <span class="ansi-green-fg">elif</span> subformats <span class="ansi-green-fg">is</span> <span class="ansi-green-fg">not</span> <span class="ansi-green-fg">None</span> <span class="ansi-green-fg">and</span> <span class="ansi-blue-fg">&#39;png&#39;</span> <span class="ansi-green-fg">in</span> subformats<span class="ansi-blue-fg">:</span>
+<span class="ansi-green-fg">--&gt; 382</span><span class="ansi-red-fg">             </span>conv<span class="ansi-blue-fg">.</span>loadFromMusic21Object<span class="ansi-blue-fg">(</span>obj<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    383</span>             convertedFilePath <span class="ansi-blue-fg">=</span> conv<span class="ansi-blue-fg">.</span>createPNG<span class="ansi-blue-fg">(</span>fp<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    384</span>             <span class="ansi-green-fg">if</span> <span class="ansi-blue-fg">&#39;ipython&#39;</span> <span class="ansi-green-fg">in</span> subformats<span class="ansi-blue-fg">:</span>
+
+<span class="ansi-green-fg">/home/iacchus/git-stuff/jupyter-venv/venv/lib/python3.5/site-packages/music21/lily/translate.py</span> in <span class="ansi-cyan-fg">loadFromMusic21Object</span><span class="ansi-blue-fg">(self, m21ObjectIn)</span>
+<span class="ansi-green-intense-fg ansi-bold">    296</span>             self<span class="ansi-blue-fg">.</span>loadObjectFromScore<span class="ansi-blue-fg">(</span>scoreObj<span class="ansi-blue-fg">,</span> makeNotation<span class="ansi-blue-fg">=</span><span class="ansi-green-fg">False</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    297</span>         <span class="ansi-green-fg">elif</span> <span class="ansi-blue-fg">&#39;Score&#39;</span> <span class="ansi-green-fg">in</span> c<span class="ansi-blue-fg">:</span>
+<span class="ansi-green-fg">--&gt; 298</span><span class="ansi-red-fg">             </span>self<span class="ansi-blue-fg">.</span>loadObjectFromScore<span class="ansi-blue-fg">(</span>m21ObjectIn<span class="ansi-blue-fg">,</span> makeNotation<span class="ansi-blue-fg">=</span><span class="ansi-green-fg">False</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    299</span>         <span class="ansi-green-fg">elif</span> <span class="ansi-blue-fg">&#39;Opus&#39;</span> <span class="ansi-green-fg">in</span> c<span class="ansi-blue-fg">:</span>
+<span class="ansi-green-intense-fg ansi-bold">    300</span>             self<span class="ansi-blue-fg">.</span>loadObjectFromOpus<span class="ansi-blue-fg">(</span>m21ObjectIn<span class="ansi-blue-fg">,</span> makeNotation<span class="ansi-blue-fg">=</span><span class="ansi-green-fg">False</span><span class="ansi-blue-fg">)</span>
+
+<span class="ansi-green-fg">/home/iacchus/git-stuff/jupyter-venv/venv/lib/python3.5/site-packages/music21/lily/translate.py</span> in <span class="ansi-cyan-fg">loadObjectFromScore</span><span class="ansi-blue-fg">(self, scoreIn, makeNotation)</span>
+<span class="ansi-green-intense-fg ansi-bold">    372</span> 
+<span class="ansi-green-intense-fg ansi-bold">    373</span>         <span class="ansi-red-fg"># here&#39;s the heavy work...</span>
+<span class="ansi-green-fg">--&gt; 374</span><span class="ansi-red-fg">         </span>lpScoreBlock <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>lyScoreBlockFromScore<span class="ansi-blue-fg">(</span>scoreIn<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    375</span> 
+<span class="ansi-green-intense-fg ansi-bold">    376</span>         lpOutputDefHead <span class="ansi-blue-fg">=</span> lyo<span class="ansi-blue-fg">.</span>LyOutputDefHead<span class="ansi-blue-fg">(</span>defType<span class="ansi-blue-fg">=</span><span class="ansi-blue-fg">&#39;paper&#39;</span><span class="ansi-blue-fg">)</span>
+
+<span class="ansi-green-fg">/home/iacchus/git-stuff/jupyter-venv/venv/lib/python3.5/site-packages/music21/lily/translate.py</span> in <span class="ansi-cyan-fg">lyScoreBlockFromScore</span><span class="ansi-blue-fg">(self, scoreIn)</span>
+<span class="ansi-green-intense-fg ansi-bold">    402</span>                                                        scoreInit=lpPartsAndOssiaInit)
+<span class="ansi-green-intense-fg ansi-bold">    403</span>             <span class="ansi-green-fg">else</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-fg">--&gt; 404</span><span class="ansi-red-fg">                 </span>lpGroupedMusicList <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>lyGroupedMusicListFromScoreWithParts<span class="ansi-blue-fg">(</span>scoreIn<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    405</span>             lpCompositeMusic<span class="ansi-blue-fg">.</span>groupedMusicList <span class="ansi-blue-fg">=</span> lpGroupedMusicList
+<span class="ansi-green-intense-fg ansi-bold">    406</span>         <span class="ansi-green-fg">else</span><span class="ansi-blue-fg">:</span>
+
+<span class="ansi-green-fg">/home/iacchus/git-stuff/jupyter-venv/venv/lib/python3.5/site-packages/music21/lily/translate.py</span> in <span class="ansi-cyan-fg">lyGroupedMusicListFromScoreWithParts</span><span class="ansi-blue-fg">(self, scoreIn, scoreInit)</span>
+<span class="ansi-green-intense-fg ansi-bold">    683</span>         <span class="ansi-green-fg">if</span> scoreInit <span class="ansi-green-fg">is</span> <span class="ansi-green-fg">None</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-intense-fg ansi-bold">    684</span>             <span class="ansi-green-fg">for</span> p <span class="ansi-green-fg">in</span> scoreIn<span class="ansi-blue-fg">.</span>parts<span class="ansi-blue-fg">:</span>
+<span class="ansi-green-fg">--&gt; 685</span><span class="ansi-red-fg">                 </span>compositeMusicList<span class="ansi-blue-fg">.</span>append<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">.</span>lyPrefixCompositeMusicFromStream<span class="ansi-blue-fg">(</span>p<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    686</span>         <span class="ansi-green-fg">else</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-intense-fg ansi-bold">    687</span>             compositeMusicList<span class="ansi-blue-fg">.</span>append<span class="ansi-blue-fg">(</span>scoreInit<span class="ansi-blue-fg">)</span>
+
+<span class="ansi-green-fg">/home/iacchus/git-stuff/jupyter-venv/venv/lib/python3.5/site-packages/music21/lily/translate.py</span> in <span class="ansi-cyan-fg">lyPrefixCompositeMusicFromStream</span><span class="ansi-blue-fg">(self, streamIn, contextType, type, beforeMatter)</span>
+<span class="ansi-green-intense-fg ansi-bold">    902</span>         lpNewLyrics <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>lyNewLyricsFromStream<span class="ansi-blue-fg">(</span>streamIn<span class="ansi-blue-fg">,</span> streamId<span class="ansi-blue-fg">=</span>makeLettersOnlyId<span class="ansi-blue-fg">(</span>streamIn<span class="ansi-blue-fg">.</span>id<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    903</span> 
+<span class="ansi-green-fg">--&gt; 904</span><span class="ansi-red-fg">         </span>lpSequentialMusic <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>lySequentialMusicFromStream<span class="ansi-blue-fg">(</span>streamIn<span class="ansi-blue-fg">,</span> beforeMatter<span class="ansi-blue-fg">=</span>beforeMatter<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    905</span>         lpGroupedMusicList <span class="ansi-blue-fg">=</span> lyo<span class="ansi-blue-fg">.</span>LyGroupedMusicList<span class="ansi-blue-fg">(</span>sequentialMusic<span class="ansi-blue-fg">=</span>lpSequentialMusic<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    906</span>         lpCompositeMusic = lyo.LyCompositeMusic(groupedMusicList=lpGroupedMusicList, 
+
+<span class="ansi-green-fg">/home/iacchus/git-stuff/jupyter-venv/venv/lib/python3.5/site-packages/music21/lily/translate.py</span> in <span class="ansi-cyan-fg">lySequentialMusicFromStream</span><span class="ansi-blue-fg">(self, streamIn, beforeMatter)</span>
+<span class="ansi-green-intense-fg ansi-bold">    831</span>                                                   beforeMatter=beforeMatter)
+<span class="ansi-green-intense-fg ansi-bold">    832</span>         self<span class="ansi-blue-fg">.</span>newContext<span class="ansi-blue-fg">(</span>lpMusicList<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-fg">--&gt; 833</span><span class="ansi-red-fg">         </span>self<span class="ansi-blue-fg">.</span>appendObjectsToContextFromStream<span class="ansi-blue-fg">(</span>streamIn<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    834</span> 
+<span class="ansi-green-intense-fg ansi-bold">    835</span>         lyObject <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>closeMeasure<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
+
+<span class="ansi-green-fg">/home/iacchus/git-stuff/jupyter-venv/venv/lib/python3.5/site-packages/music21/lily/translate.py</span> in <span class="ansi-cyan-fg">appendObjectsToContextFromStream</span><span class="ansi-blue-fg">(self, streamObject)</span>
+<span class="ansi-green-intense-fg ansi-bold">   1010</span>                     <span class="ansi-green-fg">for</span> voice <span class="ansi-green-fg">in</span> voiceList<span class="ansi-blue-fg">:</span>
+<span class="ansi-green-intense-fg ansi-bold">   1011</span>                         <span class="ansi-green-fg">if</span> voice <span class="ansi-green-fg">not</span> <span class="ansi-green-fg">in</span> self<span class="ansi-blue-fg">.</span>doNotOutput<span class="ansi-blue-fg">:</span>
+<span class="ansi-green-fg">-&gt; 1012</span><span class="ansi-red-fg">                             </span>lpPrefixCompositeMusic <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>lyPrefixCompositeMusicFromStream<span class="ansi-blue-fg">(</span>voice<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">   1013</span>                             musicList2<span class="ansi-blue-fg">.</span>append<span class="ansi-blue-fg">(</span>lpPrefixCompositeMusic<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">   1014</span> 
+
+<span class="ansi-green-fg">/home/iacchus/git-stuff/jupyter-venv/venv/lib/python3.5/site-packages/music21/lily/translate.py</span> in <span class="ansi-cyan-fg">lyPrefixCompositeMusicFromStream</span><span class="ansi-blue-fg">(self, streamIn, contextType, type, beforeMatter)</span>
+<span class="ansi-green-intense-fg ansi-bold">    902</span>         lpNewLyrics <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>lyNewLyricsFromStream<span class="ansi-blue-fg">(</span>streamIn<span class="ansi-blue-fg">,</span> streamId<span class="ansi-blue-fg">=</span>makeLettersOnlyId<span class="ansi-blue-fg">(</span>streamIn<span class="ansi-blue-fg">.</span>id<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    903</span> 
+<span class="ansi-green-fg">--&gt; 904</span><span class="ansi-red-fg">         </span>lpSequentialMusic <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>lySequentialMusicFromStream<span class="ansi-blue-fg">(</span>streamIn<span class="ansi-blue-fg">,</span> beforeMatter<span class="ansi-blue-fg">=</span>beforeMatter<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    905</span>         lpGroupedMusicList <span class="ansi-blue-fg">=</span> lyo<span class="ansi-blue-fg">.</span>LyGroupedMusicList<span class="ansi-blue-fg">(</span>sequentialMusic<span class="ansi-blue-fg">=</span>lpSequentialMusic<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    906</span>         lpCompositeMusic = lyo.LyCompositeMusic(groupedMusicList=lpGroupedMusicList, 
+
+<span class="ansi-green-fg">/home/iacchus/git-stuff/jupyter-venv/venv/lib/python3.5/site-packages/music21/lily/translate.py</span> in <span class="ansi-cyan-fg">lySequentialMusicFromStream</span><span class="ansi-blue-fg">(self, streamIn, beforeMatter)</span>
+<span class="ansi-green-intense-fg ansi-bold">    831</span>                                                   beforeMatter=beforeMatter)
+<span class="ansi-green-intense-fg ansi-bold">    832</span>         self<span class="ansi-blue-fg">.</span>newContext<span class="ansi-blue-fg">(</span>lpMusicList<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-fg">--&gt; 833</span><span class="ansi-red-fg">         </span>self<span class="ansi-blue-fg">.</span>appendObjectsToContextFromStream<span class="ansi-blue-fg">(</span>streamIn<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    834</span> 
+<span class="ansi-green-intense-fg ansi-bold">    835</span>         lyObject <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>closeMeasure<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
+
+<span class="ansi-green-fg">/home/iacchus/git-stuff/jupyter-venv/venv/lib/python3.5/site-packages/music21/lily/translate.py</span> in <span class="ansi-cyan-fg">appendObjectsToContextFromStream</span><span class="ansi-blue-fg">(self, streamObject)</span>
+<span class="ansi-green-intense-fg ansi-bold">   1022</span>                 <span class="ansi-green-fg">if</span> len<span class="ansi-blue-fg">(</span>otherList<span class="ansi-blue-fg">)</span> <span class="ansi-blue-fg">&gt;</span> <span class="ansi-cyan-fg">0</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-intense-fg ansi-bold">   1023</span>                     <span class="ansi-green-fg">for</span> el <span class="ansi-green-fg">in</span> otherList<span class="ansi-blue-fg">:</span>
+<span class="ansi-green-fg">-&gt; 1024</span><span class="ansi-red-fg">                         </span>self<span class="ansi-blue-fg">.</span>appendM21ObjectToContext<span class="ansi-blue-fg">(</span>el<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">   1025</span> 
+<span class="ansi-green-intense-fg ansi-bold">   1026</span> 
+
+<span class="ansi-green-fg">/home/iacchus/git-stuff/jupyter-venv/venv/lib/python3.5/site-packages/music21/lily/translate.py</span> in <span class="ansi-cyan-fg">appendM21ObjectToContext</span><span class="ansi-blue-fg">(self, thisObject)</span>
+<span class="ansi-green-intense-fg ansi-bold">   1082</span>             <span class="ansi-red-fg">#    raise Exception(&#34;Cannot parse %s: %s&#34; % (thisObject, str(ae)))</span>
+<span class="ansi-green-intense-fg ansi-bold">   1083</span>         <span class="ansi-green-fg">elif</span> <span class="ansi-blue-fg">&#34;Note&#34;</span> <span class="ansi-green-fg">in</span> c <span class="ansi-green-fg">or</span> <span class="ansi-blue-fg">&#34;Rest&#34;</span> <span class="ansi-green-fg">in</span> c<span class="ansi-blue-fg">:</span>
+<span class="ansi-green-fg">-&gt; 1084</span><span class="ansi-red-fg">             </span>self<span class="ansi-blue-fg">.</span>appendContextFromNoteOrRest<span class="ansi-blue-fg">(</span>thisObject<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">   1085</span>         <span class="ansi-green-fg">elif</span> <span class="ansi-blue-fg">&#34;Chord&#34;</span> <span class="ansi-green-fg">in</span> c<span class="ansi-blue-fg">:</span>
+<span class="ansi-green-intense-fg ansi-bold">   1086</span>             self<span class="ansi-blue-fg">.</span>appendContextFromChord<span class="ansi-blue-fg">(</span>thisObject<span class="ansi-blue-fg">)</span>
+
+<span class="ansi-green-fg">/home/iacchus/git-stuff/jupyter-venv/venv/lib/python3.5/site-packages/music21/lily/translate.py</span> in <span class="ansi-cyan-fg">appendContextFromNoteOrRest</span><span class="ansi-blue-fg">(self, noteOrRest)</span>
+<span class="ansi-green-intense-fg ansi-bold">   1174</span>         self<span class="ansi-blue-fg">.</span>appendStemCode<span class="ansi-blue-fg">(</span>noteOrRest<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">   1175</span> 
+<span class="ansi-green-fg">-&gt; 1176</span><span class="ansi-red-fg">         </span>lpSimpleMusic <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>lySimpleMusicFromNoteOrRest<span class="ansi-blue-fg">(</span>noteOrRest<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">   1177</span>         self<span class="ansi-blue-fg">.</span>context<span class="ansi-blue-fg">.</span>contents<span class="ansi-blue-fg">.</span>append<span class="ansi-blue-fg">(</span>lpSimpleMusic<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">   1178</span>         lpSimpleMusic<span class="ansi-blue-fg">.</span>setParent<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">.</span>context<span class="ansi-blue-fg">)</span>
+
+<span class="ansi-green-fg">/home/iacchus/git-stuff/jupyter-venv/venv/lib/python3.5/site-packages/music21/lily/translate.py</span> in <span class="ansi-cyan-fg">lySimpleMusicFromNoteOrRest</span><span class="ansi-blue-fg">(self, noteOrRest)</span>
+<span class="ansi-green-intense-fg ansi-bold">   1295</span>                 simpleElementParts<span class="ansi-blue-fg">.</span>append<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#34;r &#34;</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">   1296</span> 
+<span class="ansi-green-fg">-&gt; 1297</span><span class="ansi-red-fg">         </span>lpMultipliedDuration <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>lyMultipliedDurationFromDuration<span class="ansi-blue-fg">(</span>noteOrRest<span class="ansi-blue-fg">.</span>duration<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">   1298</span>         simpleElementParts<span class="ansi-blue-fg">.</span>append<span class="ansi-blue-fg">(</span>lpMultipliedDuration<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">   1299</span> 
+
+<span class="ansi-green-fg">/home/iacchus/git-stuff/jupyter-venv/venv/lib/python3.5/site-packages/music21/lily/translate.py</span> in <span class="ansi-cyan-fg">lyMultipliedDurationFromDuration</span><span class="ansi-blue-fg">(self, durationObj)</span>
+<span class="ansi-green-intense-fg ansi-bold">   1560</span>                 number_type <span class="ansi-blue-fg">=</span> <span class="ansi-blue-fg">r&#39;\longa&#39;</span>
+<span class="ansi-green-intense-fg ansi-bold">   1561</span>             <span class="ansi-green-fg">else</span><span class="ansi-blue-fg">:</span> <span class="ansi-red-fg"># pragma no cover</span>
+<span class="ansi-green-fg">-&gt; 1562</span><span class="ansi-red-fg">                 </span><span class="ansi-green-fg">raise</span> LilyTranslateException<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#34;Cannot support durations longer than longa&#34;</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">   1563</span>         <span class="ansi-green-fg">else</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-intense-fg ansi-bold">   1564</span>             number_type <span class="ansi-blue-fg">=</span> int<span class="ansi-blue-fg">(</span>number_type<span class="ansi-blue-fg">)</span>
+
+<span class="ansi-red-fg">LilyTranslateException</span>: Cannot support durations longer than longa</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area code">
+
+</div>
+</div>
+</div>
+
+</div>
+    </div>
+  </div>
+</body>
+
+</html>

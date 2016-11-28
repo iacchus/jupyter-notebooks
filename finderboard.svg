@@ -1,0 +1,6695 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   font-family="Inconsolata, monospace"
+   font-weight="bold"
+   height="215.55555555555554"
+   version="1.1"
+   width="970"
+   id="svg2"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="finderboard.svg">
+  <metadata
+     id="metadata1482">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1364"
+     inkscape:window-height="750"
+     id="namedview1480"
+     showgrid="false"
+     showguides="true"
+     inkscape:guide-bbox="true"
+     inkscape:zoom="1.0344147"
+     inkscape:cx="485"
+     inkscape:cy="118.79398"
+     inkscape:window-x="0"
+     inkscape:window-y="16"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g1448">
+    <sodipodi:guide
+       position="558.92193,-447.13755"
+       orientation="0,1"
+       id="guide5610" />
+  </sodipodi:namedview>
+  <defs
+     id="defs4" />
+  <rect
+     fill="#fff"
+     height="143.7037037037037"
+     stroke="#000"
+     stroke-width="1"
+     width="970"
+     x="0"
+     y="35.925925925925924"
+     id="rect6" />
+  <g
+     id="g8">
+    <rect
+       fill="none"
+       height="35.925925925925924"
+       stroke="none"
+       stroke-width="1"
+       width="53.888888888888886"
+       x="0.0"
+       y="35.925925925925924"
+       id="rect10" />
+    <circle
+       class="note-E"
+       cx="26.944444444444443"
+       cy="53.888888888888886"
+       fill="#2ecc00"
+       r="12.574074074074074"
+       stroke="white"
+       stroke-width="0"
+       id="circle12" />
+    <text
+       alignment-baseline="middle"
+       fill="#fff"
+       font-family="Inconsolata, monospace"
+       stroke="none"
+       text-anchor="middle"
+       x="26.944444444444443"
+       y="53.888888888888886"
+       id="text14">E</text>
+  </g>
+  <g
+     id="g16">
+    <rect
+       fill="none"
+       height="35.925925925925924"
+       stroke="none"
+       stroke-width="1"
+       width="53.888888888888886"
+       x="53.888888888888886"
+       y="35.925925925925924"
+       id="rect18" />
+    <circle
+       class="note-F"
+       cx="80.83333333333333"
+       cy="53.888888888888886"
+       fill="#00cc81"
+       r="12.574074074074074"
+       stroke="white"
+       stroke-width="0"
+       id="circle20" />
+    <text
+       alignment-baseline="middle"
+       fill="#fff"
+       font-family="Inconsolata, monospace"
+       stroke="none"
+       text-anchor="middle"
+       x="80.83333333333333"
+       y="53.888888888888886"
+       id="text22">F</text>
+  </g>
+  <g
+     id="g24">
+    <rect
+       fill="none"
+       height="35.925925925925924"
+       stroke="none"
+       stroke-width="1"
+       width="53.888888888888886"
+       x="107.77777777777777"
+       y="35.925925925925924"
+       id="rect26" />
+    <circle
+       class="note-F"
+       cx="134.72222222222223"
+       cy="53.888888888888886"
+       fill="#999"
+       r="12.574074074074074"
+       stroke="white"
+       stroke-width="0"
+       id="circle28" />
+    <text
+       alignment-baseline="middle"
+       fill="#fff"
+       font-family="Inconsolata, monospace"
+       stroke="none"
+       text-anchor="middle"
+       x="134.72222222222223"
+       y="53.888888888888886"
+       id="text30">F♯</text>
+  </g>
+  <g
+     id="g32">
+    <rect
+       fill="none"
+       height="35.925925925925924"
+       stroke="none"
+       stroke-width="1"
+       width="53.888888888888886"
+       x="161.66666666666666"
+       y="35.925925925925924"
+       id="rect34" />
+    <circle
+       class="note-G"
+       cx="188.6111111111111"
+       cy="53.888888888888886"
+       fill="#0068cc"
+       r="12.574074074074074"
+       stroke="white"
+       stroke-width="0"
+       id="circle36" />
+    <text
+       alignment-baseline="middle"
+       fill="#fff"
+       font-family="Inconsolata, monospace"
+       stroke="none"
+       text-anchor="middle"
+       x="188.6111111111111"
+       y="53.888888888888886"
+       id="text38">G</text>
+  </g>
+  <g
+     id="g40">
+    <rect
+       fill="none"
+       height="35.925925925925924"
+       stroke="none"
+       stroke-width="1"
+       width="53.888888888888886"
+       x="215.55555555555554"
+       y="35.925925925925924"
+       id="rect42" />
+    <circle
+       class="note-G"
+       cx="242.5"
+       cy="53.888888888888886"
+       fill="#999"
+       r="12.574074074074074"
+       stroke="white"
+       stroke-width="0"
+       id="circle44" />
+    <text
+       alignment-baseline="middle"
+       fill="#fff"
+       font-family="Inconsolata, monospace"
+       stroke="none"
+       text-anchor="middle"
+       x="242.5"
+       y="53.888888888888886"
+       id="text46">A♭</text>
+  </g>
+  <g
+     id="g48">
+    <rect
+       fill="none"
+       height="35.925925925925924"
+       stroke="none"
+       stroke-width="1"
+       width="53.888888888888886"
+       x="269.44444444444446"
+       y="35.925925925925924"
+       id="rect50" />
+    <circle
+       class="note-A"
+       cx="296.3888888888889"
+       cy="53.888888888888886"
+       fill="#4700cc"
+       r="12.574074074074074"
+       stroke="white"
+       stroke-width="0"
+       id="circle52" />
+    <text
+       alignment-baseline="middle"
+       fill="#fff"
+       font-family="Inconsolata, monospace"
+       stroke="none"
+       text-anchor="middle"
+       x="296.3888888888889"
+       y="53.888888888888886"
+       id="text54">A</text>
+  </g>
+  <g
+     id="g56">
+    <rect
+       fill="none"
+       height="35.925925925925924"
+       stroke="none"
+       stroke-width="1"
+       width="53.888888888888886"
+       x="323.3333333333333"
+       y="35.925925925925924"
+       id="rect58" />
+    <circle
+       class="note-A"
+       cx="350.27777777777777"
+       cy="53.888888888888886"
+       fill="#999"
+       r="12.574074074074074"
+       stroke="white"
+       stroke-width="0"
+       id="circle60" />
+    <text
+       alignment-baseline="middle"
+       fill="#fff"
+       font-family="Inconsolata, monospace"
+       stroke="none"
+       text-anchor="middle"
+       x="350.27777777777777"
+       y="53.888888888888886"
+       id="text62">B♭</text>
+  </g>
+  <g
+     id="g64">
+    <rect
+       fill="none"
+       height="35.925925925925924"
+       stroke="none"
+       stroke-width="1"
+       width="53.888888888888886"
+       x="377.2222222222222"
+       y="35.925925925925924"
+       id="rect66" />
+    <circle
+       class="note-B"
+       cx="404.16666666666663"
+       cy="53.888888888888886"
+       fill="#cc00a3"
+       r="12.574074074074074"
+       stroke="white"
+       stroke-width="0"
+       id="circle68" />
+    <text
+       alignment-baseline="middle"
+       fill="#fff"
+       font-family="Inconsolata, monospace"
+       stroke="none"
+       text-anchor="middle"
+       x="404.16666666666663"
+       y="53.888888888888886"
+       id="text70">B</text>
+  </g>
+  <g
+     id="g72">
+    <rect
+       fill="none"
+       height="35.925925925925924"
+       stroke="none"
+       stroke-width="1"
+       width="53.888888888888886"
+       x="431.1111111111111"
+       y="35.925925925925924"
+       id="rect74" />
+    <circle
+       class="note-C"
+       cx="458.05555555555554"
+       cy="53.888888888888886"
+       fill="#cc0c00"
+       r="12.574074074074074"
+       stroke="white"
+       stroke-width="0"
+       id="circle76" />
+    <text
+       alignment-baseline="middle"
+       fill="#fff"
+       font-family="Inconsolata, monospace"
+       stroke="none"
+       text-anchor="middle"
+       x="458.05555555555554"
+       y="53.888888888888886"
+       id="text78">C</text>
+  </g>
+  <g
+     id="g80">
+    <rect
+       fill="none"
+       height="35.925925925925924"
+       stroke="none"
+       stroke-width="1"
+       width="53.888888888888886"
+       x="485.0"
+       y="35.925925925925924"
+       id="rect82" />
+    <circle
+       class="note-C"
+       cx="511.94444444444446"
+       cy="53.888888888888886"
+       fill="#999"
+       r="12.574074074074074"
+       stroke="white"
+       stroke-width="0"
+       id="circle84" />
+    <text
+       alignment-baseline="middle"
+       fill="#fff"
+       font-family="Inconsolata, monospace"
+       stroke="none"
+       text-anchor="middle"
+       x="511.94444444444446"
+       y="53.888888888888886"
+       id="text86">C♯</text>
+  </g>
+  <g
+     id="g88">
+    <rect
+       fill="none"
+       height="35.925925925925924"
+       stroke="none"
+       stroke-width="1"
+       width="53.888888888888886"
+       x="538.8888888888889"
+       y="35.925925925925924"
+       id="rect90" />
+    <circle
+       class="note-D"
+       cx="565.8333333333334"
+       cy="53.888888888888886"
+       fill="#ccbb00"
+       r="12.574074074074074"
+       stroke="white"
+       stroke-width="0"
+       id="circle92" />
+    <text
+       alignment-baseline="middle"
+       fill="#fff"
+       font-family="Inconsolata, monospace"
+       stroke="none"
+       text-anchor="middle"
+       x="565.8333333333334"
+       y="53.888888888888886"
+       id="text94">D</text>
+  </g>
+  <g
+     id="g96">
+    <rect
+       fill="none"
+       height="35.925925925925924"
+       stroke="none"
+       stroke-width="1"
+       width="53.888888888888886"
+       x="592.7777777777777"
+       y="35.925925925925924"
+       id="rect98" />
+    <circle
+       class="note-D"
+       cx="619.7222222222222"
+       cy="53.888888888888886"
+       fill="#999"
+       r="12.574074074074074"
+       stroke="white"
+       stroke-width="0"
+       id="circle100" />
+    <text
+       alignment-baseline="middle"
+       fill="#fff"
+       font-family="Inconsolata, monospace"
+       stroke="none"
+       text-anchor="middle"
+       x="619.7222222222222"
+       y="53.888888888888886"
+       id="text102">E♭</text>
+  </g>
+  <g
+     id="g104">
+    <rect
+       fill="none"
+       height="35.925925925925924"
+       stroke="none"
+       stroke-width="1"
+       width="53.888888888888886"
+       x="646.6666666666666"
+       y="35.925925925925924"
+       id="rect106" />
+    <circle
+       class="note-E"
+       cx="673.6111111111111"
+       cy="53.888888888888886"
+       fill="#2ecc00"
+       r="12.574074074074074"
+       stroke="white"
+       stroke-width="0"
+       id="circle108" />
+    <text
+       alignment-baseline="middle"
+       fill="#fff"
+       font-family="Inconsolata, monospace"
+       stroke="none"
+       text-anchor="middle"
+       x="673.6111111111111"
+       y="53.888888888888886"
+       id="text110">E</text>
+  </g>
+  <g
+     id="g112">
+    <rect
+       fill="none"
+       height="35.925925925925924"
+       stroke="none"
+       stroke-width="1"
+       width="53.888888888888886"
+       x="700.5555555555555"
+       y="35.925925925925924"
+       id="rect114" />
+    <circle
+       class="note-F"
+       cx="727.5"
+       cy="53.888888888888886"
+       fill="#00cc81"
+       r="12.574074074074074"
+       stroke="white"
+       stroke-width="0"
+       id="circle116" />
+    <text
+       alignment-baseline="middle"
+       fill="#fff"
+       font-family="Inconsolata, monospace"
+       stroke="none"
+       text-anchor="middle"
+       x="727.5"
+       y="53.888888888888886"
+       id="text118">F</text>
+  </g>
+  <g
+     id="g120">
+    <rect
+       fill="none"
+       height="35.925925925925924"
+       stroke="none"
+       stroke-width="1"
+       width="53.888888888888886"
+       x="754.4444444444443"
+       y="35.925925925925924"
+       id="rect122" />
+    <circle
+       class="note-F"
+       cx="781.3888888888888"
+       cy="53.888888888888886"
+       fill="#999"
+       r="12.574074074074074"
+       stroke="white"
+       stroke-width="0"
+       id="circle124" />
+    <text
+       alignment-baseline="middle"
+       fill="#fff"
+       font-family="Inconsolata, monospace"
+       stroke="none"
+       text-anchor="middle"
+       x="781.3888888888888"
+       y="53.888888888888886"
+       id="text126">F♯</text>
+  </g>
+  <g
+     id="g128">
+    <rect
+       fill="none"
+       height="35.925925925925924"
+       stroke="none"
+       stroke-width="1"
+       width="53.888888888888886"
+       x="808.3333333333333"
+       y="35.925925925925924"
+       id="rect130" />
+    <circle
+       class="note-G"
+       cx="835.2777777777777"
+       cy="53.888888888888886"
+       fill="#0068cc"
+       r="12.574074074074074"
+       stroke="white"
+       stroke-width="0"
+       id="circle132" />
+    <text
+       alignment-baseline="middle"
+       fill="#fff"
+       font-family="Inconsolata, monospace"
+       stroke="none"
+       text-anchor="middle"
+       x="835.2777777777777"
+       y="53.888888888888886"
+       id="text134">G</text>
+  </g>
+  <g
+     id="g136">
+    <rect
+       fill="none"
+       height="35.925925925925924"
+       stroke="none"
+       stroke-width="1"
+       width="53.888888888888886"
+       x="862.2222222222222"
+       y="35.925925925925924"
+       id="rect138" />
+    <circle
+       class="note-G"
+       cx="889.1666666666666"
+       cy="53.888888888888886"
+       fill="#999"
+       r="12.574074074074074"
+       stroke="white"
+       stroke-width="0"
+       id="circle140" />
+    <text
+       alignment-baseline="middle"
+       fill="#fff"
+       font-family="Inconsolata, monospace"
+       stroke="none"
+       text-anchor="middle"
+       x="889.1666666666666"
+       y="53.888888888888886"
+       id="text142">A♭</text>
+  </g>
+  <g
+     id="g144">
+    <rect
+       fill="none"
+       height="35.925925925925924"
+       stroke="none"
+       stroke-width="1"
+       width="53.888888888888886"
+       x="916.1111111111111"
+       y="35.925925925925924"
+       id="rect146" />
+    <circle
+       class="note-A"
+       cx="943.0555555555555"
+       cy="53.888888888888886"
+       fill="#4700cc"
+       r="12.574074074074074"
+       stroke="white"
+       stroke-width="0"
+       id="circle148" />
+    <text
+       alignment-baseline="middle"
+       fill="#fff"
+       font-family="Inconsolata, monospace"
+       stroke="none"
+       text-anchor="middle"
+       x="943.0555555555555"
+       y="53.888888888888886"
+       id="text150">A</text>
+  </g>
+  <g
+     id="g152">
+    <line
+       fill="none"
+       stroke="#333"
+       stroke-width="3"
+       x1="53.888888888888886"
+       x2="53.888888888888886"
+       y1="35.925925925925924"
+       y2="179.62962962962962"
+       id="line154" />
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="35.925925925925924"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="269.44444444444446"
+       y="0"
+       id="rect156" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="431.1111111111111"
+       y="8.981481481481481"
+       id="text158">3rd position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="35.925925925925924"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="646.6666666666666"
+       y="0"
+       id="rect160" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="808.3333333333333"
+       y="8.981481481481481"
+       id="text162">7th position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="17.962962962962962"
+       stroke="#000"
+       stroke-width="1"
+       width="377.2222222222222"
+       x="53.888888888888886"
+       y="17.962962962962962"
+       id="rect164" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="242.49999999999997"
+       y="26.944444444444443"
+       id="text166">1st position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="35.925925925925924"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="377.2222222222222"
+       y="179.62962962962962"
+       id="rect168" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="538.8888888888888"
+       y="206.57407407407408"
+       id="text170">4th position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="17.962962962962962"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="161.66666666666666"
+       y="179.62962962962962"
+       id="rect172" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="323.3333333333333"
+       y="188.6111111111111"
+       id="text174">2nd position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="17.962962962962962"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="431.1111111111111"
+       y="17.962962962962962"
+       id="rect176" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="592.7777777777777"
+       y="26.944444444444443"
+       id="text178">5th position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="17.962962962962962"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="538.8888888888889"
+       y="179.62962962962962"
+       id="rect180" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="700.5555555555555"
+       y="188.6111111111111"
+       id="text182">6th position</text>
+  </g>
+  <g
+     id="g184">
+    <line
+       fill="none"
+       stroke="#333"
+       stroke-width="1"
+       x1="161.66666666666666"
+       x2="161.66666666666666"
+       y1="35.925925925925924"
+       y2="179.62962962962962"
+       id="line186" />
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="35.925925925925924"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="269.44444444444446"
+       y="0"
+       id="rect188" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="431.1111111111111"
+       y="8.981481481481481"
+       id="text190">3rd position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="35.925925925925924"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="646.6666666666666"
+       y="0"
+       id="rect192" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="808.3333333333333"
+       y="8.981481481481481"
+       id="text194">7th position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="17.962962962962962"
+       stroke="#000"
+       stroke-width="1"
+       width="377.2222222222222"
+       x="53.888888888888886"
+       y="17.962962962962962"
+       id="rect196" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="242.49999999999997"
+       y="26.944444444444443"
+       id="text198">1st position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="35.925925925925924"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="377.2222222222222"
+       y="179.62962962962962"
+       id="rect200" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="538.8888888888888"
+       y="206.57407407407408"
+       id="text202">4th position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="17.962962962962962"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="161.66666666666666"
+       y="179.62962962962962"
+       id="rect204" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="323.3333333333333"
+       y="188.6111111111111"
+       id="text206">2nd position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="17.962962962962962"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="431.1111111111111"
+       y="17.962962962962962"
+       id="rect208" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="592.7777777777777"
+       y="26.944444444444443"
+       id="text210">5th position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="17.962962962962962"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="538.8888888888889"
+       y="179.62962962962962"
+       id="rect212" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="700.5555555555555"
+       y="188.6111111111111"
+       id="text214">6th position</text>
+  </g>
+  <g
+     id="g216">
+    <line
+       fill="none"
+       stroke="#333"
+       stroke-width="1"
+       x1="269.44444444444446"
+       x2="269.44444444444446"
+       y1="35.925925925925924"
+       y2="179.62962962962962"
+       id="line218" />
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="35.925925925925924"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="269.44444444444446"
+       y="0"
+       id="rect220" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="431.1111111111111"
+       y="8.981481481481481"
+       id="text222">3rd position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="35.925925925925924"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="646.6666666666666"
+       y="0"
+       id="rect224" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="808.3333333333333"
+       y="8.981481481481481"
+       id="text226">7th position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="17.962962962962962"
+       stroke="#000"
+       stroke-width="1"
+       width="377.2222222222222"
+       x="53.888888888888886"
+       y="17.962962962962962"
+       id="rect228" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="242.49999999999997"
+       y="26.944444444444443"
+       id="text230">1st position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="35.925925925925924"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="377.2222222222222"
+       y="179.62962962962962"
+       id="rect232" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="538.8888888888888"
+       y="206.57407407407408"
+       id="text234">4th position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="17.962962962962962"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="161.66666666666666"
+       y="179.62962962962962"
+       id="rect236" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="323.3333333333333"
+       y="188.6111111111111"
+       id="text238">2nd position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="17.962962962962962"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="431.1111111111111"
+       y="17.962962962962962"
+       id="rect240" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="592.7777777777777"
+       y="26.944444444444443"
+       id="text242">5th position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="17.962962962962962"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="538.8888888888889"
+       y="179.62962962962962"
+       id="rect244" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="700.5555555555555"
+       y="188.6111111111111"
+       id="text246">6th position</text>
+  </g>
+  <g
+     id="g248">
+    <line
+       fill="none"
+       stroke="#333"
+       stroke-width="1"
+       x1="377.2222222222222"
+       x2="377.2222222222222"
+       y1="35.925925925925924"
+       y2="179.62962962962962"
+       id="line250" />
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="35.925925925925924"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="269.44444444444446"
+       y="0"
+       id="rect252" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="431.1111111111111"
+       y="8.981481481481481"
+       id="text254">3rd position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="35.925925925925924"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="646.6666666666666"
+       y="0"
+       id="rect256" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="808.3333333333333"
+       y="8.981481481481481"
+       id="text258">7th position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="17.962962962962962"
+       stroke="#000"
+       stroke-width="1"
+       width="377.2222222222222"
+       x="53.888888888888886"
+       y="17.962962962962962"
+       id="rect260" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="242.49999999999997"
+       y="26.944444444444443"
+       id="text262">1st position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="35.925925925925924"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="377.2222222222222"
+       y="179.62962962962962"
+       id="rect264" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="538.8888888888888"
+       y="206.57407407407408"
+       id="text266">4th position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="17.962962962962962"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="161.66666666666666"
+       y="179.62962962962962"
+       id="rect268" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="323.3333333333333"
+       y="188.6111111111111"
+       id="text270">2nd position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="17.962962962962962"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="431.1111111111111"
+       y="17.962962962962962"
+       id="rect272" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="592.7777777777777"
+       y="26.944444444444443"
+       id="text274">5th position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="17.962962962962962"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="538.8888888888889"
+       y="179.62962962962962"
+       id="rect276" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="700.5555555555555"
+       y="188.6111111111111"
+       id="text278">6th position</text>
+  </g>
+  <g
+     id="g280">
+    <line
+       fill="none"
+       stroke="#333"
+       stroke-width="1"
+       x1="485.0"
+       x2="485.0"
+       y1="35.925925925925924"
+       y2="179.62962962962962"
+       id="line282" />
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="35.925925925925924"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="269.44444444444446"
+       y="0"
+       id="rect284" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="431.1111111111111"
+       y="8.981481481481481"
+       id="text286">3rd position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="35.925925925925924"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="646.6666666666666"
+       y="0"
+       id="rect288" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="808.3333333333333"
+       y="8.981481481481481"
+       id="text290">7th position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="17.962962962962962"
+       stroke="#000"
+       stroke-width="1"
+       width="377.2222222222222"
+       x="53.888888888888886"
+       y="17.962962962962962"
+       id="rect292" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="242.49999999999997"
+       y="26.944444444444443"
+       id="text294">1st position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="35.925925925925924"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="377.2222222222222"
+       y="179.62962962962962"
+       id="rect296" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="538.8888888888888"
+       y="206.57407407407408"
+       id="text298">4th position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="17.962962962962962"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="161.66666666666666"
+       y="179.62962962962962"
+       id="rect300" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="323.3333333333333"
+       y="188.6111111111111"
+       id="text302">2nd position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="17.962962962962962"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="431.1111111111111"
+       y="17.962962962962962"
+       id="rect304" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="592.7777777777777"
+       y="26.944444444444443"
+       id="text306">5th position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="17.962962962962962"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="538.8888888888889"
+       y="179.62962962962962"
+       id="rect308" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="700.5555555555555"
+       y="188.6111111111111"
+       id="text310">6th position</text>
+  </g>
+  <g
+     id="g312">
+    <line
+       fill="none"
+       stroke="#333"
+       stroke-width="1"
+       x1="538.8888888888889"
+       x2="538.8888888888889"
+       y1="35.925925925925924"
+       y2="179.62962962962962"
+       id="line314" />
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="35.925925925925924"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="269.44444444444446"
+       y="0"
+       id="rect316" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="431.1111111111111"
+       y="8.981481481481481"
+       id="text318">3rd position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="35.925925925925924"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="646.6666666666666"
+       y="0"
+       id="rect320" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="808.3333333333333"
+       y="8.981481481481481"
+       id="text322">7th position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="17.962962962962962"
+       stroke="#000"
+       stroke-width="1"
+       width="377.2222222222222"
+       x="53.888888888888886"
+       y="17.962962962962962"
+       id="rect324" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="242.49999999999997"
+       y="26.944444444444443"
+       id="text326">1st position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="35.925925925925924"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="377.2222222222222"
+       y="179.62962962962962"
+       id="rect328" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="538.8888888888888"
+       y="206.57407407407408"
+       id="text330">4th position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="17.962962962962962"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="161.66666666666666"
+       y="179.62962962962962"
+       id="rect332" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="323.3333333333333"
+       y="188.6111111111111"
+       id="text334">2nd position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="17.962962962962962"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="431.1111111111111"
+       y="17.962962962962962"
+       id="rect336" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="592.7777777777777"
+       y="26.944444444444443"
+       id="text338">5th position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="17.962962962962962"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="538.8888888888889"
+       y="179.62962962962962"
+       id="rect340" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="700.5555555555555"
+       y="188.6111111111111"
+       id="text342">6th position</text>
+  </g>
+  <g
+     id="g344">
+    <line
+       fill="none"
+       stroke="#333"
+       stroke-width="1"
+       x1="646.6666666666666"
+       x2="646.6666666666666"
+       y1="35.925925925925924"
+       y2="179.62962962962962"
+       id="line346" />
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="35.925925925925924"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="269.44444444444446"
+       y="0"
+       id="rect348" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="431.1111111111111"
+       y="8.981481481481481"
+       id="text350">3rd position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="35.925925925925924"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="646.6666666666666"
+       y="0"
+       id="rect352" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="808.3333333333333"
+       y="8.981481481481481"
+       id="text354">7th position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="17.962962962962962"
+       stroke="#000"
+       stroke-width="1"
+       width="377.2222222222222"
+       x="53.888888888888886"
+       y="17.962962962962962"
+       id="rect356" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="242.49999999999997"
+       y="26.944444444444443"
+       id="text358">1st position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="35.925925925925924"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="377.2222222222222"
+       y="179.62962962962962"
+       id="rect360" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="538.8888888888888"
+       y="206.57407407407408"
+       id="text362">4th position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="17.962962962962962"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="161.66666666666666"
+       y="179.62962962962962"
+       id="rect364" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="323.3333333333333"
+       y="188.6111111111111"
+       id="text366">2nd position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="17.962962962962962"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="431.1111111111111"
+       y="17.962962962962962"
+       id="rect368" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="592.7777777777777"
+       y="26.944444444444443"
+       id="text370">5th position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="17.962962962962962"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="538.8888888888889"
+       y="179.62962962962962"
+       id="rect372" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="700.5555555555555"
+       y="188.6111111111111"
+       id="text374">6th position</text>
+  </g>
+  <g
+     id="g376">
+    <rect
+       fill="none"
+       height="35.925925925925924"
+       stroke="none"
+       stroke-width="1"
+       width="53.888888888888886"
+       x="0.0"
+       y="71.85185185185185"
+       id="rect378" />
+    <circle
+       class="note-A"
+       cx="26.944444444444443"
+       cy="89.81481481481481"
+       fill="#4700cc"
+       r="12.574074074074074"
+       stroke="white"
+       stroke-width="0"
+       id="circle380" />
+    <text
+       alignment-baseline="middle"
+       fill="#fff"
+       font-family="Inconsolata, monospace"
+       stroke="none"
+       text-anchor="middle"
+       x="26.944444444444443"
+       y="89.81481481481481"
+       id="text382">A</text>
+  </g>
+  <g
+     id="g384">
+    <rect
+       fill="none"
+       height="35.925925925925924"
+       stroke="none"
+       stroke-width="1"
+       width="53.888888888888886"
+       x="53.888888888888886"
+       y="71.85185185185185"
+       id="rect386" />
+    <circle
+       class="note-A"
+       cx="80.83333333333333"
+       cy="89.81481481481481"
+       fill="#999"
+       r="12.574074074074074"
+       stroke="white"
+       stroke-width="0"
+       id="circle388" />
+    <text
+       alignment-baseline="middle"
+       fill="#fff"
+       font-family="Inconsolata, monospace"
+       stroke="none"
+       text-anchor="middle"
+       x="80.83333333333333"
+       y="89.81481481481481"
+       id="text390">B♭</text>
+  </g>
+  <g
+     id="g392">
+    <rect
+       fill="none"
+       height="35.925925925925924"
+       stroke="none"
+       stroke-width="1"
+       width="53.888888888888886"
+       x="107.77777777777777"
+       y="71.85185185185185"
+       id="rect394" />
+    <circle
+       class="note-B"
+       cx="134.72222222222223"
+       cy="89.81481481481481"
+       fill="#cc00a3"
+       r="12.574074074074074"
+       stroke="white"
+       stroke-width="0"
+       id="circle396" />
+    <text
+       alignment-baseline="middle"
+       fill="#fff"
+       font-family="Inconsolata, monospace"
+       stroke="none"
+       text-anchor="middle"
+       x="134.72222222222223"
+       y="89.81481481481481"
+       id="text398">B</text>
+  </g>
+  <g
+     id="g400">
+    <rect
+       fill="none"
+       height="35.925925925925924"
+       stroke="none"
+       stroke-width="1"
+       width="53.888888888888886"
+       x="161.66666666666666"
+       y="71.85185185185185"
+       id="rect402" />
+    <circle
+       class="note-C"
+       cx="188.6111111111111"
+       cy="89.81481481481481"
+       fill="#cc0c00"
+       r="12.574074074074074"
+       stroke="white"
+       stroke-width="0"
+       id="circle404" />
+    <text
+       alignment-baseline="middle"
+       fill="#fff"
+       font-family="Inconsolata, monospace"
+       stroke="none"
+       text-anchor="middle"
+       x="188.6111111111111"
+       y="89.81481481481481"
+       id="text406">C</text>
+  </g>
+  <g
+     id="g408">
+    <rect
+       fill="none"
+       height="35.925925925925924"
+       stroke="none"
+       stroke-width="1"
+       width="53.888888888888886"
+       x="215.55555555555554"
+       y="71.85185185185185"
+       id="rect410" />
+    <circle
+       class="note-C"
+       cx="242.5"
+       cy="89.81481481481481"
+       fill="#999"
+       r="12.574074074074074"
+       stroke="white"
+       stroke-width="0"
+       id="circle412" />
+    <text
+       alignment-baseline="middle"
+       fill="#fff"
+       font-family="Inconsolata, monospace"
+       stroke="none"
+       text-anchor="middle"
+       x="242.5"
+       y="89.81481481481481"
+       id="text414">C♯</text>
+  </g>
+  <g
+     id="g416">
+    <rect
+       fill="none"
+       height="35.925925925925924"
+       stroke="none"
+       stroke-width="1"
+       width="53.888888888888886"
+       x="269.44444444444446"
+       y="71.85185185185185"
+       id="rect418" />
+    <circle
+       class="note-D"
+       cx="296.3888888888889"
+       cy="89.81481481481481"
+       fill="#ccbb00"
+       r="12.574074074074074"
+       stroke="white"
+       stroke-width="0"
+       id="circle420" />
+    <text
+       alignment-baseline="middle"
+       fill="#fff"
+       font-family="Inconsolata, monospace"
+       stroke="none"
+       text-anchor="middle"
+       x="296.3888888888889"
+       y="89.81481481481481"
+       id="text422">D</text>
+  </g>
+  <g
+     id="g424">
+    <rect
+       fill="none"
+       height="35.925925925925924"
+       stroke="none"
+       stroke-width="1"
+       width="53.888888888888886"
+       x="323.3333333333333"
+       y="71.85185185185185"
+       id="rect426" />
+    <circle
+       class="note-D"
+       cx="350.27777777777777"
+       cy="89.81481481481481"
+       fill="#999"
+       r="12.574074074074074"
+       stroke="white"
+       stroke-width="0"
+       id="circle428" />
+    <text
+       alignment-baseline="middle"
+       fill="#fff"
+       font-family="Inconsolata, monospace"
+       stroke="none"
+       text-anchor="middle"
+       x="350.27777777777777"
+       y="89.81481481481481"
+       id="text430">E♭</text>
+  </g>
+  <g
+     id="g432">
+    <rect
+       fill="none"
+       height="35.925925925925924"
+       stroke="none"
+       stroke-width="1"
+       width="53.888888888888886"
+       x="377.2222222222222"
+       y="71.85185185185185"
+       id="rect434" />
+    <circle
+       class="note-E"
+       cx="404.16666666666663"
+       cy="89.81481481481481"
+       fill="#2ecc00"
+       r="12.574074074074074"
+       stroke="white"
+       stroke-width="0"
+       id="circle436" />
+    <text
+       alignment-baseline="middle"
+       fill="#fff"
+       font-family="Inconsolata, monospace"
+       stroke="none"
+       text-anchor="middle"
+       x="404.16666666666663"
+       y="89.81481481481481"
+       id="text438">E</text>
+  </g>
+  <g
+     id="g440">
+    <rect
+       fill="none"
+       height="35.925925925925924"
+       stroke="none"
+       stroke-width="1"
+       width="53.888888888888886"
+       x="431.1111111111111"
+       y="71.85185185185185"
+       id="rect442" />
+    <circle
+       class="note-F"
+       cx="458.05555555555554"
+       cy="89.81481481481481"
+       fill="#00cc81"
+       r="12.574074074074074"
+       stroke="white"
+       stroke-width="0"
+       id="circle444" />
+    <text
+       alignment-baseline="middle"
+       fill="#fff"
+       font-family="Inconsolata, monospace"
+       stroke="none"
+       text-anchor="middle"
+       x="458.05555555555554"
+       y="89.81481481481481"
+       id="text446">F</text>
+  </g>
+  <g
+     id="g448">
+    <rect
+       fill="none"
+       height="35.925925925925924"
+       stroke="none"
+       stroke-width="1"
+       width="53.888888888888886"
+       x="485.0"
+       y="71.85185185185185"
+       id="rect450" />
+    <circle
+       class="note-F"
+       cx="511.94444444444446"
+       cy="89.81481481481481"
+       fill="#999"
+       r="12.574074074074074"
+       stroke="white"
+       stroke-width="0"
+       id="circle452" />
+    <text
+       alignment-baseline="middle"
+       fill="#fff"
+       font-family="Inconsolata, monospace"
+       stroke="none"
+       text-anchor="middle"
+       x="511.94444444444446"
+       y="89.81481481481481"
+       id="text454">F♯</text>
+  </g>
+  <g
+     id="g456">
+    <rect
+       fill="none"
+       height="35.925925925925924"
+       stroke="none"
+       stroke-width="1"
+       width="53.888888888888886"
+       x="538.8888888888889"
+       y="71.85185185185185"
+       id="rect458" />
+    <circle
+       class="note-G"
+       cx="565.8333333333334"
+       cy="89.81481481481481"
+       fill="#0068cc"
+       r="12.574074074074074"
+       stroke="white"
+       stroke-width="0"
+       id="circle460" />
+    <text
+       alignment-baseline="middle"
+       fill="#fff"
+       font-family="Inconsolata, monospace"
+       stroke="none"
+       text-anchor="middle"
+       x="565.8333333333334"
+       y="89.81481481481481"
+       id="text462">G</text>
+  </g>
+  <g
+     id="g464">
+    <rect
+       fill="none"
+       height="35.925925925925924"
+       stroke="none"
+       stroke-width="1"
+       width="53.888888888888886"
+       x="592.7777777777777"
+       y="71.85185185185185"
+       id="rect466" />
+    <circle
+       class="note-G"
+       cx="619.7222222222222"
+       cy="89.81481481481481"
+       fill="#999"
+       r="12.574074074074074"
+       stroke="white"
+       stroke-width="0"
+       id="circle468" />
+    <text
+       alignment-baseline="middle"
+       fill="#fff"
+       font-family="Inconsolata, monospace"
+       stroke="none"
+       text-anchor="middle"
+       x="619.7222222222222"
+       y="89.81481481481481"
+       id="text470">A♭</text>
+  </g>
+  <g
+     id="g472">
+    <rect
+       fill="none"
+       height="35.925925925925924"
+       stroke="none"
+       stroke-width="1"
+       width="53.888888888888886"
+       x="646.6666666666666"
+       y="71.85185185185185"
+       id="rect474" />
+    <circle
+       class="note-A"
+       cx="673.6111111111111"
+       cy="89.81481481481481"
+       fill="#4700cc"
+       r="12.574074074074074"
+       stroke="white"
+       stroke-width="0"
+       id="circle476" />
+    <text
+       alignment-baseline="middle"
+       fill="#fff"
+       font-family="Inconsolata, monospace"
+       stroke="none"
+       text-anchor="middle"
+       x="673.6111111111111"
+       y="89.81481481481481"
+       id="text478">A</text>
+  </g>
+  <g
+     id="g480">
+    <rect
+       fill="none"
+       height="35.925925925925924"
+       stroke="none"
+       stroke-width="1"
+       width="53.888888888888886"
+       x="700.5555555555555"
+       y="71.85185185185185"
+       id="rect482" />
+    <circle
+       class="note-A"
+       cx="727.5"
+       cy="89.81481481481481"
+       fill="#999"
+       r="12.574074074074074"
+       stroke="white"
+       stroke-width="0"
+       id="circle484" />
+    <text
+       alignment-baseline="middle"
+       fill="#fff"
+       font-family="Inconsolata, monospace"
+       stroke="none"
+       text-anchor="middle"
+       x="727.5"
+       y="89.81481481481481"
+       id="text486">B♭</text>
+  </g>
+  <g
+     id="g488">
+    <rect
+       fill="none"
+       height="35.925925925925924"
+       stroke="none"
+       stroke-width="1"
+       width="53.888888888888886"
+       x="754.4444444444443"
+       y="71.85185185185185"
+       id="rect490" />
+    <circle
+       class="note-B"
+       cx="781.3888888888888"
+       cy="89.81481481481481"
+       fill="#cc00a3"
+       r="12.574074074074074"
+       stroke="white"
+       stroke-width="0"
+       id="circle492" />
+    <text
+       alignment-baseline="middle"
+       fill="#fff"
+       font-family="Inconsolata, monospace"
+       stroke="none"
+       text-anchor="middle"
+       x="781.3888888888888"
+       y="89.81481481481481"
+       id="text494">B</text>
+  </g>
+  <g
+     id="g496">
+    <rect
+       fill="none"
+       height="35.925925925925924"
+       stroke="none"
+       stroke-width="1"
+       width="53.888888888888886"
+       x="808.3333333333333"
+       y="71.85185185185185"
+       id="rect498" />
+    <circle
+       class="note-C"
+       cx="835.2777777777777"
+       cy="89.81481481481481"
+       fill="#cc0c00"
+       r="12.574074074074074"
+       stroke="white"
+       stroke-width="0"
+       id="circle500" />
+    <text
+       alignment-baseline="middle"
+       fill="#fff"
+       font-family="Inconsolata, monospace"
+       stroke="none"
+       text-anchor="middle"
+       x="835.2777777777777"
+       y="89.81481481481481"
+       id="text502">C</text>
+  </g>
+  <g
+     id="g504">
+    <rect
+       fill="none"
+       height="35.925925925925924"
+       stroke="none"
+       stroke-width="1"
+       width="53.888888888888886"
+       x="862.2222222222222"
+       y="71.85185185185185"
+       id="rect506" />
+    <circle
+       class="note-C"
+       cx="889.1666666666666"
+       cy="89.81481481481481"
+       fill="#999"
+       r="12.574074074074074"
+       stroke="white"
+       stroke-width="0"
+       id="circle508" />
+    <text
+       alignment-baseline="middle"
+       fill="#fff"
+       font-family="Inconsolata, monospace"
+       stroke="none"
+       text-anchor="middle"
+       x="889.1666666666666"
+       y="89.81481481481481"
+       id="text510">C♯</text>
+  </g>
+  <g
+     id="g512">
+    <rect
+       fill="none"
+       height="35.925925925925924"
+       stroke="none"
+       stroke-width="1"
+       width="53.888888888888886"
+       x="916.1111111111111"
+       y="71.85185185185185"
+       id="rect514" />
+    <circle
+       class="note-D"
+       cx="943.0555555555555"
+       cy="89.81481481481481"
+       fill="#ccbb00"
+       r="12.574074074074074"
+       stroke="white"
+       stroke-width="0"
+       id="circle516" />
+    <text
+       alignment-baseline="middle"
+       fill="#fff"
+       font-family="Inconsolata, monospace"
+       stroke="none"
+       text-anchor="middle"
+       x="943.0555555555555"
+       y="89.81481481481481"
+       id="text518">D</text>
+  </g>
+  <g
+     id="g520">
+    <line
+       fill="none"
+       stroke="#333"
+       stroke-width="3"
+       x1="53.888888888888886"
+       x2="53.888888888888886"
+       y1="35.925925925925924"
+       y2="179.62962962962962"
+       id="line522" />
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="35.925925925925924"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="269.44444444444446"
+       y="0"
+       id="rect524" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="431.1111111111111"
+       y="8.981481481481481"
+       id="text526">3rd position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="35.925925925925924"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="646.6666666666666"
+       y="0"
+       id="rect528" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="808.3333333333333"
+       y="8.981481481481481"
+       id="text530">7th position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="17.962962962962962"
+       stroke="#000"
+       stroke-width="1"
+       width="377.2222222222222"
+       x="53.888888888888886"
+       y="17.962962962962962"
+       id="rect532" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="242.49999999999997"
+       y="26.944444444444443"
+       id="text534">1st position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="35.925925925925924"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="377.2222222222222"
+       y="179.62962962962962"
+       id="rect536" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="538.8888888888888"
+       y="206.57407407407408"
+       id="text538">4th position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="17.962962962962962"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="161.66666666666666"
+       y="179.62962962962962"
+       id="rect540" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="323.3333333333333"
+       y="188.6111111111111"
+       id="text542">2nd position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="17.962962962962962"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="431.1111111111111"
+       y="17.962962962962962"
+       id="rect544" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="592.7777777777777"
+       y="26.944444444444443"
+       id="text546">5th position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="17.962962962962962"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="538.8888888888889"
+       y="179.62962962962962"
+       id="rect548" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="700.5555555555555"
+       y="188.6111111111111"
+       id="text550">6th position</text>
+  </g>
+  <g
+     id="g552">
+    <line
+       fill="none"
+       stroke="#333"
+       stroke-width="1"
+       x1="161.66666666666666"
+       x2="161.66666666666666"
+       y1="35.925925925925924"
+       y2="179.62962962962962"
+       id="line554" />
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="35.925925925925924"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="269.44444444444446"
+       y="0"
+       id="rect556" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="431.1111111111111"
+       y="8.981481481481481"
+       id="text558">3rd position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="35.925925925925924"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="646.6666666666666"
+       y="0"
+       id="rect560" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="808.3333333333333"
+       y="8.981481481481481"
+       id="text562">7th position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="17.962962962962962"
+       stroke="#000"
+       stroke-width="1"
+       width="377.2222222222222"
+       x="53.888888888888886"
+       y="17.962962962962962"
+       id="rect564" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="242.49999999999997"
+       y="26.944444444444443"
+       id="text566">1st position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="35.925925925925924"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="377.2222222222222"
+       y="179.62962962962962"
+       id="rect568" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="538.8888888888888"
+       y="206.57407407407408"
+       id="text570">4th position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="17.962962962962962"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="161.66666666666666"
+       y="179.62962962962962"
+       id="rect572" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="323.3333333333333"
+       y="188.6111111111111"
+       id="text574">2nd position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="17.962962962962962"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="431.1111111111111"
+       y="17.962962962962962"
+       id="rect576" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="592.7777777777777"
+       y="26.944444444444443"
+       id="text578">5th position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="17.962962962962962"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="538.8888888888889"
+       y="179.62962962962962"
+       id="rect580" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="700.5555555555555"
+       y="188.6111111111111"
+       id="text582">6th position</text>
+  </g>
+  <g
+     id="g584">
+    <line
+       fill="none"
+       stroke="#333"
+       stroke-width="1"
+       x1="269.44444444444446"
+       x2="269.44444444444446"
+       y1="35.925925925925924"
+       y2="179.62962962962962"
+       id="line586" />
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="35.925925925925924"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="269.44444444444446"
+       y="0"
+       id="rect588" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="431.1111111111111"
+       y="8.981481481481481"
+       id="text590">3rd position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="35.925925925925924"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="646.6666666666666"
+       y="0"
+       id="rect592" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="808.3333333333333"
+       y="8.981481481481481"
+       id="text594">7th position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="17.962962962962962"
+       stroke="#000"
+       stroke-width="1"
+       width="377.2222222222222"
+       x="53.888888888888886"
+       y="17.962962962962962"
+       id="rect596" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="242.49999999999997"
+       y="26.944444444444443"
+       id="text598">1st position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="35.925925925925924"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="377.2222222222222"
+       y="179.62962962962962"
+       id="rect600" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="538.8888888888888"
+       y="206.57407407407408"
+       id="text602">4th position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="17.962962962962962"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="161.66666666666666"
+       y="179.62962962962962"
+       id="rect604" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="323.3333333333333"
+       y="188.6111111111111"
+       id="text606">2nd position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="17.962962962962962"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="431.1111111111111"
+       y="17.962962962962962"
+       id="rect608" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="592.7777777777777"
+       y="26.944444444444443"
+       id="text610">5th position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="17.962962962962962"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="538.8888888888889"
+       y="179.62962962962962"
+       id="rect612" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="700.5555555555555"
+       y="188.6111111111111"
+       id="text614">6th position</text>
+  </g>
+  <g
+     id="g616">
+    <line
+       fill="none"
+       stroke="#333"
+       stroke-width="1"
+       x1="377.2222222222222"
+       x2="377.2222222222222"
+       y1="35.925925925925924"
+       y2="179.62962962962962"
+       id="line618" />
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="35.925925925925924"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="269.44444444444446"
+       y="0"
+       id="rect620" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="431.1111111111111"
+       y="8.981481481481481"
+       id="text622">3rd position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="35.925925925925924"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="646.6666666666666"
+       y="0"
+       id="rect624" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="808.3333333333333"
+       y="8.981481481481481"
+       id="text626">7th position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="17.962962962962962"
+       stroke="#000"
+       stroke-width="1"
+       width="377.2222222222222"
+       x="53.888888888888886"
+       y="17.962962962962962"
+       id="rect628" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="242.49999999999997"
+       y="26.944444444444443"
+       id="text630">1st position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="35.925925925925924"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="377.2222222222222"
+       y="179.62962962962962"
+       id="rect632" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="538.8888888888888"
+       y="206.57407407407408"
+       id="text634">4th position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="17.962962962962962"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="161.66666666666666"
+       y="179.62962962962962"
+       id="rect636" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="323.3333333333333"
+       y="188.6111111111111"
+       id="text638">2nd position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="17.962962962962962"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="431.1111111111111"
+       y="17.962962962962962"
+       id="rect640" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="592.7777777777777"
+       y="26.944444444444443"
+       id="text642">5th position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="17.962962962962962"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="538.8888888888889"
+       y="179.62962962962962"
+       id="rect644" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="700.5555555555555"
+       y="188.6111111111111"
+       id="text646">6th position</text>
+  </g>
+  <g
+     id="g648">
+    <line
+       fill="none"
+       stroke="#333"
+       stroke-width="1"
+       x1="485.0"
+       x2="485.0"
+       y1="35.925925925925924"
+       y2="179.62962962962962"
+       id="line650" />
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="35.925925925925924"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="269.44444444444446"
+       y="0"
+       id="rect652" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="431.1111111111111"
+       y="8.981481481481481"
+       id="text654">3rd position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="35.925925925925924"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="646.6666666666666"
+       y="0"
+       id="rect656" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="808.3333333333333"
+       y="8.981481481481481"
+       id="text658">7th position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="17.962962962962962"
+       stroke="#000"
+       stroke-width="1"
+       width="377.2222222222222"
+       x="53.888888888888886"
+       y="17.962962962962962"
+       id="rect660" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="242.49999999999997"
+       y="26.944444444444443"
+       id="text662">1st position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="35.925925925925924"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="377.2222222222222"
+       y="179.62962962962962"
+       id="rect664" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="538.8888888888888"
+       y="206.57407407407408"
+       id="text666">4th position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="17.962962962962962"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="161.66666666666666"
+       y="179.62962962962962"
+       id="rect668" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="323.3333333333333"
+       y="188.6111111111111"
+       id="text670">2nd position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="17.962962962962962"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="431.1111111111111"
+       y="17.962962962962962"
+       id="rect672" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="592.7777777777777"
+       y="26.944444444444443"
+       id="text674">5th position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="17.962962962962962"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="538.8888888888889"
+       y="179.62962962962962"
+       id="rect676" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="700.5555555555555"
+       y="188.6111111111111"
+       id="text678">6th position</text>
+  </g>
+  <g
+     id="g680">
+    <line
+       fill="none"
+       stroke="#333"
+       stroke-width="1"
+       x1="538.8888888888889"
+       x2="538.8888888888889"
+       y1="35.925925925925924"
+       y2="179.62962962962962"
+       id="line682" />
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="35.925925925925924"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="269.44444444444446"
+       y="0"
+       id="rect684" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="431.1111111111111"
+       y="8.981481481481481"
+       id="text686">3rd position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="35.925925925925924"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="646.6666666666666"
+       y="0"
+       id="rect688" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="808.3333333333333"
+       y="8.981481481481481"
+       id="text690">7th position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="17.962962962962962"
+       stroke="#000"
+       stroke-width="1"
+       width="377.2222222222222"
+       x="53.888888888888886"
+       y="17.962962962962962"
+       id="rect692" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="242.49999999999997"
+       y="26.944444444444443"
+       id="text694">1st position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="35.925925925925924"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="377.2222222222222"
+       y="179.62962962962962"
+       id="rect696" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="538.8888888888888"
+       y="206.57407407407408"
+       id="text698">4th position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="17.962962962962962"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="161.66666666666666"
+       y="179.62962962962962"
+       id="rect700" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="323.3333333333333"
+       y="188.6111111111111"
+       id="text702">2nd position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="17.962962962962962"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="431.1111111111111"
+       y="17.962962962962962"
+       id="rect704" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="592.7777777777777"
+       y="26.944444444444443"
+       id="text706">5th position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="17.962962962962962"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="538.8888888888889"
+       y="179.62962962962962"
+       id="rect708" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="700.5555555555555"
+       y="188.6111111111111"
+       id="text710">6th position</text>
+  </g>
+  <g
+     id="g712">
+    <line
+       fill="none"
+       stroke="#333"
+       stroke-width="1"
+       x1="646.6666666666666"
+       x2="646.6666666666666"
+       y1="35.925925925925924"
+       y2="179.62962962962962"
+       id="line714" />
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="35.925925925925924"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="269.44444444444446"
+       y="0"
+       id="rect716" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="431.1111111111111"
+       y="8.981481481481481"
+       id="text718">3rd position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="35.925925925925924"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="646.6666666666666"
+       y="0"
+       id="rect720" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="808.3333333333333"
+       y="8.981481481481481"
+       id="text722">7th position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="17.962962962962962"
+       stroke="#000"
+       stroke-width="1"
+       width="377.2222222222222"
+       x="53.888888888888886"
+       y="17.962962962962962"
+       id="rect724" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="242.49999999999997"
+       y="26.944444444444443"
+       id="text726">1st position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="35.925925925925924"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="377.2222222222222"
+       y="179.62962962962962"
+       id="rect728" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="538.8888888888888"
+       y="206.57407407407408"
+       id="text730">4th position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="17.962962962962962"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="161.66666666666666"
+       y="179.62962962962962"
+       id="rect732" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="323.3333333333333"
+       y="188.6111111111111"
+       id="text734">2nd position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="17.962962962962962"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="431.1111111111111"
+       y="17.962962962962962"
+       id="rect736" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="592.7777777777777"
+       y="26.944444444444443"
+       id="text738">5th position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="17.962962962962962"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="538.8888888888889"
+       y="179.62962962962962"
+       id="rect740" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="700.5555555555555"
+       y="188.6111111111111"
+       id="text742">6th position</text>
+  </g>
+  <g
+     id="g744">
+    <rect
+       fill="none"
+       height="35.925925925925924"
+       stroke="none"
+       stroke-width="1"
+       width="53.888888888888886"
+       x="0.0"
+       y="107.77777777777777"
+       id="rect746" />
+    <circle
+       class="note-D"
+       cx="26.944444444444443"
+       cy="125.74074074074073"
+       fill="#ccbb00"
+       r="12.574074074074074"
+       stroke="white"
+       stroke-width="0"
+       id="circle748" />
+    <text
+       alignment-baseline="middle"
+       fill="#fff"
+       font-family="Inconsolata, monospace"
+       stroke="none"
+       text-anchor="middle"
+       x="26.944444444444443"
+       y="125.74074074074073"
+       id="text750">D</text>
+  </g>
+  <g
+     id="g752">
+    <rect
+       fill="none"
+       height="35.925925925925924"
+       stroke="none"
+       stroke-width="1"
+       width="53.888888888888886"
+       x="53.888888888888886"
+       y="107.77777777777777"
+       id="rect754" />
+    <circle
+       class="note-D"
+       cx="80.83333333333333"
+       cy="125.74074074074073"
+       fill="#999"
+       r="12.574074074074074"
+       stroke="white"
+       stroke-width="0"
+       id="circle756" />
+    <text
+       alignment-baseline="middle"
+       fill="#fff"
+       font-family="Inconsolata, monospace"
+       stroke="none"
+       text-anchor="middle"
+       x="80.83333333333333"
+       y="125.74074074074073"
+       id="text758">E♭</text>
+  </g>
+  <g
+     id="g760">
+    <rect
+       fill="none"
+       height="35.925925925925924"
+       stroke="none"
+       stroke-width="1"
+       width="53.888888888888886"
+       x="107.77777777777777"
+       y="107.77777777777777"
+       id="rect762" />
+    <circle
+       class="note-E"
+       cx="134.72222222222223"
+       cy="125.74074074074073"
+       fill="#2ecc00"
+       r="12.574074074074074"
+       stroke="white"
+       stroke-width="0"
+       id="circle764" />
+    <text
+       alignment-baseline="middle"
+       fill="#fff"
+       font-family="Inconsolata, monospace"
+       stroke="none"
+       text-anchor="middle"
+       x="134.72222222222223"
+       y="125.74074074074073"
+       id="text766">E</text>
+  </g>
+  <g
+     id="g768">
+    <rect
+       fill="none"
+       height="35.925925925925924"
+       stroke="none"
+       stroke-width="1"
+       width="53.888888888888886"
+       x="161.66666666666666"
+       y="107.77777777777777"
+       id="rect770" />
+    <circle
+       class="note-F"
+       cx="188.6111111111111"
+       cy="125.74074074074073"
+       fill="#00cc81"
+       r="12.574074074074074"
+       stroke="white"
+       stroke-width="0"
+       id="circle772" />
+    <text
+       alignment-baseline="middle"
+       fill="#fff"
+       font-family="Inconsolata, monospace"
+       stroke="none"
+       text-anchor="middle"
+       x="188.6111111111111"
+       y="125.74074074074073"
+       id="text774">F</text>
+  </g>
+  <g
+     id="g776">
+    <rect
+       fill="none"
+       height="35.925925925925924"
+       stroke="none"
+       stroke-width="1"
+       width="53.888888888888886"
+       x="215.55555555555554"
+       y="107.77777777777777"
+       id="rect778" />
+    <circle
+       class="note-F"
+       cx="242.5"
+       cy="125.74074074074073"
+       fill="#999"
+       r="12.574074074074074"
+       stroke="white"
+       stroke-width="0"
+       id="circle780" />
+    <text
+       alignment-baseline="middle"
+       fill="#fff"
+       font-family="Inconsolata, monospace"
+       stroke="none"
+       text-anchor="middle"
+       x="242.5"
+       y="125.74074074074073"
+       id="text782">F♯</text>
+  </g>
+  <g
+     id="g784">
+    <rect
+       fill="none"
+       height="35.925925925925924"
+       stroke="none"
+       stroke-width="1"
+       width="53.888888888888886"
+       x="269.44444444444446"
+       y="107.77777777777777"
+       id="rect786" />
+    <circle
+       class="note-G"
+       cx="296.3888888888889"
+       cy="125.74074074074073"
+       fill="#0068cc"
+       r="12.574074074074074"
+       stroke="white"
+       stroke-width="0"
+       id="circle788" />
+    <text
+       alignment-baseline="middle"
+       fill="#fff"
+       font-family="Inconsolata, monospace"
+       stroke="none"
+       text-anchor="middle"
+       x="296.3888888888889"
+       y="125.74074074074073"
+       id="text790">G</text>
+  </g>
+  <g
+     id="g792">
+    <rect
+       fill="none"
+       height="35.925925925925924"
+       stroke="none"
+       stroke-width="1"
+       width="53.888888888888886"
+       x="323.3333333333333"
+       y="107.77777777777777"
+       id="rect794" />
+    <circle
+       class="note-G"
+       cx="350.27777777777777"
+       cy="125.74074074074073"
+       fill="#999"
+       r="12.574074074074074"
+       stroke="white"
+       stroke-width="0"
+       id="circle796" />
+    <text
+       alignment-baseline="middle"
+       fill="#fff"
+       font-family="Inconsolata, monospace"
+       stroke="none"
+       text-anchor="middle"
+       x="350.27777777777777"
+       y="125.74074074074073"
+       id="text798">G♯</text>
+  </g>
+  <g
+     id="g800">
+    <rect
+       fill="none"
+       height="35.925925925925924"
+       stroke="none"
+       stroke-width="1"
+       width="53.888888888888886"
+       x="377.2222222222222"
+       y="107.77777777777777"
+       id="rect802" />
+    <circle
+       class="note-A"
+       cx="404.16666666666663"
+       cy="125.74074074074073"
+       fill="#4700cc"
+       r="12.574074074074074"
+       stroke="white"
+       stroke-width="0"
+       id="circle804" />
+    <text
+       alignment-baseline="middle"
+       fill="#fff"
+       font-family="Inconsolata, monospace"
+       stroke="none"
+       text-anchor="middle"
+       x="404.16666666666663"
+       y="125.74074074074073"
+       id="text806">A</text>
+  </g>
+  <g
+     id="g808">
+    <rect
+       fill="none"
+       height="35.925925925925924"
+       stroke="none"
+       stroke-width="1"
+       width="53.888888888888886"
+       x="431.1111111111111"
+       y="107.77777777777777"
+       id="rect810" />
+    <circle
+       class="note-A"
+       cx="458.05555555555554"
+       cy="125.74074074074073"
+       fill="#999"
+       r="12.574074074074074"
+       stroke="white"
+       stroke-width="0"
+       id="circle812" />
+    <text
+       alignment-baseline="middle"
+       fill="#fff"
+       font-family="Inconsolata, monospace"
+       stroke="none"
+       text-anchor="middle"
+       x="458.05555555555554"
+       y="125.74074074074073"
+       id="text814">B♭</text>
+  </g>
+  <g
+     id="g816">
+    <rect
+       fill="none"
+       height="35.925925925925924"
+       stroke="none"
+       stroke-width="1"
+       width="53.888888888888886"
+       x="485.0"
+       y="107.77777777777777"
+       id="rect818" />
+    <circle
+       class="note-B"
+       cx="511.94444444444446"
+       cy="125.74074074074073"
+       fill="#cc00a3"
+       r="12.574074074074074"
+       stroke="white"
+       stroke-width="0"
+       id="circle820" />
+    <text
+       alignment-baseline="middle"
+       fill="#fff"
+       font-family="Inconsolata, monospace"
+       stroke="none"
+       text-anchor="middle"
+       x="511.94444444444446"
+       y="125.74074074074073"
+       id="text822">B</text>
+  </g>
+  <g
+     id="g824">
+    <rect
+       fill="none"
+       height="35.925925925925924"
+       stroke="none"
+       stroke-width="1"
+       width="53.888888888888886"
+       x="538.8888888888889"
+       y="107.77777777777777"
+       id="rect826" />
+    <circle
+       class="note-C"
+       cx="565.8333333333334"
+       cy="125.74074074074073"
+       fill="#cc0c00"
+       r="12.574074074074074"
+       stroke="white"
+       stroke-width="0"
+       id="circle828" />
+    <text
+       alignment-baseline="middle"
+       fill="#fff"
+       font-family="Inconsolata, monospace"
+       stroke="none"
+       text-anchor="middle"
+       x="565.8333333333334"
+       y="125.74074074074073"
+       id="text830">C</text>
+  </g>
+  <g
+     id="g832">
+    <rect
+       fill="none"
+       height="35.925925925925924"
+       stroke="none"
+       stroke-width="1"
+       width="53.888888888888886"
+       x="592.7777777777777"
+       y="107.77777777777777"
+       id="rect834" />
+    <circle
+       class="note-C"
+       cx="619.7222222222222"
+       cy="125.74074074074073"
+       fill="#999"
+       r="12.574074074074074"
+       stroke="white"
+       stroke-width="0"
+       id="circle836" />
+    <text
+       alignment-baseline="middle"
+       fill="#fff"
+       font-family="Inconsolata, monospace"
+       stroke="none"
+       text-anchor="middle"
+       x="619.7222222222222"
+       y="125.74074074074073"
+       id="text838">C♯</text>
+  </g>
+  <g
+     id="g840">
+    <rect
+       fill="none"
+       height="35.925925925925924"
+       stroke="none"
+       stroke-width="1"
+       width="53.888888888888886"
+       x="646.6666666666666"
+       y="107.77777777777777"
+       id="rect842" />
+    <circle
+       class="note-D"
+       cx="673.6111111111111"
+       cy="125.74074074074073"
+       fill="#ccbb00"
+       r="12.574074074074074"
+       stroke="white"
+       stroke-width="0"
+       id="circle844" />
+    <text
+       alignment-baseline="middle"
+       fill="#fff"
+       font-family="Inconsolata, monospace"
+       stroke="none"
+       text-anchor="middle"
+       x="673.6111111111111"
+       y="125.74074074074073"
+       id="text846">D</text>
+  </g>
+  <g
+     id="g848">
+    <rect
+       fill="none"
+       height="35.925925925925924"
+       stroke="none"
+       stroke-width="1"
+       width="53.888888888888886"
+       x="700.5555555555555"
+       y="107.77777777777777"
+       id="rect850" />
+    <circle
+       class="note-D"
+       cx="727.5"
+       cy="125.74074074074073"
+       fill="#999"
+       r="12.574074074074074"
+       stroke="white"
+       stroke-width="0"
+       id="circle852" />
+    <text
+       alignment-baseline="middle"
+       fill="#fff"
+       font-family="Inconsolata, monospace"
+       stroke="none"
+       text-anchor="middle"
+       x="727.5"
+       y="125.74074074074073"
+       id="text854">E♭</text>
+  </g>
+  <g
+     id="g856">
+    <rect
+       fill="none"
+       height="35.925925925925924"
+       stroke="none"
+       stroke-width="1"
+       width="53.888888888888886"
+       x="754.4444444444443"
+       y="107.77777777777777"
+       id="rect858" />
+    <circle
+       class="note-E"
+       cx="781.3888888888888"
+       cy="125.74074074074073"
+       fill="#2ecc00"
+       r="12.574074074074074"
+       stroke="white"
+       stroke-width="0"
+       id="circle860" />
+    <text
+       alignment-baseline="middle"
+       fill="#fff"
+       font-family="Inconsolata, monospace"
+       stroke="none"
+       text-anchor="middle"
+       x="781.3888888888888"
+       y="125.74074074074073"
+       id="text862">E</text>
+  </g>
+  <g
+     id="g864">
+    <rect
+       fill="none"
+       height="35.925925925925924"
+       stroke="none"
+       stroke-width="1"
+       width="53.888888888888886"
+       x="808.3333333333333"
+       y="107.77777777777777"
+       id="rect866" />
+    <circle
+       class="note-F"
+       cx="835.2777777777777"
+       cy="125.74074074074073"
+       fill="#00cc81"
+       r="12.574074074074074"
+       stroke="white"
+       stroke-width="0"
+       id="circle868" />
+    <text
+       alignment-baseline="middle"
+       fill="#fff"
+       font-family="Inconsolata, monospace"
+       stroke="none"
+       text-anchor="middle"
+       x="835.2777777777777"
+       y="125.74074074074073"
+       id="text870">F</text>
+  </g>
+  <g
+     id="g872">
+    <rect
+       fill="none"
+       height="35.925925925925924"
+       stroke="none"
+       stroke-width="1"
+       width="53.888888888888886"
+       x="862.2222222222222"
+       y="107.77777777777777"
+       id="rect874" />
+    <circle
+       class="note-F"
+       cx="889.1666666666666"
+       cy="125.74074074074073"
+       fill="#999"
+       r="12.574074074074074"
+       stroke="white"
+       stroke-width="0"
+       id="circle876" />
+    <text
+       alignment-baseline="middle"
+       fill="#fff"
+       font-family="Inconsolata, monospace"
+       stroke="none"
+       text-anchor="middle"
+       x="889.1666666666666"
+       y="125.74074074074073"
+       id="text878">F♯</text>
+  </g>
+  <g
+     id="g880">
+    <rect
+       fill="none"
+       height="35.925925925925924"
+       stroke="none"
+       stroke-width="1"
+       width="53.888888888888886"
+       x="916.1111111111111"
+       y="107.77777777777777"
+       id="rect882" />
+    <circle
+       class="note-G"
+       cx="943.0555555555555"
+       cy="125.74074074074073"
+       fill="#0068cc"
+       r="12.574074074074074"
+       stroke="white"
+       stroke-width="0"
+       id="circle884" />
+    <text
+       alignment-baseline="middle"
+       fill="#fff"
+       font-family="Inconsolata, monospace"
+       stroke="none"
+       text-anchor="middle"
+       x="943.0555555555555"
+       y="125.74074074074073"
+       id="text886">G</text>
+  </g>
+  <g
+     id="g888">
+    <line
+       fill="none"
+       stroke="#333"
+       stroke-width="3"
+       x1="53.888888888888886"
+       x2="53.888888888888886"
+       y1="35.925925925925924"
+       y2="179.62962962962962"
+       id="line890" />
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="35.925925925925924"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="269.44444444444446"
+       y="0"
+       id="rect892" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="431.1111111111111"
+       y="8.981481481481481"
+       id="text894">3rd position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="35.925925925925924"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="646.6666666666666"
+       y="0"
+       id="rect896" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="808.3333333333333"
+       y="8.981481481481481"
+       id="text898">7th position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="17.962962962962962"
+       stroke="#000"
+       stroke-width="1"
+       width="377.2222222222222"
+       x="53.888888888888886"
+       y="17.962962962962962"
+       id="rect900" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="242.49999999999997"
+       y="26.944444444444443"
+       id="text902">1st position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="35.925925925925924"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="377.2222222222222"
+       y="179.62962962962962"
+       id="rect904" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="538.8888888888888"
+       y="206.57407407407408"
+       id="text906">4th position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="17.962962962962962"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="161.66666666666666"
+       y="179.62962962962962"
+       id="rect908" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="323.3333333333333"
+       y="188.6111111111111"
+       id="text910">2nd position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="17.962962962962962"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="431.1111111111111"
+       y="17.962962962962962"
+       id="rect912" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="592.7777777777777"
+       y="26.944444444444443"
+       id="text914">5th position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="17.962962962962962"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="538.8888888888889"
+       y="179.62962962962962"
+       id="rect916" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="700.5555555555555"
+       y="188.6111111111111"
+       id="text918">6th position</text>
+  </g>
+  <g
+     id="g920">
+    <line
+       fill="none"
+       stroke="#333"
+       stroke-width="1"
+       x1="161.66666666666666"
+       x2="161.66666666666666"
+       y1="35.925925925925924"
+       y2="179.62962962962962"
+       id="line922" />
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="35.925925925925924"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="269.44444444444446"
+       y="0"
+       id="rect924" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="431.1111111111111"
+       y="8.981481481481481"
+       id="text926">3rd position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="35.925925925925924"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="646.6666666666666"
+       y="0"
+       id="rect928" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="808.3333333333333"
+       y="8.981481481481481"
+       id="text930">7th position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="17.962962962962962"
+       stroke="#000"
+       stroke-width="1"
+       width="377.2222222222222"
+       x="53.888888888888886"
+       y="17.962962962962962"
+       id="rect932" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="242.49999999999997"
+       y="26.944444444444443"
+       id="text934">1st position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="35.925925925925924"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="377.2222222222222"
+       y="179.62962962962962"
+       id="rect936" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="538.8888888888888"
+       y="206.57407407407408"
+       id="text938">4th position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="17.962962962962962"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="161.66666666666666"
+       y="179.62962962962962"
+       id="rect940" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="323.3333333333333"
+       y="188.6111111111111"
+       id="text942">2nd position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="17.962962962962962"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="431.1111111111111"
+       y="17.962962962962962"
+       id="rect944" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="592.7777777777777"
+       y="26.944444444444443"
+       id="text946">5th position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="17.962962962962962"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="538.8888888888889"
+       y="179.62962962962962"
+       id="rect948" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="700.5555555555555"
+       y="188.6111111111111"
+       id="text950">6th position</text>
+  </g>
+  <g
+     id="g952">
+    <line
+       fill="none"
+       stroke="#333"
+       stroke-width="1"
+       x1="269.44444444444446"
+       x2="269.44444444444446"
+       y1="35.925925925925924"
+       y2="179.62962962962962"
+       id="line954" />
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="35.925925925925924"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="269.44444444444446"
+       y="0"
+       id="rect956" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="431.1111111111111"
+       y="8.981481481481481"
+       id="text958">3rd position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="35.925925925925924"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="646.6666666666666"
+       y="0"
+       id="rect960" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="808.3333333333333"
+       y="8.981481481481481"
+       id="text962">7th position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="17.962962962962962"
+       stroke="#000"
+       stroke-width="1"
+       width="377.2222222222222"
+       x="53.888888888888886"
+       y="17.962962962962962"
+       id="rect964" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="242.49999999999997"
+       y="26.944444444444443"
+       id="text966">1st position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="35.925925925925924"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="377.2222222222222"
+       y="179.62962962962962"
+       id="rect968" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="538.8888888888888"
+       y="206.57407407407408"
+       id="text970">4th position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="17.962962962962962"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="161.66666666666666"
+       y="179.62962962962962"
+       id="rect972" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="323.3333333333333"
+       y="188.6111111111111"
+       id="text974">2nd position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="17.962962962962962"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="431.1111111111111"
+       y="17.962962962962962"
+       id="rect976" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="592.7777777777777"
+       y="26.944444444444443"
+       id="text978">5th position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="17.962962962962962"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="538.8888888888889"
+       y="179.62962962962962"
+       id="rect980" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="700.5555555555555"
+       y="188.6111111111111"
+       id="text982">6th position</text>
+  </g>
+  <g
+     id="g984">
+    <line
+       fill="none"
+       stroke="#333"
+       stroke-width="1"
+       x1="377.2222222222222"
+       x2="377.2222222222222"
+       y1="35.925925925925924"
+       y2="179.62962962962962"
+       id="line986" />
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="35.925925925925924"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="269.44444444444446"
+       y="0"
+       id="rect988" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="431.1111111111111"
+       y="8.981481481481481"
+       id="text990">3rd position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="35.925925925925924"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="646.6666666666666"
+       y="0"
+       id="rect992" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="808.3333333333333"
+       y="8.981481481481481"
+       id="text994">7th position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="17.962962962962962"
+       stroke="#000"
+       stroke-width="1"
+       width="377.2222222222222"
+       x="53.888888888888886"
+       y="17.962962962962962"
+       id="rect996" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="242.49999999999997"
+       y="26.944444444444443"
+       id="text998">1st position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="35.925925925925924"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="377.2222222222222"
+       y="179.62962962962962"
+       id="rect1000" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="538.8888888888888"
+       y="206.57407407407408"
+       id="text1002">4th position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="17.962962962962962"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="161.66666666666666"
+       y="179.62962962962962"
+       id="rect1004" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="323.3333333333333"
+       y="188.6111111111111"
+       id="text1006">2nd position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="17.962962962962962"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="431.1111111111111"
+       y="17.962962962962962"
+       id="rect1008" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="592.7777777777777"
+       y="26.944444444444443"
+       id="text1010">5th position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="17.962962962962962"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="538.8888888888889"
+       y="179.62962962962962"
+       id="rect1012" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="700.5555555555555"
+       y="188.6111111111111"
+       id="text1014">6th position</text>
+  </g>
+  <g
+     id="g1016">
+    <line
+       fill="none"
+       stroke="#333"
+       stroke-width="1"
+       x1="485.0"
+       x2="485.0"
+       y1="35.925925925925924"
+       y2="179.62962962962962"
+       id="line1018" />
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="35.925925925925924"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="269.44444444444446"
+       y="0"
+       id="rect1020" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="431.1111111111111"
+       y="8.981481481481481"
+       id="text1022">3rd position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="35.925925925925924"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="646.6666666666666"
+       y="0"
+       id="rect1024" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="808.3333333333333"
+       y="8.981481481481481"
+       id="text1026">7th position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="17.962962962962962"
+       stroke="#000"
+       stroke-width="1"
+       width="377.2222222222222"
+       x="53.888888888888886"
+       y="17.962962962962962"
+       id="rect1028" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="242.49999999999997"
+       y="26.944444444444443"
+       id="text1030">1st position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="35.925925925925924"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="377.2222222222222"
+       y="179.62962962962962"
+       id="rect1032" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="538.8888888888888"
+       y="206.57407407407408"
+       id="text1034">4th position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="17.962962962962962"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="161.66666666666666"
+       y="179.62962962962962"
+       id="rect1036" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="323.3333333333333"
+       y="188.6111111111111"
+       id="text1038">2nd position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="17.962962962962962"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="431.1111111111111"
+       y="17.962962962962962"
+       id="rect1040" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="592.7777777777777"
+       y="26.944444444444443"
+       id="text1042">5th position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="17.962962962962962"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="538.8888888888889"
+       y="179.62962962962962"
+       id="rect1044" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="700.5555555555555"
+       y="188.6111111111111"
+       id="text1046">6th position</text>
+  </g>
+  <g
+     id="g1048">
+    <line
+       fill="none"
+       stroke="#333"
+       stroke-width="1"
+       x1="538.8888888888889"
+       x2="538.8888888888889"
+       y1="35.925925925925924"
+       y2="179.62962962962962"
+       id="line1050" />
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="35.925925925925924"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="269.44444444444446"
+       y="0"
+       id="rect1052" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="431.1111111111111"
+       y="8.981481481481481"
+       id="text1054">3rd position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="35.925925925925924"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="646.6666666666666"
+       y="0"
+       id="rect1056" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="808.3333333333333"
+       y="8.981481481481481"
+       id="text1058">7th position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="17.962962962962962"
+       stroke="#000"
+       stroke-width="1"
+       width="377.2222222222222"
+       x="53.888888888888886"
+       y="17.962962962962962"
+       id="rect1060" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="242.49999999999997"
+       y="26.944444444444443"
+       id="text1062">1st position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="35.925925925925924"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="377.2222222222222"
+       y="179.62962962962962"
+       id="rect1064" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="538.8888888888888"
+       y="206.57407407407408"
+       id="text1066">4th position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="17.962962962962962"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="161.66666666666666"
+       y="179.62962962962962"
+       id="rect1068" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="323.3333333333333"
+       y="188.6111111111111"
+       id="text1070">2nd position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="17.962962962962962"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="431.1111111111111"
+       y="17.962962962962962"
+       id="rect1072" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="592.7777777777777"
+       y="26.944444444444443"
+       id="text1074">5th position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="17.962962962962962"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="538.8888888888889"
+       y="179.62962962962962"
+       id="rect1076" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="700.5555555555555"
+       y="188.6111111111111"
+       id="text1078">6th position</text>
+  </g>
+  <g
+     id="g1080">
+    <line
+       fill="none"
+       stroke="#333"
+       stroke-width="1"
+       x1="646.6666666666666"
+       x2="646.6666666666666"
+       y1="35.925925925925924"
+       y2="179.62962962962962"
+       id="line1082" />
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="35.925925925925924"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="269.44444444444446"
+       y="0"
+       id="rect1084" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="431.1111111111111"
+       y="8.981481481481481"
+       id="text1086">3rd position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="35.925925925925924"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="646.6666666666666"
+       y="0"
+       id="rect1088" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="808.3333333333333"
+       y="8.981481481481481"
+       id="text1090">7th position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="17.962962962962962"
+       stroke="#000"
+       stroke-width="1"
+       width="377.2222222222222"
+       x="53.888888888888886"
+       y="17.962962962962962"
+       id="rect1092" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="242.49999999999997"
+       y="26.944444444444443"
+       id="text1094">1st position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="35.925925925925924"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="377.2222222222222"
+       y="179.62962962962962"
+       id="rect1096" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="538.8888888888888"
+       y="206.57407407407408"
+       id="text1098">4th position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="17.962962962962962"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="161.66666666666666"
+       y="179.62962962962962"
+       id="rect1100" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="323.3333333333333"
+       y="188.6111111111111"
+       id="text1102">2nd position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="17.962962962962962"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="431.1111111111111"
+       y="17.962962962962962"
+       id="rect1104" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="592.7777777777777"
+       y="26.944444444444443"
+       id="text1106">5th position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="17.962962962962962"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="538.8888888888889"
+       y="179.62962962962962"
+       id="rect1108" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="700.5555555555555"
+       y="188.6111111111111"
+       id="text1110">6th position</text>
+  </g>
+  <g
+     id="g1112">
+    <rect
+       fill="none"
+       height="35.925925925925924"
+       stroke="none"
+       stroke-width="1"
+       width="53.888888888888886"
+       x="0.0"
+       y="143.7037037037037"
+       id="rect1114" />
+    <circle
+       class="note-G"
+       cx="26.944444444444443"
+       cy="161.66666666666666"
+       fill="#0068cc"
+       r="12.574074074074074"
+       stroke="white"
+       stroke-width="0"
+       id="circle1116" />
+    <text
+       alignment-baseline="middle"
+       fill="#fff"
+       font-family="Inconsolata, monospace"
+       stroke="none"
+       text-anchor="middle"
+       x="26.944444444444443"
+       y="161.66666666666666"
+       id="text1118">G</text>
+  </g>
+  <g
+     id="g1120">
+    <rect
+       fill="none"
+       height="35.925925925925924"
+       stroke="none"
+       stroke-width="1"
+       width="53.888888888888886"
+       x="53.888888888888886"
+       y="143.7037037037037"
+       id="rect1122" />
+    <circle
+       class="note-G"
+       cx="80.83333333333333"
+       cy="161.66666666666666"
+       fill="#999"
+       r="12.574074074074074"
+       stroke="white"
+       stroke-width="0"
+       id="circle1124" />
+    <text
+       alignment-baseline="middle"
+       fill="#fff"
+       font-family="Inconsolata, monospace"
+       stroke="none"
+       text-anchor="middle"
+       x="80.83333333333333"
+       y="161.66666666666666"
+       id="text1126">G♯</text>
+  </g>
+  <g
+     id="g1128">
+    <rect
+       fill="none"
+       height="35.925925925925924"
+       stroke="none"
+       stroke-width="1"
+       width="53.888888888888886"
+       x="107.77777777777777"
+       y="143.7037037037037"
+       id="rect1130" />
+    <circle
+       class="note-A"
+       cx="134.72222222222223"
+       cy="161.66666666666666"
+       fill="#4700cc"
+       r="12.574074074074074"
+       stroke="white"
+       stroke-width="0"
+       id="circle1132" />
+    <text
+       alignment-baseline="middle"
+       fill="#fff"
+       font-family="Inconsolata, monospace"
+       stroke="none"
+       text-anchor="middle"
+       x="134.72222222222223"
+       y="161.66666666666666"
+       id="text1134">A</text>
+  </g>
+  <g
+     id="g1136">
+    <rect
+       fill="none"
+       height="35.925925925925924"
+       stroke="none"
+       stroke-width="1"
+       width="53.888888888888886"
+       x="161.66666666666666"
+       y="143.7037037037037"
+       id="rect1138" />
+    <circle
+       class="note-A"
+       cx="188.6111111111111"
+       cy="161.66666666666666"
+       fill="#999"
+       r="12.574074074074074"
+       stroke="white"
+       stroke-width="0"
+       id="circle1140" />
+    <text
+       alignment-baseline="middle"
+       fill="#fff"
+       font-family="Inconsolata, monospace"
+       stroke="none"
+       text-anchor="middle"
+       x="188.6111111111111"
+       y="161.66666666666666"
+       id="text1142">B♭</text>
+  </g>
+  <g
+     id="g1144">
+    <rect
+       fill="none"
+       height="35.925925925925924"
+       stroke="none"
+       stroke-width="1"
+       width="53.888888888888886"
+       x="215.55555555555554"
+       y="143.7037037037037"
+       id="rect1146" />
+    <circle
+       class="note-B"
+       cx="242.5"
+       cy="161.66666666666666"
+       fill="#cc00a3"
+       r="12.574074074074074"
+       stroke="white"
+       stroke-width="0"
+       id="circle1148" />
+    <text
+       alignment-baseline="middle"
+       fill="#fff"
+       font-family="Inconsolata, monospace"
+       stroke="none"
+       text-anchor="middle"
+       x="242.5"
+       y="161.66666666666666"
+       id="text1150">B</text>
+  </g>
+  <g
+     id="g1152">
+    <rect
+       fill="none"
+       height="35.925925925925924"
+       stroke="none"
+       stroke-width="1"
+       width="53.888888888888886"
+       x="269.44444444444446"
+       y="143.7037037037037"
+       id="rect1154" />
+    <circle
+       class="note-C"
+       cx="296.3888888888889"
+       cy="161.66666666666666"
+       fill="#cc0c00"
+       r="12.574074074074074"
+       stroke="white"
+       stroke-width="0"
+       id="circle1156" />
+    <text
+       alignment-baseline="middle"
+       fill="#fff"
+       font-family="Inconsolata, monospace"
+       stroke="none"
+       text-anchor="middle"
+       x="296.3888888888889"
+       y="161.66666666666666"
+       id="text1158">C</text>
+  </g>
+  <g
+     id="g1160">
+    <rect
+       fill="none"
+       height="35.925925925925924"
+       stroke="none"
+       stroke-width="1"
+       width="53.888888888888886"
+       x="323.3333333333333"
+       y="143.7037037037037"
+       id="rect1162" />
+    <circle
+       class="note-C"
+       cx="350.27777777777777"
+       cy="161.66666666666666"
+       fill="#999"
+       r="12.574074074074074"
+       stroke="white"
+       stroke-width="0"
+       id="circle1164" />
+    <text
+       alignment-baseline="middle"
+       fill="#fff"
+       font-family="Inconsolata, monospace"
+       stroke="none"
+       text-anchor="middle"
+       x="350.27777777777777"
+       y="161.66666666666666"
+       id="text1166">C♯</text>
+  </g>
+  <g
+     id="g1168">
+    <rect
+       fill="none"
+       height="35.925925925925924"
+       stroke="none"
+       stroke-width="1"
+       width="53.888888888888886"
+       x="377.2222222222222"
+       y="143.7037037037037"
+       id="rect1170" />
+    <circle
+       class="note-D"
+       cx="404.16666666666663"
+       cy="161.66666666666666"
+       fill="#ccbb00"
+       r="12.574074074074074"
+       stroke="white"
+       stroke-width="0"
+       id="circle1172" />
+    <text
+       alignment-baseline="middle"
+       fill="#fff"
+       font-family="Inconsolata, monospace"
+       stroke="none"
+       text-anchor="middle"
+       x="404.16666666666663"
+       y="161.66666666666666"
+       id="text1174">D</text>
+  </g>
+  <g
+     id="g1176">
+    <rect
+       fill="none"
+       height="35.925925925925924"
+       stroke="none"
+       stroke-width="1"
+       width="53.888888888888886"
+       x="431.1111111111111"
+       y="143.7037037037037"
+       id="rect1178" />
+    <circle
+       class="note-D"
+       cx="458.05555555555554"
+       cy="161.66666666666666"
+       fill="#999"
+       r="12.574074074074074"
+       stroke="white"
+       stroke-width="0"
+       id="circle1180" />
+    <text
+       alignment-baseline="middle"
+       fill="#fff"
+       font-family="Inconsolata, monospace"
+       stroke="none"
+       text-anchor="middle"
+       x="458.05555555555554"
+       y="161.66666666666666"
+       id="text1182">E♭</text>
+  </g>
+  <g
+     id="g1184">
+    <rect
+       fill="none"
+       height="35.925925925925924"
+       stroke="none"
+       stroke-width="1"
+       width="53.888888888888886"
+       x="485.0"
+       y="143.7037037037037"
+       id="rect1186" />
+    <circle
+       class="note-E"
+       cx="511.94444444444446"
+       cy="161.66666666666666"
+       fill="#2ecc00"
+       r="12.574074074074074"
+       stroke="white"
+       stroke-width="0"
+       id="circle1188" />
+    <text
+       alignment-baseline="middle"
+       fill="#fff"
+       font-family="Inconsolata, monospace"
+       stroke="none"
+       text-anchor="middle"
+       x="511.94444444444446"
+       y="161.66666666666666"
+       id="text1190">E</text>
+  </g>
+  <g
+     id="g1192">
+    <rect
+       fill="none"
+       height="35.925925925925924"
+       stroke="none"
+       stroke-width="1"
+       width="53.888888888888886"
+       x="538.8888888888889"
+       y="143.7037037037037"
+       id="rect1194" />
+    <circle
+       class="note-F"
+       cx="565.8333333333334"
+       cy="161.66666666666666"
+       fill="#00cc81"
+       r="12.574074074074074"
+       stroke="white"
+       stroke-width="0"
+       id="circle1196" />
+    <text
+       alignment-baseline="middle"
+       fill="#fff"
+       font-family="Inconsolata, monospace"
+       stroke="none"
+       text-anchor="middle"
+       x="565.8333333333334"
+       y="161.66666666666666"
+       id="text1198">F</text>
+  </g>
+  <g
+     id="g1200">
+    <rect
+       fill="none"
+       height="35.925925925925924"
+       stroke="none"
+       stroke-width="1"
+       width="53.888888888888886"
+       x="592.7777777777777"
+       y="143.7037037037037"
+       id="rect1202" />
+    <circle
+       class="note-F"
+       cx="619.7222222222222"
+       cy="161.66666666666666"
+       fill="#999"
+       r="12.574074074074074"
+       stroke="white"
+       stroke-width="0"
+       id="circle1204" />
+    <text
+       alignment-baseline="middle"
+       fill="#fff"
+       font-family="Inconsolata, monospace"
+       stroke="none"
+       text-anchor="middle"
+       x="619.7222222222222"
+       y="161.66666666666666"
+       id="text1206">F♯</text>
+  </g>
+  <g
+     id="g1208">
+    <rect
+       fill="none"
+       height="35.925925925925924"
+       stroke="none"
+       stroke-width="1"
+       width="53.888888888888886"
+       x="646.6666666666666"
+       y="143.7037037037037"
+       id="rect1210" />
+    <circle
+       class="note-G"
+       cx="673.6111111111111"
+       cy="161.66666666666666"
+       fill="#0068cc"
+       r="12.574074074074074"
+       stroke="white"
+       stroke-width="0"
+       id="circle1212" />
+    <text
+       alignment-baseline="middle"
+       fill="#fff"
+       font-family="Inconsolata, monospace"
+       stroke="none"
+       text-anchor="middle"
+       x="673.6111111111111"
+       y="161.66666666666666"
+       id="text1214">G</text>
+  </g>
+  <g
+     id="g1216">
+    <rect
+       fill="none"
+       height="35.925925925925924"
+       stroke="none"
+       stroke-width="1"
+       width="53.888888888888886"
+       x="700.5555555555555"
+       y="143.7037037037037"
+       id="rect1218" />
+    <circle
+       class="note-G"
+       cx="727.5"
+       cy="161.66666666666666"
+       fill="#999"
+       r="12.574074074074074"
+       stroke="white"
+       stroke-width="0"
+       id="circle1220" />
+    <text
+       alignment-baseline="middle"
+       fill="#fff"
+       font-family="Inconsolata, monospace"
+       stroke="none"
+       text-anchor="middle"
+       x="727.5"
+       y="161.66666666666666"
+       id="text1222">G♯</text>
+  </g>
+  <g
+     id="g1224">
+    <rect
+       fill="none"
+       height="35.925925925925924"
+       stroke="none"
+       stroke-width="1"
+       width="53.888888888888886"
+       x="754.4444444444443"
+       y="143.7037037037037"
+       id="rect1226" />
+    <circle
+       class="note-A"
+       cx="781.3888888888888"
+       cy="161.66666666666666"
+       fill="#4700cc"
+       r="12.574074074074074"
+       stroke="white"
+       stroke-width="0"
+       id="circle1228" />
+    <text
+       alignment-baseline="middle"
+       fill="#fff"
+       font-family="Inconsolata, monospace"
+       stroke="none"
+       text-anchor="middle"
+       x="781.3888888888888"
+       y="161.66666666666666"
+       id="text1230">A</text>
+  </g>
+  <g
+     id="g1232">
+    <rect
+       fill="none"
+       height="35.925925925925924"
+       stroke="none"
+       stroke-width="1"
+       width="53.888888888888886"
+       x="808.3333333333333"
+       y="143.7037037037037"
+       id="rect1234" />
+    <circle
+       class="note-A"
+       cx="835.2777777777777"
+       cy="161.66666666666666"
+       fill="#999"
+       r="12.574074074074074"
+       stroke="white"
+       stroke-width="0"
+       id="circle1236" />
+    <text
+       alignment-baseline="middle"
+       fill="#fff"
+       font-family="Inconsolata, monospace"
+       stroke="none"
+       text-anchor="middle"
+       x="835.2777777777777"
+       y="161.66666666666666"
+       id="text1238">B♭</text>
+  </g>
+  <g
+     id="g1240">
+    <rect
+       fill="none"
+       height="35.925925925925924"
+       stroke="none"
+       stroke-width="1"
+       width="53.888888888888886"
+       x="862.2222222222222"
+       y="143.7037037037037"
+       id="rect1242" />
+    <circle
+       class="note-B"
+       cx="889.1666666666666"
+       cy="161.66666666666666"
+       fill="#cc00a3"
+       r="12.574074074074074"
+       stroke="white"
+       stroke-width="0"
+       id="circle1244" />
+    <text
+       alignment-baseline="middle"
+       fill="#fff"
+       font-family="Inconsolata, monospace"
+       stroke="none"
+       text-anchor="middle"
+       x="889.1666666666666"
+       y="161.66666666666666"
+       id="text1246">B</text>
+  </g>
+  <g
+     id="g1248">
+    <rect
+       fill="none"
+       height="35.925925925925924"
+       stroke="none"
+       stroke-width="1"
+       width="53.888888888888886"
+       x="916.1111111111111"
+       y="143.7037037037037"
+       id="rect1250" />
+    <circle
+       class="note-C"
+       cx="943.0555555555555"
+       cy="161.66666666666666"
+       fill="#cc0c00"
+       r="12.574074074074074"
+       stroke="white"
+       stroke-width="0"
+       id="circle1252" />
+    <text
+       alignment-baseline="middle"
+       fill="#fff"
+       font-family="Inconsolata, monospace"
+       stroke="none"
+       text-anchor="middle"
+       x="943.0555555555555"
+       y="161.66666666666666"
+       id="text1254">C</text>
+  </g>
+  <g
+     id="g1256">
+    <line
+       fill="none"
+       stroke="#333"
+       stroke-width="3"
+       x1="53.888888888888886"
+       x2="53.888888888888886"
+       y1="35.925925925925924"
+       y2="179.62962962962962"
+       id="line1258" />
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="35.925925925925924"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="269.44444444444446"
+       y="0"
+       id="rect1260" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="431.1111111111111"
+       y="8.981481481481481"
+       id="text1262">3rd position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="35.925925925925924"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="646.6666666666666"
+       y="0"
+       id="rect1264" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="808.3333333333333"
+       y="8.981481481481481"
+       id="text1266">7th position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="17.962962962962962"
+       stroke="#000"
+       stroke-width="1"
+       width="377.2222222222222"
+       x="53.888888888888886"
+       y="17.962962962962962"
+       id="rect1268" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="242.49999999999997"
+       y="26.944444444444443"
+       id="text1270">1st position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="35.925925925925924"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="377.2222222222222"
+       y="179.62962962962962"
+       id="rect1272" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="538.8888888888888"
+       y="206.57407407407408"
+       id="text1274">4th position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="17.962962962962962"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="161.66666666666666"
+       y="179.62962962962962"
+       id="rect1276" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="323.3333333333333"
+       y="188.6111111111111"
+       id="text1278">2nd position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="17.962962962962962"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="431.1111111111111"
+       y="17.962962962962962"
+       id="rect1280" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="592.7777777777777"
+       y="26.944444444444443"
+       id="text1282">5th position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="17.962962962962962"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="538.8888888888889"
+       y="179.62962962962962"
+       id="rect1284" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="700.5555555555555"
+       y="188.6111111111111"
+       id="text1286">6th position</text>
+  </g>
+  <g
+     id="g1288">
+    <line
+       fill="none"
+       stroke="#333"
+       stroke-width="1"
+       x1="161.66666666666666"
+       x2="161.66666666666666"
+       y1="35.925925925925924"
+       y2="179.62962962962962"
+       id="line1290" />
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="35.925925925925924"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="269.44444444444446"
+       y="0"
+       id="rect1292" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="431.1111111111111"
+       y="8.981481481481481"
+       id="text1294">3rd position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="35.925925925925924"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="646.6666666666666"
+       y="0"
+       id="rect1296" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="808.3333333333333"
+       y="8.981481481481481"
+       id="text1298">7th position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="17.962962962962962"
+       stroke="#000"
+       stroke-width="1"
+       width="377.2222222222222"
+       x="53.888888888888886"
+       y="17.962962962962962"
+       id="rect1300" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="242.49999999999997"
+       y="26.944444444444443"
+       id="text1302">1st position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="35.925925925925924"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="377.2222222222222"
+       y="179.62962962962962"
+       id="rect1304" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="538.8888888888888"
+       y="206.57407407407408"
+       id="text1306">4th position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="17.962962962962962"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="161.66666666666666"
+       y="179.62962962962962"
+       id="rect1308" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="323.3333333333333"
+       y="188.6111111111111"
+       id="text1310">2nd position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="17.962962962962962"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="431.1111111111111"
+       y="17.962962962962962"
+       id="rect1312" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="592.7777777777777"
+       y="26.944444444444443"
+       id="text1314">5th position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="17.962962962962962"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="538.8888888888889"
+       y="179.62962962962962"
+       id="rect1316" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="700.5555555555555"
+       y="188.6111111111111"
+       id="text1318">6th position</text>
+  </g>
+  <g
+     id="g1320">
+    <line
+       fill="none"
+       stroke="#333"
+       stroke-width="1"
+       x1="269.44444444444446"
+       x2="269.44444444444446"
+       y1="35.925925925925924"
+       y2="179.62962962962962"
+       id="line1322" />
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="35.925925925925924"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="269.44444444444446"
+       y="0"
+       id="rect1324" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="431.1111111111111"
+       y="8.981481481481481"
+       id="text1326">3rd position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="35.925925925925924"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="646.6666666666666"
+       y="0"
+       id="rect1328" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="808.3333333333333"
+       y="8.981481481481481"
+       id="text1330">7th position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="17.962962962962962"
+       stroke="#000"
+       stroke-width="1"
+       width="377.2222222222222"
+       x="53.888888888888886"
+       y="17.962962962962962"
+       id="rect1332" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="242.49999999999997"
+       y="26.944444444444443"
+       id="text1334">1st position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="35.925925925925924"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="377.2222222222222"
+       y="179.62962962962962"
+       id="rect1336" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="538.8888888888888"
+       y="206.57407407407408"
+       id="text1338">4th position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="17.962962962962962"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="161.66666666666666"
+       y="179.62962962962962"
+       id="rect1340" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="323.3333333333333"
+       y="188.6111111111111"
+       id="text1342">2nd position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="17.962962962962962"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="431.1111111111111"
+       y="17.962962962962962"
+       id="rect1344" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="592.7777777777777"
+       y="26.944444444444443"
+       id="text1346">5th position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="17.962962962962962"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="538.8888888888889"
+       y="179.62962962962962"
+       id="rect1348" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="700.5555555555555"
+       y="188.6111111111111"
+       id="text1350">6th position</text>
+  </g>
+  <g
+     id="g1352">
+    <line
+       fill="none"
+       stroke="#333"
+       stroke-width="1"
+       x1="377.2222222222222"
+       x2="377.2222222222222"
+       y1="35.925925925925924"
+       y2="179.62962962962962"
+       id="line1354" />
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="35.925925925925924"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="269.44444444444446"
+       y="0"
+       id="rect1356" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="431.1111111111111"
+       y="8.981481481481481"
+       id="text1358">3rd position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="35.925925925925924"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="646.6666666666666"
+       y="0"
+       id="rect1360" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="808.3333333333333"
+       y="8.981481481481481"
+       id="text1362">7th position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="17.962962962962962"
+       stroke="#000"
+       stroke-width="1"
+       width="377.2222222222222"
+       x="53.888888888888886"
+       y="17.962962962962962"
+       id="rect1364" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="242.49999999999997"
+       y="26.944444444444443"
+       id="text1366">1st position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="35.925925925925924"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="377.2222222222222"
+       y="179.62962962962962"
+       id="rect1368" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="538.8888888888888"
+       y="206.57407407407408"
+       id="text1370">4th position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="17.962962962962962"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="161.66666666666666"
+       y="179.62962962962962"
+       id="rect1372" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="323.3333333333333"
+       y="188.6111111111111"
+       id="text1374">2nd position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="17.962962962962962"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="431.1111111111111"
+       y="17.962962962962962"
+       id="rect1376" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="592.7777777777777"
+       y="26.944444444444443"
+       id="text1378">5th position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="17.962962962962962"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="538.8888888888889"
+       y="179.62962962962962"
+       id="rect1380" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="700.5555555555555"
+       y="188.6111111111111"
+       id="text1382">6th position</text>
+  </g>
+  <g
+     id="g1384">
+    <line
+       fill="none"
+       stroke="#333"
+       stroke-width="1"
+       x1="485.0"
+       x2="485.0"
+       y1="35.925925925925924"
+       y2="179.62962962962962"
+       id="line1386" />
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="35.925925925925924"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="269.44444444444446"
+       y="0"
+       id="rect1388" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="431.1111111111111"
+       y="8.981481481481481"
+       id="text1390">3rd position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="35.925925925925924"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="646.6666666666666"
+       y="0"
+       id="rect1392" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="808.3333333333333"
+       y="8.981481481481481"
+       id="text1394">7th position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="17.962962962962962"
+       stroke="#000"
+       stroke-width="1"
+       width="377.2222222222222"
+       x="53.888888888888886"
+       y="17.962962962962962"
+       id="rect1396" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="242.49999999999997"
+       y="26.944444444444443"
+       id="text1398">1st position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="35.925925925925924"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="377.2222222222222"
+       y="179.62962962962962"
+       id="rect1400" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="538.8888888888888"
+       y="206.57407407407408"
+       id="text1402">4th position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="17.962962962962962"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="161.66666666666666"
+       y="179.62962962962962"
+       id="rect1404" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="323.3333333333333"
+       y="188.6111111111111"
+       id="text1406">2nd position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="17.962962962962962"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="431.1111111111111"
+       y="17.962962962962962"
+       id="rect1408" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="592.7777777777777"
+       y="26.944444444444443"
+       id="text1410">5th position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="17.962962962962962"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="538.8888888888889"
+       y="179.62962962962962"
+       id="rect1412" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="700.5555555555555"
+       y="188.6111111111111"
+       id="text1414">6th position</text>
+  </g>
+  <g
+     id="g1416">
+    <line
+       fill="none"
+       stroke="#333"
+       stroke-width="1"
+       x1="538.8888888888889"
+       x2="538.8888888888889"
+       y1="35.925925925925924"
+       y2="179.62962962962962"
+       id="line1418" />
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="35.925925925925924"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="269.44444444444446"
+       y="0"
+       id="rect1420" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="431.1111111111111"
+       y="8.981481481481481"
+       id="text1422">3rd position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="35.925925925925924"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="646.6666666666666"
+       y="0"
+       id="rect1424" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="808.3333333333333"
+       y="8.981481481481481"
+       id="text1426">7th position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="17.962962962962962"
+       stroke="#000"
+       stroke-width="1"
+       width="377.2222222222222"
+       x="53.888888888888886"
+       y="17.962962962962962"
+       id="rect1428" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="242.49999999999997"
+       y="26.944444444444443"
+       id="text1430">1st position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="35.925925925925924"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="377.2222222222222"
+       y="179.62962962962962"
+       id="rect1432" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="538.8888888888888"
+       y="206.57407407407408"
+       id="text1434">4th position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="17.962962962962962"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="161.66666666666666"
+       y="179.62962962962962"
+       id="rect1436" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="323.3333333333333"
+       y="188.6111111111111"
+       id="text1438">2nd position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="17.962962962962962"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="431.1111111111111"
+       y="17.962962962962962"
+       id="rect1440" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="592.7777777777777"
+       y="26.944444444444443"
+       id="text1442">5th position</text>
+    <rect
+       fill="#fff"
+       fill-opacity="0.8"
+       height="17.962962962962962"
+       stroke="#000"
+       stroke-width="1"
+       width="323.3333333333333"
+       x="538.8888888888889"
+       y="179.62962962962962"
+       id="rect1444" />
+    <text
+       alignment-baseline="middle"
+       fill="#000"
+       font-family="Inconsolata, monospace"
+       font-weight="normal"
+       stroke="#000"
+       stroke-width="0"
+       text-anchor="middle"
+       x="700.5555555555555"
+       y="188.6111111111111"
+       id="text1446">6th position</text>
+  </g>
+  <g
+     id="g1448"
+     style="fill:none;fill-opacity:1">
+    <line
+       x1="646.6666666666666"
+       x2="646.6666666666666"
+       y1="35.925925925925924"
+       y2="179.62962962962962"
+       id="line1450"
+       style="fill:none;fill-opacity:1"
+       stroke-width="1"
+       stroke="#333"
+       fill="none" />
+    <rect
+       height="35.925925925925924"
+       width="323.3333333333333"
+       x="269.44444444444446"
+       y="0"
+       id="rect1452"
+       style="fill:#ff6633;fill-opacity:1"
+       stroke-width="1"
+       stroke="#000"
+       fill-opacity="0.8"
+       fill="#fff" />
+    <rect
+       height="35.925925925925924"
+       width="323.3333333333333"
+       x="646.6666666666666"
+       y="0"
+       id="rect1456"
+       style="fill:#cc3366;fill-opacity:1"
+       stroke-width="1"
+       stroke="#000"
+       fill-opacity="0.8"
+       fill="#fff" />
+    <text
+       alignment-baseline="middle"
+       font-weight="normal"
+       x="808.3333333333333"
+       y="8.981481481481481"
+       id="text1458"
+       style="fill:#ffffff;fill-opacity:1;"
+       text-anchor="middle"
+       font-family="Inconsolata, monospace"
+       stroke-width="0"
+       stroke="#000"
+       fill="#000">7th position</text>
+    <rect
+       height="17.962962962962962"
+       width="377.2222222222222"
+       x="53.888888888888886"
+       y="17.962962962962962"
+       id="rect1460"
+       style="fill:#333366;fill-opacity:0.86666667"
+       stroke-width="1"
+       stroke="#000"
+       fill-opacity="0.8"
+       fill="#fff" />
+    <text
+       alignment-baseline="middle"
+       font-weight="normal"
+       x="431.1111111111111"
+       y="8.981481481481481"
+       id="text1454"
+       style="fill:#ffffff;fill-opacity:1;"
+       text-anchor="middle"
+       font-family="Inconsolata, monospace"
+       stroke-width="0"
+       stroke="#000"
+       fill="#000">3rd position</text>
+    <text
+       alignment-baseline="middle"
+       font-weight="normal"
+       x="242.49999999999997"
+       y="26.944444444444443"
+       id="text1462"
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-opacity:1;"
+       text-anchor="middle"
+       font-family="Inconsolata, monospace"
+       stroke-width="0"
+       stroke="#000"
+       fill="#000">1st position</text>
+    <rect
+       height="35.925925925925924"
+       width="323.3333333333333"
+       x="377.2222222222222"
+       y="179.62962962962962"
+       id="rect1464"
+       style="fill:#cc3333;fill-opacity:1;stroke:none;stroke-opacity:1"
+       stroke-width="1"
+       stroke="#000"
+       fill-opacity="0.8"
+       fill="#fff" />
+    <text
+       alignment-baseline="middle"
+       font-weight="normal"
+       x="538.8888888888888"
+       y="206.57407407407408"
+       id="text1466"
+       style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-opacity:1;"
+       text-anchor="middle"
+       font-family="Inconsolata, monospace"
+       stroke-width="0"
+       stroke="#000"
+       fill="#000">4th position</text>
+    <rect
+       height="17.962962962962962"
+       width="323.3333333333333"
+       x="161.66666666666666"
+       y="179.62962962962962"
+       id="rect1468"
+       style="fill:#336633;fill-opacity:0.86666667"
+       stroke-width="1"
+       stroke="#000"
+       fill-opacity="0.8"
+       fill="#fff" />
+    <text
+       alignment-baseline="middle"
+       font-weight="normal"
+       x="323.3333333333333"
+       y="188.6111111111111"
+       id="text1470"
+       style="fill:#ffffff;fill-opacity:1;"
+       text-anchor="middle"
+       font-family="Inconsolata, monospace"
+       stroke-width="0"
+       stroke="#000"
+       fill="#000">2nd position</text>
+    <rect
+       height="17.962962962962962"
+       width="323.3333333333333"
+       x="431.1111111111111"
+       y="17.962962962962962"
+       id="rect1472"
+       style="fill:#66cc66;fill-opacity:0.86666667"
+       stroke-width="1"
+       stroke="#000"
+       fill-opacity="0.8"
+       fill="#fff" />
+    <text
+       alignment-baseline="middle"
+       font-weight="normal"
+       x="592.7777777777777"
+       y="26.944444444444443"
+       id="text1474"
+       style="fill:#ffffff;fill-opacity:1;"
+       text-anchor="middle"
+       font-family="Inconsolata, monospace"
+       stroke-width="0"
+       stroke="#000"
+       fill="#000">5th position</text>
+    <rect
+       height="17.962962962962962"
+       width="323.3333333333333"
+       x="538.8888888888889"
+       y="179.62962962962962"
+       id="rect1476"
+       style="fill:#6666cc;fill-opacity:0.86666667"
+       stroke-width="1"
+       stroke="#000"
+       fill-opacity="0.8"
+       fill="#fff" />
+    <text
+       alignment-baseline="middle"
+       font-weight="normal"
+       x="700.5555555555555"
+       y="188.6111111111111"
+       id="text1478"
+       style="fill:#ffffff;fill-opacity:1;"
+       text-anchor="middle"
+       font-family="Inconsolata, monospace"
+       stroke-width="0"
+       stroke="#000"
+       fill="#000">6th position</text>
+  </g>
+</svg>
