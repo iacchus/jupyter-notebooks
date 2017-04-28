@@ -6,7 +6,7 @@
 
 body {
     font-family: 'Slabo 27px';
-    font-size: 18px;
+    font-size: 14px;
 }
 
 h1
@@ -40,6 +40,7 @@ a:hover {
 
 #page-container {
     width: 80%;
+    maxt-width: 520px;
     margin: 0 auto;
 }
 
@@ -53,15 +54,15 @@ a:hover {
     padding: 4px 7px;
     background-color: #669;
     color: #fff;
-    border-top-left-radius: 3px;
-    border-top-right-radius: 3px;
+    //border-top-left-radius: 3px;
+    //border-top-right-radius: 3px;
     text-align: center;
     text-shadow: 1px 1px #333;
 
 }
 
 #files > a:nth-child(4n) {
-    background-color: #eee;
+    background-color: beige;
 }
 
 #files > a:before {
@@ -71,8 +72,11 @@ a:hover {
 #files > a {
     padding: 4px 9px;
     display: inline-block;
-    width: 100%
+    width: 100%;
+    border-bottom: 1px solid #ccc;
+    text-align: center;
 }
+
 
 #files > a:hover {
     color: #669;

@@ -27,7 +27,10 @@ index_files = str()
 
 print("Writing index file listing..")
 for file in html_files:
-    index_files += "<a href='{0}' data-featherlight='iframe'>{0}</a><br/>\n".format(file)
+    filename = file.split('/')[1] # remove 'html/'
+    notebook_nicename = filename.split('.')[0].replace('-',' ')
+
+    index_files += "<a href='{0}' data-featherlight='iframe'>{1}</a><br/>\n".format(file, notebook_nicename)
 
 file_contents = """
 <!DOCTYPE html>
