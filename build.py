@@ -45,6 +45,8 @@ file_contents = """
     <link href="index_files/featherlight.min.css" type="text/css" rel="stylesheet" />
     <link rel="stylesheet" href="index_files/style.css">
 
+    <link href='https://fonts.googleapis.com/css?family=Old+Standard+TT|Slabo+27px|Roboto:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
     <!--<script src="script.js"></script>-->
     <script src="index_files/jquery-latest.js"></script>
     <script src="index_files/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
