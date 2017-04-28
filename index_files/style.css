@@ -6,7 +6,7 @@
 
 body {
     font-family: 'Slabo 27px';
-    font-size: 14px;
+    font-size: 16px;
 }
 
 h1
@@ -17,7 +17,7 @@ h1
 }
 
 a {
-    color: #333;
+    color: #000;
     text-decoration: none;
     padding-left: 0;
     //transition: padding-left .2s ease;
@@ -40,7 +40,7 @@ a:hover {
 
 #page-container {
     width: 80%;
-    maxt-width: 520px;
+    max-width: 520px;
     margin: 0 auto;
 }
 
@@ -52,7 +52,8 @@ a:hover {
 
 #files-title {
     padding: 4px 7px;
-    background-color: #669;
+    //background-color: #669;
+    background-color: #333;
     color: #fff;
     //border-top-left-radius: 3px;
     //border-top-right-radius: 3px;
