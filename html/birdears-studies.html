@@ -23501,7 +23501,7 @@ div#notebook {
 <!-- Custom stylesheet, it must be in the same directory as the html file -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.19.0/codemirror.css">
 <link rel="stylesheet" href="custom.css">
-<link rel="stylesheet" href="index_files/custom.css">
+<link rel="stylesheet" href="/index_files/custom.css">
 
 <!-- Loading mathjax macro -->
 </head>
@@ -23511,7 +23511,7 @@ div#notebook {
 
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area code">
 from music21 import *
@@ -23523,18 +23523,163 @@ from pprint import pprint
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area code">
 c = scale.ChromaticScale('c')
+#intervals = [(interval.notesToInterval(c.pitches[0],pitch).directedNiceName) for pitch in c.pitches]
+intervals = []
+
+for pitch in c.getPitches('c4','c9'):
+    ival = interval.notesToInterval(c.pitches[0], pitch)
+    
+    intervals.append((ival.semitones, ival.name, ival.niceName))
+    
+pprint(intervals)
 </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[(0, &#39;P1&#39;, &#39;Perfect Unison&#39;),
+ (1, &#39;A1&#39;, &#39;Augmented Unison&#39;),
+ (2, &#39;M2&#39;, &#39;Major Second&#39;),
+ (3, &#39;m3&#39;, &#39;Minor Third&#39;),
+ (4, &#39;M3&#39;, &#39;Major Third&#39;),
+ (5, &#39;P4&#39;, &#39;Perfect Fourth&#39;),
+ (6, &#39;A4&#39;, &#39;Augmented Fourth&#39;),
+ (7, &#39;P5&#39;, &#39;Perfect Fifth&#39;),
+ (8, &#39;m6&#39;, &#39;Minor Sixth&#39;),
+ (9, &#39;M6&#39;, &#39;Major Sixth&#39;),
+ (10, &#39;m7&#39;, &#39;Minor Seventh&#39;),
+ (11, &#39;M7&#39;, &#39;Major Seventh&#39;),
+ (12, &#39;P8&#39;, &#39;Perfect Octave&#39;),
+ (13, &#39;A8&#39;, &#39;Augmented Octave&#39;),
+ (14, &#39;M9&#39;, &#39;Major Ninth&#39;),
+ (15, &#39;m10&#39;, &#39;Minor Tenth&#39;),
+ (16, &#39;M10&#39;, &#39;Major Tenth&#39;),
+ (17, &#39;P11&#39;, &#39;Perfect Eleventh&#39;),
+ (18, &#39;A11&#39;, &#39;Augmented Eleventh&#39;),
+ (19, &#39;P12&#39;, &#39;Perfect Twelfth&#39;),
+ (20, &#39;m13&#39;, &#39;Minor Thirteenth&#39;),
+ (21, &#39;M13&#39;, &#39;Major Thirteenth&#39;),
+ (22, &#39;m14&#39;, &#39;Minor Fourteenth&#39;),
+ (23, &#39;M14&#39;, &#39;Major Fourteenth&#39;),
+ (24, &#39;P15&#39;, &#39;Perfect Double-octave&#39;),
+ (25, &#39;A15&#39;, &#39;Augmented Double-octave&#39;),
+ (26, &#39;M16&#39;, &#39;Major Sixteenth&#39;),
+ (27, &#39;m17&#39;, &#39;Minor Seventeenth&#39;),
+ (28, &#39;M17&#39;, &#39;Major Seventeenth&#39;),
+ (29, &#39;P18&#39;, &#39;Perfect Eighteenth&#39;),
+ (30, &#39;A18&#39;, &#39;Augmented Eighteenth&#39;),
+ (31, &#39;P19&#39;, &#39;Perfect Nineteenth&#39;),
+ (32, &#39;m20&#39;, &#39;Minor Twentieth&#39;),
+ (33, &#39;M20&#39;, &#39;Major Twentieth&#39;),
+ (34, &#39;m21&#39;, &#39;Minor Twenty-first&#39;),
+ (35, &#39;M21&#39;, &#39;Major Twenty-first&#39;),
+ (36, &#39;P22&#39;, &#39;Perfect Triple-octave&#39;),
+ (37, &#39;A22&#39;, &#39;Augmented Triple-octave&#39;),
+ (38, &#39;M23&#39;, &#39;Major 23&#39;),
+ (39, &#39;m24&#39;, &#39;Minor 24&#39;),
+ (40, &#39;M24&#39;, &#39;Major 24&#39;),
+ (41, &#39;P25&#39;, &#39;Perfect 25&#39;),
+ (42, &#39;A25&#39;, &#39;Augmented 25&#39;),
+ (43, &#39;P26&#39;, &#39;Perfect 26&#39;),
+ (44, &#39;m27&#39;, &#39;Minor 27&#39;),
+ (45, &#39;M27&#39;, &#39;Major 27&#39;),
+ (46, &#39;m28&#39;, &#39;Minor 28&#39;),
+ (47, &#39;M28&#39;, &#39;Major 28&#39;),
+ (48, &#39;P29&#39;, &#39;Perfect 29&#39;),
+ (49, &#39;A29&#39;, &#39;Augmented 29&#39;),
+ (50, &#39;M30&#39;, &#39;Major 30&#39;),
+ (51, &#39;m31&#39;, &#39;Minor 31&#39;),
+ (52, &#39;M31&#39;, &#39;Major 31&#39;),
+ (53, &#39;P32&#39;, &#39;Perfect 32&#39;),
+ (54, &#39;A32&#39;, &#39;Augmented 32&#39;),
+ (55, &#39;P33&#39;, &#39;Perfect 33&#39;),
+ (56, &#39;m34&#39;, &#39;Minor 34&#39;),
+ (57, &#39;M34&#39;, &#39;Major 34&#39;),
+ (58, &#39;m35&#39;, &#39;Minor 35&#39;),
+ (59, &#39;M35&#39;, &#39;Major 35&#39;),
+ (60, &#39;P36&#39;, &#39;Perfect 36&#39;)]
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="inner_cell">
+    <div class="input_area code">
+c.getPitches()
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">AttributeError</span>                            Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-15-d8e1553639ab&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>c<span class="ansi-blue-fg">.</span>getPitches<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
+
+<span class="ansi-green-fg">/home/iacchus/git-stuff/jupyter-venv/venv/lib/python3.6/site-packages/music21/scale/__init__.py</span> in <span class="ansi-cyan-fg">getPitches</span><span class="ansi-blue-fg">(self, minPitch, maxPitch, direction)</span>
+<span class="ansi-green-intense-fg ansi-bold">   1551</span>                                                  maxPitch<span class="ansi-blue-fg">=</span>maxPitch<span class="ansi-blue-fg">,</span>
+<span class="ansi-green-intense-fg ansi-bold">   1552</span>                                                  direction<span class="ansi-blue-fg">=</span>direction<span class="ansi-blue-fg">,</span>
+<span class="ansi-green-fg">-&gt; 1553</span><span class="ansi-red-fg">                                                  reverse=reverse)
+</span><span class="ansi-green-intense-fg ansi-bold">   1554</span>         <span class="ansi-green-fg">else</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-intense-fg ansi-bold">   1555</span>             <span class="ansi-green-fg">return</span> <span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">]</span>
+
+<span class="ansi-green-fg">/home/iacchus/git-stuff/jupyter-venv/venv/lib/python3.6/site-packages/music21/scale/__init__.py</span> in <span class="ansi-cyan-fg">getRealization</span><span class="ansi-blue-fg">(self, pitchObj, stepOfPitch, minPitch, maxPitch, direction, reverse)</span>
+<span class="ansi-green-intense-fg ansi-bold">    411</span>                                       alteredDegrees<span class="ansi-blue-fg">=</span>self<span class="ansi-blue-fg">.</span>_alteredDegrees<span class="ansi-blue-fg">,</span>
+<span class="ansi-green-intense-fg ansi-bold">    412</span>                                       direction<span class="ansi-blue-fg">=</span>direction<span class="ansi-blue-fg">,</span>
+<span class="ansi-green-fg">--&gt; 413</span><span class="ansi-red-fg">                                       reverse=reverse)
+</span><span class="ansi-green-intense-fg ansi-bold">    414</span>         <span class="ansi-red-fg"># here, we copy the list of pitches so as not to allow editing of</span>
+<span class="ansi-green-intense-fg ansi-bold">    415</span>         <span class="ansi-red-fg"># cached pitch values later</span>
+
+<span class="ansi-green-fg">/home/iacchus/git-stuff/jupyter-venv/venv/lib/python3.6/site-packages/music21/scale/intervalNetwork.py</span> in <span class="ansi-cyan-fg">realizePitch</span><span class="ansi-blue-fg">(self, pitchReference, nodeId, minPitch, maxPitch, direction, alteredDegrees, reverse)</span>
+<span class="ansi-green-intense-fg ansi-bold">   1905</span>                             direction<span class="ansi-blue-fg">=</span>direction<span class="ansi-blue-fg">,</span>
+<span class="ansi-green-intense-fg ansi-bold">   1906</span>                             alteredDegrees<span class="ansi-blue-fg">=</span>alteredDegrees<span class="ansi-blue-fg">,</span>
+<span class="ansi-green-fg">-&gt; 1907</span><span class="ansi-red-fg">                             reverse=reverse)
+</span><span class="ansi-green-intense-fg ansi-bold">   1908</span>         <span class="ansi-green-fg">return</span> components<span class="ansi-blue-fg">[</span><span class="ansi-cyan-fg">0</span><span class="ansi-blue-fg">]</span> <span class="ansi-red-fg"># just return first component</span>
+<span class="ansi-green-intense-fg ansi-bold">   1909</span> 
+
+<span class="ansi-green-fg">/home/iacchus/git-stuff/jupyter-venv/venv/lib/python3.6/site-packages/music21/scale/intervalNetwork.py</span> in <span class="ansi-cyan-fg">realize</span><span class="ansi-blue-fg">(self, pitchReference, nodeId, minPitch, maxPitch, direction, alteredDegrees, reverse)</span>
+<span class="ansi-green-intense-fg ansi-bold">   1713</span>             <span class="ansi-green-fg">raise</span> IntervalNetworkException<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#39;pitchReference cannot be None&#39;</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">   1714</span>         <span class="ansi-red-fg"># must set an octave for pitch reference, even if not given</span>
+<span class="ansi-green-fg">-&gt; 1715</span><span class="ansi-red-fg">         </span><span class="ansi-green-fg">if</span> pitchReference<span class="ansi-blue-fg">.</span>octave <span class="ansi-green-fg">is</span> <span class="ansi-green-fg">None</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-intense-fg ansi-bold">   1716</span>             pitchReference<span class="ansi-blue-fg">.</span>octave <span class="ansi-blue-fg">=</span> pitchReference<span class="ansi-blue-fg">.</span>implicitOctave
+<span class="ansi-green-intense-fg ansi-bold">   1717</span> 
+
+<span class="ansi-red-fg">AttributeError</span>: &#39;list&#39; object has no attribute &#39;octave&#39;</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area code">
 tones = [p.name.replace('-','b') for p in c.pitches]
@@ -23551,9 +23696,44 @@ pprint(tones)
 <div class="output_area">
 <div class="prompt"></div>
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>[&#39;C&#39;, &#39;C#&#39;, &#39;D&#39;, &#39;Eb&#39;, &#39;E&#39;, &#39;F&#39;, &#39;F#&#39;, &#39;G&#39;, &#39;Ab&#39;, &#39;A&#39;, &#39;Bb&#39;, &#39;B&#39;, &#39;C&#39;]
-</pre>
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">AttributeError</span>                            Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-7-5c818464f94b&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>tones <span class="ansi-blue-fg">=</span> <span class="ansi-blue-fg">[</span>p<span class="ansi-blue-fg">.</span>name<span class="ansi-blue-fg">.</span>replace<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#39;-&#39;</span><span class="ansi-blue-fg">,</span><span class="ansi-blue-fg">&#39;b&#39;</span><span class="ansi-blue-fg">)</span> <span class="ansi-green-fg">for</span> p <span class="ansi-green-fg">in</span> c<span class="ansi-blue-fg">.</span>pitches<span class="ansi-blue-fg">]</span>
+<span class="ansi-green-intense-fg ansi-bold">      2</span> 
+<span class="ansi-green-intense-fg ansi-bold">      3</span> pprint<span class="ansi-blue-fg">(</span>tones<span class="ansi-blue-fg">)</span>
+
+<span class="ansi-green-fg">/home/iacchus/git-stuff/jupyter-venv/venv/lib/python3.6/site-packages/music21/scale/__init__.py</span> in <span class="ansi-cyan-fg">getPitches</span><span class="ansi-blue-fg">(self, minPitch, maxPitch, direction)</span>
+<span class="ansi-green-intense-fg ansi-bold">   1551</span>                                                  maxPitch<span class="ansi-blue-fg">=</span>maxPitch<span class="ansi-blue-fg">,</span>
+<span class="ansi-green-intense-fg ansi-bold">   1552</span>                                                  direction<span class="ansi-blue-fg">=</span>direction<span class="ansi-blue-fg">,</span>
+<span class="ansi-green-fg">-&gt; 1553</span><span class="ansi-red-fg">                                                  reverse=reverse)
+</span><span class="ansi-green-intense-fg ansi-bold">   1554</span>         <span class="ansi-green-fg">else</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-intense-fg ansi-bold">   1555</span>             <span class="ansi-green-fg">return</span> <span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">]</span>
+
+<span class="ansi-green-fg">/home/iacchus/git-stuff/jupyter-venv/venv/lib/python3.6/site-packages/music21/scale/__init__.py</span> in <span class="ansi-cyan-fg">getRealization</span><span class="ansi-blue-fg">(self, pitchObj, stepOfPitch, minPitch, maxPitch, direction, reverse)</span>
+<span class="ansi-green-intense-fg ansi-bold">    411</span>                                       alteredDegrees<span class="ansi-blue-fg">=</span>self<span class="ansi-blue-fg">.</span>_alteredDegrees<span class="ansi-blue-fg">,</span>
+<span class="ansi-green-intense-fg ansi-bold">    412</span>                                       direction<span class="ansi-blue-fg">=</span>direction<span class="ansi-blue-fg">,</span>
+<span class="ansi-green-fg">--&gt; 413</span><span class="ansi-red-fg">                                       reverse=reverse)
+</span><span class="ansi-green-intense-fg ansi-bold">    414</span>         <span class="ansi-red-fg"># here, we copy the list of pitches so as not to allow editing of</span>
+<span class="ansi-green-intense-fg ansi-bold">    415</span>         <span class="ansi-red-fg"># cached pitch values later</span>
+
+<span class="ansi-green-fg">/home/iacchus/git-stuff/jupyter-venv/venv/lib/python3.6/site-packages/music21/scale/intervalNetwork.py</span> in <span class="ansi-cyan-fg">realizePitch</span><span class="ansi-blue-fg">(self, pitchReference, nodeId, minPitch, maxPitch, direction, alteredDegrees, reverse)</span>
+<span class="ansi-green-intense-fg ansi-bold">   1905</span>                             direction<span class="ansi-blue-fg">=</span>direction<span class="ansi-blue-fg">,</span>
+<span class="ansi-green-intense-fg ansi-bold">   1906</span>                             alteredDegrees<span class="ansi-blue-fg">=</span>alteredDegrees<span class="ansi-blue-fg">,</span>
+<span class="ansi-green-fg">-&gt; 1907</span><span class="ansi-red-fg">                             reverse=reverse)
+</span><span class="ansi-green-intense-fg ansi-bold">   1908</span>         <span class="ansi-green-fg">return</span> components<span class="ansi-blue-fg">[</span><span class="ansi-cyan-fg">0</span><span class="ansi-blue-fg">]</span> <span class="ansi-red-fg"># just return first component</span>
+<span class="ansi-green-intense-fg ansi-bold">   1909</span> 
+
+<span class="ansi-green-fg">/home/iacchus/git-stuff/jupyter-venv/venv/lib/python3.6/site-packages/music21/scale/intervalNetwork.py</span> in <span class="ansi-cyan-fg">realize</span><span class="ansi-blue-fg">(self, pitchReference, nodeId, minPitch, maxPitch, direction, alteredDegrees, reverse)</span>
+<span class="ansi-green-intense-fg ansi-bold">   1713</span>             <span class="ansi-green-fg">raise</span> IntervalNetworkException<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#39;pitchReference cannot be None&#39;</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">   1714</span>         <span class="ansi-red-fg"># must set an octave for pitch reference, even if not given</span>
+<span class="ansi-green-fg">-&gt; 1715</span><span class="ansi-red-fg">         </span><span class="ansi-green-fg">if</span> pitchReference<span class="ansi-blue-fg">.</span>octave <span class="ansi-green-fg">is</span> <span class="ansi-green-fg">None</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-intense-fg ansi-bold">   1716</span>             pitchReference<span class="ansi-blue-fg">.</span>octave <span class="ansi-blue-fg">=</span> pitchReference<span class="ansi-blue-fg">.</span>implicitOctave
+<span class="ansi-green-intense-fg ansi-bold">   1717</span> 
+
+<span class="ansi-red-fg">AttributeError</span>: &#39;list&#39; object has no attribute &#39;octave&#39;</pre>
 </div>
 </div>
 
@@ -23563,7 +23743,7 @@ pprint(tones)
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area code">
 tones21 = [p.name for p in c.pitches]
@@ -23573,26 +23753,10 @@ pprint(tones21)
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-<div class="prompt"></div>
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>[&#39;C&#39;, &#39;C#&#39;, &#39;D&#39;, &#39;E-&#39;, &#39;E&#39;, &#39;F&#39;, &#39;F#&#39;, &#39;G&#39;, &#39;A-&#39;, &#39;A&#39;, &#39;B-&#39;, &#39;B&#39;, &#39;C&#39;]
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area code">
 majors = {}
@@ -23606,37 +23770,10 @@ pprint(majors)
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-<div class="prompt"></div>
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>{&#39;A&#39;: [&#39;A&#39;, &#39;B&#39;, &#39;C#&#39;, &#39;D&#39;, &#39;E&#39;, &#39;F#&#39;, &#39;G#&#39;, &#39;A&#39;],
- &#39;Ab&#39;: [&#39;Ab&#39;, &#39;Bb&#39;, &#39;C&#39;, &#39;Db&#39;, &#39;Eb&#39;, &#39;F&#39;, &#39;G&#39;, &#39;Ab&#39;],
- &#39;B&#39;: [&#39;B&#39;, &#39;C#&#39;, &#39;D#&#39;, &#39;E&#39;, &#39;F#&#39;, &#39;G#&#39;, &#39;A#&#39;, &#39;B&#39;],
- &#39;Bb&#39;: [&#39;Bb&#39;, &#39;C&#39;, &#39;D&#39;, &#39;Eb&#39;, &#39;F&#39;, &#39;G&#39;, &#39;A&#39;, &#39;Bb&#39;],
- &#39;C&#39;: [&#39;C&#39;, &#39;D&#39;, &#39;E&#39;, &#39;F&#39;, &#39;G&#39;, &#39;A&#39;, &#39;B&#39;, &#39;C&#39;],
- &#39;C#&#39;: [&#39;C#&#39;, &#39;D#&#39;, &#39;E#&#39;, &#39;F#&#39;, &#39;G#&#39;, &#39;A#&#39;, &#39;B#&#39;, &#39;C#&#39;],
- &#39;D&#39;: [&#39;D&#39;, &#39;E&#39;, &#39;F#&#39;, &#39;G&#39;, &#39;A&#39;, &#39;B&#39;, &#39;C#&#39;, &#39;D&#39;],
- &#39;E&#39;: [&#39;E&#39;, &#39;F#&#39;, &#39;G#&#39;, &#39;A&#39;, &#39;B&#39;, &#39;C#&#39;, &#39;D#&#39;, &#39;E&#39;],
- &#39;Eb&#39;: [&#39;Eb&#39;, &#39;F&#39;, &#39;G&#39;, &#39;Ab&#39;, &#39;Bb&#39;, &#39;C&#39;, &#39;D&#39;, &#39;Eb&#39;],
- &#39;F&#39;: [&#39;F&#39;, &#39;G&#39;, &#39;A&#39;, &#39;Bb&#39;, &#39;C&#39;, &#39;D&#39;, &#39;E&#39;, &#39;F&#39;],
- &#39;F#&#39;: [&#39;F#&#39;, &#39;G#&#39;, &#39;A#&#39;, &#39;B&#39;, &#39;C#&#39;, &#39;D#&#39;, &#39;E#&#39;, &#39;F#&#39;],
- &#39;G&#39;: [&#39;G&#39;, &#39;A&#39;, &#39;B&#39;, &#39;C&#39;, &#39;D&#39;, &#39;E&#39;, &#39;F#&#39;, &#39;G&#39;]}
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area code">
 minors = {}
@@ -23650,37 +23787,10 @@ pprint(minors)
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-<div class="prompt"></div>
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>{&#39;A&#39;: [&#39;A&#39;, &#39;B&#39;, &#39;C&#39;, &#39;D&#39;, &#39;E&#39;, &#39;F&#39;, &#39;G&#39;, &#39;A&#39;],
- &#39;Ab&#39;: [&#39;Ab&#39;, &#39;Bb&#39;, &#39;Cb&#39;, &#39;Db&#39;, &#39;Eb&#39;, &#39;Fb&#39;, &#39;Gb&#39;, &#39;Ab&#39;],
- &#39;B&#39;: [&#39;B&#39;, &#39;C#&#39;, &#39;D&#39;, &#39;E&#39;, &#39;F#&#39;, &#39;G&#39;, &#39;A&#39;, &#39;B&#39;],
- &#39;Bb&#39;: [&#39;Bb&#39;, &#39;C&#39;, &#39;Db&#39;, &#39;Eb&#39;, &#39;F&#39;, &#39;Gb&#39;, &#39;Ab&#39;, &#39;Bb&#39;],
- &#39;C&#39;: [&#39;C&#39;, &#39;D&#39;, &#39;Eb&#39;, &#39;F&#39;, &#39;G&#39;, &#39;Ab&#39;, &#39;Bb&#39;, &#39;C&#39;],
- &#39;C#&#39;: [&#39;C#&#39;, &#39;D#&#39;, &#39;E&#39;, &#39;F#&#39;, &#39;G#&#39;, &#39;A&#39;, &#39;B&#39;, &#39;C#&#39;],
- &#39;D&#39;: [&#39;D&#39;, &#39;E&#39;, &#39;F&#39;, &#39;G&#39;, &#39;A&#39;, &#39;Bb&#39;, &#39;C&#39;, &#39;D&#39;],
- &#39;E&#39;: [&#39;E&#39;, &#39;F#&#39;, &#39;G&#39;, &#39;A&#39;, &#39;B&#39;, &#39;C&#39;, &#39;D&#39;, &#39;E&#39;],
- &#39;Eb&#39;: [&#39;Eb&#39;, &#39;F&#39;, &#39;Gb&#39;, &#39;Ab&#39;, &#39;Bb&#39;, &#39;Cb&#39;, &#39;Db&#39;, &#39;Eb&#39;],
- &#39;F&#39;: [&#39;F&#39;, &#39;G&#39;, &#39;Ab&#39;, &#39;Bb&#39;, &#39;C&#39;, &#39;Db&#39;, &#39;Eb&#39;, &#39;F&#39;],
- &#39;F#&#39;: [&#39;F#&#39;, &#39;G#&#39;, &#39;A&#39;, &#39;B&#39;, &#39;C#&#39;, &#39;D&#39;, &#39;E&#39;, &#39;F#&#39;],
- &#39;G&#39;: [&#39;G&#39;, &#39;A&#39;, &#39;Bb&#39;, &#39;C&#39;, &#39;D&#39;, &#39;Eb&#39;, &#39;F&#39;, &#39;G&#39;]}
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area code">
 chromatics = {}
@@ -23694,37 +23804,10 @@ pprint(chromatics)
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-<div class="prompt"></div>
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>{&#39;A&#39;: [&#39;A&#39;, &#39;Bb&#39;, &#39;B&#39;, &#39;C&#39;, &#39;C#&#39;, &#39;D&#39;, &#39;Eb&#39;, &#39;E&#39;, &#39;F&#39;, &#39;F#&#39;, &#39;G&#39;, &#39;Ab&#39;, &#39;A&#39;],
- &#39;Ab&#39;: [&#39;Ab&#39;, &#39;A&#39;, &#39;Bb&#39;, &#39;B&#39;, &#39;C&#39;, &#39;C#&#39;, &#39;D&#39;, &#39;Eb&#39;, &#39;E&#39;, &#39;F&#39;, &#39;F#&#39;, &#39;G&#39;, &#39;Ab&#39;],
- &#39;B&#39;: [&#39;B&#39;, &#39;C&#39;, &#39;C#&#39;, &#39;D&#39;, &#39;Eb&#39;, &#39;E&#39;, &#39;F&#39;, &#39;F#&#39;, &#39;G&#39;, &#39;Ab&#39;, &#39;A&#39;, &#39;Bb&#39;, &#39;B&#39;],
- &#39;Bb&#39;: [&#39;Bb&#39;, &#39;B&#39;, &#39;C&#39;, &#39;C#&#39;, &#39;D&#39;, &#39;Eb&#39;, &#39;E&#39;, &#39;F&#39;, &#39;F#&#39;, &#39;G&#39;, &#39;Ab&#39;, &#39;A&#39;, &#39;Bb&#39;],
- &#39;C&#39;: [&#39;C&#39;, &#39;C#&#39;, &#39;D&#39;, &#39;Eb&#39;, &#39;E&#39;, &#39;F&#39;, &#39;F#&#39;, &#39;G&#39;, &#39;Ab&#39;, &#39;A&#39;, &#39;Bb&#39;, &#39;B&#39;, &#39;C&#39;],
- &#39;C#&#39;: [&#39;C#&#39;, &#39;D&#39;, &#39;Eb&#39;, &#39;E&#39;, &#39;F&#39;, &#39;F#&#39;, &#39;G&#39;, &#39;Ab&#39;, &#39;A&#39;, &#39;Bb&#39;, &#39;B&#39;, &#39;C&#39;, &#39;C#&#39;],
- &#39;D&#39;: [&#39;D&#39;, &#39;Eb&#39;, &#39;E&#39;, &#39;F&#39;, &#39;F#&#39;, &#39;G&#39;, &#39;Ab&#39;, &#39;A&#39;, &#39;Bb&#39;, &#39;B&#39;, &#39;C&#39;, &#39;C#&#39;, &#39;D&#39;],
- &#39;E&#39;: [&#39;E&#39;, &#39;F&#39;, &#39;F#&#39;, &#39;G&#39;, &#39;Ab&#39;, &#39;A&#39;, &#39;Bb&#39;, &#39;B&#39;, &#39;C&#39;, &#39;C#&#39;, &#39;D&#39;, &#39;Eb&#39;, &#39;E&#39;],
- &#39;Eb&#39;: [&#39;Eb&#39;, &#39;E&#39;, &#39;F&#39;, &#39;F#&#39;, &#39;G&#39;, &#39;Ab&#39;, &#39;A&#39;, &#39;Bb&#39;, &#39;B&#39;, &#39;C&#39;, &#39;C#&#39;, &#39;D&#39;, &#39;Eb&#39;],
- &#39;F&#39;: [&#39;F&#39;, &#39;F#&#39;, &#39;G&#39;, &#39;Ab&#39;, &#39;A&#39;, &#39;Bb&#39;, &#39;B&#39;, &#39;C&#39;, &#39;C#&#39;, &#39;D&#39;, &#39;Eb&#39;, &#39;E&#39;, &#39;F&#39;],
- &#39;F#&#39;: [&#39;F#&#39;, &#39;G&#39;, &#39;Ab&#39;, &#39;A&#39;, &#39;Bb&#39;, &#39;B&#39;, &#39;C&#39;, &#39;C#&#39;, &#39;D&#39;, &#39;Eb&#39;, &#39;E&#39;, &#39;F&#39;, &#39;F#&#39;],
- &#39;G&#39;: [&#39;G&#39;, &#39;Ab&#39;, &#39;A&#39;, &#39;Bb&#39;, &#39;B&#39;, &#39;C&#39;, &#39;C#&#39;, &#39;D&#39;, &#39;Eb&#39;, &#39;E&#39;, &#39;F&#39;, &#39;F#&#39;, &#39;G&#39;]}
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[45]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area code">
 #c.intervalBetweenDegrees(c.pitches[0],c.pitches[-1])
@@ -23737,7 +23820,7 @@ intv = interval.notesToInterval(c.pitches[0],c.pitches[-3])
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[52]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area code">
 intv.semitones
@@ -23746,28 +23829,10 @@ intv.semitones
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-<div class="prompt output_prompt">Out[52]:</div>
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>10</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[54]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area code">
 #intervals = [(interval.notesToInterval(c.pitches[0],pitch).directedNiceName) for pitch in c.pitches]
@@ -23780,34 +23845,6 @@ for pitch in c.pitches:
     
 pprint(intervals)
 </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-<div class="prompt"></div>
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>{0: [0, &#39;P1&#39;, &#39;Perfect Unison&#39;],
- 1: [1, &#39;A1&#39;, &#39;Augmented Unison&#39;],
- 2: [2, &#39;M2&#39;, &#39;Major Second&#39;],
- 3: [3, &#39;m3&#39;, &#39;Minor Third&#39;],
- 4: [4, &#39;M3&#39;, &#39;Major Third&#39;],
- 5: [5, &#39;P4&#39;, &#39;Perfect Fourth&#39;],
- 6: [6, &#39;A4&#39;, &#39;Augmented Fourth&#39;],
- 7: [7, &#39;P5&#39;, &#39;Perfect Fifth&#39;],
- 8: [8, &#39;m6&#39;, &#39;Minor Sixth&#39;],
- 9: [9, &#39;M6&#39;, &#39;Major Sixth&#39;],
- 10: [10, &#39;m7&#39;, &#39;Minor Seventh&#39;],
- 11: [11, &#39;M7&#39;, &#39;Major Seventh&#39;],
- 12: [12, &#39;P8&#39;, &#39;Perfect Octave&#39;]}
-</pre>
-</div>
-</div>
-
 </div>
 </div>
 
