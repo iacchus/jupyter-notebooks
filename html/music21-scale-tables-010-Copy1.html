@@ -1,37 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8" />
-<title>music21-scale-tables-010-Copy1</title><!--<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>-->
-<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>-->
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.19.0/codemirror.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.19.0/mode/python/python.js"></script>
-
-<script>
-$(document).ready(function(){
-	$('.code').each(function() {
-
-	    var $this = $(this),
-		$code = $this.html().trim();
-
-	    $this.empty();
-
-	    var myCodeMirror = CodeMirror(this, {
-		value: $code,
-		mode: 'python',
-		lineNumbers: true,
-		readOnly: true,
-                lineWrapping: true,
-                htmlMode: true,
-                matchClosing: true,       
-                indentWithTabs: true,
-	    });
-
-	});
-});
-</script>
+<title>music21-scale-tables-010-Copy1</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 <style type="text/css">
     /*!
@@ -23480,9 +23451,7 @@ body {
 div#notebook {
   overflow: visible;
   border-top: none;
-}
-
-@media print {
+}@media print {
   div.cell {
     display: block;
     page-break-inside: avoid;
@@ -23499,18 +23468,35 @@ div#notebook {
 </style>
 
 <!-- Custom stylesheet, it must be in the same directory as the html file -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.19.0/codemirror.css">
 <link rel="stylesheet" href="custom.css">
-<link rel="stylesheet" href="../index_files/custom.css">
 
 <!-- Loading mathjax macro -->
-</head>
+<!-- Load mathjax -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML"></script>
+    <!-- MathJax configuration -->
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            processEscapes: true,
+            processEnvironments: true
+        },
+        // Center justify equations in code and markdown cells. Elsewhere
+        // we use CSS to left justify single line equations in code cells.
+        displayAlign: 'center',
+        "HTML-CSS": {
+            styles: {'.MathJax_Display': {"margin": 0}},
+            linebreaks: { automatic: true }
+        }
+    });
+    </script>
+    <!-- End of mathjax configuration --></head>
 <body>
   <div tabindex="-1" id="notebook" class="border-box-sizing">
     <div class="container" id="notebook-container">
 
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -23519,8 +23505,7 @@ div#notebook {
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -23569,14 +23554,16 @@ div#notebook {
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
-    <div class="input_area code">
-from music21 import *
-from IPython.display import display, HTML #, Image, Audio
-#import plim
-import base64
-#from music21.common.pathTools import relativepath as m21_jupyter_relpath
-from PIL import Image as PILImage
-import svgwrite as sw
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">music21</span> <span class="k">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="k">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">HTML</span> <span class="c1">#, Image, Audio</span>
+<span class="c1">#import plim</span>
+<span class="kn">import</span> <span class="nn">base64</span>
+<span class="c1">#from music21.common.pathTools import relativepath as m21_jupyter_relpath</span>
+<span class="kn">from</span> <span class="nn">PIL</span> <span class="k">import</span> <span class="n">Image</span> <span class="k">as</span> <span class="n">PILImage</span>
+<span class="kn">import</span> <span class="nn">svgwrite</span> <span class="k">as</span> <span class="nn">sw</span>
+</pre></div>
+
 </div>
 </div>
 </div>
@@ -23586,27 +23573,29 @@ import svgwrite as sw
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
-    <div class="input_area code">
-def circleOfFifths():
-    fifths = []
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">circleOfFifths</span><span class="p">():</span>
+    <span class="n">fifths</span> <span class="o">=</span> <span class="p">[]</span>
 
-    fifthsScale = scale.CyclicalScale('c4', 'p5')
+    <span class="n">fifthsScale</span> <span class="o">=</span> <span class="n">scale</span><span class="o">.</span><span class="n">CyclicalScale</span><span class="p">(</span><span class="s1">&#39;c4&#39;</span><span class="p">,</span> <span class="s1">&#39;p5&#39;</span><span class="p">)</span>
     
-    for p in fifthsScale.getPitches('c4', 'c11'):
+    <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">fifthsScale</span><span class="o">.</span><span class="n">getPitches</span><span class="p">(</span><span class="s1">&#39;c4&#39;</span><span class="p">,</span> <span class="s1">&#39;c11&#39;</span><span class="p">):</span>
         
-        if key.pitchToSharps(p,'major') <= 7:
-            MAJOR = str(p.simplifyEnharmonic().name)
-            MINOR = str(key.Key(MAJOR, 'major').relative.tonic.simplifyEnharmonic().name).lower()
+        <span class="k">if</span> <span class="n">key</span><span class="o">.</span><span class="n">pitchToSharps</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="s1">&#39;major&#39;</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">7</span><span class="p">:</span>
+            <span class="n">MAJOR</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">simplifyEnharmonic</span><span class="p">()</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+            <span class="n">MINOR</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">key</span><span class="o">.</span><span class="n">Key</span><span class="p">(</span><span class="n">MAJOR</span><span class="p">,</span> <span class="s1">&#39;major&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">relative</span><span class="o">.</span><span class="n">tonic</span><span class="o">.</span><span class="n">simplifyEnharmonic</span><span class="p">()</span><span class="o">.</span><span class="n">name</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
 
-        else:
-            MAJOR = str(p.getEnharmonic().simplifyEnharmonic().name)
-            MINOR = str(key.Key(MAJOR, 'major').relative.tonic.simplifyEnharmonic().name).lower()
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">MAJOR</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">getEnharmonic</span><span class="p">()</span><span class="o">.</span><span class="n">simplifyEnharmonic</span><span class="p">()</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+            <span class="n">MINOR</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">key</span><span class="o">.</span><span class="n">Key</span><span class="p">(</span><span class="n">MAJOR</span><span class="p">,</span> <span class="s1">&#39;major&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">relative</span><span class="o">.</span><span class="n">tonic</span><span class="o">.</span><span class="n">simplifyEnharmonic</span><span class="p">()</span><span class="o">.</span><span class="n">name</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
         
-        fifths.append( [ MAJOR, MINOR ] )
+        <span class="n">fifths</span><span class="o">.</span><span class="n">append</span><span class="p">(</span> <span class="p">[</span> <span class="n">MAJOR</span><span class="p">,</span> <span class="n">MINOR</span> <span class="p">]</span> <span class="p">)</span>
 
-        #fifths.append(p.simplifyEnharmonic())
+        <span class="c1">#fifths.append(p.simplifyEnharmonic())</span>
         
-    return fifths
+    <span class="k">return</span> <span class="n">fifths</span>
+</pre></div>
+
 </div>
 </div>
 </div>
@@ -23616,8 +23605,10 @@ def circleOfFifths():
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
-    <div class="input_area code">
-/circleOfFifths
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">/</span><span class="n">circleOfFifths</span>
+</pre></div>
+
 </div>
 </div>
 </div>
@@ -23627,7 +23618,9 @@ def circleOfFifths():
 
 
 <div class="output_area">
+
 <div class="prompt output_prompt">Out[6]:</div>
+
 
 
 
@@ -23653,8 +23646,7 @@ def circleOfFifths():
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -23667,67 +23659,69 @@ def circleOfFifths():
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
-    <div class="input_area code">
-def returnScale(tonic='c', mode='major', ownKey=False):
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">returnScale</span><span class="p">(</span><span class="n">tonic</span><span class="o">=</span><span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;major&#39;</span><span class="p">,</span> <span class="n">ownKey</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
     
-    modes = [ 'ionian','dorian','phrygian',
-              'lydian','mixolydian','aeolian',
-              'locrian','major','minor']
+    <span class="n">modes</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;ionian&#39;</span><span class="p">,</span><span class="s1">&#39;dorian&#39;</span><span class="p">,</span><span class="s1">&#39;phrygian&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;lydian&#39;</span><span class="p">,</span><span class="s1">&#39;mixolydian&#39;</span><span class="p">,</span><span class="s1">&#39;aeolian&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;locrian&#39;</span><span class="p">,</span><span class="s1">&#39;major&#39;</span><span class="p">,</span><span class="s1">&#39;minor&#39;</span><span class="p">]</span>
     
-    if not mode in modes: mode = 'major'
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">mode</span> <span class="ow">in</span> <span class="n">modes</span><span class="p">:</span> <span class="n">mode</span> <span class="o">=</span> <span class="s1">&#39;major&#39;</span>
         
-    if mode == 'ionian': mode = 'major'
-    if mode == 'aeolian': mode = 'minor'
+    <span class="k">if</span> <span class="n">mode</span> <span class="o">==</span> <span class="s1">&#39;ionian&#39;</span><span class="p">:</span> <span class="n">mode</span> <span class="o">=</span> <span class="s1">&#39;major&#39;</span>
+    <span class="k">if</span> <span class="n">mode</span> <span class="o">==</span> <span class="s1">&#39;aeolian&#39;</span><span class="p">:</span> <span class="n">mode</span> <span class="o">=</span> <span class="s1">&#39;minor&#39;</span>
 
-    tonic_pitch = pitch.Pitch(tonic)
-    scale_sharps = key.pitchToSharps(tonic_pitch, mode)
+    <span class="n">tonic_pitch</span> <span class="o">=</span> <span class="n">pitch</span><span class="o">.</span><span class="n">Pitch</span><span class="p">(</span><span class="n">tonic</span><span class="p">)</span>
+    <span class="n">scale_sharps</span> <span class="o">=</span> <span class="n">key</span><span class="o">.</span><span class="n">pitchToSharps</span><span class="p">(</span><span class="n">tonic_pitch</span><span class="p">,</span> <span class="n">mode</span><span class="p">)</span>
 
-    scale_func = getattr(scale, "{0}Scale".format(mode.capitalize()))
-    real_scale = scale_func(tonic_pitch)
-    pitches = real_scale.getPitches()
+    <span class="n">scale_func</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">scale</span><span class="p">,</span> <span class="s2">&quot;</span><span class="si">{0}</span><span class="s2">Scale&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">mode</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()))</span>
+    <span class="n">real_scale</span> <span class="o">=</span> <span class="n">scale_func</span><span class="p">(</span><span class="n">tonic_pitch</span><span class="p">)</span>
+    <span class="n">pitches</span> <span class="o">=</span> <span class="n">real_scale</span><span class="o">.</span><span class="n">getPitches</span><span class="p">()</span>
 
-    scale_name = real_scale.name
-    absolute_intervals = []
-    relative_intervals = []
-    myKeySig = key.KeySignature(scale_sharps)
+    <span class="n">scale_name</span> <span class="o">=</span> <span class="n">real_scale</span><span class="o">.</span><span class="n">name</span>
+    <span class="n">absolute_intervals</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">relative_intervals</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">myKeySig</span> <span class="o">=</span> <span class="n">key</span><span class="o">.</span><span class="n">KeySignature</span><span class="p">(</span><span class="n">scale_sharps</span><span class="p">)</span>
     
-    mystream = stream.Stream()
+    <span class="n">mystream</span> <span class="o">=</span> <span class="n">stream</span><span class="o">.</span><span class="n">Stream</span><span class="p">()</span>
     
-    if ownKey:
-        mystream.append(myKeySig)
+    <span class="k">if</span> <span class="n">ownKey</span><span class="p">:</span>
+        <span class="n">mystream</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">myKeySig</span><span class="p">)</span>
 
-    for idx,cur_pitch in enumerate(pitches):
-        mynote = note.Note(cur_pitch)
+    <span class="k">for</span> <span class="n">idx</span><span class="p">,</span><span class="n">cur_pitch</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">pitches</span><span class="p">):</span>
+        <span class="n">mynote</span> <span class="o">=</span> <span class="n">note</span><span class="o">.</span><span class="n">Note</span><span class="p">(</span><span class="n">cur_pitch</span><span class="p">)</span>
 
-        cur_degree = real_scale.getScaleDegreeFromPitch(cur_pitch)
-        past_degree_or_tonic = cur_degree-1 if cur_degree>1 else 1
+        <span class="n">cur_degree</span> <span class="o">=</span> <span class="n">real_scale</span><span class="o">.</span><span class="n">getScaleDegreeFromPitch</span><span class="p">(</span><span class="n">cur_pitch</span><span class="p">)</span>
+        <span class="n">past_degree_or_tonic</span> <span class="o">=</span> <span class="n">cur_degree</span><span class="o">-</span><span class="mi">1</span> <span class="k">if</span> <span class="n">cur_degree</span><span class="o">&gt;</span><span class="mi">1</span> <span class="k">else</span> <span class="mi">1</span>
         
-        absolute_interval = real_scale.intervalBetweenDegrees(1,cur_degree).name
-        #relative_interval_semitones = real_scale.intervalBetweenDegrees(past_degree_or_tonic, cur_degree).semitones
-        try:
-            relative_interval_semitones = interval.notesToChromatic(cur_pitch, pitches[idx+1]).semitones
-        except:
-            #pass
-            relative_interval_semitones = 'None'
-        #relative_interval = real_scale.intervalBetweenDegrees(past_degree_or_tonic, cur_degree).name
+        <span class="n">absolute_interval</span> <span class="o">=</span> <span class="n">real_scale</span><span class="o">.</span><span class="n">intervalBetweenDegrees</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">cur_degree</span><span class="p">)</span><span class="o">.</span><span class="n">name</span>
+        <span class="c1">#relative_interval_semitones = real_scale.intervalBetweenDegrees(past_degree_or_tonic, cur_degree).semitones</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">relative_interval_semitones</span> <span class="o">=</span> <span class="n">interval</span><span class="o">.</span><span class="n">notesToChromatic</span><span class="p">(</span><span class="n">cur_pitch</span><span class="p">,</span> <span class="n">pitches</span><span class="p">[</span><span class="n">idx</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">semitones</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="c1">#pass</span>
+            <span class="n">relative_interval_semitones</span> <span class="o">=</span> <span class="s1">&#39;None&#39;</span>
+        <span class="c1">#relative_interval = real_scale.intervalBetweenDegrees(past_degree_or_tonic, cur_degree).name</span>
         
-        absolute_intervals.append(absolute_interval)
-        relative_intervals.append(relative_interval_semitones)
+        <span class="n">absolute_intervals</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">absolute_interval</span><span class="p">)</span>
+        <span class="n">relative_intervals</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">relative_interval_semitones</span><span class="p">)</span>
         
-        mynote.addLyric(absolute_interval)
-        mynote.addLyric(relative_interval_semitones)
+        <span class="n">mynote</span><span class="o">.</span><span class="n">addLyric</span><span class="p">(</span><span class="n">absolute_interval</span><span class="p">)</span>
+        <span class="n">mynote</span><span class="o">.</span><span class="n">addLyric</span><span class="p">(</span><span class="n">relative_interval_semitones</span><span class="p">)</span>
         
-        mystream.append(mynote)
+        <span class="n">mystream</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">mynote</span><span class="p">)</span>
         
-    filename = mystream.write()
+    <span class="n">filename</span> <span class="o">=</span> <span class="n">mystream</span><span class="o">.</span><span class="n">write</span><span class="p">()</span>
         
-    return {
-        'scalename': scale_name,
-        'stream' : mystream,
-        'filename': filename,
-        'ai' : absolute_intervals,
-        'ri' : relative_intervals,
-    }
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="s1">&#39;scalename&#39;</span><span class="p">:</span> <span class="n">scale_name</span><span class="p">,</span>
+        <span class="s1">&#39;stream&#39;</span> <span class="p">:</span> <span class="n">mystream</span><span class="p">,</span>
+        <span class="s1">&#39;filename&#39;</span><span class="p">:</span> <span class="n">filename</span><span class="p">,</span>
+        <span class="s1">&#39;ai&#39;</span> <span class="p">:</span> <span class="n">absolute_intervals</span><span class="p">,</span>
+        <span class="s1">&#39;ri&#39;</span> <span class="p">:</span> <span class="n">relative_intervals</span><span class="p">,</span>
+    <span class="p">}</span>
+</pre></div>
+
 </div>
 </div>
 </div>
@@ -23737,193 +23731,195 @@ def returnScale(tonic='c', mode='major', ownKey=False):
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[33]:</div>
 <div class="inner_cell">
-    <div class="input_area code">
-def svg_table2(sc):
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">svg_table2</span><span class="p">(</span><span class="n">sc</span><span class="p">):</span>
 
-    img_w, img_h = PILImage.open(sc['filename']).size
+    <span class="n">img_w</span><span class="p">,</span> <span class="n">img_h</span> <span class="o">=</span> <span class="n">PILImage</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">sc</span><span class="p">[</span><span class="s1">&#39;filename&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">size</span>
 
-    with open(sc['filename'],'rb') as image_file:
-        b64_scale = base64.b64encode(image_file.read()).decode('utf8')
-        image_data = "data:image/png;base64,{}".format(b64_scale)
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">sc</span><span class="p">[</span><span class="s1">&#39;filename&#39;</span><span class="p">],</span><span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">image_file</span><span class="p">:</span>
+        <span class="n">b64_scale</span> <span class="o">=</span> <span class="n">base64</span><span class="o">.</span><span class="n">b64encode</span><span class="p">(</span><span class="n">image_file</span><span class="o">.</span><span class="n">read</span><span class="p">())</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf8&#39;</span><span class="p">)</span>
+        <span class="n">image_data</span> <span class="o">=</span> <span class="s2">&quot;data:image/png;base64,</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">b64_scale</span><span class="p">)</span>
 
-    def y_by_line(line_num, line_height):
-        return (line_num-1) * line_height
+    <span class="k">def</span> <span class="nf">y_by_line</span><span class="p">(</span><span class="n">line_num</span><span class="p">,</span> <span class="n">line_height</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">line_num</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">line_height</span>
 
-    svg_attrs = {
-        'font-family': 'Inconsolata, monospace',
-    #    'shape-rendering':'optimizeQuality',
+    <span class="n">svg_attrs</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;font-family&#39;</span><span class="p">:</span> <span class="s1">&#39;Inconsolata, monospace&#39;</span><span class="p">,</span>
+    <span class="c1">#    &#39;shape-rendering&#39;:&#39;optimizeQuality&#39;,</span>
 
-    }
+    <span class="p">}</span>
 
-    title_text_attrs = {
-        'fill':'#fff',
-        'alignment-baseline' : 'middle',
-        'text-anchor' : 'middle',
-        'font-weight' : 'bold',
-    }
+    <span class="n">title_text_attrs</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;fill&#39;</span><span class="p">:</span><span class="s1">&#39;#fff&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;alignment-baseline&#39;</span> <span class="p">:</span> <span class="s1">&#39;middle&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;text-anchor&#39;</span> <span class="p">:</span> <span class="s1">&#39;middle&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;font-weight&#39;</span> <span class="p">:</span> <span class="s1">&#39;bold&#39;</span><span class="p">,</span>
+    <span class="p">}</span>
 
-    image_attrs = {
-        'stroke' : '#666',
-    }
-    img_rect_attrs = {
-        'fill':'none',
-        'stroke':'#000',
-        'stroke-width':'1',
-    }
+    <span class="n">image_attrs</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;stroke&#39;</span> <span class="p">:</span> <span class="s1">&#39;#666&#39;</span><span class="p">,</span>
+    <span class="p">}</span>
+    <span class="n">img_rect_attrs</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;fill&#39;</span><span class="p">:</span><span class="s1">&#39;none&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;stroke&#39;</span><span class="p">:</span><span class="s1">&#39;#000&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;stroke-width&#39;</span><span class="p">:</span><span class="s1">&#39;1&#39;</span><span class="p">,</span>
+    <span class="p">}</span>
 
-    background_attrs = {
-        'stroke':'#000',
-        'fill':'#fff',
-        'stroke-width':'1',
-    }
+    <span class="n">background_attrs</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;stroke&#39;</span><span class="p">:</span><span class="s1">&#39;#000&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;fill&#39;</span><span class="p">:</span><span class="s1">&#39;#fff&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;stroke-width&#39;</span><span class="p">:</span><span class="s1">&#39;1&#39;</span><span class="p">,</span>
+    <span class="p">}</span>
 
-    title_attrs = {
-        'color': '#fff',
-        'fill':'#336',
-        'stroke':'#000',
-        'stroke-width':'1',
-    }
+    <span class="n">title_attrs</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;color&#39;</span><span class="p">:</span> <span class="s1">&#39;#fff&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;fill&#39;</span><span class="p">:</span><span class="s1">&#39;#336&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;stroke&#39;</span><span class="p">:</span><span class="s1">&#39;#000&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;stroke-width&#39;</span><span class="p">:</span><span class="s1">&#39;1&#39;</span><span class="p">,</span>
+    <span class="p">}</span>
 
-    cell_rect_attrs = {
-        'fill':'#fff',
-        'stroke':'#666',
-        'stroke-width':'1',
-    }
-    cell_path_attrs = {
-        'fill':'none',
-        'stroke':'#000',
-        'stroke-width':'1',
-    }
-    cell_text_attrs = {
-        #'fill':'#fff',
-        #'stroke':'#333',
-        #'stroke-width':'1',
-        'alignment-baseline' : 'middle',
-        'text-anchor' : 'middle',
-        'font-weight' : 'bold',
-    }
-    # sizes in px
+    <span class="n">cell_rect_attrs</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;fill&#39;</span><span class="p">:</span><span class="s1">&#39;#fff&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;stroke&#39;</span><span class="p">:</span><span class="s1">&#39;#666&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;stroke-width&#39;</span><span class="p">:</span><span class="s1">&#39;1&#39;</span><span class="p">,</span>
+    <span class="p">}</span>
+    <span class="n">cell_path_attrs</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;fill&#39;</span><span class="p">:</span><span class="s1">&#39;none&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;stroke&#39;</span><span class="p">:</span><span class="s1">&#39;#000&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;stroke-width&#39;</span><span class="p">:</span><span class="s1">&#39;1&#39;</span><span class="p">,</span>
+    <span class="p">}</span>
+    <span class="n">cell_text_attrs</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="c1">#&#39;fill&#39;:&#39;#fff&#39;,</span>
+        <span class="c1">#&#39;stroke&#39;:&#39;#333&#39;,</span>
+        <span class="c1">#&#39;stroke-width&#39;:&#39;1&#39;,</span>
+        <span class="s1">&#39;alignment-baseline&#39;</span> <span class="p">:</span> <span class="s1">&#39;middle&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;text-anchor&#39;</span> <span class="p">:</span> <span class="s1">&#39;middle&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;font-weight&#39;</span> <span class="p">:</span> <span class="s1">&#39;bold&#39;</span><span class="p">,</span>
+    <span class="p">}</span>
+    <span class="c1"># sizes in px</span>
 
-    #line_height = 32
+    <span class="c1">#line_height = 32</span>
 
-    #table_width = 440
-    table_width = img_w
-    line_height = img_h/3
+    <span class="c1">#table_width = 440</span>
+    <span class="n">table_width</span> <span class="o">=</span> <span class="n">img_w</span>
+    <span class="n">line_height</span> <span class="o">=</span> <span class="n">img_h</span><span class="o">/</span><span class="mi">3</span>
 
-    table_height = line_height*6
+    <span class="n">table_height</span> <span class="o">=</span> <span class="n">line_height</span><span class="o">*</span><span class="mi">6</span>
 
-    cell_width = table_width/8
+    <span class="n">cell_width</span> <span class="o">=</span> <span class="n">table_width</span><span class="o">/</span><span class="mi">8</span>
 
-    # SVG
+    <span class="c1"># SVG</span>
 
-    dwg = sw.Drawing(profile='full', size=("{}".format(table_width),"{}".format(table_height)), **svg_attrs)
+    <span class="n">dwg</span> <span class="o">=</span> <span class="n">sw</span><span class="o">.</span><span class="n">Drawing</span><span class="p">(</span><span class="n">profile</span><span class="o">=</span><span class="s1">&#39;full&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">table_width</span><span class="p">),</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">table_height</span><span class="p">)),</span> <span class="o">**</span><span class="n">svg_attrs</span><span class="p">)</span>
 
-    # BACKGROUND
+    <span class="c1"># BACKGROUND</span>
 
-    # why not beutiful background right now;
-    background = sw.shapes.Rect(insert=(0,0), size=(table_width, table_height), **background_attrs)
-    dwg.add(background)
+    <span class="c1"># why not beutiful background right now;</span>
+    <span class="n">background</span> <span class="o">=</span> <span class="n">sw</span><span class="o">.</span><span class="n">shapes</span><span class="o">.</span><span class="n">Rect</span><span class="p">(</span><span class="n">insert</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="n">table_width</span><span class="p">,</span> <span class="n">table_height</span><span class="p">),</span> <span class="o">**</span><span class="n">background_attrs</span><span class="p">)</span>
+    <span class="n">dwg</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">background</span><span class="p">)</span>
 
-    # TITLE
+    <span class="c1"># TITLE</span>
     
-    cell_group = sw.container.Group()
+    <span class="n">cell_group</span> <span class="o">=</span> <span class="n">sw</span><span class="o">.</span><span class="n">container</span><span class="o">.</span><span class="n">Group</span><span class="p">()</span>
 
-    group_els = [
-        sw.shapes.Rect(insert=(0,0), size=(table_width, line_height), **title_attrs),
-        sw.text.Text(sc['scalename'], insert=(table_width/2, line_height/2), **title_text_attrs)
-    ]
+    <span class="n">group_els</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">sw</span><span class="o">.</span><span class="n">shapes</span><span class="o">.</span><span class="n">Rect</span><span class="p">(</span><span class="n">insert</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="n">table_width</span><span class="p">,</span> <span class="n">line_height</span><span class="p">),</span> <span class="o">**</span><span class="n">title_attrs</span><span class="p">),</span>
+        <span class="n">sw</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">Text</span><span class="p">(</span><span class="n">sc</span><span class="p">[</span><span class="s1">&#39;scalename&#39;</span><span class="p">],</span> <span class="n">insert</span><span class="o">=</span><span class="p">(</span><span class="n">table_width</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">line_height</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span> <span class="o">**</span><span class="n">title_text_attrs</span><span class="p">)</span>
+    <span class="p">]</span>
 
-    for element in group_els:
-        cell_group.add(element)
+    <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">group_els</span><span class="p">:</span>
+        <span class="n">cell_group</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">element</span><span class="p">)</span>
 
-    dwg.add(cell_group)
+    <span class="n">dwg</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">cell_group</span><span class="p">)</span>
 
-    # IMAGE
+    <span class="c1"># IMAGE</span>
 
-    table_image = sw.image.Image(href=image_data, insert=(0,line_height), size=(img_w, img_h))
-    dwg.add(table_image)
-    #array = [1,2,3,4,5,6,7,8]
-    #array2 = ["I","II","III","IV","V","VI","VII","VIII"]
-    cell_group = sw.container.Group()
+    <span class="n">table_image</span> <span class="o">=</span> <span class="n">sw</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">Image</span><span class="p">(</span><span class="n">href</span><span class="o">=</span><span class="n">image_data</span><span class="p">,</span> <span class="n">insert</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">line_height</span><span class="p">),</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="n">img_w</span><span class="p">,</span> <span class="n">img_h</span><span class="p">))</span>
+    <span class="n">dwg</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">table_image</span><span class="p">)</span>
+    <span class="c1">#array = [1,2,3,4,5,6,7,8]</span>
+    <span class="c1">#array2 = [&quot;I&quot;,&quot;II&quot;,&quot;III&quot;,&quot;IV&quot;,&quot;V&quot;,&quot;VI&quot;,&quot;VII&quot;,&quot;VIII&quot;]</span>
+    <span class="n">cell_group</span> <span class="o">=</span> <span class="n">sw</span><span class="o">.</span><span class="n">container</span><span class="o">.</span><span class="n">Group</span><span class="p">()</span>
 
-    group_els = [
-        sw.image.Image(href=image_data, insert=(0,line_height), size=(img_w, img_h)),
-        sw.shapes.Rect(insert=(0,line_height), size=(img_w, img_h), **img_rect_attrs),
-    ]
+    <span class="n">group_els</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">sw</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">Image</span><span class="p">(</span><span class="n">href</span><span class="o">=</span><span class="n">image_data</span><span class="p">,</span> <span class="n">insert</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">line_height</span><span class="p">),</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="n">img_w</span><span class="p">,</span> <span class="n">img_h</span><span class="p">)),</span>
+        <span class="n">sw</span><span class="o">.</span><span class="n">shapes</span><span class="o">.</span><span class="n">Rect</span><span class="p">(</span><span class="n">insert</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">line_height</span><span class="p">),</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="n">img_w</span><span class="p">,</span> <span class="n">img_h</span><span class="p">),</span> <span class="o">**</span><span class="n">img_rect_attrs</span><span class="p">),</span>
+    <span class="p">]</span>
 
-    for element in group_els:
-        cell_group.add(element)
+    <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">group_els</span><span class="p">:</span>
+        <span class="n">cell_group</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">element</span><span class="p">)</span>
 
-    dwg.add(cell_group)
+    <span class="n">dwg</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">cell_group</span><span class="p">)</span>
     
-    # ABSOLUTE
+    <span class="c1"># ABSOLUTE</span>
 
-    for idx,item in enumerate(sc['ai']):
+    <span class="k">for</span> <span class="n">idx</span><span class="p">,</span><span class="n">item</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">sc</span><span class="p">[</span><span class="s1">&#39;ai&#39;</span><span class="p">]):</span>
 
-        x = idx * cell_width
-        y = y_by_line(line_num=5, line_height=line_height)
+        <span class="n">x</span> <span class="o">=</span> <span class="n">idx</span> <span class="o">*</span> <span class="n">cell_width</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="n">y_by_line</span><span class="p">(</span><span class="n">line_num</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">line_height</span><span class="o">=</span><span class="n">line_height</span><span class="p">)</span>
 
-        v_center = (line_height/2) + y
-        h_center = (cell_width/2) + x
+        <span class="n">v_center</span> <span class="o">=</span> <span class="p">(</span><span class="n">line_height</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">y</span>
+        <span class="n">h_center</span> <span class="o">=</span> <span class="p">(</span><span class="n">cell_width</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">x</span>
 
-        cell_group = sw.container.Group()
+        <span class="n">cell_group</span> <span class="o">=</span> <span class="n">sw</span><span class="o">.</span><span class="n">container</span><span class="o">.</span><span class="n">Group</span><span class="p">()</span>
 
-        group_els = [
-            sw.shapes.Rect(insert=(x, y), size=(cell_width, line_height), **cell_rect_attrs),
-            sw.text.Text(item, insert=(h_center, v_center), **cell_text_attrs)
-        ]
+        <span class="n">group_els</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="n">sw</span><span class="o">.</span><span class="n">shapes</span><span class="o">.</span><span class="n">Rect</span><span class="p">(</span><span class="n">insert</span><span class="o">=</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">),</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="n">cell_width</span><span class="p">,</span> <span class="n">line_height</span><span class="p">),</span> <span class="o">**</span><span class="n">cell_rect_attrs</span><span class="p">),</span>
+            <span class="n">sw</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">Text</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">insert</span><span class="o">=</span><span class="p">(</span><span class="n">h_center</span><span class="p">,</span> <span class="n">v_center</span><span class="p">),</span> <span class="o">**</span><span class="n">cell_text_attrs</span><span class="p">)</span>
+        <span class="p">]</span>
 
-        for element in group_els:
-            cell_group.add(element)
+        <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">group_els</span><span class="p">:</span>
+            <span class="n">cell_group</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">element</span><span class="p">)</span>
 
-        dwg.add(cell_group)
+        <span class="n">dwg</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">cell_group</span><span class="p">)</span>
 
-    # INTERVALS
+    <span class="c1"># INTERVALS</span>
 
-    for idx,item in enumerate(sc['ri']):
-        v_center = (line_height/2) + idx * y_by_line(line_num=6, line_height=line_height)
-        h_center = (cell_width/2) + y_by_line(line_num=6, line_height=line_height)
+    <span class="k">for</span> <span class="n">idx</span><span class="p">,</span><span class="n">item</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">sc</span><span class="p">[</span><span class="s1">&#39;ri&#39;</span><span class="p">]):</span>
+        <span class="n">v_center</span> <span class="o">=</span> <span class="p">(</span><span class="n">line_height</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">idx</span> <span class="o">*</span> <span class="n">y_by_line</span><span class="p">(</span><span class="n">line_num</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">line_height</span><span class="o">=</span><span class="n">line_height</span><span class="p">)</span>
+        <span class="n">h_center</span> <span class="o">=</span> <span class="p">(</span><span class="n">cell_width</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">y_by_line</span><span class="p">(</span><span class="n">line_num</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">line_height</span><span class="o">=</span><span class="n">line_height</span><span class="p">)</span>
 
-        x = idx * cell_width + (cell_width/2)
-        y = y_by_line(line_num=6, line_height=line_height) + (line_height/2)
+        <span class="n">x</span> <span class="o">=</span> <span class="n">idx</span> <span class="o">*</span> <span class="n">cell_width</span> <span class="o">+</span> <span class="p">(</span><span class="n">cell_width</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="n">y_by_line</span><span class="p">(</span><span class="n">line_num</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">line_height</span><span class="o">=</span><span class="n">line_height</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">line_height</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
         
-        path_h_pad = cell_width /12
-        path_width = cell_width - path_h_pad
-        path_height = (line_height/3) - path_v_pad
-        path_v_pad = -(path_height/2)
-        cell_group = sw.container.Group()
+        <span class="n">path_h_pad</span> <span class="o">=</span> <span class="n">cell_width</span> <span class="o">/</span><span class="mi">12</span>
+        <span class="n">path_width</span> <span class="o">=</span> <span class="n">cell_width</span> <span class="o">-</span> <span class="n">path_h_pad</span>
+        <span class="n">path_height</span> <span class="o">=</span> <span class="p">(</span><span class="n">line_height</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span> <span class="o">-</span> <span class="n">path_v_pad</span>
+        <span class="n">path_v_pad</span> <span class="o">=</span> <span class="o">-</span><span class="p">(</span><span class="n">path_height</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+        <span class="n">cell_group</span> <span class="o">=</span> <span class="n">sw</span><span class="o">.</span><span class="n">container</span><span class="o">.</span><span class="n">Group</span><span class="p">()</span>
         
-        # minor second
-        if item == 1:
-            path_commands = [
-                'M{0} {1}'.format(x,y),
-                'l {0} {1}'.format(path_width/2, path_height),
-                'l {0} -{1}'.format(path_width/2, path_height),
-            ]
+        <span class="c1"># minor second</span>
+        <span class="k">if</span> <span class="n">item</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">path_commands</span> <span class="o">=</span> <span class="p">[</span>
+                <span class="s1">&#39;M</span><span class="si">{0}</span><span class="s1"> </span><span class="si">{1}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">),</span>
+                <span class="s1">&#39;l </span><span class="si">{0}</span><span class="s1"> </span><span class="si">{1}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">path_width</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">path_height</span><span class="p">),</span>
+                <span class="s1">&#39;l </span><span class="si">{0}</span><span class="s1"> -</span><span class="si">{1}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">path_width</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">path_height</span><span class="p">),</span>
+            <span class="p">]</span>
 
 
-        # major second
-        elif item == 2:
-            path_commands = [
-                'M{0} {1}'.format(x,y),
-                'v {0}'.format(path_height),
-                'h {0}'.format(path_width),
-                'v -{0}'.format(path_height),
-            ]
+        <span class="c1"># major second</span>
+        <span class="k">elif</span> <span class="n">item</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+            <span class="n">path_commands</span> <span class="o">=</span> <span class="p">[</span>
+                <span class="s1">&#39;M</span><span class="si">{0}</span><span class="s1"> </span><span class="si">{1}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">),</span>
+                <span class="s1">&#39;v </span><span class="si">{0}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">path_height</span><span class="p">),</span>
+                <span class="s1">&#39;h </span><span class="si">{0}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">path_width</span><span class="p">),</span>
+                <span class="s1">&#39;v -</span><span class="si">{0}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">path_height</span><span class="p">),</span>
+            <span class="p">]</span>
             
-        group_els = [
-            sw.path.Path(d=path_commands, **cell_path_attrs),
-            #sw.shapes.Rect(insert=(x, y), size=(cell_width, line_height), **cell_rect_attrs),
-            #sw.text.Text(item, insert=(x, y), **cell_text_attrs)
-        ]
+        <span class="n">group_els</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="n">sw</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">Path</span><span class="p">(</span><span class="n">d</span><span class="o">=</span><span class="n">path_commands</span><span class="p">,</span> <span class="o">**</span><span class="n">cell_path_attrs</span><span class="p">),</span>
+            <span class="c1">#sw.shapes.Rect(insert=(x, y), size=(cell_width, line_height), **cell_rect_attrs),</span>
+            <span class="c1">#sw.text.Text(item, insert=(x, y), **cell_text_attrs)</span>
+        <span class="p">]</span>
 
-        for element in group_els:
-            cell_group.add(element)
+        <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">group_els</span><span class="p">:</span>
+            <span class="n">cell_group</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">element</span><span class="p">)</span>
 
-        dwg.add(cell_group)
+        <span class="n">dwg</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">cell_group</span><span class="p">)</span>
 
-    # returns <svg/> table:
-    return dwg.tostring()
+    <span class="c1"># returns &lt;svg/&gt; table:</span>
+    <span class="k">return</span> <span class="n">dwg</span><span class="o">.</span><span class="n">tostring</span><span class="p">()</span>
+</pre></div>
+
 </div>
 </div>
 </div>
@@ -23933,12 +23929,14 @@ def svg_table2(sc):
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[32]:</div>
 <div class="inner_cell">
-    <div class="input_area code">
-# lets discover something to get the distance between pitches
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># lets discover something to get the distance between pitches</span>
 
-sc2=returnScale('c')
-svg_img=svg_table2(sc2)
-display(HTML(svg_img))
+<span class="n">sc2</span><span class="o">=</span><span class="n">returnScale</span><span class="p">(</span><span class="s1">&#39;c&#39;</span><span class="p">)</span>
+<span class="n">svg_img</span><span class="o">=</span><span class="n">svg_table2</span><span class="p">(</span><span class="n">sc2</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">HTML</span><span class="p">(</span><span class="n">svg_img</span><span class="p">))</span>
+</pre></div>
+
 </div>
 </div>
 </div>
@@ -23948,7 +23946,9 @@ display(HTML(svg_img))
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
 
 
 <div class="output_html rendered_html output_subarea ">
@@ -23965,7 +23965,9 @@ display(HTML(svg_img))
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
-    <div class="input_area code">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
 
 </div>
 </div>

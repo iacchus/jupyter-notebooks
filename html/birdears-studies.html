@@ -1,37 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8" />
-<title>birdears-studies</title><!--<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>-->
-<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>-->
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.19.0/codemirror.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.19.0/mode/python/python.js"></script>
-
-<script>
-$(document).ready(function(){
-	$('.code').each(function() {
-
-	    var $this = $(this),
-		$code = $this.html().trim();
-
-	    $this.empty();
-
-	    var myCodeMirror = CodeMirror(this, {
-		value: $code,
-		mode: 'python',
-		lineNumbers: true,
-		readOnly: true,
-                lineWrapping: true,
-                htmlMode: true,
-                matchClosing: true,       
-                indentWithTabs: true,
-	    });
-
-	});
-});
-</script>
+<title>birdears-studies</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 <style type="text/css">
     /*!
@@ -23480,9 +23451,7 @@ body {
 div#notebook {
   overflow: visible;
   border-top: none;
-}
-
-@media print {
+}@media print {
   div.cell {
     display: block;
     page-break-inside: avoid;
@@ -23499,12 +23468,30 @@ div#notebook {
 </style>
 
 <!-- Custom stylesheet, it must be in the same directory as the html file -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.19.0/codemirror.css">
 <link rel="stylesheet" href="custom.css">
-<link rel="stylesheet" href="../index_files/custom.css">
 
 <!-- Loading mathjax macro -->
-</head>
+<!-- Load mathjax -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML"></script>
+    <!-- MathJax configuration -->
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            processEscapes: true,
+            processEnvironments: true
+        },
+        // Center justify equations in code and markdown cells. Elsewhere
+        // we use CSS to left justify single line equations in code cells.
+        displayAlign: 'center',
+        "HTML-CSS": {
+            styles: {'.MathJax_Display': {"margin": 0}},
+            linebreaks: { automatic: true }
+        }
+    });
+    </script>
+    <!-- End of mathjax configuration --></head>
 <body>
   <div tabindex="-1" id="notebook" class="border-box-sizing">
     <div class="container" id="notebook-container">
@@ -23513,9 +23500,11 @@ div#notebook {
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
-    <div class="input_area code">
-from music21 import *
-from pprint import pprint
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">music21</span> <span class="k">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">pprint</span> <span class="k">import</span> <span class="n">pprint</span>
+</pre></div>
+
 </div>
 </div>
 </div>
@@ -23525,17 +23514,19 @@ from pprint import pprint
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
-    <div class="input_area code">
-c = scale.ChromaticScale('c')
-#intervals = [(interval.notesToInterval(c.pitches[0],pitch).directedNiceName) for pitch in c.pitches]
-intervals = []
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="n">scale</span><span class="o">.</span><span class="n">ChromaticScale</span><span class="p">(</span><span class="s1">&#39;c&#39;</span><span class="p">)</span>
+<span class="c1">#intervals = [(interval.notesToInterval(c.pitches[0],pitch).directedNiceName) for pitch in c.pitches]</span>
+<span class="n">intervals</span> <span class="o">=</span> <span class="p">[]</span>
 
-for pitch in c.getPitches('c4','c9'):
-    ival = interval.notesToInterval(c.pitches[0], pitch)
+<span class="k">for</span> <span class="n">pitch</span> <span class="ow">in</span> <span class="n">c</span><span class="o">.</span><span class="n">getPitches</span><span class="p">(</span><span class="s1">&#39;c4&#39;</span><span class="p">,</span><span class="s1">&#39;c9&#39;</span><span class="p">):</span>
+    <span class="n">ival</span> <span class="o">=</span> <span class="n">interval</span><span class="o">.</span><span class="n">notesToInterval</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">pitches</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">pitch</span><span class="p">)</span>
     
-    intervals.append((ival.semitones, ival.name, ival.niceName))
+    <span class="n">intervals</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">ival</span><span class="o">.</span><span class="n">semitones</span><span class="p">,</span> <span class="n">ival</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">ival</span><span class="o">.</span><span class="n">niceName</span><span class="p">))</span>
     
-pprint(intervals)
+<span class="n">pprint</span><span class="p">(</span><span class="n">intervals</span><span class="p">)</span>
+</pre></div>
+
 </div>
 </div>
 </div>
@@ -23545,7 +23536,9 @@ pprint(intervals)
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>[(0, &#39;P1&#39;, &#39;Perfect Unison&#39;),
@@ -23621,8 +23614,10 @@ pprint(intervals)
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
-    <div class="input_area code">
-c.getPitches()
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">c</span><span class="o">.</span><span class="n">getPitches</span><span class="p">()</span>
+</pre></div>
+
 </div>
 </div>
 </div>
@@ -23632,7 +23627,9 @@ c.getPitches()
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
 
 <div class="output_subarea output_text output_error">
 <pre>
@@ -23681,10 +23678,12 @@ c.getPitches()
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
-    <div class="input_area code">
-tones = [p.name.replace('-','b') for p in c.pitches]
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">tones</span> <span class="o">=</span> <span class="p">[</span><span class="n">p</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">c</span><span class="o">.</span><span class="n">pitches</span><span class="p">]</span>
 
-pprint(tones)
+<span class="n">pprint</span><span class="p">(</span><span class="n">tones</span><span class="p">)</span>
+</pre></div>
+
 </div>
 </div>
 </div>
@@ -23694,7 +23693,9 @@ pprint(tones)
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
 
 <div class="output_subarea output_text output_error">
 <pre>
@@ -23745,10 +23746,12 @@ pprint(tones)
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
-    <div class="input_area code">
-tones21 = [p.name for p in c.pitches]
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">tones21</span> <span class="o">=</span> <span class="p">[</span><span class="n">p</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">c</span><span class="o">.</span><span class="n">pitches</span><span class="p">]</span>
 
-pprint(tones21)
+<span class="n">pprint</span><span class="p">(</span><span class="n">tones21</span><span class="p">)</span>
+</pre></div>
+
 </div>
 </div>
 </div>
@@ -23758,14 +23761,16 @@ pprint(tones21)
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
-    <div class="input_area code">
-majors = {}
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">majors</span> <span class="o">=</span> <span class="p">{}</span>
 
-for tonic in tones21:
-    maj_sc = scale.MajorScale(tonic)
-    majors.update({tonic.replace('-','b'):[p.name.replace('-','b') for p in maj_sc.pitches]})
+<span class="k">for</span> <span class="n">tonic</span> <span class="ow">in</span> <span class="n">tones21</span><span class="p">:</span>
+    <span class="n">maj_sc</span> <span class="o">=</span> <span class="n">scale</span><span class="o">.</span><span class="n">MajorScale</span><span class="p">(</span><span class="n">tonic</span><span class="p">)</span>
+    <span class="n">majors</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="n">tonic</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">):[</span><span class="n">p</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">maj_sc</span><span class="o">.</span><span class="n">pitches</span><span class="p">]})</span>
     
-pprint(majors)
+<span class="n">pprint</span><span class="p">(</span><span class="n">majors</span><span class="p">)</span>
+</pre></div>
+
 </div>
 </div>
 </div>
@@ -23775,14 +23780,16 @@ pprint(majors)
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
-    <div class="input_area code">
-minors = {}
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">minors</span> <span class="o">=</span> <span class="p">{}</span>
 
-for tonic in tones21:
-    min_sc = scale.MinorScale(tonic)
-    minors.update({tonic.replace('-','b'):[p.name.replace('-','b') for p in min_sc.pitches]})
+<span class="k">for</span> <span class="n">tonic</span> <span class="ow">in</span> <span class="n">tones21</span><span class="p">:</span>
+    <span class="n">min_sc</span> <span class="o">=</span> <span class="n">scale</span><span class="o">.</span><span class="n">MinorScale</span><span class="p">(</span><span class="n">tonic</span><span class="p">)</span>
+    <span class="n">minors</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="n">tonic</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">):[</span><span class="n">p</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">min_sc</span><span class="o">.</span><span class="n">pitches</span><span class="p">]})</span>
     
-pprint(minors)
+<span class="n">pprint</span><span class="p">(</span><span class="n">minors</span><span class="p">)</span>
+</pre></div>
+
 </div>
 </div>
 </div>
@@ -23792,38 +23799,15 @@ pprint(minors)
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
-    <div class="input_area code">
-chromatics = {}
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">chromatics</span> <span class="o">=</span> <span class="p">{}</span>
 
-for tonic in tones21:
-    chrm_sc = scale.ChromaticScale(tonic)
-    chromatics.update({tonic.replace('-','b'):[p.name.replace('-','b') for p in chrm_sc.pitches]})
+<span class="k">for</span> <span class="n">tonic</span> <span class="ow">in</span> <span class="n">tones21</span><span class="p">:</span>
+    <span class="n">chrm_sc</span> <span class="o">=</span> <span class="n">scale</span><span class="o">.</span><span class="n">ChromaticScale</span><span class="p">(</span><span class="n">tonic</span><span class="p">)</span>
+    <span class="n">chromatics</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="n">tonic</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">):[</span><span class="n">p</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">chrm_sc</span><span class="o">.</span><span class="n">pitches</span><span class="p">]})</span>
     
-pprint(chromatics)
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area code">
-#c.intervalBetweenDegrees(c.pitches[0],c.pitches[-1])
-
-intv = interval.notesToInterval(c.pitches[0],c.pitches[-3])
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area code">
-intv.semitones
+<span class="n">pprint</span><span class="p">(</span><span class="n">chromatics</span><span class="p">)</span>
+</pre></div>
 
 </div>
 </div>
@@ -23834,16 +23818,46 @@ intv.semitones
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
-    <div class="input_area code">
-#intervals = [(interval.notesToInterval(c.pitches[0],pitch).directedNiceName) for pitch in c.pitches]
-intervals = {}
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#c.intervalBetweenDegrees(c.pitches[0],c.pitches[-1])</span>
 
-for pitch in c.pitches:
-    ival = interval.notesToInterval(c.pitches[0], pitch)
+<span class="n">intv</span> <span class="o">=</span> <span class="n">interval</span><span class="o">.</span><span class="n">notesToInterval</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">pitches</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">c</span><span class="o">.</span><span class="n">pitches</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">])</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">intv</span><span class="o">.</span><span class="n">semitones</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#intervals = [(interval.notesToInterval(c.pitches[0],pitch).directedNiceName) for pitch in c.pitches]</span>
+<span class="n">intervals</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="k">for</span> <span class="n">pitch</span> <span class="ow">in</span> <span class="n">c</span><span class="o">.</span><span class="n">pitches</span><span class="p">:</span>
+    <span class="n">ival</span> <span class="o">=</span> <span class="n">interval</span><span class="o">.</span><span class="n">notesToInterval</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">pitches</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">pitch</span><span class="p">)</span>
     
-    intervals.update({ival.semitones: [ival.semitones, ival.name, ival.niceName]})
+    <span class="n">intervals</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="n">ival</span><span class="o">.</span><span class="n">semitones</span><span class="p">:</span> <span class="p">[</span><span class="n">ival</span><span class="o">.</span><span class="n">semitones</span><span class="p">,</span> <span class="n">ival</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">ival</span><span class="o">.</span><span class="n">niceName</span><span class="p">]})</span>
     
-pprint(intervals)
+<span class="n">pprint</span><span class="p">(</span><span class="n">intervals</span><span class="p">)</span>
+</pre></div>
+
 </div>
 </div>
 </div>
@@ -23853,7 +23867,9 @@ pprint(intervals)
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
-    <div class="input_area code">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
 
 </div>
 </div>

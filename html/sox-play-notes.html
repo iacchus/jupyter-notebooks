@@ -1,37 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8" />
-<title>sox-play-notes</title><!--<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>-->
-<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>-->
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.19.0/codemirror.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.19.0/mode/python/python.js"></script>
-
-<script>
-$(document).ready(function(){
-	$('.code').each(function() {
-
-	    var $this = $(this),
-		$code = $this.html().trim();
-
-	    $this.empty();
-
-	    var myCodeMirror = CodeMirror(this, {
-		value: $code,
-		mode: 'python',
-		lineNumbers: true,
-		readOnly: true,
-                lineWrapping: true,
-                htmlMode: true,
-                matchClosing: true,       
-                indentWithTabs: true,
-	    });
-
-	});
-});
-</script>
+<title>sox-play-notes</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 <style type="text/css">
     /*!
@@ -23480,9 +23451,7 @@ body {
 div#notebook {
   overflow: visible;
   border-top: none;
-}
-
-@media print {
+}@media print {
   div.cell {
     display: block;
     page-break-inside: avoid;
@@ -23499,12 +23468,30 @@ div#notebook {
 </style>
 
 <!-- Custom stylesheet, it must be in the same directory as the html file -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.19.0/codemirror.css">
 <link rel="stylesheet" href="custom.css">
-<link rel="stylesheet" href="../index_files/custom.css">
 
 <!-- Loading mathjax macro -->
-</head>
+<!-- Load mathjax -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML"></script>
+    <!-- MathJax configuration -->
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            processEscapes: true,
+            processEnvironments: true
+        },
+        // Center justify equations in code and markdown cells. Elsewhere
+        // we use CSS to left justify single line equations in code cells.
+        displayAlign: 'center',
+        "HTML-CSS": {
+            styles: {'.MathJax_Display': {"margin": 0}},
+            linebreaks: { automatic: true }
+        }
+    });
+    </script>
+    <!-- End of mathjax configuration --></head>
 <body>
   <div tabindex="-1" id="notebook" class="border-box-sizing">
     <div class="container" id="notebook-container">
@@ -23513,9 +23500,11 @@ div#notebook {
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
-    <div class="input_area code">
-import subprocess
-import time
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">subprocess</span>
+<span class="kn">import</span> <span class="nn">time</span>
+</pre></div>
+
 </div>
 </div>
 </div>
@@ -23525,22 +23514,24 @@ import time
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
-    <div class="input_area code">
-def wait(seconds):
-    time.sleep(seconds)
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">wait</span><span class="p">(</span><span class="n">seconds</span><span class="p">):</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">seconds</span><span class="p">)</span>
 
 
-def play_note(note='C', duration=4, delay=0):
-    # requires sox to be installed
-    command = (
-        "play -qn synth {duration} pluck {note}"
-        " fade l 0 {duration} 2 reverb"
-    ).format(note=note, duration=duration)
+<span class="k">def</span> <span class="nf">play_note</span><span class="p">(</span><span class="n">note</span><span class="o">=</span><span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">delay</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+    <span class="c1"># requires sox to be installed</span>
+    <span class="n">command</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="s2">&quot;play -qn synth </span><span class="si">{duration}</span><span class="s2"> pluck </span><span class="si">{note}</span><span class="s2">&quot;</span>
+        <span class="s2">&quot; fade l 0 </span><span class="si">{duration}</span><span class="s2"> 2 reverb&quot;</span>
+    <span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">note</span><span class="o">=</span><span class="n">note</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="n">duration</span><span class="p">)</span>
 
-    subprocess.Popen(command.split())
+    <span class="n">subprocess</span><span class="o">.</span><span class="n">Popen</span><span class="p">(</span><span class="n">command</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
 
-    if delay:
-        wait(delay)
+    <span class="k">if</span> <span class="n">delay</span><span class="p">:</span>
+        <span class="n">wait</span><span class="p">(</span><span class="n">delay</span><span class="p">)</span>
+</pre></div>
+
 </div>
 </div>
 </div>
@@ -23550,24 +23541,24 @@ def play_note(note='C', duration=4, delay=0):
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
-    <div class="input_area code">
-play_note('C', delay=0.1)
-play_note('E', delay=0.1)
-play_note('G')
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">play_note</span><span class="p">(</span><span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="n">delay</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+<span class="n">play_note</span><span class="p">(</span><span class="s1">&#39;E&#39;</span><span class="p">,</span> <span class="n">delay</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+<span class="n">play_note</span><span class="p">(</span><span class="s1">&#39;G&#39;</span><span class="p">)</span>
 
-wait(0.5)
+<span class="n">wait</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
 
-play_note('C', delay=0.1)
-play_note('F', delay=0.1)
-play_note('A')
-
-</div>
-</div>
-</div>
+<span class="n">play_note</span><span class="p">(</span><span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="n">delay</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+<span class="n">play_note</span><span class="p">(</span><span class="s1">&#39;F&#39;</span><span class="p">,</span> <span class="n">delay</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+<span class="n">play_note</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">)</span>
+</pre></div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -23580,11 +23571,13 @@ play_note('A')
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[47]:</div>
 <div class="inner_cell">
-    <div class="input_area code">
-question_duration = 2
-question_delay = 1
-play_note('C', duration=question_duration, delay=question_delay)
-play_note('E', duration=question_duration, delay=question_delay)
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">question_duration</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">question_delay</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">play_note</span><span class="p">(</span><span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="n">question_duration</span><span class="p">,</span> <span class="n">delay</span><span class="o">=</span><span class="n">question_delay</span><span class="p">)</span>
+<span class="n">play_note</span><span class="p">(</span><span class="s1">&#39;E&#39;</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="n">question_duration</span><span class="p">,</span> <span class="n">delay</span><span class="o">=</span><span class="n">question_delay</span><span class="p">)</span>
+</pre></div>
+
 </div>
 </div>
 </div>
@@ -23594,12 +23587,13 @@ play_note('E', duration=question_duration, delay=question_delay)
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[45]:</div>
 <div class="inner_cell">
-    <div class="input_area code">
-resolution_duration = 2.5
-resolution_delay = 0.5
-play_note('E', duration=resolution_duration, delay=resolution_delay)
-play_note('D', duration=resolution_duration, delay=resolution_delay)
-play_note('C', duration=resolution_duration, delay=resolution_delay)
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">resolution_duration</span> <span class="o">=</span> <span class="mf">2.5</span>
+<span class="n">resolution_delay</span> <span class="o">=</span> <span class="mf">0.5</span>
+<span class="n">play_note</span><span class="p">(</span><span class="s1">&#39;E&#39;</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="n">resolution_duration</span><span class="p">,</span> <span class="n">delay</span><span class="o">=</span><span class="n">resolution_delay</span><span class="p">)</span>
+<span class="n">play_note</span><span class="p">(</span><span class="s1">&#39;D&#39;</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="n">resolution_duration</span><span class="p">,</span> <span class="n">delay</span><span class="o">=</span><span class="n">resolution_delay</span><span class="p">)</span>
+<span class="n">play_note</span><span class="p">(</span><span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="n">resolution_duration</span><span class="p">,</span> <span class="n">delay</span><span class="o">=</span><span class="n">resolution_delay</span><span class="p">)</span>
+</pre></div>
 
 </div>
 </div>
@@ -23610,10 +23604,12 @@ play_note('C', duration=resolution_duration, delay=resolution_delay)
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[49]:</div>
 <div class="inner_cell">
-    <div class="input_area code">
-a=1
-a+=1
-a
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span><span class="o">=</span><span class="mi">1</span>
+<span class="n">a</span><span class="o">+=</span><span class="mi">1</span>
+<span class="n">a</span>
+</pre></div>
+
 </div>
 </div>
 </div>
@@ -23623,7 +23619,9 @@ a
 
 
 <div class="output_area">
+
 <div class="prompt output_prompt">Out[49]:</div>
+
 
 
 
@@ -23641,7 +23639,9 @@ a
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
-    <div class="input_area code">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
 
 </div>
 </div>

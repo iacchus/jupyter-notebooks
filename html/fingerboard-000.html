@@ -1,37 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8" />
-<title>fingerboard-000</title><!--<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>-->
-<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>-->
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.19.0/codemirror.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.19.0/mode/python/python.js"></script>
-
-<script>
-$(document).ready(function(){
-	$('.code').each(function() {
-
-	    var $this = $(this),
-		$code = $this.html().trim();
-
-	    $this.empty();
-
-	    var myCodeMirror = CodeMirror(this, {
-		value: $code,
-		mode: 'python',
-		lineNumbers: true,
-		readOnly: true,
-                lineWrapping: true,
-                htmlMode: true,
-                matchClosing: true,       
-                indentWithTabs: true,
-	    });
-
-	});
-});
-</script>
+<title>fingerboard-000</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 <style type="text/css">
     /*!
@@ -23480,9 +23451,7 @@ body {
 div#notebook {
   overflow: visible;
   border-top: none;
-}
-
-@media print {
+}@media print {
   div.cell {
     display: block;
     page-break-inside: avoid;
@@ -23499,18 +23468,35 @@ div#notebook {
 </style>
 
 <!-- Custom stylesheet, it must be in the same directory as the html file -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.19.0/codemirror.css">
 <link rel="stylesheet" href="custom.css">
-<link rel="stylesheet" href="../index_files/custom.css">
 
 <!-- Loading mathjax macro -->
-</head>
+<!-- Load mathjax -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML"></script>
+    <!-- MathJax configuration -->
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            processEscapes: true,
+            processEnvironments: true
+        },
+        // Center justify equations in code and markdown cells. Elsewhere
+        // we use CSS to left justify single line equations in code cells.
+        displayAlign: 'center',
+        "HTML-CSS": {
+            styles: {'.MathJax_Display': {"margin": 0}},
+            linebreaks: { automatic: true }
+        }
+    });
+    </script>
+    <!-- End of mathjax configuration --></head>
 <body>
   <div tabindex="-1" id="notebook" class="border-box-sizing">
     <div class="container" id="notebook-container">
 
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -23524,16 +23510,18 @@ div#notebook {
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
-    <div class="input_area code">
-from music21 import *
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">music21</span> <span class="k">import</span> <span class="o">*</span>
 
-import svgwrite as sw
+<span class="kn">import</span> <span class="nn">svgwrite</span> <span class="k">as</span> <span class="nn">sw</span>
 
-from IPython.display import display, HTML, Image
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="k">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">HTML</span><span class="p">,</span> <span class="n">Image</span>
 
-import seaborn
-from colorsys import hls_to_rgb
-from base64 import b16encode
+<span class="kn">import</span> <span class="nn">seaborn</span>
+<span class="kn">from</span> <span class="nn">colorsys</span> <span class="k">import</span> <span class="n">hls_to_rgb</span>
+<span class="kn">from</span> <span class="nn">base64</span> <span class="k">import</span> <span class="n">b16encode</span>
+</pre></div>
+
 </div>
 </div>
 </div>
@@ -23543,151 +23531,153 @@ from base64 import b16encode
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
-    <div class="input_area code">
-def y_by_line(line_num, line_height):
-    return (line_num) * line_height
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">y_by_line</span><span class="p">(</span><span class="n">line_num</span><span class="p">,</span> <span class="n">line_height</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">line_num</span><span class="p">)</span> <span class="o">*</span> <span class="n">line_height</span>
 
-svg_attrs = {
-    'font-family': 'Inconsolata, monospace',
-    'font-weight': 'bold',
-}
+<span class="n">svg_attrs</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;font-family&#39;</span><span class="p">:</span> <span class="s1">&#39;Inconsolata, monospace&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;font-weight&#39;</span><span class="p">:</span> <span class="s1">&#39;bold&#39;</span><span class="p">,</span>
+<span class="p">}</span>
 
-table_attrs = {
-    'stroke' : '#000',
-    'fill' : '#fff',
-    'stroke-width' : '1',
-}
+<span class="n">table_attrs</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;stroke&#39;</span> <span class="p">:</span> <span class="s1">&#39;#000&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;fill&#39;</span> <span class="p">:</span> <span class="s1">&#39;#fff&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;stroke-width&#39;</span> <span class="p">:</span> <span class="s1">&#39;1&#39;</span><span class="p">,</span>
+<span class="p">}</span>
 
-cell_attrs = {
-    'fill':'none',
-    'stroke':'none',
-    'stroke-width':'1',
-}
+<span class="n">cell_attrs</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;fill&#39;</span><span class="p">:</span><span class="s1">&#39;none&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;stroke&#39;</span><span class="p">:</span><span class="s1">&#39;none&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;stroke-width&#39;</span><span class="p">:</span><span class="s1">&#39;1&#39;</span><span class="p">,</span>
+<span class="p">}</span>
 
-openstr_attrs = {
-    'fill':'none',
-    'stroke':'#333',
-    'stroke-width':'3',
-}
+<span class="n">openstr_attrs</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;fill&#39;</span><span class="p">:</span><span class="s1">&#39;none&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;stroke&#39;</span><span class="p">:</span><span class="s1">&#39;#333&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;stroke-width&#39;</span><span class="p">:</span><span class="s1">&#39;3&#39;</span><span class="p">,</span>
+<span class="p">}</span>
 
-closestr_attrs = {
-    'fill':'none',
-    'stroke':'#333',
-    'stroke-width':'1',
-}
+<span class="n">closestr_attrs</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;fill&#39;</span><span class="p">:</span><span class="s1">&#39;none&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;stroke&#39;</span><span class="p">:</span><span class="s1">&#39;#333&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;stroke-width&#39;</span><span class="p">:</span><span class="s1">&#39;1&#39;</span><span class="p">,</span>
+<span class="p">}</span>
 
-circ_attrs = {
-    'fill':'#fff',
-    'stroke':'white',
-    'stroke-width':'0',
-}
+<span class="n">circ_attrs</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;fill&#39;</span><span class="p">:</span><span class="s1">&#39;#fff&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;stroke&#39;</span><span class="p">:</span><span class="s1">&#39;white&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;stroke-width&#39;</span><span class="p">:</span><span class="s1">&#39;0&#39;</span><span class="p">,</span>
+<span class="p">}</span>
 
-text_attrs = {
-    'font-family': '"Inconsolata", monospace',
-    'alignment-baseline' : 'middle',
-    'text-anchor' : 'middle',
-    'fill' : '#fff',
-    'stroke' : 'none',
-}
+<span class="n">text_attrs</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;font-family&#39;</span><span class="p">:</span> <span class="s1">&#39;&quot;Inconsolata&quot;, monospace&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;alignment-baseline&#39;</span> <span class="p">:</span> <span class="s1">&#39;middle&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;text-anchor&#39;</span> <span class="p">:</span> <span class="s1">&#39;middle&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;fill&#39;</span> <span class="p">:</span> <span class="s1">&#39;#fff&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;stroke&#39;</span> <span class="p">:</span> <span class="s1">&#39;none&#39;</span><span class="p">,</span>
+<span class="p">}</span>
 
-string_num = 4
-string_notes = 18
+<span class="n">string_num</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">string_notes</span> <span class="o">=</span> <span class="mi">18</span>
 
-width = 970
-cell_width = width/18
-cell_height = (cell_width/3)*2
-height = cell_height*4
+<span class="n">width</span> <span class="o">=</span> <span class="mi">970</span>
+<span class="n">cell_width</span> <span class="o">=</span> <span class="n">width</span><span class="o">/</span><span class="mi">18</span>
+<span class="n">cell_height</span> <span class="o">=</span> <span class="p">(</span><span class="n">cell_width</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span><span class="o">*</span><span class="mi">2</span>
+<span class="n">height</span> <span class="o">=</span> <span class="n">cell_height</span><span class="o">*</span><span class="mi">4</span>
 
-dwg = sw.Drawing(profile='full', size=("{}".format(width), "{}".format(height)), **svg_attrs)
+<span class="n">dwg</span> <span class="o">=</span> <span class="n">sw</span><span class="o">.</span><span class="n">Drawing</span><span class="p">(</span><span class="n">profile</span><span class="o">=</span><span class="s1">&#39;full&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">width</span><span class="p">),</span> <span class="s2">&quot;</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">height</span><span class="p">)),</span> <span class="o">**</span><span class="n">svg_attrs</span><span class="p">)</span>
 
-dwg.add(sw.shapes.Rect(insert=(0, 0), size=(width, height), **table_attrs))
+<span class="n">dwg</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">sw</span><span class="o">.</span><span class="n">shapes</span><span class="o">.</span><span class="n">Rect</span><span class="p">(</span><span class="n">insert</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">),</span> <span class="o">**</span><span class="n">table_attrs</span><span class="p">))</span>
 
-chromatic = scale.ChromaticScale()
+<span class="n">chromatic</span> <span class="o">=</span> <span class="n">scale</span><span class="o">.</span><span class="n">ChromaticScale</span><span class="p">()</span>
 
-#nts = [ pitch.Pitch('e4'),
-#        pitch.Pitch('a3'),
-#        pitch.Pitch('d3'),
-#        pitch.Pitch('g2'),
-#       ]
+<span class="c1">#nts = [ pitch.Pitch(&#39;e4&#39;),</span>
+<span class="c1">#        pitch.Pitch(&#39;a3&#39;),</span>
+<span class="c1">#        pitch.Pitch(&#39;d3&#39;),</span>
+<span class="c1">#        pitch.Pitch(&#39;g2&#39;),</span>
+<span class="c1">#       ]</span>
 
-nts = [ chromatic.getPitches('e4', 'a5'),
-        chromatic.getPitches('a3', 'd5'),
-        chromatic.getPitches('d3', 'g4'),
-        chromatic.getPitches('g2', 'c4'),
-       ]
+<span class="n">nts</span> <span class="o">=</span> <span class="p">[</span> <span class="n">chromatic</span><span class="o">.</span><span class="n">getPitches</span><span class="p">(</span><span class="s1">&#39;e4&#39;</span><span class="p">,</span> <span class="s1">&#39;a5&#39;</span><span class="p">),</span>
+        <span class="n">chromatic</span><span class="o">.</span><span class="n">getPitches</span><span class="p">(</span><span class="s1">&#39;a3&#39;</span><span class="p">,</span> <span class="s1">&#39;d5&#39;</span><span class="p">),</span>
+        <span class="n">chromatic</span><span class="o">.</span><span class="n">getPitches</span><span class="p">(</span><span class="s1">&#39;d3&#39;</span><span class="p">,</span> <span class="s1">&#39;g4&#39;</span><span class="p">),</span>
+        <span class="n">chromatic</span><span class="o">.</span><span class="n">getPitches</span><span class="p">(</span><span class="s1">&#39;g2&#39;</span><span class="p">,</span> <span class="s1">&#39;c4&#39;</span><span class="p">),</span>
+       <span class="p">]</span>
 
 
-pal_hls = seaborn.hls_palette(7, l=.3, s=.8).as_hex()
+<span class="n">pal_hls</span> <span class="o">=</span> <span class="n">seaborn</span><span class="o">.</span><span class="n">hls_palette</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="n">l</span><span class="o">=.</span><span class="mi">3</span><span class="p">,</span> <span class="n">s</span><span class="o">=.</span><span class="mi">8</span><span class="p">)</span><span class="o">.</span><span class="n">as_hex</span><span class="p">()</span>
 
-note_colors = dict()
-note_names = ['c','d','e','f','g','a','b'].sort()
+<span class="n">note_colors</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+<span class="n">note_names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;c&#39;</span><span class="p">,</span><span class="s1">&#39;d&#39;</span><span class="p">,</span><span class="s1">&#39;e&#39;</span><span class="p">,</span><span class="s1">&#39;f&#39;</span><span class="p">,</span><span class="s1">&#39;g&#39;</span><span class="p">,</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
 
-#note_names = chromatic.getPitches('c4','b4')
+<span class="c1">#note_names = chromatic.getPitches(&#39;c4&#39;,&#39;b4&#39;)</span>
 
-for idx,note_name in enumerate(note_names):
-    note_colors.update({note_name.upper() : pal_hls[idx]})
+<span class="k">for</span> <span class="n">idx</span><span class="p">,</span><span class="n">note_name</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">note_names</span><span class="p">):</span>
+    <span class="n">note_colors</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="n">note_name</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="p">:</span> <span class="n">pal_hls</span><span class="p">[</span><span class="n">idx</span><span class="p">]})</span>
     
 
-print(note_colors)
+<span class="nb">print</span><span class="p">(</span><span class="n">note_colors</span><span class="p">)</span>
 
-for string in range(string_num):
-    string_y = y_by_line(string, cell_height)
-    #test_pitch = nts[string]
+<span class="k">for</span> <span class="n">string</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">string_num</span><span class="p">):</span>
+    <span class="n">string_y</span> <span class="o">=</span> <span class="n">y_by_line</span><span class="p">(</span><span class="n">string</span><span class="p">,</span> <span class="n">cell_height</span><span class="p">)</span>
+    <span class="c1">#test_pitch = nts[string]</span>
     
-    for note in range(string_notes):
-        cell_start_x = note*cell_width
-        cell_start_y = string_y
-        cell_middle_x = cell_start_x + (cell_width/2)
-        cell_middle_y = cell_start_y + (cell_height/2)
-        circle_radius = ((cell_height/2)/10) * 7
+    <span class="k">for</span> <span class="n">note</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">string_notes</span><span class="p">):</span>
+        <span class="n">cell_start_x</span> <span class="o">=</span> <span class="n">note</span><span class="o">*</span><span class="n">cell_width</span>
+        <span class="n">cell_start_y</span> <span class="o">=</span> <span class="n">string_y</span>
+        <span class="n">cell_middle_x</span> <span class="o">=</span> <span class="n">cell_start_x</span> <span class="o">+</span> <span class="p">(</span><span class="n">cell_width</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+        <span class="n">cell_middle_y</span> <span class="o">=</span> <span class="n">cell_start_y</span> <span class="o">+</span> <span class="p">(</span><span class="n">cell_height</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+        <span class="n">circle_radius</span> <span class="o">=</span> <span class="p">((</span><span class="n">cell_height</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="mi">10</span><span class="p">)</span> <span class="o">*</span> <span class="mi">7</span>
         
-        #if note>0:
-        #    test_pitch = test_pitch.transpose(1)
+        <span class="c1">#if note&gt;0:</span>
+        <span class="c1">#    test_pitch = test_pitch.transpose(1)</span>
         
-        grp = sw.container.Group()
-        if not nts[string][note].accidental:
-            note_color_attrs = circ_attrs.update({'fill' : note_colors[nts[string][note].step]})
-        else:
-            note_color_attrs = circ_attrs.update({'fill' : '#999'})
-        svg_els = [
-            sw.shapes.Rect(insert=(cell_start_x, cell_start_y), size=(cell_width, cell_height), **cell_attrs),
-            sw.shapes.Circle(center=(cell_middle_x, cell_middle_y), r=circle_radius, **circ_attrs),
-            sw.text.Text(nts[string][note].unicodeName, insert=(cell_middle_x, cell_middle_y), **text_attrs),
-        ]
+        <span class="n">grp</span> <span class="o">=</span> <span class="n">sw</span><span class="o">.</span><span class="n">container</span><span class="o">.</span><span class="n">Group</span><span class="p">()</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">nts</span><span class="p">[</span><span class="n">string</span><span class="p">][</span><span class="n">note</span><span class="p">]</span><span class="o">.</span><span class="n">accidental</span><span class="p">:</span>
+            <span class="n">note_color_attrs</span> <span class="o">=</span> <span class="n">circ_attrs</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;fill&#39;</span> <span class="p">:</span> <span class="n">note_colors</span><span class="p">[</span><span class="n">nts</span><span class="p">[</span><span class="n">string</span><span class="p">][</span><span class="n">note</span><span class="p">]</span><span class="o">.</span><span class="n">step</span><span class="p">]})</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">note_color_attrs</span> <span class="o">=</span> <span class="n">circ_attrs</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;fill&#39;</span> <span class="p">:</span> <span class="s1">&#39;#999&#39;</span><span class="p">})</span>
+        <span class="n">svg_els</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="n">sw</span><span class="o">.</span><span class="n">shapes</span><span class="o">.</span><span class="n">Rect</span><span class="p">(</span><span class="n">insert</span><span class="o">=</span><span class="p">(</span><span class="n">cell_start_x</span><span class="p">,</span> <span class="n">cell_start_y</span><span class="p">),</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="n">cell_width</span><span class="p">,</span> <span class="n">cell_height</span><span class="p">),</span> <span class="o">**</span><span class="n">cell_attrs</span><span class="p">),</span>
+            <span class="n">sw</span><span class="o">.</span><span class="n">shapes</span><span class="o">.</span><span class="n">Circle</span><span class="p">(</span><span class="n">center</span><span class="o">=</span><span class="p">(</span><span class="n">cell_middle_x</span><span class="p">,</span> <span class="n">cell_middle_y</span><span class="p">),</span> <span class="n">r</span><span class="o">=</span><span class="n">circle_radius</span><span class="p">,</span> <span class="o">**</span><span class="n">circ_attrs</span><span class="p">),</span>
+            <span class="n">sw</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">Text</span><span class="p">(</span><span class="n">nts</span><span class="p">[</span><span class="n">string</span><span class="p">][</span><span class="n">note</span><span class="p">]</span><span class="o">.</span><span class="n">unicodeName</span><span class="p">,</span> <span class="n">insert</span><span class="o">=</span><span class="p">(</span><span class="n">cell_middle_x</span><span class="p">,</span> <span class="n">cell_middle_y</span><span class="p">),</span> <span class="o">**</span><span class="n">text_attrs</span><span class="p">),</span>
+        <span class="p">]</span>
         
-        for element in svg_els:
-            grp.add(element)
+        <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">svg_els</span><span class="p">:</span>
+            <span class="n">grp</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">element</span><span class="p">)</span>
             
-        dwg.add(grp)
+        <span class="n">dwg</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">grp</span><span class="p">)</span>
         
-    # first element is open
-    positions = [
-        1, 3, 5, 7, 9, 10, 12
-    ]
+    <span class="c1"># first element is open</span>
+    <span class="n">positions</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">12</span>
+    <span class="p">]</span>
     
-    for pos_begin in positions:
+    <span class="k">for</span> <span class="n">pos_begin</span> <span class="ow">in</span> <span class="n">positions</span><span class="p">:</span>
         
-        # equal for both
-        line_x = pos_begin * cell_width
-        upper_y = 0
-        lower_y = height
+        <span class="c1"># equal for both</span>
+        <span class="n">line_x</span> <span class="o">=</span> <span class="n">pos_begin</span> <span class="o">*</span> <span class="n">cell_width</span>
+        <span class="n">upper_y</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">lower_y</span> <span class="o">=</span> <span class="n">height</span>
         
-        if pos_begin == 1:
-            attrs = openstr_attrs
-        else:
-            attrs = closestr_attrs
+        <span class="k">if</span> <span class="n">pos_begin</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">attrs</span> <span class="o">=</span> <span class="n">openstr_attrs</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">attrs</span> <span class="o">=</span> <span class="n">closestr_attrs</span>
             
-        grp = sw.container.Group()
-        svg_els = [
-            sw.shapes.Line(start=(line_x, upper_y), end=(line_x, lower_y), **attrs),
-        ]
+        <span class="n">grp</span> <span class="o">=</span> <span class="n">sw</span><span class="o">.</span><span class="n">container</span><span class="o">.</span><span class="n">Group</span><span class="p">()</span>
+        <span class="n">svg_els</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="n">sw</span><span class="o">.</span><span class="n">shapes</span><span class="o">.</span><span class="n">Line</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="p">(</span><span class="n">line_x</span><span class="p">,</span> <span class="n">upper_y</span><span class="p">),</span> <span class="n">end</span><span class="o">=</span><span class="p">(</span><span class="n">line_x</span><span class="p">,</span> <span class="n">lower_y</span><span class="p">),</span> <span class="o">**</span><span class="n">attrs</span><span class="p">),</span>
+        <span class="p">]</span>
         
-        for element in svg_els:
-            grp.add(element)
+        <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">svg_els</span><span class="p">:</span>
+            <span class="n">grp</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">element</span><span class="p">)</span>
             
-        dwg.add(grp)
+        <span class="n">dwg</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">grp</span><span class="p">)</span>
 
-display(HTML(dwg.tostring()))
+<span class="n">display</span><span class="p">(</span><span class="n">HTML</span><span class="p">(</span><span class="n">dwg</span><span class="o">.</span><span class="n">tostring</span><span class="p">()))</span>
+</pre></div>
+
 </div>
 </div>
 </div>
@@ -23697,7 +23687,9 @@ display(HTML(dwg.tostring()))
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
 
 <div class="output_subarea output_text output_error">
 <pre>
@@ -23722,7 +23714,9 @@ display(HTML(dwg.tostring()))
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
-    <div class="input_area code">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
 
 </div>
 </div>

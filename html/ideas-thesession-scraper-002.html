@@ -1,37 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8" />
-<title>ideas-thesession-scraper-002</title><!--<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>-->
-<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>-->
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.19.0/codemirror.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.19.0/mode/python/python.js"></script>
-
-<script>
-$(document).ready(function(){
-	$('.code').each(function() {
-
-	    var $this = $(this),
-		$code = $this.html().trim();
-
-	    $this.empty();
-
-	    var myCodeMirror = CodeMirror(this, {
-		value: $code,
-		mode: 'python',
-		lineNumbers: true,
-		readOnly: true,
-                lineWrapping: true,
-                htmlMode: true,
-                matchClosing: true,       
-                indentWithTabs: true,
-	    });
-
-	});
-});
-</script>
+<title>ideas-thesession-scraper-002</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 <style type="text/css">
     /*!
@@ -23480,9 +23451,7 @@ body {
 div#notebook {
   overflow: visible;
   border-top: none;
-}
-
-@media print {
+}@media print {
   div.cell {
     display: block;
     page-break-inside: avoid;
@@ -23499,18 +23468,35 @@ div#notebook {
 </style>
 
 <!-- Custom stylesheet, it must be in the same directory as the html file -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.19.0/codemirror.css">
 <link rel="stylesheet" href="custom.css">
-<link rel="stylesheet" href="../index_files/custom.css">
 
 <!-- Loading mathjax macro -->
-</head>
+<!-- Load mathjax -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML"></script>
+    <!-- MathJax configuration -->
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            processEscapes: true,
+            processEnvironments: true
+        },
+        // Center justify equations in code and markdown cells. Elsewhere
+        // we use CSS to left justify single line equations in code cells.
+        displayAlign: 'center',
+        "HTML-CSS": {
+            styles: {'.MathJax_Display': {"margin": 0}},
+            linebreaks: { automatic: true }
+        }
+    });
+    </script>
+    <!-- End of mathjax configuration --></head>
 <body>
   <div tabindex="-1" id="notebook" class="border-box-sizing">
     <div class="container" id="notebook-container">
 
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -23526,18 +23512,19 @@ div#notebook {
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
-    <div class="input_area code">
-from lxml import html
-import requests
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">lxml</span> <span class="k">import</span> <span class="n">html</span>
+<span class="kn">import</span> <span class="nn">requests</span>
 
-from IPython.display import display, HTML
-</div>
-</div>
-</div>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="k">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">HTML</span>
+</pre></div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -23550,20 +23537,22 @@ from IPython.display import display, HTML
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
-    <div class="input_area code">
-# https://thesession.org/tunes/search?type=jig&mode=Eminor&q=butterfly
-#xpaths
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># https://thesession.org/tunes/search?type=jig&amp;mode=Eminor&amp;q=butterfly</span>
+<span class="c1">#xpaths</span>
 
-def get_search(sc_name='butterfly', sc_type='', sc_mode=''):
-    #makeuri = "https://thesession.org/tunes/search?type={0}&mode={1}&q={2}".format(sc_type, sc_mode, sc_name)
-    makeuri = "https://thesession.org/tunes/search?type={0}&mode={1}&q={2}".format(sc_type, sc_mode, sc_name)
+<span class="k">def</span> <span class="nf">get_search</span><span class="p">(</span><span class="n">sc_name</span><span class="o">=</span><span class="s1">&#39;butterfly&#39;</span><span class="p">,</span> <span class="n">sc_type</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">sc_mode</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">):</span>
+    <span class="c1">#makeuri = &quot;https://thesession.org/tunes/search?type={0}&amp;mode={1}&amp;q={2}&quot;.format(sc_type, sc_mode, sc_name)</span>
+    <span class="n">makeuri</span> <span class="o">=</span> <span class="s2">&quot;https://thesession.org/tunes/search?type=</span><span class="si">{0}</span><span class="s2">&amp;mode=</span><span class="si">{1}</span><span class="s2">&amp;q=</span><span class="si">{2}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sc_type</span><span class="p">,</span> <span class="n">sc_mode</span><span class="p">,</span> <span class="n">sc_name</span><span class="p">)</span>
     
-    return requests.get(makeuri)
+    <span class="k">return</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">makeuri</span><span class="p">)</span>
 
-page = get_search('morrisons')
-tree = html.fromstring(page.content)
+<span class="n">page</span> <span class="o">=</span> <span class="n">get_search</span><span class="p">(</span><span class="s1">&#39;morrisons&#39;</span><span class="p">)</span>
+<span class="n">tree</span> <span class="o">=</span> <span class="n">html</span><span class="o">.</span><span class="n">fromstring</span><span class="p">(</span><span class="n">page</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
 
-tree.xpath('//div[@id="results"]/ol/li/a/text()')
+<span class="n">tree</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s1">&#39;//div[@id=&quot;results&quot;]/ol/li/a/text()&#39;</span><span class="p">)</span>
+</pre></div>
+
 </div>
 </div>
 </div>
@@ -23573,7 +23562,9 @@ tree.xpath('//div[@id="results"]/ol/li/a/text()')
 
 
 <div class="output_area">
+
 <div class="prompt output_prompt">Out[3]:</div>
+
 
 
 
@@ -23592,8 +23583,7 @@ tree.xpath('//div[@id="results"]/ol/li/a/text()')
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -23605,13 +23595,15 @@ tree.xpath('//div[@id="results"]/ol/li/a/text()')
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
-    <div class="input_area code">
-# https://thesession.org/tunes/10
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># https://thesession.org/tunes/10</span>
 
-def get_tune(tune_id):
-    makeuri = "https://thesession.org/tunes/{}".format(tune_id)
+<span class="k">def</span> <span class="nf">get_tune</span><span class="p">(</span><span class="n">tune_id</span><span class="p">):</span>
+    <span class="n">makeuri</span> <span class="o">=</span> <span class="s2">&quot;https://thesession.org/tunes/</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">tune_id</span><span class="p">)</span>
     
-    return requests.get(makeuri)
+    <span class="k">return</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">makeuri</span><span class="p">)</span>
+</pre></div>
+
 </div>
 </div>
 </div>
@@ -23621,9 +23613,11 @@ def get_tune(tune_id):
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
-    <div class="input_area code">
-page = get_tune('10')
-tree = html.fromstring(page.content)
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">page</span> <span class="o">=</span> <span class="n">get_tune</span><span class="p">(</span><span class="s1">&#39;10&#39;</span><span class="p">)</span>
+<span class="n">tree</span> <span class="o">=</span> <span class="n">html</span><span class="o">.</span><span class="n">fromstring</span><span class="p">(</span><span class="n">page</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+</pre></div>
+
 </div>
 </div>
 </div>
@@ -23633,8 +23627,10 @@ tree = html.fromstring(page.content)
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
-    <div class="input_area code">
-tree
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">tree</span>
+</pre></div>
+
 </div>
 </div>
 </div>
@@ -23644,7 +23640,9 @@ tree
 
 
 <div class="output_area">
+
 <div class="prompt output_prompt">Out[6]:</div>
+
 
 
 
@@ -23662,10 +23660,12 @@ tree
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
-    <div class="input_area code">
-nds = tree.xpath('//*[@class="notes"]')
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">nds</span> <span class="o">=</span> <span class="n">tree</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s1">&#39;//*[@class=&quot;notes&quot;]&#39;</span><span class="p">)</span>
 
-nds
+<span class="n">nds</span>
+</pre></div>
+
 </div>
 </div>
 </div>
@@ -23675,7 +23675,9 @@ nds
 
 
 <div class="output_area">
+
 <div class="prompt output_prompt">Out[7]:</div>
+
 
 
 
@@ -23698,8 +23700,10 @@ nds
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
-    <div class="input_area code">
-nds[0].text_content()
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">nds</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">text_content</span><span class="p">()</span>
+</pre></div>
+
 </div>
 </div>
 </div>
@@ -23709,7 +23713,9 @@ nds[0].text_content()
 
 
 <div class="output_area">
+
 <div class="prompt output_prompt">Out[8]:</div>
+
 
 
 
@@ -23727,8 +23733,10 @@ nds[0].text_content()
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
-    <div class="input_area code">
-str="oi\n\nola\noila"
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">str</span><span class="o">=</span><span class="s2">&quot;oi</span><span class="se">\n\n</span><span class="s2">ola</span><span class="se">\n</span><span class="s2">oila&quot;</span>
+</pre></div>
+
 </div>
 </div>
 </div>
@@ -23738,16 +23746,18 @@ str="oi\n\nola\noila"
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
-    <div class="input_area code">
-def remove_empty(teh_string):
-    newlist=list()
-    the_list = teh_string.split('\n')
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">remove_empty</span><span class="p">(</span><span class="n">teh_string</span><span class="p">):</span>
+    <span class="n">newlist</span><span class="o">=</span><span class="nb">list</span><span class="p">()</span>
+    <span class="n">the_list</span> <span class="o">=</span> <span class="n">teh_string</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
     
-    for nonempty in the_list: 
-        if nonempty:
-            newlist.append(nonempty)
+    <span class="k">for</span> <span class="n">nonempty</span> <span class="ow">in</span> <span class="n">the_list</span><span class="p">:</span> 
+        <span class="k">if</span> <span class="n">nonempty</span><span class="p">:</span>
+            <span class="n">newlist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">nonempty</span><span class="p">)</span>
     
-    return "\n".join(newlist)
+    <span class="k">return</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">newlist</span><span class="p">)</span>
+</pre></div>
+
 </div>
 </div>
 </div>
@@ -23757,8 +23767,10 @@ def remove_empty(teh_string):
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
-    <div class="input_area code">
-nds[0].text_content()
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">nds</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">text_content</span><span class="p">()</span>
+</pre></div>
+
 </div>
 </div>
 </div>
@@ -23768,7 +23780,9 @@ nds[0].text_content()
 
 
 <div class="output_area">
+
 <div class="prompt output_prompt">Out[11]:</div>
+
 
 
 
@@ -23786,37 +23800,39 @@ nds[0].text_content()
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
-    <div class="input_area code">
-from lxml import html
-import requests
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">lxml</span> <span class="k">import</span> <span class="n">html</span>
+<span class="kn">import</span> <span class="nn">requests</span>
 
-from IPython.display import display, HTML
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="k">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">HTML</span>
 
-def remove_empty(teh_string):
-    newlist=list()
-    the_list = teh_string.split('\n')
+<span class="k">def</span> <span class="nf">remove_empty</span><span class="p">(</span><span class="n">teh_string</span><span class="p">):</span>
+    <span class="n">newlist</span><span class="o">=</span><span class="nb">list</span><span class="p">()</span>
+    <span class="n">the_list</span> <span class="o">=</span> <span class="n">teh_string</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
     
-    for nonempty in the_list: 
-        if nonempty:
-            newlist.append(nonempty)
+    <span class="k">for</span> <span class="n">nonempty</span> <span class="ow">in</span> <span class="n">the_list</span><span class="p">:</span> 
+        <span class="k">if</span> <span class="n">nonempty</span><span class="p">:</span>
+            <span class="n">newlist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">nonempty</span><span class="p">)</span>
     
-    return "\n".join(newlist)
+    <span class="k">return</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">newlist</span><span class="p">)</span>
 
-def get_tune(tune_id):
-    makeuri = "https://thesession.org/tunes/{}".format(tune_id)
+<span class="k">def</span> <span class="nf">get_tune</span><span class="p">(</span><span class="n">tune_id</span><span class="p">):</span>
+    <span class="n">makeuri</span> <span class="o">=</span> <span class="s2">&quot;https://thesession.org/tunes/</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">tune_id</span><span class="p">)</span>
     
-    page = requests.get(makeuri)
-    tree = html.fromstring(page.content)
-    nds = tree.xpath('//*[@class="notes"]')
+    <span class="n">page</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">makeuri</span><span class="p">)</span>
+    <span class="n">tree</span> <span class="o">=</span> <span class="n">html</span><span class="o">.</span><span class="n">fromstring</span><span class="p">(</span><span class="n">page</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+    <span class="n">nds</span> <span class="o">=</span> <span class="n">tree</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s1">&#39;//*[@class=&quot;notes&quot;]&#39;</span><span class="p">)</span>
 
-    tune_list = list()
-    for tune in nds:
-        tune_list.append(remove_empty(tune.text_content()))
+    <span class="n">tune_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">tune</span> <span class="ow">in</span> <span class="n">nds</span><span class="p">:</span>
+        <span class="n">tune_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">remove_empty</span><span class="p">(</span><span class="n">tune</span><span class="o">.</span><span class="n">text_content</span><span class="p">()))</span>
         
-    return { 'tunes':tune_list, 'count': len(tune_list) }
+    <span class="k">return</span> <span class="p">{</span> <span class="s1">&#39;tunes&#39;</span><span class="p">:</span><span class="n">tune_list</span><span class="p">,</span> <span class="s1">&#39;count&#39;</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">tune_list</span><span class="p">)</span> <span class="p">}</span>
 
-HEY = get_tune(1)
-print(HEY)
+<span class="n">HEY</span> <span class="o">=</span> <span class="n">get_tune</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">HEY</span><span class="p">)</span>
+</pre></div>
+
 </div>
 </div>
 </div>
@@ -23826,7 +23842,9 @@ print(HEY)
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>{&#39;tunes&#39;: [&#34;X: 1\nT: Cooley&#39;s\nR: reel\nM: 4/4\nL: 1/8\nK: Edor\n|:D2|EBBA B2 EB|B2 AB dBAG|FDAD BDAD|FDAD dAFD|\nEBBA B2 EB|B2 AB defg|afec dBAF|DEFD E2:|\n|:gf|eB B2 efge|eB B2 gedB|A2 FA DAFA|A2 FA defg|\neB B2 eBgB|eB B2 defg|afec dBAF|DEFD E2:|&#34;, &#34;X: 2\nT: Cooley&#39;s\nR: reel\nM: 4/4\nL: 1/8\nK: Emin\n|:F|CGGC G2 CG|G2 FG BGFE|(3DCB, FB, GB,FB,|DB,DF BFDB,|\rCGGC G2 CG|G2 FG Bcde|fdcd BGFB|B,CDF C3:|\r|:d|cG ~G2 cede| cG ~G2 ecBG|(3FGF DF B,FDF|GFDF Bcde|\rcG ~G2 cede| cG ~G2 Bcde| fdcd BGFB| B,CDF C3:|&#34;, &#34;X: 3\nT: Cooley&#39;s\nR: reel\nM: 4/4\nL: 1/8\nK: Emin\n|:D2|EBBA B2 EB|B2 AB dBAG|FDAD BDAD|FDAD dAFD|\rEBBA B2 EB|B2 AB defg|afef dBAF|DEFD E2:|\r|:gf|eB ~B2 eBgB|eB ~B2 {a}gedB|A2 FA DFAB|BA FA defg|\reB ~B2 eBgB|eB B2 defg|afef dBAF|DEFD E2:|&#34;, &#39;X: 4\nT: Cooley\&#39;s\nR: reel\nM: 4/4\nL: 1/8\nK: Edor\nD |: EBBA &#34;slide&#34;B3 B | B2 AB dBAD | (3FED AD BDAD | (3FED A=c BAFD |\nEBBA &#34;slide&#34; B3 B | B2 AB defg | afec dBAF |1 EGFD E3 D :|2 EGFD E3 d ||\n|: eB (3BBB efgf | eB (3BBB fedB | (3ABA FB (3ABA FB | ADFA Bcdf |\neB (3BBB efgf | eB (3BBB fedB | (3ABA FB dfec | dBAF EFGB :|\n|: eB (3BBB eBfB | eB (3BBB fedc | BE (3EEE BEdE | BE (3BBB BAFB |\neB (3BBB eBfB | eB (3BBB fecA | d3 e fdec | dBAF EFGB :|&#39;, &#34;X: 5\nT: Cooley&#39;s\nR: reel\nM: 4/4\nL: 1/8\nK: Edor\neBBA ~B2B2|~B2AB dBAG|FDAD BDAD|EDFA BAFB|\neBBA ~B2Bc|B2AB defA|~A2eA dBAF|1DEFD ~E2E2:|2DEFD ~e2e2||\neB~B2 eBgB|eB~B2 gedB|A2FA DAFA|~A2FA Beed|\ne2~A2 eage|dBAB defA|~A2e2 dBAF|1DEfd ~e2e2:|2DEFD ~E2E2||&#34;, &#34;X: 6\nT: Cooley&#39;s\nR: reel\nM: 4/4\nL: 1/8\nK: Emin\nA | EBBE B2 EB | ~B2 AB dBAG | (3FED AD BDAD | FDFA dAFD |\nEBBE B2 EB | ~B2 AB defg | afef dBAd | DEFA E3 :|\nf | eB ~B2 egfg | eB ~B2 gedB | (3ABA FA DAFA | BAFA defg |\neB ~B2 egfg | eB ~B2 defg | afef dBAd | DEFA E3 :|&#34;, &#39;X: 7\nT: Cooley\&#39;s\nR: reel\nM: 4/4\nL: 1/8\nK: Edor\nD|&#34;Em&#34;EB{=c}BA B2 EB|&#34;Em&#34;{=c}B2 AB dBAG|&#34;D&#34;F/E/D AD BDAD|&#34;D&#34;F/E/D AD {=c}BAGF|\n&#34;Em&#34;EB{=c}BA B2 EB|&#34;Em&#34;{=c}B2 AB defg|&#34;D&#34;{b}afec dBAF|[1&#34;D&#34;DEFD &#34;Em&#34;E3:|[2&#34;D&#34;DEFD &#34;Em&#34;E2||\n|gf|&#34;Em&#34;eB {B/d/B/A/}B2 eBgf|&#34;Em&#34;eB {B/d/B/A/}B2 gedB|&#34;D&#34;A/A/A FA DAFA|&#34;D&#34;A/A/A FA defg|\n&#34;Em&#34;eB {B/d/B/A/}B2 eBgf|&#34;Em&#34;eB {B/d/B/A/}B2 defg|&#34;D&#34;{b}afec dBAF|[1&#34;D&#34;DEFD &#34;Em&#34;E2:|[2&#34;D&#34;DEFD &#34;Em&#34;E3|]&#39;, &#34;X: 8\nT: Cooley&#39;s\nR: reel\nM: 4/4\nL: 1/8\nK: Edor\n|: D |EBBA B2- BA | ~B2 AB dBAG | FDAD BDAG | F/E/D FA dAFD |\nEB-BA B2 BA | B/c/B AB defg | afef dBAF | DEFD E3 :|\n|: f |eB ~B2 eBfB | eB ~B2 gedB | A/B/A FA DAFA | ~A2 FA defd |\neB B/c/B eBgf | eB ~B2 defg | afef dBAF | DE F/E/D E3 :|&#34;, &#34;X: 9\nT: Cooley&#39;s\nR: reel\nM: 4/4\nL: 1/8\nK: Edor\n|:D2|EBBA B2 EB|B2 AB dBAG|FED AD BDAD|FEDAD BAGF|\nEBBA B2 EB|B2 AB defg|afec dBAF|DEFD E2:|\n|:gf|eB B2 efge|eB B2 gedB|A2 FA DAFA|A2 FA defg|\neB B2 eBgF|eB B2 defg|afec dBAF|DEFD E2:|&#34;, &#34;X: 10\nT: Cooley&#39;s\nR: reel\nM: 4/4\nL: 1/8\nK: Edor\n|:D2|EBBA B2 EB|B2 AB dBAF|DF F2 A3B|AF F2 dBAF|\nEBBA B2 EB|B2 AB defg|afec dBAF|DEFD E2:|\n|:gf|eB B2 egfg|eB B2 gedB|A2 FA DAFA|A2 FA defg|\neB B2 egfg|eB B2 defg|afec dBAF|DEFD E2:|&#34;], &#39;count&#39;: 10}
@@ -23842,27 +23860,29 @@ print(HEY)
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
-    <div class="input_area code">
-# https://thesession.org/tunes/search?type=jig&mode=Eminor&q=butterfly
-#xpaths
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># https://thesession.org/tunes/search?type=jig&amp;mode=Eminor&amp;q=butterfly</span>
+<span class="c1">#xpaths</span>
 
-def get_search(sc_name='butterfly', sc_type='', sc_mode=''):
-    #makeuri = "https://thesession.org/tunes/search?type={0}&mode={1}&q={2}".format(sc_type, sc_mode, sc_name)
-    makeuri = "https://thesession.org/tunes/search?type={0}&mode={1}&q={2}".format(sc_type, sc_mode, sc_name)
+<span class="k">def</span> <span class="nf">get_search</span><span class="p">(</span><span class="n">sc_name</span><span class="o">=</span><span class="s1">&#39;butterfly&#39;</span><span class="p">,</span> <span class="n">sc_type</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">sc_mode</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">):</span>
+    <span class="c1">#makeuri = &quot;https://thesession.org/tunes/search?type={0}&amp;mode={1}&amp;q={2}&quot;.format(sc_type, sc_mode, sc_name)</span>
+    <span class="n">makeuri</span> <span class="o">=</span> <span class="s2">&quot;https://thesession.org/tunes/search?type=</span><span class="si">{0}</span><span class="s2">&amp;mode=</span><span class="si">{1}</span><span class="s2">&amp;q=</span><span class="si">{2}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sc_type</span><span class="p">,</span> <span class="n">sc_mode</span><span class="p">,</span> <span class="n">sc_name</span><span class="p">)</span>
     
-    return requests.get(makeuri)
+    <span class="k">return</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">makeuri</span><span class="p">)</span>
 
-page = get_search('morrisons')
-tree = html.fromstring(page.content)
+<span class="n">page</span> <span class="o">=</span> <span class="n">get_search</span><span class="p">(</span><span class="s1">&#39;morrisons&#39;</span><span class="p">)</span>
+<span class="n">tree</span> <span class="o">=</span> <span class="n">html</span><span class="o">.</span><span class="n">fromstring</span><span class="p">(</span><span class="n">page</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
 
-results = tree.xpath('//div[@id="results"]/ol/li/a/text()')
+<span class="n">results</span> <span class="o">=</span> <span class="n">tree</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s1">&#39;//div[@id=&quot;results&quot;]/ol/li/a/text()&#39;</span><span class="p">)</span>
 
-search = list()
+<span class="n">search</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
 
-for idx,result in enumerate(results):
-    search.append( {'name': result, 'id': tree.xpath('//div[@id="results"]/ol/li/a/@href')[idx].split('/')[-1] } )
+<span class="k">for</span> <span class="n">idx</span><span class="p">,</span><span class="n">result</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">results</span><span class="p">):</span>
+    <span class="n">search</span><span class="o">.</span><span class="n">append</span><span class="p">(</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="n">result</span><span class="p">,</span> <span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="n">tree</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s1">&#39;//div[@id=&quot;results&quot;]/ol/li/a/@href&#39;</span><span class="p">)[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="p">}</span> <span class="p">)</span>
     
-search
+<span class="n">search</span>
+</pre></div>
+
 </div>
 </div>
 </div>
@@ -23872,7 +23892,9 @@ search
 
 
 <div class="output_area">
+
 <div class="prompt output_prompt">Out[17]:</div>
+
 
 
 
@@ -23895,8 +23917,10 @@ search
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
-    <div class="input_area code">
-tree.xpath('//div[@id="results"]/ol/li/a/@href')[0].split('/')[-1]
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">tree</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s1">&#39;//div[@id=&quot;results&quot;]/ol/li/a/@href&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+
 </div>
 </div>
 </div>
@@ -23906,7 +23930,9 @@ tree.xpath('//div[@id="results"]/ol/li/a/@href')[0].split('/')[-1]
 
 
 <div class="output_area">
+
 <div class="prompt output_prompt">Out[16]:</div>
+
 
 
 
@@ -23924,7 +23950,9 @@ tree.xpath('//div[@id="results"]/ol/li/a/@href')[0].split('/')[-1]
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
-    <div class="input_area code">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
 
 </div>
 </div>

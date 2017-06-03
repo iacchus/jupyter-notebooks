@@ -1,37 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8" />
-<title>color-tests-000</title><!--<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>-->
-<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>-->
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.19.0/codemirror.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.19.0/mode/python/python.js"></script>
-
-<script>
-$(document).ready(function(){
-	$('.code').each(function() {
-
-	    var $this = $(this),
-		$code = $this.html().trim();
-
-	    $this.empty();
-
-	    var myCodeMirror = CodeMirror(this, {
-		value: $code,
-		mode: 'python',
-		lineNumbers: true,
-		readOnly: true,
-                lineWrapping: true,
-                htmlMode: true,
-                matchClosing: true,       
-                indentWithTabs: true,
-	    });
-
-	});
-});
-</script>
+<title>color-tests-000</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 <style type="text/css">
     /*!
@@ -23480,9 +23451,7 @@ body {
 div#notebook {
   overflow: visible;
   border-top: none;
-}
-
-@media print {
+}@media print {
   div.cell {
     display: block;
     page-break-inside: avoid;
@@ -23499,18 +23468,35 @@ div#notebook {
 </style>
 
 <!-- Custom stylesheet, it must be in the same directory as the html file -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.19.0/codemirror.css">
 <link rel="stylesheet" href="custom.css">
-<link rel="stylesheet" href="../index_files/custom.css">
 
 <!-- Loading mathjax macro -->
-</head>
+<!-- Load mathjax -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML"></script>
+    <!-- MathJax configuration -->
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            processEscapes: true,
+            processEnvironments: true
+        },
+        // Center justify equations in code and markdown cells. Elsewhere
+        // we use CSS to left justify single line equations in code cells.
+        displayAlign: 'center',
+        "HTML-CSS": {
+            styles: {'.MathJax_Display': {"margin": 0}},
+            linebreaks: { automatic: true }
+        }
+    });
+    </script>
+    <!-- End of mathjax configuration --></head>
 <body>
   <div tabindex="-1" id="notebook" class="border-box-sizing">
     <div class="container" id="notebook-container">
 
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -23526,15 +23512,17 @@ div#notebook {
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
-    <div class="input_area code">
-%matplotlib inline
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
 
-import numpy as np
-import seaborn as sns
-import matplotlib.pyplot as plt
-import colour
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">colour</span>
 
-from colorsys import hls_to_rgb
+<span class="kn">from</span> <span class="nn">colorsys</span> <span class="k">import</span> <span class="n">hls_to_rgb</span>
+</pre></div>
+
 </div>
 </div>
 </div>
@@ -23544,9 +23532,11 @@ from colorsys import hls_to_rgb
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
-    <div class="input_area code">
-sns.set(rc={"figure.figsize": (6, 6)})
-np.random.seed(sum(map(ord, "palettes")))
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;figure.figsize&quot;</span><span class="p">:</span> <span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">)})</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">ord</span><span class="p">,</span> <span class="s2">&quot;palettes&quot;</span><span class="p">)))</span>
+</pre></div>
+
 </div>
 </div>
 </div>
@@ -23556,9 +23546,11 @@ np.random.seed(sum(map(ord, "palettes")))
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
-    <div class="input_area code">
-current_palette = sns.color_palette()
-sns.palplot(current_palette)
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">current_palette</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">color_palette</span><span class="p">()</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">palplot</span><span class="p">(</span><span class="n">current_palette</span><span class="p">)</span>
+</pre></div>
+
 </div>
 </div>
 </div>
@@ -23568,7 +23560,9 @@ sns.palplot(current_palette)
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
 
 
 
@@ -23602,8 +23596,10 @@ Z/1Lz3SGw+HwH2wBAH7DV9YAEECQASCAIANAAEEGgACCDAABBBkAAggyAAQQZAAIIMgAEOAHSU5Z
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
-    <div class="input_area code">
-sns.palplot(sns.hls_palette(12, l=.3, s=.8))
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">palplot</span><span class="p">(</span><span class="n">sns</span><span class="o">.</span><span class="n">hls_palette</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="n">l</span><span class="o">=.</span><span class="mi">3</span><span class="p">,</span> <span class="n">s</span><span class="o">=.</span><span class="mi">8</span><span class="p">))</span>
+</pre></div>
+
 </div>
 </div>
 </div>
@@ -23613,7 +23609,9 @@ sns.palplot(sns.hls_palette(12, l=.3, s=.8))
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
 
 
 
@@ -23652,11 +23650,13 @@ AABANGELAABANGELAABANGELAABANGELAABAtL8BvFmcTsawZ+0AAAAASUVORK5CYII=
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
-    <div class="input_area code">
-pal_hls = sns.hls_palette(8, l=.3, s=.8)
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pal_hls</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">hls_palette</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="n">l</span><span class="o">=.</span><span class="mi">3</span><span class="p">,</span> <span class="n">s</span><span class="o">=.</span><span class="mi">8</span><span class="p">)</span>
 
 
-pal_hls
+<span class="n">pal_hls</span>
+</pre></div>
+
 </div>
 </div>
 </div>
@@ -23666,7 +23666,9 @@ pal_hls
 
 
 <div class="output_area">
+
 <div class="prompt output_prompt">Out[14]:</div>
+
 
 
 
@@ -23691,21 +23693,23 @@ pal_hls
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
-    <div class="input_area code">
-import seaborn
-from base64 import b16encode
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span>
+<span class="kn">from</span> <span class="nn">base64</span> <span class="k">import</span> <span class="n">b16encode</span>
 
-pal_hls = sns.hls_palette(12, l=.3, s=.8)
+<span class="n">pal_hls</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">hls_palette</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="n">l</span><span class="o">=.</span><span class="mi">3</span><span class="p">,</span> <span class="n">s</span><span class="o">=.</span><span class="mi">8</span><span class="p">)</span>
 
-for hsl_color in pal_hls:
-    rgb_color = hls_to_rgb(*hsl_color)
+<span class="k">for</span> <span class="n">hsl_color</span> <span class="ow">in</span> <span class="n">pal_hls</span><span class="p">:</span>
+    <span class="n">rgb_color</span> <span class="o">=</span> <span class="n">hls_to_rgb</span><span class="p">(</span><span class="o">*</span><span class="n">hsl_color</span><span class="p">)</span>
 
-    color_str = "#"
+    <span class="n">color_str</span> <span class="o">=</span> <span class="s2">&quot;#&quot;</span>
     
-    for value in rgb_color:
-        hex_v = int(round(value*255))
-        color_str += "{0:02x}".format(hex_v)
-    print(color_str)
+    <span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">rgb_color</span><span class="p">:</span>
+        <span class="n">hex_v</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">value</span><span class="o">*</span><span class="mi">255</span><span class="p">))</span>
+        <span class="n">color_str</span> <span class="o">+=</span> <span class="s2">&quot;</span><span class="si">{0:02x}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">hex_v</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">color_str</span><span class="p">)</span>
+</pre></div>
+
 </div>
 </div>
 </div>
@@ -23715,7 +23719,9 @@ for hsl_color in pal_hls:
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>#151718
@@ -23742,8 +23748,9 @@ for hsl_color in pal_hls:
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
-    <div class="input_area code">
-a=(127,177,255)
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span><span class="o">=</span><span class="p">(</span><span class="mi">127</span><span class="p">,</span><span class="mi">177</span><span class="p">,</span><span class="mi">255</span><span class="p">)</span>
+</pre></div>
 
 </div>
 </div>
@@ -23754,9 +23761,11 @@ a=(127,177,255)
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
-    <div class="input_area code">
-from base64 import b16encode
-print('#'+b16encode(bytes(a)).decode('utf-8'))
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">base64</span> <span class="k">import</span> <span class="n">b16encode</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;#&#39;</span><span class="o">+</span><span class="n">b16encode</span><span class="p">(</span><span class="nb">bytes</span><span class="p">(</span><span class="n">a</span><span class="p">))</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">))</span>
+</pre></div>
+
 </div>
 </div>
 </div>
@@ -23766,7 +23775,9 @@ print('#'+b16encode(bytes(a)).decode('utf-8'))
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>#7FB1FF
@@ -23782,8 +23793,10 @@ print('#'+b16encode(bytes(a)).decode('utf-8'))
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
-    <div class="input_area code">
-type(pal_hls.as_hex()[0])
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">pal_hls</span><span class="o">.</span><span class="n">as_hex</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+
 </div>
 </div>
 </div>
@@ -23793,7 +23806,9 @@ type(pal_hls.as_hex()[0])
 
 
 <div class="output_area">
+
 <div class="prompt output_prompt">Out[19]:</div>
+
 
 
 
@@ -23811,8 +23826,10 @@ type(pal_hls.as_hex()[0])
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[23]:</div>
 <div class="inner_cell">
-    <div class="input_area code">
-import seaborn; pal_hls = seaborn.hls_palette(12, l=.3, s=.8).as_hex(); print(pal_hls);
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span><span class="p">;</span> <span class="n">pal_hls</span> <span class="o">=</span> <span class="n">seaborn</span><span class="o">.</span><span class="n">hls_palette</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="n">l</span><span class="o">=.</span><span class="mi">3</span><span class="p">,</span> <span class="n">s</span><span class="o">=.</span><span class="mi">8</span><span class="p">)</span><span class="o">.</span><span class="n">as_hex</span><span class="p">();</span> <span class="nb">print</span><span class="p">(</span><span class="n">pal_hls</span><span class="p">);</span>
+</pre></div>
+
 </div>
 </div>
 </div>
@@ -23822,7 +23839,9 @@ import seaborn; pal_hls = seaborn.hls_palette(12, l=.3, s=.8).as_hex(); print(pa
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>[&#39;#8a170f&#39;, &#39;#8a540f&#39;, &#39;#828a0f&#39;, &#39;#458a0f&#39;, &#39;#0f8a17&#39;, &#39;#0f8a54&#39;, &#39;#0f828a&#39;, &#39;#0f458a&#39;, &#39;#170f8a&#39;, &#39;#540f8a&#39;, &#39;#8a0f82&#39;, &#39;#8a0f45&#39;]
@@ -23838,7 +23857,9 @@ import seaborn; pal_hls = seaborn.hls_palette(12, l=.3, s=.8).as_hex(); print(pa
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
-    <div class="input_area code">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
 
 </div>
 </div>

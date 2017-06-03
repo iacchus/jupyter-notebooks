@@ -1,37 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8" />
-<title>fretboard-003</title><!--<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>-->
-<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>-->
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.19.0/codemirror.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.19.0/mode/python/python.js"></script>
-
-<script>
-$(document).ready(function(){
-	$('.code').each(function() {
-
-	    var $this = $(this),
-		$code = $this.html().trim();
-
-	    $this.empty();
-
-	    var myCodeMirror = CodeMirror(this, {
-		value: $code,
-		mode: 'python',
-		lineNumbers: true,
-		readOnly: true,
-                lineWrapping: true,
-                htmlMode: true,
-                matchClosing: true,       
-                indentWithTabs: true,
-	    });
-
-	});
-});
-</script>
+<title>fretboard-003</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 <style type="text/css">
     /*!
@@ -23480,9 +23451,7 @@ body {
 div#notebook {
   overflow: visible;
   border-top: none;
-}
-
-@media print {
+}@media print {
   div.cell {
     display: block;
     page-break-inside: avoid;
@@ -23499,18 +23468,35 @@ div#notebook {
 </style>
 
 <!-- Custom stylesheet, it must be in the same directory as the html file -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.19.0/codemirror.css">
 <link rel="stylesheet" href="custom.css">
-<link rel="stylesheet" href="../index_files/custom.css">
 
 <!-- Loading mathjax macro -->
-</head>
+<!-- Load mathjax -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML"></script>
+    <!-- MathJax configuration -->
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            processEscapes: true,
+            processEnvironments: true
+        },
+        // Center justify equations in code and markdown cells. Elsewhere
+        // we use CSS to left justify single line equations in code cells.
+        displayAlign: 'center',
+        "HTML-CSS": {
+            styles: {'.MathJax_Display': {"margin": 0}},
+            linebreaks: { automatic: true }
+        }
+    });
+    </script>
+    <!-- End of mathjax configuration --></head>
 <body>
   <div tabindex="-1" id="notebook" class="border-box-sizing">
     <div class="container" id="notebook-container">
 
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -23524,16 +23510,18 @@ div#notebook {
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
-    <div class="input_area code">
-from music21 import *
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">music21</span> <span class="k">import</span> <span class="o">*</span>
 
-import svgwrite as sw
+<span class="kn">import</span> <span class="nn">svgwrite</span> <span class="k">as</span> <span class="nn">sw</span>
 
-from IPython.display import display, HTML, Image
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="k">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">HTML</span><span class="p">,</span> <span class="n">Image</span>
 
-import seaborn
-from colorsys import hls_to_rgb
-from base64 import b16encode
+<span class="kn">import</span> <span class="nn">seaborn</span>
+<span class="kn">from</span> <span class="nn">colorsys</span> <span class="k">import</span> <span class="n">hls_to_rgb</span>
+<span class="kn">from</span> <span class="nn">base64</span> <span class="k">import</span> <span class="n">b16encode</span>
+</pre></div>
+
 </div>
 </div>
 </div>
@@ -23543,356 +23531,358 @@ from base64 import b16encode
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
-    <div class="input_area code">
-def x_by_cell(cell_num, line_height):
-    return round((cell_num) * line_height)
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">x_by_cell</span><span class="p">(</span><span class="n">cell_num</span><span class="p">,</span> <span class="n">line_height</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">round</span><span class="p">((</span><span class="n">cell_num</span><span class="p">)</span> <span class="o">*</span> <span class="n">line_height</span><span class="p">)</span>
 
-def y_by_line(line_num, cell_width):
-    return round((line_num) * cell_width)
+<span class="k">def</span> <span class="nf">y_by_line</span><span class="p">(</span><span class="n">line_num</span><span class="p">,</span> <span class="n">cell_width</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">round</span><span class="p">((</span><span class="n">line_num</span><span class="p">)</span> <span class="o">*</span> <span class="n">cell_width</span><span class="p">)</span>
 
-def pos_center(x,y,w,h):
-    x = (w/2) + x
-    y = (h/2) + y
+<span class="k">def</span> <span class="nf">pos_center</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">w</span><span class="p">,</span><span class="n">h</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="n">w</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">x</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="p">(</span><span class="n">h</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">y</span>
 
-    return (x,y)
+    <span class="k">return</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
 
-svg_attrs = {
-    'font-family': 'Inconsolata, monospace',
-    'font-weight': 'bold',
-    'fill': '#fff',
-}
+<span class="n">svg_attrs</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;font-family&#39;</span><span class="p">:</span> <span class="s1">&#39;Inconsolata, monospace&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;font-weight&#39;</span><span class="p">:</span> <span class="s1">&#39;bold&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;fill&#39;</span><span class="p">:</span> <span class="s1">&#39;#fff&#39;</span><span class="p">,</span>
+<span class="p">}</span>
 
-table_attrs = {
-    'stroke' : '#000',
-    'fill' : '#fff',
-    'stroke-width' : '1',
-}
+<span class="n">table_attrs</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;stroke&#39;</span> <span class="p">:</span> <span class="s1">&#39;#000&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;fill&#39;</span> <span class="p">:</span> <span class="s1">&#39;#fff&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;stroke-width&#39;</span> <span class="p">:</span> <span class="s1">&#39;1&#39;</span><span class="p">,</span>
+<span class="p">}</span>
 
-cell_attrs = {
-    'fill':'none',
-    'stroke':'none',
-    'stroke-width':'0',
-}
+<span class="n">cell_attrs</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;fill&#39;</span><span class="p">:</span><span class="s1">&#39;none&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;stroke&#39;</span><span class="p">:</span><span class="s1">&#39;none&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;stroke-width&#39;</span><span class="p">:</span><span class="s1">&#39;0&#39;</span><span class="p">,</span>
+<span class="p">}</span>
 
-pos_attrs_template = {
-    'stroke' : '#000',
-    'fill' : '#fff',
-    'stroke-width' : '1',
-    'fill-opacity':'0.6',
-}
+<span class="n">pos_attrs_template</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;stroke&#39;</span> <span class="p">:</span> <span class="s1">&#39;#000&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;fill&#39;</span> <span class="p">:</span> <span class="s1">&#39;#fff&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;stroke-width&#39;</span> <span class="p">:</span> <span class="s1">&#39;1&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;fill-opacity&#39;</span><span class="p">:</span><span class="s1">&#39;0.6&#39;</span><span class="p">,</span>
+<span class="p">}</span>
 
-pos_colors = {
-    0: '#000',
-    1: '#336',
-    2: '#363',
-    3: '#f63',
-    4: '#c33',
-    5: '#6c6',
-    6: '#66c',
-    7: '#c36',
-    8: '#996',
-}
+<span class="n">pos_colors</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="mi">0</span><span class="p">:</span> <span class="s1">&#39;#000&#39;</span><span class="p">,</span>
+    <span class="mi">1</span><span class="p">:</span> <span class="s1">&#39;#336&#39;</span><span class="p">,</span>
+    <span class="mi">2</span><span class="p">:</span> <span class="s1">&#39;#363&#39;</span><span class="p">,</span>
+    <span class="mi">3</span><span class="p">:</span> <span class="s1">&#39;#f63&#39;</span><span class="p">,</span>
+    <span class="mi">4</span><span class="p">:</span> <span class="s1">&#39;#c33&#39;</span><span class="p">,</span>
+    <span class="mi">5</span><span class="p">:</span> <span class="s1">&#39;#6c6&#39;</span><span class="p">,</span>
+    <span class="mi">6</span><span class="p">:</span> <span class="s1">&#39;#66c&#39;</span><span class="p">,</span>
+    <span class="mi">7</span><span class="p">:</span> <span class="s1">&#39;#c36&#39;</span><span class="p">,</span>
+    <span class="mi">8</span><span class="p">:</span> <span class="s1">&#39;#996&#39;</span><span class="p">,</span>
+<span class="p">}</span>
 
-pos_attrs = dict()
-for p in range(0,9):
-    pos_attrs.update({p: {
-    'stroke' : '#000',
-    #'fill' : pos_colors[p],
-    'fill' : '#fff',
-    'stroke-width' : '1',
-    'fill-opacity':'0.6',
-    }})
+<span class="n">pos_attrs</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">9</span><span class="p">):</span>
+    <span class="n">pos_attrs</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="n">p</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s1">&#39;stroke&#39;</span> <span class="p">:</span> <span class="s1">&#39;#000&#39;</span><span class="p">,</span>
+    <span class="c1">#&#39;fill&#39; : pos_colors[p],</span>
+    <span class="s1">&#39;fill&#39;</span> <span class="p">:</span> <span class="s1">&#39;#fff&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;stroke-width&#39;</span> <span class="p">:</span> <span class="s1">&#39;1&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;fill-opacity&#39;</span><span class="p">:</span><span class="s1">&#39;0.6&#39;</span><span class="p">,</span>
+    <span class="p">}})</span>
 
-pos_text_attrs = {
-    'font-family': 'Inconsolata, monospace',
-    'alignment-baseline' : 'middle',
-    'text-anchor' : 'middle',
-    'fill' : '#000',
-    'stroke-width' : '0',
-    'font-weight': 'normal',
-}
-openstr_attrs = {
-    'fill':'none',
-    'stroke':'#000',
-    'stroke-width':'3',
+<span class="n">pos_text_attrs</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;font-family&#39;</span><span class="p">:</span> <span class="s1">&#39;Inconsolata, monospace&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;alignment-baseline&#39;</span> <span class="p">:</span> <span class="s1">&#39;middle&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;text-anchor&#39;</span> <span class="p">:</span> <span class="s1">&#39;middle&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;fill&#39;</span> <span class="p">:</span> <span class="s1">&#39;#000&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;stroke-width&#39;</span> <span class="p">:</span> <span class="s1">&#39;0&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;font-weight&#39;</span><span class="p">:</span> <span class="s1">&#39;normal&#39;</span><span class="p">,</span>
+<span class="p">}</span>
+<span class="n">openstr_attrs</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;fill&#39;</span><span class="p">:</span><span class="s1">&#39;none&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;stroke&#39;</span><span class="p">:</span><span class="s1">&#39;#000&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;stroke-width&#39;</span><span class="p">:</span><span class="s1">&#39;3&#39;</span><span class="p">,</span>
     
-}
+<span class="p">}</span>
 
-closestr_attrs = {
-    'fill':'none',
-    'stroke':'#000',
-    'stroke-width':'1',
-}
+<span class="n">closestr_attrs</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;fill&#39;</span><span class="p">:</span><span class="s1">&#39;none&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;stroke&#39;</span><span class="p">:</span><span class="s1">&#39;#000&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;stroke-width&#39;</span><span class="p">:</span><span class="s1">&#39;1&#39;</span><span class="p">,</span>
+<span class="p">}</span>
 
-circ_attrs = {
-    'fill':'#fff',
-    'fill-opacity': '0.6',
-    'stroke':'#000',
-    'stroke-width':'1',
-}
+<span class="n">circ_attrs</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;fill&#39;</span><span class="p">:</span><span class="s1">&#39;#fff&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;fill-opacity&#39;</span><span class="p">:</span> <span class="s1">&#39;0.6&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;stroke&#39;</span><span class="p">:</span><span class="s1">&#39;#000&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;stroke-width&#39;</span><span class="p">:</span><span class="s1">&#39;1&#39;</span><span class="p">,</span>
+<span class="p">}</span>
 
-fretmark_attrs = {
-    'fill':'#333',
-    'stroke':'#333',
-    'stroke-width':'1',
-}
+<span class="n">fretmark_attrs</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;fill&#39;</span><span class="p">:</span><span class="s1">&#39;#333&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;stroke&#39;</span><span class="p">:</span><span class="s1">&#39;#333&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;stroke-width&#39;</span><span class="p">:</span><span class="s1">&#39;1&#39;</span><span class="p">,</span>
+<span class="p">}</span>
 
-text_attrs = {
-    'font-family': 'Inconsolata, monospace',
-    'alignment-baseline' : 'middle',
-    'text-anchor' : 'middle',
-    'fill' : '#000',
-    'stroke' : 'none',
-}
+<span class="n">text_attrs</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;font-family&#39;</span><span class="p">:</span> <span class="s1">&#39;Inconsolata, monospace&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;alignment-baseline&#39;</span> <span class="p">:</span> <span class="s1">&#39;middle&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;text-anchor&#39;</span> <span class="p">:</span> <span class="s1">&#39;middle&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;fill&#39;</span> <span class="p">:</span> <span class="s1">&#39;#000&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;stroke&#39;</span> <span class="p">:</span> <span class="s1">&#39;none&#39;</span><span class="p">,</span>
+<span class="p">}</span>
 
-string_num = 4
-string_notes = 20 # open string note also counts
+<span class="n">string_num</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">string_notes</span> <span class="o">=</span> <span class="mi">20</span> <span class="c1"># open string note also counts</span>
 
-width = 970
-cell_width = width/string_notes
-cell_height = (cell_width/3)*2
-height = cell_height*6
+<span class="n">width</span> <span class="o">=</span> <span class="mi">970</span>
+<span class="n">cell_width</span> <span class="o">=</span> <span class="n">width</span><span class="o">/</span><span class="n">string_notes</span>
+<span class="n">cell_height</span> <span class="o">=</span> <span class="p">(</span><span class="n">cell_width</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span><span class="o">*</span><span class="mi">2</span>
+<span class="n">height</span> <span class="o">=</span> <span class="n">cell_height</span><span class="o">*</span><span class="mi">6</span>
 
-dwg = sw.Drawing(profile='full', size=("{}".format(width), "{}".format(height)), **svg_attrs)
+<span class="n">dwg</span> <span class="o">=</span> <span class="n">sw</span><span class="o">.</span><span class="n">Drawing</span><span class="p">(</span><span class="n">profile</span><span class="o">=</span><span class="s1">&#39;full&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">width</span><span class="p">),</span> <span class="s2">&quot;</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">height</span><span class="p">)),</span> <span class="o">**</span><span class="n">svg_attrs</span><span class="p">)</span>
 
-dwg.add(sw.shapes.Rect(insert=(0, y_by_line(1, cell_height)), size=(width, cell_height*4), **table_attrs, **{'class':'table-attrs'}))
+<span class="n">dwg</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">sw</span><span class="o">.</span><span class="n">shapes</span><span class="o">.</span><span class="n">Rect</span><span class="p">(</span><span class="n">insert</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">y_by_line</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">cell_height</span><span class="p">)),</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">cell_height</span><span class="o">*</span><span class="mi">4</span><span class="p">),</span> <span class="o">**</span><span class="n">table_attrs</span><span class="p">,</span> <span class="o">**</span><span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span><span class="s1">&#39;table-attrs&#39;</span><span class="p">}))</span>
 
-chromatic = scale.ChromaticScale()
+<span class="n">chromatic</span> <span class="o">=</span> <span class="n">scale</span><span class="o">.</span><span class="n">ChromaticScale</span><span class="p">()</span>
 
-nts = [ chromatic.getPitches('e4', 'b5'),
-        chromatic.getPitches('a3', 'e5'),
-        chromatic.getPitches('d3', 'a4'),
-        chromatic.getPitches('g2', 'd4'),
-       ]
-
-
-pal_hls = seaborn.hls_palette(7, l=.4, s=1).as_hex()
-
-note_colors = dict()
-note_names = ['c','d','e','f','g','a','b']
-
-for idx,note_name in enumerate(note_names):
-    note_colors.update({note_name.upper() : pal_hls[idx]})
-
-print(note_colors)
-
-#this draws lines for each fret in fretboard
-positions = range(1, 20)
-
-for pos_begin in positions:
-
-    # equal for both
-    line_x = pos_begin * cell_width
-    upper_y = y_by_line(1, cell_height)
-
-    lower_y = y_by_line(1, cell_height) +  (cell_height*4)
-
-    #this allows us to drawn in the v-middle between v-lines
-    half_line = cell_height/2
+<span class="n">nts</span> <span class="o">=</span> <span class="p">[</span> <span class="n">chromatic</span><span class="o">.</span><span class="n">getPitches</span><span class="p">(</span><span class="s1">&#39;e4&#39;</span><span class="p">,</span> <span class="s1">&#39;b5&#39;</span><span class="p">),</span>
+        <span class="n">chromatic</span><span class="o">.</span><span class="n">getPitches</span><span class="p">(</span><span class="s1">&#39;a3&#39;</span><span class="p">,</span> <span class="s1">&#39;e5&#39;</span><span class="p">),</span>
+        <span class="n">chromatic</span><span class="o">.</span><span class="n">getPitches</span><span class="p">(</span><span class="s1">&#39;d3&#39;</span><span class="p">,</span> <span class="s1">&#39;a4&#39;</span><span class="p">),</span>
+        <span class="n">chromatic</span><span class="o">.</span><span class="n">getPitches</span><span class="p">(</span><span class="s1">&#39;g2&#39;</span><span class="p">,</span> <span class="s1">&#39;d4&#39;</span><span class="p">),</span>
+       <span class="p">]</span>
 
 
-    if pos_begin == 1:
-        attrs = openstr_attrs
-    else:
-        attrs = closestr_attrs
+<span class="n">pal_hls</span> <span class="o">=</span> <span class="n">seaborn</span><span class="o">.</span><span class="n">hls_palette</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="n">l</span><span class="o">=.</span><span class="mi">4</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">as_hex</span><span class="p">()</span>
 
-    grp = sw.container.Group()
+<span class="n">note_colors</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+<span class="n">note_names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;c&#39;</span><span class="p">,</span><span class="s1">&#39;d&#39;</span><span class="p">,</span><span class="s1">&#39;e&#39;</span><span class="p">,</span><span class="s1">&#39;f&#39;</span><span class="p">,</span><span class="s1">&#39;g&#39;</span><span class="p">,</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">]</span>
 
-    positions_start = [1,3,5,7,8,10,12,14]
-    if pos_begin in positions_start:
+<span class="k">for</span> <span class="n">idx</span><span class="p">,</span><span class="n">note_name</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">note_names</span><span class="p">):</span>
+    <span class="n">note_colors</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="n">note_name</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="p">:</span> <span class="n">pal_hls</span><span class="p">[</span><span class="n">idx</span><span class="p">]})</span>
 
-        start_x = pos_begin * cell_width
-        start_y = upper_y = y_by_line(1, cell_height)
+<span class="nb">print</span><span class="p">(</span><span class="n">note_colors</span><span class="p">)</span>
+
+<span class="c1">#this draws lines for each fret in fretboard</span>
+<span class="n">positions</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">pos_begin</span> <span class="ow">in</span> <span class="n">positions</span><span class="p">:</span>
+
+    <span class="c1"># equal for both</span>
+    <span class="n">line_x</span> <span class="o">=</span> <span class="n">pos_begin</span> <span class="o">*</span> <span class="n">cell_width</span>
+    <span class="n">upper_y</span> <span class="o">=</span> <span class="n">y_by_line</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">cell_height</span><span class="p">)</span>
+
+    <span class="n">lower_y</span> <span class="o">=</span> <span class="n">y_by_line</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">cell_height</span><span class="p">)</span> <span class="o">+</span>  <span class="p">(</span><span class="n">cell_height</span><span class="o">*</span><span class="mi">4</span><span class="p">)</span>
+
+    <span class="c1">#this allows us to drawn in the v-middle between v-lines</span>
+    <span class="n">half_line</span> <span class="o">=</span> <span class="n">cell_height</span><span class="o">/</span><span class="mi">2</span>
+
+
+    <span class="k">if</span> <span class="n">pos_begin</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">attrs</span> <span class="o">=</span> <span class="n">openstr_attrs</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">attrs</span> <span class="o">=</span> <span class="n">closestr_attrs</span>
+
+    <span class="n">grp</span> <span class="o">=</span> <span class="n">sw</span><span class="o">.</span><span class="n">container</span><span class="o">.</span><span class="n">Group</span><span class="p">()</span>
+
+    <span class="n">positions_start</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">14</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">pos_begin</span> <span class="ow">in</span> <span class="n">positions_start</span><span class="p">:</span>
+
+        <span class="n">start_x</span> <span class="o">=</span> <span class="n">pos_begin</span> <span class="o">*</span> <span class="n">cell_width</span>
+        <span class="n">start_y</span> <span class="o">=</span> <span class="n">upper_y</span> <span class="o">=</span> <span class="n">y_by_line</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">cell_height</span><span class="p">)</span>
         
-        idx = positions_start.index(pos_begin)
-        grp.add(sw.shapes.Rect(insert=(start_x, start_y), size=(cell_width, cell_height*string_num), **pos_attrs[idx+1],**{'class':'pos-highlight pos-highlight-{}'.format(pos_begin)})),
+        <span class="n">idx</span> <span class="o">=</span> <span class="n">positions_start</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">pos_begin</span><span class="p">)</span>
+        <span class="n">grp</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">sw</span><span class="o">.</span><span class="n">shapes</span><span class="o">.</span><span class="n">Rect</span><span class="p">(</span><span class="n">insert</span><span class="o">=</span><span class="p">(</span><span class="n">start_x</span><span class="p">,</span> <span class="n">start_y</span><span class="p">),</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="n">cell_width</span><span class="p">,</span> <span class="n">cell_height</span><span class="o">*</span><span class="n">string_num</span><span class="p">),</span> <span class="o">**</span><span class="n">pos_attrs</span><span class="p">[</span><span class="n">idx</span><span class="o">+</span><span class="mi">1</span><span class="p">],</span><span class="o">**</span><span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span><span class="s1">&#39;pos-highlight pos-highlight-</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">pos_begin</span><span class="p">)})),</span>
 
-    # this draws the fretboard marks
-    fretmarks = [5,7,9,12]
-    if pos_begin in fretmarks:
+    <span class="c1"># this draws the fretboard marks</span>
+    <span class="n">fretmarks</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">12</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">pos_begin</span> <span class="ow">in</span> <span class="n">fretmarks</span><span class="p">:</span>
 
-        if pos_begin != 12:
-            pos_start_x = pos_begin*cell_width
-            pos_start_y = y_by_line(1, cell_height)
-            pos_middle_x = pos_start_x + (cell_width/2)
-            pos_middle_y = pos_start_y + ((cell_height*string_num)/2)
-            circle_radius = ((cell_height/2)/10) * 5
+        <span class="k">if</span> <span class="n">pos_begin</span> <span class="o">!=</span> <span class="mi">12</span><span class="p">:</span>
+            <span class="n">pos_start_x</span> <span class="o">=</span> <span class="n">pos_begin</span><span class="o">*</span><span class="n">cell_width</span>
+            <span class="n">pos_start_y</span> <span class="o">=</span> <span class="n">y_by_line</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">cell_height</span><span class="p">)</span>
+            <span class="n">pos_middle_x</span> <span class="o">=</span> <span class="n">pos_start_x</span> <span class="o">+</span> <span class="p">(</span><span class="n">cell_width</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+            <span class="n">pos_middle_y</span> <span class="o">=</span> <span class="n">pos_start_y</span> <span class="o">+</span> <span class="p">((</span><span class="n">cell_height</span><span class="o">*</span><span class="n">string_num</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+            <span class="n">circle_radius</span> <span class="o">=</span> <span class="p">((</span><span class="n">cell_height</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="mi">10</span><span class="p">)</span> <span class="o">*</span> <span class="mi">5</span>
 
-            grp.add(sw.shapes.Circle(center=(pos_middle_x, pos_middle_y), r=circle_radius, **fretmark_attrs, **{'class':'fretmark fretmark-pos-{}'.format(pos_begin)})),
-        else:
-            # fretmark at position 12 has two dots
-            pos_start_x = pos_begin*cell_width
-            pos_start_y = y_by_line(1, cell_height)
-            pos_middle_x = pos_start_x + (cell_width/2)
-            pos_middle_y1 = pos_start_y + ((cell_height*(string_num/2))/2)
-            pos_middle_y2 = (pos_start_y + ((cell_height*string_num)/2)) + cell_height
-            circle_radius = ((cell_height/2)/10) * 5
+            <span class="n">grp</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">sw</span><span class="o">.</span><span class="n">shapes</span><span class="o">.</span><span class="n">Circle</span><span class="p">(</span><span class="n">center</span><span class="o">=</span><span class="p">(</span><span class="n">pos_middle_x</span><span class="p">,</span> <span class="n">pos_middle_y</span><span class="p">),</span> <span class="n">r</span><span class="o">=</span><span class="n">circle_radius</span><span class="p">,</span> <span class="o">**</span><span class="n">fretmark_attrs</span><span class="p">,</span> <span class="o">**</span><span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span><span class="s1">&#39;fretmark fretmark-pos-</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">pos_begin</span><span class="p">)})),</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># fretmark at position 12 has two dots</span>
+            <span class="n">pos_start_x</span> <span class="o">=</span> <span class="n">pos_begin</span><span class="o">*</span><span class="n">cell_width</span>
+            <span class="n">pos_start_y</span> <span class="o">=</span> <span class="n">y_by_line</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">cell_height</span><span class="p">)</span>
+            <span class="n">pos_middle_x</span> <span class="o">=</span> <span class="n">pos_start_x</span> <span class="o">+</span> <span class="p">(</span><span class="n">cell_width</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+            <span class="n">pos_middle_y1</span> <span class="o">=</span> <span class="n">pos_start_y</span> <span class="o">+</span> <span class="p">((</span><span class="n">cell_height</span><span class="o">*</span><span class="p">(</span><span class="n">string_num</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+            <span class="n">pos_middle_y2</span> <span class="o">=</span> <span class="p">(</span><span class="n">pos_start_y</span> <span class="o">+</span> <span class="p">((</span><span class="n">cell_height</span><span class="o">*</span><span class="n">string_num</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span> <span class="o">+</span> <span class="n">cell_height</span>
+            <span class="n">circle_radius</span> <span class="o">=</span> <span class="p">((</span><span class="n">cell_height</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="mi">10</span><span class="p">)</span> <span class="o">*</span> <span class="mi">5</span>
 
-            grp.add(sw.shapes.Circle(center=(pos_middle_x, pos_middle_y1), r=circle_radius, **fretmark_attrs, **{'class':'fretmark fretmark-pos-{}'.format(pos_begin)})),
-            grp.add(sw.shapes.Circle(center=(pos_middle_x, pos_middle_y2), r=circle_radius, **fretmark_attrs, **{'class':'fretmark fretmark-pos-{}'.format(pos_begin)})),
+            <span class="n">grp</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">sw</span><span class="o">.</span><span class="n">shapes</span><span class="o">.</span><span class="n">Circle</span><span class="p">(</span><span class="n">center</span><span class="o">=</span><span class="p">(</span><span class="n">pos_middle_x</span><span class="p">,</span> <span class="n">pos_middle_y1</span><span class="p">),</span> <span class="n">r</span><span class="o">=</span><span class="n">circle_radius</span><span class="p">,</span> <span class="o">**</span><span class="n">fretmark_attrs</span><span class="p">,</span> <span class="o">**</span><span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span><span class="s1">&#39;fretmark fretmark-pos-</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">pos_begin</span><span class="p">)})),</span>
+            <span class="n">grp</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">sw</span><span class="o">.</span><span class="n">shapes</span><span class="o">.</span><span class="n">Circle</span><span class="p">(</span><span class="n">center</span><span class="o">=</span><span class="p">(</span><span class="n">pos_middle_x</span><span class="p">,</span> <span class="n">pos_middle_y2</span><span class="p">),</span> <span class="n">r</span><span class="o">=</span><span class="n">circle_radius</span><span class="p">,</span> <span class="o">**</span><span class="n">fretmark_attrs</span><span class="p">,</span> <span class="o">**</span><span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span><span class="s1">&#39;fretmark fretmark-pos-</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">pos_begin</span><span class="p">)})),</span>
             
             
-    # vertical position lines
-    svg_els = [
-        sw.shapes.Line(start=(line_x, upper_y), end=(line_x, lower_y), **closestr_attrs, **{'class':'fret fret-{}'.format(pos_begin)}),
-    ]
+    <span class="c1"># vertical position lines</span>
+    <span class="n">svg_els</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">sw</span><span class="o">.</span><span class="n">shapes</span><span class="o">.</span><span class="n">Line</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="p">(</span><span class="n">line_x</span><span class="p">,</span> <span class="n">upper_y</span><span class="p">),</span> <span class="n">end</span><span class="o">=</span><span class="p">(</span><span class="n">line_x</span><span class="p">,</span> <span class="n">lower_y</span><span class="p">),</span> <span class="o">**</span><span class="n">closestr_attrs</span><span class="p">,</span> <span class="o">**</span><span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span><span class="s1">&#39;fret fret-</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">pos_begin</span><span class="p">)}),</span>
+    <span class="p">]</span>
 
-    for element in svg_els:
-        grp.add(element)
+    <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">svg_els</span><span class="p">:</span>
+        <span class="n">grp</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">element</span><span class="p">)</span>
 
-    dwg.add(grp)
+    <span class="n">dwg</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">grp</span><span class="p">)</span>
 
-    svg_els = [
+    <span class="n">svg_els</span> <span class="o">=</span> <span class="p">[</span>
 
-        # third
-        sw.shapes.Rect(insert=(x_by_cell(5,cell_width), 0), size=(x_by_cell(6,cell_width), cell_height), **pos_attrs[3],**{'class':'pos-label pos-label-3'}),
-        sw.text.Text('3rd position', insert=(pos_center(x_by_cell(5,cell_width), 0, x_by_cell(6,cell_width), half_line)), **pos_text_attrs,**{'class':'pos-label-text pos-label-text-3'}),
+        <span class="c1"># third</span>
+        <span class="n">sw</span><span class="o">.</span><span class="n">shapes</span><span class="o">.</span><span class="n">Rect</span><span class="p">(</span><span class="n">insert</span><span class="o">=</span><span class="p">(</span><span class="n">x_by_cell</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="n">cell_width</span><span class="p">),</span> <span class="mi">0</span><span class="p">),</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="n">x_by_cell</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="n">cell_width</span><span class="p">),</span> <span class="n">cell_height</span><span class="p">),</span> <span class="o">**</span><span class="n">pos_attrs</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span><span class="o">**</span><span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span><span class="s1">&#39;pos-label pos-label-3&#39;</span><span class="p">}),</span>
+        <span class="n">sw</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">Text</span><span class="p">(</span><span class="s1">&#39;3rd position&#39;</span><span class="p">,</span> <span class="n">insert</span><span class="o">=</span><span class="p">(</span><span class="n">pos_center</span><span class="p">(</span><span class="n">x_by_cell</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="n">cell_width</span><span class="p">),</span> <span class="mi">0</span><span class="p">,</span> <span class="n">x_by_cell</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="n">cell_width</span><span class="p">),</span> <span class="n">half_line</span><span class="p">)),</span> <span class="o">**</span><span class="n">pos_text_attrs</span><span class="p">,</span><span class="o">**</span><span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span><span class="s1">&#39;pos-label-text pos-label-text-3&#39;</span><span class="p">}),</span>
 
-        # seventh
-        sw.shapes.Rect(insert=(x_by_cell(12,cell_width), 0), size=(x_by_cell(6,cell_width), cell_height), **pos_attrs[7],**{'class':'pos-label pos-label-7'}),
-        sw.text.Text('7th position', insert=(pos_center(x_by_cell(12,cell_width), 0, x_by_cell(6,cell_width), half_line)), **pos_text_attrs,**{'class':'pos-label-text pos-label-text-7'}),
+        <span class="c1"># seventh</span>
+        <span class="n">sw</span><span class="o">.</span><span class="n">shapes</span><span class="o">.</span><span class="n">Rect</span><span class="p">(</span><span class="n">insert</span><span class="o">=</span><span class="p">(</span><span class="n">x_by_cell</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="n">cell_width</span><span class="p">),</span> <span class="mi">0</span><span class="p">),</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="n">x_by_cell</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="n">cell_width</span><span class="p">),</span> <span class="n">cell_height</span><span class="p">),</span> <span class="o">**</span><span class="n">pos_attrs</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span><span class="o">**</span><span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span><span class="s1">&#39;pos-label pos-label-7&#39;</span><span class="p">}),</span>
+        <span class="n">sw</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">Text</span><span class="p">(</span><span class="s1">&#39;7th position&#39;</span><span class="p">,</span> <span class="n">insert</span><span class="o">=</span><span class="p">(</span><span class="n">pos_center</span><span class="p">(</span><span class="n">x_by_cell</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="n">cell_width</span><span class="p">),</span> <span class="mi">0</span><span class="p">,</span> <span class="n">x_by_cell</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="n">cell_width</span><span class="p">),</span> <span class="n">half_line</span><span class="p">)),</span> <span class="o">**</span><span class="n">pos_text_attrs</span><span class="p">,</span><span class="o">**</span><span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span><span class="s1">&#39;pos-label-text pos-label-text-7&#39;</span><span class="p">}),</span>
 
-        # first
-        sw.shapes.Rect(insert=(x_by_cell(1,cell_width), half_line), size=(x_by_cell(7,cell_width), half_line), **pos_attrs[1],**{'class':'pos-label pos-label-1'}),
-        sw.text.Text('1st position', insert=(pos_center(x_by_cell(1,cell_width),half_line,x_by_cell(7,cell_width),half_line)), **pos_text_attrs,**{'class':'pos-label-text pos-label-text-1'}),
+        <span class="c1"># first</span>
+        <span class="n">sw</span><span class="o">.</span><span class="n">shapes</span><span class="o">.</span><span class="n">Rect</span><span class="p">(</span><span class="n">insert</span><span class="o">=</span><span class="p">(</span><span class="n">x_by_cell</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">cell_width</span><span class="p">),</span> <span class="n">half_line</span><span class="p">),</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="n">x_by_cell</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="n">cell_width</span><span class="p">),</span> <span class="n">half_line</span><span class="p">),</span> <span class="o">**</span><span class="n">pos_attrs</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="o">**</span><span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span><span class="s1">&#39;pos-label pos-label-1&#39;</span><span class="p">}),</span>
+        <span class="n">sw</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">Text</span><span class="p">(</span><span class="s1">&#39;1st position&#39;</span><span class="p">,</span> <span class="n">insert</span><span class="o">=</span><span class="p">(</span><span class="n">pos_center</span><span class="p">(</span><span class="n">x_by_cell</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">cell_width</span><span class="p">),</span><span class="n">half_line</span><span class="p">,</span><span class="n">x_by_cell</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="n">cell_width</span><span class="p">),</span><span class="n">half_line</span><span class="p">)),</span> <span class="o">**</span><span class="n">pos_text_attrs</span><span class="p">,</span><span class="o">**</span><span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span><span class="s1">&#39;pos-label-text pos-label-text-1&#39;</span><span class="p">}),</span>
 
-        # fourth
-        sw.shapes.Rect(insert=(x_by_cell(7,cell_width), y_by_line(5, cell_height)), size=(x_by_cell(6,cell_width), cell_height), **pos_attrs[4],**{'class':'pos-label pos-label-4'}),
-        sw.text.Text('4th position', insert=(pos_center(x_by_cell(7,cell_width), y_by_line(5, cell_height), x_by_cell(6,cell_width), half_line+cell_height)), **pos_text_attrs,**{'class':'pos-label-text pos-label-text-4'}),
+        <span class="c1"># fourth</span>
+        <span class="n">sw</span><span class="o">.</span><span class="n">shapes</span><span class="o">.</span><span class="n">Rect</span><span class="p">(</span><span class="n">insert</span><span class="o">=</span><span class="p">(</span><span class="n">x_by_cell</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="n">cell_width</span><span class="p">),</span> <span class="n">y_by_line</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="n">cell_height</span><span class="p">)),</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="n">x_by_cell</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="n">cell_width</span><span class="p">),</span> <span class="n">cell_height</span><span class="p">),</span> <span class="o">**</span><span class="n">pos_attrs</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span><span class="o">**</span><span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span><span class="s1">&#39;pos-label pos-label-4&#39;</span><span class="p">}),</span>
+        <span class="n">sw</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">Text</span><span class="p">(</span><span class="s1">&#39;4th position&#39;</span><span class="p">,</span> <span class="n">insert</span><span class="o">=</span><span class="p">(</span><span class="n">pos_center</span><span class="p">(</span><span class="n">x_by_cell</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="n">cell_width</span><span class="p">),</span> <span class="n">y_by_line</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="n">cell_height</span><span class="p">),</span> <span class="n">x_by_cell</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="n">cell_width</span><span class="p">),</span> <span class="n">half_line</span><span class="o">+</span><span class="n">cell_height</span><span class="p">)),</span> <span class="o">**</span><span class="n">pos_text_attrs</span><span class="p">,</span><span class="o">**</span><span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span><span class="s1">&#39;pos-label-text pos-label-text-4&#39;</span><span class="p">}),</span>
 
-        #second
-        sw.shapes.Rect(insert=(x_by_cell(3,cell_width), y_by_line(5, cell_height)), size=(x_by_cell(6,cell_width), half_line), **pos_attrs[2],**{'class':'pos-label pos-label-2'}),
-        sw.text.Text('2nd position', insert=(pos_center(x_by_cell(3,cell_width), y_by_line(5, cell_height), x_by_cell(6,cell_width), half_line)), **pos_text_attrs,**{'class':'pos-label-text pos-label-text-2'}),
+        <span class="c1">#second</span>
+        <span class="n">sw</span><span class="o">.</span><span class="n">shapes</span><span class="o">.</span><span class="n">Rect</span><span class="p">(</span><span class="n">insert</span><span class="o">=</span><span class="p">(</span><span class="n">x_by_cell</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="n">cell_width</span><span class="p">),</span> <span class="n">y_by_line</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="n">cell_height</span><span class="p">)),</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="n">x_by_cell</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="n">cell_width</span><span class="p">),</span> <span class="n">half_line</span><span class="p">),</span> <span class="o">**</span><span class="n">pos_attrs</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span><span class="o">**</span><span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span><span class="s1">&#39;pos-label pos-label-2&#39;</span><span class="p">}),</span>
+        <span class="n">sw</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">Text</span><span class="p">(</span><span class="s1">&#39;2nd position&#39;</span><span class="p">,</span> <span class="n">insert</span><span class="o">=</span><span class="p">(</span><span class="n">pos_center</span><span class="p">(</span><span class="n">x_by_cell</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="n">cell_width</span><span class="p">),</span> <span class="n">y_by_line</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="n">cell_height</span><span class="p">),</span> <span class="n">x_by_cell</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="n">cell_width</span><span class="p">),</span> <span class="n">half_line</span><span class="p">)),</span> <span class="o">**</span><span class="n">pos_text_attrs</span><span class="p">,</span><span class="o">**</span><span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span><span class="s1">&#39;pos-label-text pos-label-text-2&#39;</span><span class="p">}),</span>
 
-        # fifth
-        sw.shapes.Rect(insert=(x_by_cell(8,cell_width), half_line), size=(x_by_cell(6,cell_width), half_line), **pos_attrs[5],**{'class':'pos-label pos-label-5'}),
-        sw.text.Text('5th position', insert=(pos_center(x_by_cell(8,cell_width), half_line, x_by_cell(6,cell_width), half_line)), **pos_text_attrs,**{'class':'pos-label-text pos-label-text-5'}),
+        <span class="c1"># fifth</span>
+        <span class="n">sw</span><span class="o">.</span><span class="n">shapes</span><span class="o">.</span><span class="n">Rect</span><span class="p">(</span><span class="n">insert</span><span class="o">=</span><span class="p">(</span><span class="n">x_by_cell</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="n">cell_width</span><span class="p">),</span> <span class="n">half_line</span><span class="p">),</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="n">x_by_cell</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="n">cell_width</span><span class="p">),</span> <span class="n">half_line</span><span class="p">),</span> <span class="o">**</span><span class="n">pos_attrs</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span><span class="o">**</span><span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span><span class="s1">&#39;pos-label pos-label-5&#39;</span><span class="p">}),</span>
+        <span class="n">sw</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">Text</span><span class="p">(</span><span class="s1">&#39;5th position&#39;</span><span class="p">,</span> <span class="n">insert</span><span class="o">=</span><span class="p">(</span><span class="n">pos_center</span><span class="p">(</span><span class="n">x_by_cell</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="n">cell_width</span><span class="p">),</span> <span class="n">half_line</span><span class="p">,</span> <span class="n">x_by_cell</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="n">cell_width</span><span class="p">),</span> <span class="n">half_line</span><span class="p">)),</span> <span class="o">**</span><span class="n">pos_text_attrs</span><span class="p">,</span><span class="o">**</span><span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span><span class="s1">&#39;pos-label-text pos-label-text-5&#39;</span><span class="p">}),</span>
 
-        # eighth
-        sw.shapes.Rect(insert=(x_by_cell(14,cell_width), y_by_line(5, cell_height)), size=(x_by_cell(6,cell_width), cell_height), **pos_attrs[8],**{'class':'pos-label pos-label-8'}),
-        sw.text.Text('8th position', insert=(pos_center(x_by_cell(14,cell_width), y_by_line(5, cell_height), x_by_cell(6,cell_width), half_line+cell_height)), **pos_text_attrs,**{'class':'pos-label-text pos-label-text-8'}),
+        <span class="c1"># eighth</span>
+        <span class="n">sw</span><span class="o">.</span><span class="n">shapes</span><span class="o">.</span><span class="n">Rect</span><span class="p">(</span><span class="n">insert</span><span class="o">=</span><span class="p">(</span><span class="n">x_by_cell</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span><span class="n">cell_width</span><span class="p">),</span> <span class="n">y_by_line</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="n">cell_height</span><span class="p">)),</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="n">x_by_cell</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="n">cell_width</span><span class="p">),</span> <span class="n">cell_height</span><span class="p">),</span> <span class="o">**</span><span class="n">pos_attrs</span><span class="p">[</span><span class="mi">8</span><span class="p">],</span><span class="o">**</span><span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span><span class="s1">&#39;pos-label pos-label-8&#39;</span><span class="p">}),</span>
+        <span class="n">sw</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">Text</span><span class="p">(</span><span class="s1">&#39;8th position&#39;</span><span class="p">,</span> <span class="n">insert</span><span class="o">=</span><span class="p">(</span><span class="n">pos_center</span><span class="p">(</span><span class="n">x_by_cell</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span><span class="n">cell_width</span><span class="p">),</span> <span class="n">y_by_line</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="n">cell_height</span><span class="p">),</span> <span class="n">x_by_cell</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="n">cell_width</span><span class="p">),</span> <span class="n">half_line</span><span class="o">+</span><span class="n">cell_height</span><span class="p">)),</span> <span class="o">**</span><span class="n">pos_text_attrs</span><span class="p">,</span><span class="o">**</span><span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span><span class="s1">&#39;pos-label-text pos-label-text-8&#39;</span><span class="p">}),</span>
 
-        # sixth
-        sw.shapes.Rect(insert=(x_by_cell(10,cell_width), y_by_line(5, cell_height)), size=(x_by_cell(6,cell_width), half_line), **pos_attrs[6],**{'class':'pos-label pos-label-6'}),
-        sw.text.Text('6th position', insert=(pos_center(x_by_cell(10,cell_width), y_by_line(5, cell_height), x_by_cell(6,cell_width), half_line)), **pos_text_attrs,**{'class':'pos-label-text pos-label-text-6'}),
+        <span class="c1"># sixth</span>
+        <span class="n">sw</span><span class="o">.</span><span class="n">shapes</span><span class="o">.</span><span class="n">Rect</span><span class="p">(</span><span class="n">insert</span><span class="o">=</span><span class="p">(</span><span class="n">x_by_cell</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="n">cell_width</span><span class="p">),</span> <span class="n">y_by_line</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="n">cell_height</span><span class="p">)),</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="n">x_by_cell</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="n">cell_width</span><span class="p">),</span> <span class="n">half_line</span><span class="p">),</span> <span class="o">**</span><span class="n">pos_attrs</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span><span class="o">**</span><span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span><span class="s1">&#39;pos-label pos-label-6&#39;</span><span class="p">}),</span>
+        <span class="n">sw</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">Text</span><span class="p">(</span><span class="s1">&#39;6th position&#39;</span><span class="p">,</span> <span class="n">insert</span><span class="o">=</span><span class="p">(</span><span class="n">pos_center</span><span class="p">(</span><span class="n">x_by_cell</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="n">cell_width</span><span class="p">),</span> <span class="n">y_by_line</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="n">cell_height</span><span class="p">),</span> <span class="n">x_by_cell</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="n">cell_width</span><span class="p">),</span> <span class="n">half_line</span><span class="p">)),</span> <span class="o">**</span><span class="n">pos_text_attrs</span><span class="p">,</span><span class="o">**</span><span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span><span class="s1">&#39;pos-label-text pos-label-text-6&#39;</span><span class="p">}),</span>
 
-        # open
-        #sw.shapes.Rect(insert=(x_by_cell(0,cell_width), y_by_line(5, cell_height)), size=(x_by_cell(1,cell_width), half_line), **pos_attrs[0]),
-        #sw.text.Text('open', insert=(pos_center(x_by_cell(0,cell_width), y_by_line(5, cell_height), x_by_cell(1,cell_width), half_line)), **pos_text_attrs),
+        <span class="c1"># open</span>
+        <span class="c1">#sw.shapes.Rect(insert=(x_by_cell(0,cell_width), y_by_line(5, cell_height)), size=(x_by_cell(1,cell_width), half_line), **pos_attrs[0]),</span>
+        <span class="c1">#sw.text.Text(&#39;open&#39;, insert=(pos_center(x_by_cell(0,cell_width), y_by_line(5, cell_height), x_by_cell(1,cell_width), half_line)), **pos_text_attrs),</span>
 
-    ]
+    <span class="p">]</span>
 
-    for element in svg_els:
-        grp.add(element)
+    <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">svg_els</span><span class="p">:</span>
+        <span class="n">grp</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">element</span><span class="p">)</span>
         
-# this loop draws h-lines for the strings
-# and also notes for each of them
-for string in range(string_num):
-    string_y = y_by_line(string+1, cell_height)
+<span class="c1"># this loop draws h-lines for the strings</span>
+<span class="c1"># and also notes for each of them</span>
+<span class="k">for</span> <span class="n">string</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">string_num</span><span class="p">):</span>
+    <span class="n">string_y</span> <span class="o">=</span> <span class="n">y_by_line</span><span class="p">(</span><span class="n">string</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">cell_height</span><span class="p">)</span>
 
-    svg_els = [
-        sw.shapes.Line(start=(0, string_y), end=(width, string_y), **closestr_attrs,**{'class':'string-v-line string-v-line-{}'.format(string+1)}),
-    ]
-    grp = sw.container.Group()
+    <span class="n">svg_els</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">sw</span><span class="o">.</span><span class="n">shapes</span><span class="o">.</span><span class="n">Line</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">string_y</span><span class="p">),</span> <span class="n">end</span><span class="o">=</span><span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">string_y</span><span class="p">),</span> <span class="o">**</span><span class="n">closestr_attrs</span><span class="p">,</span><span class="o">**</span><span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span><span class="s1">&#39;string-v-line string-v-line-</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">string</span><span class="o">+</span><span class="mi">1</span><span class="p">)}),</span>
+    <span class="p">]</span>
+    <span class="n">grp</span> <span class="o">=</span> <span class="n">sw</span><span class="o">.</span><span class="n">container</span><span class="o">.</span><span class="n">Group</span><span class="p">()</span>
     
-    for element in svg_els:
-        grp.add(element)
+    <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">svg_els</span><span class="p">:</span>
+        <span class="n">grp</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">element</span><span class="p">)</span>
 
-    dwg.add(grp)
+    <span class="n">dwg</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">grp</span><span class="p">)</span>
        
-    for note in range(string_notes):
-        cell_start_x = note*cell_width
-        cell_start_y = string_y
-        cell_middle_x = cell_start_x + (cell_width/2)
-        cell_middle_y = cell_start_y + (cell_height/2)
-        circle_radius = ((cell_height/2)/10) * 7
+    <span class="k">for</span> <span class="n">note</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">string_notes</span><span class="p">):</span>
+        <span class="n">cell_start_x</span> <span class="o">=</span> <span class="n">note</span><span class="o">*</span><span class="n">cell_width</span>
+        <span class="n">cell_start_y</span> <span class="o">=</span> <span class="n">string_y</span>
+        <span class="n">cell_middle_x</span> <span class="o">=</span> <span class="n">cell_start_x</span> <span class="o">+</span> <span class="p">(</span><span class="n">cell_width</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+        <span class="n">cell_middle_y</span> <span class="o">=</span> <span class="n">cell_start_y</span> <span class="o">+</span> <span class="p">(</span><span class="n">cell_height</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+        <span class="n">circle_radius</span> <span class="o">=</span> <span class="p">((</span><span class="n">cell_height</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="mi">10</span><span class="p">)</span> <span class="o">*</span> <span class="mi">7</span>
         
-        grp = sw.container.Group()
-        #if not nts[string][note].accidental:
-        #    note_color_attrs = circ_attrs.update({'fill' : note_colors[nts[string][note].step]})
-        #else:
-        #    note_color_attrs = circ_attrs.update({'fill' : '#777'})
+        <span class="n">grp</span> <span class="o">=</span> <span class="n">sw</span><span class="o">.</span><span class="n">container</span><span class="o">.</span><span class="n">Group</span><span class="p">()</span>
+        <span class="c1">#if not nts[string][note].accidental:</span>
+        <span class="c1">#    note_color_attrs = circ_attrs.update({&#39;fill&#39; : note_colors[nts[string][note].step]})</span>
+        <span class="c1">#else:</span>
+        <span class="c1">#    note_color_attrs = circ_attrs.update({&#39;fill&#39; : &#39;#777&#39;})</span>
 
-        nt = nts[string][note]
+        <span class="n">nt</span> <span class="o">=</span> <span class="n">nts</span><span class="p">[</span><span class="n">string</span><span class="p">][</span><span class="n">note</span><span class="p">]</span>
         
-        names = nt.getAllCommonEnharmonics(1)
+        <span class="n">names</span> <span class="o">=</span> <span class="n">nt</span><span class="o">.</span><span class="n">getAllCommonEnharmonics</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
         
-        names.insert(0, nt)
-        #cell_names_classes = "{} ".format(nt.name)
-        #circ_names_classes = "{} ".format(nt.name)
-        #text_names_classes = "{} ".format(nt.name)
+        <span class="n">names</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">nt</span><span class="p">)</span>
+        <span class="c1">#cell_names_classes = &quot;{} &quot;.format(nt.name)</span>
+        <span class="c1">#circ_names_classes = &quot;{} &quot;.format(nt.name)</span>
+        <span class="c1">#text_names_classes = &quot;{} &quot;.format(nt.name)</span>
 
-        cell_names_classes = ""
-        circ_names_classes = ""
-        text_names_classes = ""
+        <span class="n">cell_names_classes</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+        <span class="n">circ_names_classes</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+        <span class="n">text_names_classes</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
 
-        for name in names:
-            cell_names_classes += "note-cell-name-{} ".format(name.name)
-            circ_names_classes += "note-circ-name-{} ".format(name.name)
-            text_names_classes += "note-text-name-{} ".format(name.name)
+        <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">names</span><span class="p">:</span>
+            <span class="n">cell_names_classes</span> <span class="o">+=</span> <span class="s2">&quot;note-cell-name-</span><span class="si">{}</span><span class="s2"> &quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+            <span class="n">circ_names_classes</span> <span class="o">+=</span> <span class="s2">&quot;note-circ-name-</span><span class="si">{}</span><span class="s2"> &quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+            <span class="n">text_names_classes</span> <span class="o">+=</span> <span class="s2">&quot;note-text-name-</span><span class="si">{}</span><span class="s2"> &quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
             
-            if '-' in name.name:
-                cell_names_classes += "note-cell-name-{} ".format(name.name.replace('-', 'b'))
-                circ_names_classes += "note-circ-name-{} ".format(name.name.replace('-', 'b'))
-                text_names_classes += "note-text-name-{} ".format(name.name.replace('-', 'b'))
-            elif '#' in name.name:
-                cell_names_classes += "note-cell-name-{} ".format(name.name.replace('#', 'u'))
-                circ_names_classes += "note-circ-name-{} ".format(name.name.replace('#', 'u'))
-                text_names_classes += "note-text-name-{} ".format(name.name.replace('#', 'u'))
+            <span class="k">if</span> <span class="s1">&#39;-&#39;</span> <span class="ow">in</span> <span class="n">name</span><span class="o">.</span><span class="n">name</span><span class="p">:</span>
+                <span class="n">cell_names_classes</span> <span class="o">+=</span> <span class="s2">&quot;note-cell-name-</span><span class="si">{}</span><span class="s2"> &quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">))</span>
+                <span class="n">circ_names_classes</span> <span class="o">+=</span> <span class="s2">&quot;note-circ-name-</span><span class="si">{}</span><span class="s2"> &quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">))</span>
+                <span class="n">text_names_classes</span> <span class="o">+=</span> <span class="s2">&quot;note-text-name-</span><span class="si">{}</span><span class="s2"> &quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">))</span>
+            <span class="k">elif</span> <span class="s1">&#39;#&#39;</span> <span class="ow">in</span> <span class="n">name</span><span class="o">.</span><span class="n">name</span><span class="p">:</span>
+                <span class="n">cell_names_classes</span> <span class="o">+=</span> <span class="s2">&quot;note-cell-name-</span><span class="si">{}</span><span class="s2"> &quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;#&#39;</span><span class="p">,</span> <span class="s1">&#39;u&#39;</span><span class="p">))</span>
+                <span class="n">circ_names_classes</span> <span class="o">+=</span> <span class="s2">&quot;note-circ-name-</span><span class="si">{}</span><span class="s2"> &quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;#&#39;</span><span class="p">,</span> <span class="s1">&#39;u&#39;</span><span class="p">))</span>
+                <span class="n">text_names_classes</span> <span class="o">+=</span> <span class="s2">&quot;note-text-name-</span><span class="si">{}</span><span class="s2"> &quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;#&#39;</span><span class="p">,</span> <span class="s1">&#39;u&#39;</span><span class="p">))</span>
 
-            note_cell_classes = {'class':'''\
-note-cell \
-{} \
-note-cell-step-{} \
-note-cell-octave-{} \
-note-cell-alter-in-halfsteps-{} \
-note-cell-namewithoctave-{}'''.format(
-            cell_names_classes.strip(),
-            nt.step,
-            nt.octave,
-            round(nt.alter),
-            nt.nameWithOctave
-        ).lower()}
+            <span class="n">note_cell_classes</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span><span class="s1">&#39;&#39;&#39;</span><span class="se">\</span>
+<span class="s1">note-cell </span><span class="se">\</span>
+<span class="si">{}</span><span class="s1"> </span><span class="se">\</span>
+<span class="s1">note-cell-step-</span><span class="si">{}</span><span class="s1"> </span><span class="se">\</span>
+<span class="s1">note-cell-octave-</span><span class="si">{}</span><span class="s1"> </span><span class="se">\</span>
+<span class="s1">note-cell-alter-in-halfsteps-</span><span class="si">{}</span><span class="s1"> </span><span class="se">\</span>
+<span class="s1">note-cell-namewithoctave-</span><span class="si">{}</span><span class="s1">&#39;&#39;&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+            <span class="n">cell_names_classes</span><span class="o">.</span><span class="n">strip</span><span class="p">(),</span>
+            <span class="n">nt</span><span class="o">.</span><span class="n">step</span><span class="p">,</span>
+            <span class="n">nt</span><span class="o">.</span><span class="n">octave</span><span class="p">,</span>
+            <span class="nb">round</span><span class="p">(</span><span class="n">nt</span><span class="o">.</span><span class="n">alter</span><span class="p">),</span>
+            <span class="n">nt</span><span class="o">.</span><span class="n">nameWithOctave</span>
+        <span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()}</span>
         
-        note_circ_classes = {'class':'''\
-note-circ \
-{} \
-note-circ-step-{} \
-note-circ-octave-{} \
-note-circ-alter-in-halfsteps-{} \
-note-circ-namewithoctave-{}'''.format(
-            circ_names_classes.strip(),
-            nt.step,
-            nt.octave,
-            round(nt.alter),
-            nt.nameWithOctave
-        ).lower()}
+        <span class="n">note_circ_classes</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span><span class="s1">&#39;&#39;&#39;</span><span class="se">\</span>
+<span class="s1">note-circ </span><span class="se">\</span>
+<span class="si">{}</span><span class="s1"> </span><span class="se">\</span>
+<span class="s1">note-circ-step-</span><span class="si">{}</span><span class="s1"> </span><span class="se">\</span>
+<span class="s1">note-circ-octave-</span><span class="si">{}</span><span class="s1"> </span><span class="se">\</span>
+<span class="s1">note-circ-alter-in-halfsteps-</span><span class="si">{}</span><span class="s1"> </span><span class="se">\</span>
+<span class="s1">note-circ-namewithoctave-</span><span class="si">{}</span><span class="s1">&#39;&#39;&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+            <span class="n">circ_names_classes</span><span class="o">.</span><span class="n">strip</span><span class="p">(),</span>
+            <span class="n">nt</span><span class="o">.</span><span class="n">step</span><span class="p">,</span>
+            <span class="n">nt</span><span class="o">.</span><span class="n">octave</span><span class="p">,</span>
+            <span class="nb">round</span><span class="p">(</span><span class="n">nt</span><span class="o">.</span><span class="n">alter</span><span class="p">),</span>
+            <span class="n">nt</span><span class="o">.</span><span class="n">nameWithOctave</span>
+        <span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()}</span>
         
-        note_text_classes = {'class':'''\
-note-text \
-{} \
-note-text-step-{} \
-note-text-octave-{} \
-note-text-alter-in-halfsteps-{} \
-note-text-namewithoctave-{}'''.format(
-            text_names_classes.strip(),
-            nt.step,
-            nt.octave,
-            round(nt.alter),
-            nt.nameWithOctave
-        ).lower()}
+        <span class="n">note_text_classes</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span><span class="s1">&#39;&#39;&#39;</span><span class="se">\</span>
+<span class="s1">note-text </span><span class="se">\</span>
+<span class="si">{}</span><span class="s1"> </span><span class="se">\</span>
+<span class="s1">note-text-step-</span><span class="si">{}</span><span class="s1"> </span><span class="se">\</span>
+<span class="s1">note-text-octave-</span><span class="si">{}</span><span class="s1"> </span><span class="se">\</span>
+<span class="s1">note-text-alter-in-halfsteps-</span><span class="si">{}</span><span class="s1"> </span><span class="se">\</span>
+<span class="s1">note-text-namewithoctave-</span><span class="si">{}</span><span class="s1">&#39;&#39;&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+            <span class="n">text_names_classes</span><span class="o">.</span><span class="n">strip</span><span class="p">(),</span>
+            <span class="n">nt</span><span class="o">.</span><span class="n">step</span><span class="p">,</span>
+            <span class="n">nt</span><span class="o">.</span><span class="n">octave</span><span class="p">,</span>
+            <span class="nb">round</span><span class="p">(</span><span class="n">nt</span><span class="o">.</span><span class="n">alter</span><span class="p">),</span>
+            <span class="n">nt</span><span class="o">.</span><span class="n">nameWithOctave</span>
+        <span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()}</span>
         
-        svg_els = [
-            sw.shapes.Rect(insert=(cell_start_x, cell_start_y), size=(cell_width, cell_height), **cell_attrs,**note_cell_classes),
-            sw.shapes.Circle(center=(cell_middle_x, cell_middle_y), r=circle_radius, **circ_attrs,**note_circ_classes),
-            sw.text.Text(nts[string][note].unicodeName, insert=(cell_middle_x, cell_middle_y), **text_attrs,**note_text_classes),
-        ]
+        <span class="n">svg_els</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="n">sw</span><span class="o">.</span><span class="n">shapes</span><span class="o">.</span><span class="n">Rect</span><span class="p">(</span><span class="n">insert</span><span class="o">=</span><span class="p">(</span><span class="n">cell_start_x</span><span class="p">,</span> <span class="n">cell_start_y</span><span class="p">),</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="n">cell_width</span><span class="p">,</span> <span class="n">cell_height</span><span class="p">),</span> <span class="o">**</span><span class="n">cell_attrs</span><span class="p">,</span><span class="o">**</span><span class="n">note_cell_classes</span><span class="p">),</span>
+            <span class="n">sw</span><span class="o">.</span><span class="n">shapes</span><span class="o">.</span><span class="n">Circle</span><span class="p">(</span><span class="n">center</span><span class="o">=</span><span class="p">(</span><span class="n">cell_middle_x</span><span class="p">,</span> <span class="n">cell_middle_y</span><span class="p">),</span> <span class="n">r</span><span class="o">=</span><span class="n">circle_radius</span><span class="p">,</span> <span class="o">**</span><span class="n">circ_attrs</span><span class="p">,</span><span class="o">**</span><span class="n">note_circ_classes</span><span class="p">),</span>
+            <span class="n">sw</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">Text</span><span class="p">(</span><span class="n">nts</span><span class="p">[</span><span class="n">string</span><span class="p">][</span><span class="n">note</span><span class="p">]</span><span class="o">.</span><span class="n">unicodeName</span><span class="p">,</span> <span class="n">insert</span><span class="o">=</span><span class="p">(</span><span class="n">cell_middle_x</span><span class="p">,</span> <span class="n">cell_middle_y</span><span class="p">),</span> <span class="o">**</span><span class="n">text_attrs</span><span class="p">,</span><span class="o">**</span><span class="n">note_text_classes</span><span class="p">),</span>
+        <span class="p">]</span>
         
-        for element in svg_els:
-            grp.add(element)
+        <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">svg_els</span><span class="p">:</span>
+            <span class="n">grp</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">element</span><span class="p">)</span>
             
-        dwg.add(grp)
-display(HTML(dwg.tostring()))
+        <span class="n">dwg</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">grp</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">HTML</span><span class="p">(</span><span class="n">dwg</span><span class="o">.</span><span class="n">tostring</span><span class="p">()))</span>
+</pre></div>
+
 </div>
 </div>
 </div>
@@ -23902,7 +23892,9 @@ display(HTML(dwg.tostring()))
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>{&#39;C&#39;: &#39;#cc0c00&#39;, &#39;D&#39;: &#39;#ccbb00&#39;, &#39;E&#39;: &#39;#2ecc00&#39;, &#39;F&#39;: &#39;#00cc81&#39;, &#39;G&#39;: &#39;#0068cc&#39;, &#39;A&#39;: &#39;#4700cc&#39;, &#39;B&#39;: &#39;#cc00a3&#39;}
@@ -23911,7 +23903,9 @@ display(HTML(dwg.tostring()))
 </div>
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
 
 
 <div class="output_html rendered_html output_subarea ">
@@ -23928,9 +23922,11 @@ display(HTML(dwg.tostring()))
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
-    <div class="input_area code">
-with open('fretboard.svg','w') as svg_output:
-    svg_output.write(dwg.tostring())
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;fretboard.svg&#39;</span><span class="p">,</span><span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">svg_output</span><span class="p">:</span>
+    <span class="n">svg_output</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">dwg</span><span class="o">.</span><span class="n">tostring</span><span class="p">())</span>
+</pre></div>
+
 </div>
 </div>
 </div>
@@ -23940,7 +23936,9 @@ with open('fretboard.svg','w') as svg_output:
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
-    <div class="input_area code">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
 
 </div>
 </div>

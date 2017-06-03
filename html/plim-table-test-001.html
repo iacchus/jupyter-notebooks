@@ -1,37 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8" />
-<title>plim-table-test-001</title><!--<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>-->
-<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>-->
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.19.0/codemirror.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.19.0/mode/python/python.js"></script>
-
-<script>
-$(document).ready(function(){
-	$('.code').each(function() {
-
-	    var $this = $(this),
-		$code = $this.html().trim();
-
-	    $this.empty();
-
-	    var myCodeMirror = CodeMirror(this, {
-		value: $code,
-		mode: 'python',
-		lineNumbers: true,
-		readOnly: true,
-                lineWrapping: true,
-                htmlMode: true,
-                matchClosing: true,       
-                indentWithTabs: true,
-	    });
-
-	});
-});
-</script>
+<title>plim-table-test-001</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 <style type="text/css">
     /*!
@@ -23480,9 +23451,7 @@ body {
 div#notebook {
   overflow: visible;
   border-top: none;
-}
-
-@media print {
+}@media print {
   div.cell {
     display: block;
     page-break-inside: avoid;
@@ -23499,12 +23468,30 @@ div#notebook {
 </style>
 
 <!-- Custom stylesheet, it must be in the same directory as the html file -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.19.0/codemirror.css">
 <link rel="stylesheet" href="custom.css">
-<link rel="stylesheet" href="../index_files/custom.css">
 
 <!-- Loading mathjax macro -->
-</head>
+<!-- Load mathjax -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML"></script>
+    <!-- MathJax configuration -->
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            processEscapes: true,
+            processEnvironments: true
+        },
+        // Center justify equations in code and markdown cells. Elsewhere
+        // we use CSS to left justify single line equations in code cells.
+        displayAlign: 'center',
+        "HTML-CSS": {
+            styles: {'.MathJax_Display': {"margin": 0}},
+            linebreaks: { automatic: true }
+        }
+    });
+    </script>
+    <!-- End of mathjax configuration --></head>
 <body>
   <div tabindex="-1" id="notebook" class="border-box-sizing">
     <div class="container" id="notebook-container">
@@ -23513,11 +23500,11 @@ div#notebook {
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[33]:</div>
 <div class="inner_cell">
-    <div class="input_area code">
-import plim
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">plim</span>
 
-from IPython.display import display, HTML
-
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="k">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">HTML</span>
+</pre></div>
 
 </div>
 </div>
@@ -23528,28 +23515,29 @@ from IPython.display import display, HTML
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
-    <div class="input_area code">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">table_slim</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">table</span>
+<span class="s2">    tr</span>
+<span class="s2">        th um</span>
+<span class="s2">        th dois</span>
+<span class="s2">        th tres</span>
+<span class="s2">    tr</span>
+<span class="s2">        td first one</span>
+<span class="s2">        td second one</span>
+<span class="s2">        td third one</span>
+<span class="s2">    tr</span>
+<span class="s2">        td second row</span>
+<span class="s2">        td second row too</span>
+<span class="s2">        td also second row</span>
+<span class="s2">&quot;&quot;&quot;</span>
 
-table_slim = """
-table
-    tr
-        th um
-        th dois
-        th tres
-    tr
-        td first one
-        td second one
-        td third one
-    tr
-        td second row
-        td second row too
-        td also second row
-"""
 
+<span class="n">table_html</span> <span class="o">=</span> <span class="n">plim</span><span class="o">.</span><span class="n">preprocessor</span><span class="p">(</span><span class="n">table_slim</span><span class="p">)</span>
 
-table_html = plim.preprocessor(table_slim)
+<span class="n">HTML</span><span class="p">(</span><span class="n">table_html</span><span class="p">)</span>
+</pre></div>
 
-HTML(table_html)
 </div>
 </div>
 </div>
@@ -23559,7 +23547,9 @@ HTML(table_html)
 
 
 <div class="output_area">
+
 <div class="prompt output_prompt">Out[2]:</div>
+
 
 
 <div class="output_html rendered_html output_subarea output_execute_result">
@@ -23576,13 +23566,15 @@ HTML(table_html)
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
-    <div class="input_area code">
-my_array = [
-    ['C Major Scale'],
-    ['[IMG GOES HERE]'],
-    ['I','II','III','IV','V','VI','VII'],
-    ['a','b','c','d','e','f','g'],
-]
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">my_array</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">[</span><span class="s1">&#39;C Major Scale&#39;</span><span class="p">],</span>
+    <span class="p">[</span><span class="s1">&#39;[IMG GOES HERE]&#39;</span><span class="p">],</span>
+    <span class="p">[</span><span class="s1">&#39;I&#39;</span><span class="p">,</span><span class="s1">&#39;II&#39;</span><span class="p">,</span><span class="s1">&#39;III&#39;</span><span class="p">,</span><span class="s1">&#39;IV&#39;</span><span class="p">,</span><span class="s1">&#39;V&#39;</span><span class="p">,</span><span class="s1">&#39;VI&#39;</span><span class="p">,</span><span class="s1">&#39;VII&#39;</span><span class="p">],</span>
+    <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;c&#39;</span><span class="p">,</span><span class="s1">&#39;d&#39;</span><span class="p">,</span><span class="s1">&#39;e&#39;</span><span class="p">,</span><span class="s1">&#39;f&#39;</span><span class="p">,</span><span class="s1">&#39;g&#39;</span><span class="p">],</span>
+<span class="p">]</span>
+</pre></div>
+
 </div>
 </div>
 </div>
@@ -23592,17 +23584,19 @@ my_array = [
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
-    <div class="input_area code">
-t2_slim = """
-table
-"""
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">t2_slim</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">table</span>
+<span class="s2">&quot;&quot;&quot;</span>
 
-for row in my_array:
-    t2_slim += "\ttr\n"
-    for column in row:
-        t2_slim += "\t\ttd {}\n".format(column)
+<span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">my_array</span><span class="p">:</span>
+    <span class="n">t2_slim</span> <span class="o">+=</span> <span class="s2">&quot;</span><span class="se">\t</span><span class="s2">tr</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="k">for</span> <span class="n">column</span> <span class="ow">in</span> <span class="n">row</span><span class="p">:</span>
+        <span class="n">t2_slim</span> <span class="o">+=</span> <span class="s2">&quot;</span><span class="se">\t\t</span><span class="s2">td </span><span class="si">{}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">column</span><span class="p">)</span>
         
-table2_html = plim.preprocessor(t2_slim)
+<span class="n">table2_html</span> <span class="o">=</span> <span class="n">plim</span><span class="o">.</span><span class="n">preprocessor</span><span class="p">(</span><span class="n">t2_slim</span><span class="p">)</span>
+</pre></div>
+
 </div>
 </div>
 </div>
@@ -23612,8 +23606,10 @@ table2_html = plim.preprocessor(t2_slim)
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
-    <div class="input_area code">
-print(t2_slim)
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">t2_slim</span><span class="p">)</span>
+</pre></div>
+
 </div>
 </div>
 </div>
@@ -23623,7 +23619,9 @@ print(t2_slim)
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>
@@ -23661,8 +23659,10 @@ table
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
-    <div class="input_area code">
-HTML(table2_html)
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">HTML</span><span class="p">(</span><span class="n">table2_html</span><span class="p">)</span>
+</pre></div>
+
 </div>
 </div>
 </div>
@@ -23672,7 +23672,9 @@ HTML(table2_html)
 
 
 <div class="output_area">
+
 <div class="prompt output_prompt">Out[11]:</div>
+
 
 
 <div class="output_html rendered_html output_subarea output_execute_result">
@@ -23689,33 +23691,35 @@ HTML(table2_html)
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[36]:</div>
 <div class="inner_cell">
-    <div class="input_area code">
-t3_slim = """
-table
-    thead
-        caption C Major Scale
-    tr
-        caption [IMG GOES HERE]
-    tr
-        td I
-        td II
-        td III
-        td IV
-        td V
-        td VI
-        td VII
-    tr
-        td a
-        td b
-        td c
-        td d
-        td e
-        td f
-        td g
-"""
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">t3_slim</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">table</span>
+<span class="s2">    thead</span>
+<span class="s2">        caption C Major Scale</span>
+<span class="s2">    tr</span>
+<span class="s2">        caption [IMG GOES HERE]</span>
+<span class="s2">    tr</span>
+<span class="s2">        td I</span>
+<span class="s2">        td II</span>
+<span class="s2">        td III</span>
+<span class="s2">        td IV</span>
+<span class="s2">        td V</span>
+<span class="s2">        td VI</span>
+<span class="s2">        td VII</span>
+<span class="s2">    tr</span>
+<span class="s2">        td a</span>
+<span class="s2">        td b</span>
+<span class="s2">        td c</span>
+<span class="s2">        td d</span>
+<span class="s2">        td e</span>
+<span class="s2">        td f</span>
+<span class="s2">        td g</span>
+<span class="s2">&quot;&quot;&quot;</span>
 
-table3_html = plim.preprocessor(t3_slim)
-HTML(table3_html)
+<span class="n">table3_html</span> <span class="o">=</span> <span class="n">plim</span><span class="o">.</span><span class="n">preprocessor</span><span class="p">(</span><span class="n">t3_slim</span><span class="p">)</span>
+<span class="n">HTML</span><span class="p">(</span><span class="n">table3_html</span><span class="p">)</span>
+</pre></div>
+
 </div>
 </div>
 </div>
@@ -23725,7 +23729,9 @@ HTML(table3_html)
 
 
 <div class="output_area">
+
 <div class="prompt output_prompt">Out[36]:</div>
+
 
 
 <div class="output_html rendered_html output_subarea output_execute_result">
@@ -23742,33 +23748,35 @@ HTML(table3_html)
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[42]:</div>
 <div class="inner_cell">
-    <div class="input_area code">
-t4_slim = """
-table width="300"
-    tr
-        caption style="font-weight: normal;" C Major Scale
-    tr
-        caption style="font-weight: normal;" [IMG GOES HERE]
-    tr
-        td I
-        td II
-        td III
-        td IV
-        td V
-        td VI
-        td VII
-    tr
-        td a
-        td b
-        td c
-        td d
-        td e
-        td f
-        td g
-"""
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">t4_slim</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">table width=&quot;300&quot;</span>
+<span class="s2">    tr</span>
+<span class="s2">        caption style=&quot;font-weight: normal;&quot; C Major Scale</span>
+<span class="s2">    tr</span>
+<span class="s2">        caption style=&quot;font-weight: normal;&quot; [IMG GOES HERE]</span>
+<span class="s2">    tr</span>
+<span class="s2">        td I</span>
+<span class="s2">        td II</span>
+<span class="s2">        td III</span>
+<span class="s2">        td IV</span>
+<span class="s2">        td V</span>
+<span class="s2">        td VI</span>
+<span class="s2">        td VII</span>
+<span class="s2">    tr</span>
+<span class="s2">        td a</span>
+<span class="s2">        td b</span>
+<span class="s2">        td c</span>
+<span class="s2">        td d</span>
+<span class="s2">        td e</span>
+<span class="s2">        td f</span>
+<span class="s2">        td g</span>
+<span class="s2">&quot;&quot;&quot;</span>
 
-table4_html = plim.preprocessor(t4_slim)
-HTML(table4_html)
+<span class="n">table4_html</span> <span class="o">=</span> <span class="n">plim</span><span class="o">.</span><span class="n">preprocessor</span><span class="p">(</span><span class="n">t4_slim</span><span class="p">)</span>
+<span class="n">HTML</span><span class="p">(</span><span class="n">table4_html</span><span class="p">)</span>
+</pre></div>
+
 </div>
 </div>
 </div>
@@ -23778,7 +23786,9 @@ HTML(table4_html)
 
 
 <div class="output_area">
+
 <div class="prompt output_prompt">Out[42]:</div>
+
 
 
 <div class="output_html rendered_html output_subarea output_execute_result">
@@ -23795,7 +23805,9 @@ HTML(table4_html)
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
-    <div class="input_area code">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
 
 </div>
 </div>

@@ -1,37 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8" />
-<title>music21-developing-returnscale</title><!--<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>-->
-<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>-->
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.19.0/codemirror.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.19.0/mode/python/python.js"></script>
-
-<script>
-$(document).ready(function(){
-	$('.code').each(function() {
-
-	    var $this = $(this),
-		$code = $this.html().trim();
-
-	    $this.empty();
-
-	    var myCodeMirror = CodeMirror(this, {
-		value: $code,
-		mode: 'python',
-		lineNumbers: true,
-		readOnly: true,
-                lineWrapping: true,
-                htmlMode: true,
-                matchClosing: true,       
-                indentWithTabs: true,
-	    });
-
-	});
-});
-</script>
+<title>music21-developing-returnscale</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 <style type="text/css">
     /*!
@@ -23480,9 +23451,7 @@ body {
 div#notebook {
   overflow: visible;
   border-top: none;
-}
-
-@media print {
+}@media print {
   div.cell {
     display: block;
     page-break-inside: avoid;
@@ -23499,12 +23468,30 @@ div#notebook {
 </style>
 
 <!-- Custom stylesheet, it must be in the same directory as the html file -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.19.0/codemirror.css">
 <link rel="stylesheet" href="custom.css">
-<link rel="stylesheet" href="../index_files/custom.css">
 
 <!-- Loading mathjax macro -->
-</head>
+<!-- Load mathjax -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML"></script>
+    <!-- MathJax configuration -->
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            processEscapes: true,
+            processEnvironments: true
+        },
+        // Center justify equations in code and markdown cells. Elsewhere
+        // we use CSS to left justify single line equations in code cells.
+        displayAlign: 'center',
+        "HTML-CSS": {
+            styles: {'.MathJax_Display': {"margin": 0}},
+            linebreaks: { automatic: true }
+        }
+    });
+    </script>
+    <!-- End of mathjax configuration --></head>
 <body>
   <div tabindex="-1" id="notebook" class="border-box-sizing">
     <div class="container" id="notebook-container">
@@ -23513,12 +23500,14 @@ div#notebook {
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
-    <div class="input_area code">
-from music21 import *
-from IPython.display import display, HTML, Image, Audio
-import plim
-import base64
-#from music21.common.pathTools import relativepath as m21_jupyter_relpath
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">music21</span> <span class="k">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="k">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">HTML</span><span class="p">,</span> <span class="n">Image</span><span class="p">,</span> <span class="n">Audio</span>
+<span class="kn">import</span> <span class="nn">plim</span>
+<span class="kn">import</span> <span class="nn">base64</span>
+<span class="c1">#from music21.common.pathTools import relativepath as m21_jupyter_relpath</span>
+</pre></div>
+
 </div>
 </div>
 </div>
@@ -23528,27 +23517,29 @@ import base64
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
-    <div class="input_area code">
-def circleOfFifths():
-    fifths = []
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">circleOfFifths</span><span class="p">():</span>
+    <span class="n">fifths</span> <span class="o">=</span> <span class="p">[]</span>
 
-    fifthsScale = scale.CyclicalScale('c4', 'p5')
+    <span class="n">fifthsScale</span> <span class="o">=</span> <span class="n">scale</span><span class="o">.</span><span class="n">CyclicalScale</span><span class="p">(</span><span class="s1">&#39;c4&#39;</span><span class="p">,</span> <span class="s1">&#39;p5&#39;</span><span class="p">)</span>
     
-    for p in fifthsScale.getPitches('c4', 'c11'):
+    <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">fifthsScale</span><span class="o">.</span><span class="n">getPitches</span><span class="p">(</span><span class="s1">&#39;c4&#39;</span><span class="p">,</span> <span class="s1">&#39;c11&#39;</span><span class="p">):</span>
         
-        if key.pitchToSharps(p,'major') <= 7:
-            MAJOR = str(p.simplifyEnharmonic().name)
-            MINOR = str(key.Key(MAJOR, 'major').relative.tonic.simplifyEnharmonic().name).lower()
+        <span class="k">if</span> <span class="n">key</span><span class="o">.</span><span class="n">pitchToSharps</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="s1">&#39;major&#39;</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">7</span><span class="p">:</span>
+            <span class="n">MAJOR</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">simplifyEnharmonic</span><span class="p">()</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+            <span class="n">MINOR</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">key</span><span class="o">.</span><span class="n">Key</span><span class="p">(</span><span class="n">MAJOR</span><span class="p">,</span> <span class="s1">&#39;major&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">relative</span><span class="o">.</span><span class="n">tonic</span><span class="o">.</span><span class="n">simplifyEnharmonic</span><span class="p">()</span><span class="o">.</span><span class="n">name</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
 
-        else:
-            MAJOR = str(p.getEnharmonic().simplifyEnharmonic().name)
-            MINOR = str(key.Key(MAJOR, 'major').relative.tonic.simplifyEnharmonic().name).lower()
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">MAJOR</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">getEnharmonic</span><span class="p">()</span><span class="o">.</span><span class="n">simplifyEnharmonic</span><span class="p">()</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+            <span class="n">MINOR</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">key</span><span class="o">.</span><span class="n">Key</span><span class="p">(</span><span class="n">MAJOR</span><span class="p">,</span> <span class="s1">&#39;major&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">relative</span><span class="o">.</span><span class="n">tonic</span><span class="o">.</span><span class="n">simplifyEnharmonic</span><span class="p">()</span><span class="o">.</span><span class="n">name</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
         
-        fifths.append( [ MAJOR, MINOR ] )
+        <span class="n">fifths</span><span class="o">.</span><span class="n">append</span><span class="p">(</span> <span class="p">[</span> <span class="n">MAJOR</span><span class="p">,</span> <span class="n">MINOR</span> <span class="p">]</span> <span class="p">)</span>
 
-        #fifths.append(p.simplifyEnharmonic())
+        <span class="c1">#fifths.append(p.simplifyEnharmonic())</span>
         
-    return fifths
+    <span class="k">return</span> <span class="n">fifths</span>
+</pre></div>
+
 </div>
 </div>
 </div>
@@ -23558,8 +23549,10 @@ def circleOfFifths():
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
-    <div class="input_area code">
-sc = scale.MajorScale('c')
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sc</span> <span class="o">=</span> <span class="n">scale</span><span class="o">.</span><span class="n">MajorScale</span><span class="p">(</span><span class="s1">&#39;c&#39;</span><span class="p">)</span>
+</pre></div>
+
 </div>
 </div>
 </div>
@@ -23569,8 +23562,10 @@ sc = scale.MajorScale('c')
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
-    <div class="input_area code">
-pitches = sc.getPitches()
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pitches</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">getPitches</span><span class="p">()</span>
+</pre></div>
+
 </div>
 </div>
 </div>
@@ -23580,8 +23575,10 @@ pitches = sc.getPitches()
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
-    <div class="input_area code">
-pitches
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pitches</span>
+</pre></div>
+
 </div>
 </div>
 </div>
@@ -23591,7 +23588,9 @@ pitches
 
 
 <div class="output_area">
+
 <div class="prompt output_prompt">Out[5]:</div>
+
 
 
 
@@ -23616,69 +23615,71 @@ pitches
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[44]:</div>
 <div class="inner_cell">
-    <div class="input_area code">
-def returnScale2(tonic='c', mode='major', ownKey = False):
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">returnScale2</span><span class="p">(</span><span class="n">tonic</span><span class="o">=</span><span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;major&#39;</span><span class="p">,</span> <span class="n">ownKey</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
     
-    modes = [ 'ionian','dorian','phrygian',
-              'lydian','mixolydian','aeolian',
-              'locrian','major','minor']
+    <span class="n">modes</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;ionian&#39;</span><span class="p">,</span><span class="s1">&#39;dorian&#39;</span><span class="p">,</span><span class="s1">&#39;phrygian&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;lydian&#39;</span><span class="p">,</span><span class="s1">&#39;mixolydian&#39;</span><span class="p">,</span><span class="s1">&#39;aeolian&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;locrian&#39;</span><span class="p">,</span><span class="s1">&#39;major&#39;</span><span class="p">,</span><span class="s1">&#39;minor&#39;</span><span class="p">]</span>
     
-    if not mode in modes: mode = 'major'
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">mode</span> <span class="ow">in</span> <span class="n">modes</span><span class="p">:</span> <span class="n">mode</span> <span class="o">=</span> <span class="s1">&#39;major&#39;</span>
         
-    if mode == 'ionian': mode = 'major'
-    if mode == 'aeolian': mode = 'minor'
+    <span class="k">if</span> <span class="n">mode</span> <span class="o">==</span> <span class="s1">&#39;ionian&#39;</span><span class="p">:</span> <span class="n">mode</span> <span class="o">=</span> <span class="s1">&#39;major&#39;</span>
+    <span class="k">if</span> <span class="n">mode</span> <span class="o">==</span> <span class="s1">&#39;aeolian&#39;</span><span class="p">:</span> <span class="n">mode</span> <span class="o">=</span> <span class="s1">&#39;minor&#39;</span>
 
-    tonic_pitch = pitch.Pitch(tonic)
-    #key_enharmonic = tonic_pitch.getEnharmonic().simplifyEnharmonic().name
-    key_enharmonic = tonic_pitch
-    scale_sharps = key.pitchToSharps(key_enharmonic, mode)
+    <span class="n">tonic_pitch</span> <span class="o">=</span> <span class="n">pitch</span><span class="o">.</span><span class="n">Pitch</span><span class="p">(</span><span class="n">tonic</span><span class="p">)</span>
+    <span class="c1">#key_enharmonic = tonic_pitch.getEnharmonic().simplifyEnharmonic().name</span>
+    <span class="n">key_enharmonic</span> <span class="o">=</span> <span class="n">tonic_pitch</span>
+    <span class="n">scale_sharps</span> <span class="o">=</span> <span class="n">key</span><span class="o">.</span><span class="n">pitchToSharps</span><span class="p">(</span><span class="n">key_enharmonic</span><span class="p">,</span> <span class="n">mode</span><span class="p">)</span>
 
-    #    myfunc = eval("scale.{0}Scale".format(mode.capitalize()))
-    scale_func = getattr(scale, "{0}Scale".format(mode.capitalize()))
-    real_scale = scale_func(key_enharmonic)
-    pitches = real_scale.getPitches()
+    <span class="c1">#    myfunc = eval(&quot;scale.{0}Scale&quot;.format(mode.capitalize()))</span>
+    <span class="n">scale_func</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">scale</span><span class="p">,</span> <span class="s2">&quot;</span><span class="si">{0}</span><span class="s2">Scale&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">mode</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()))</span>
+    <span class="n">real_scale</span> <span class="o">=</span> <span class="n">scale_func</span><span class="p">(</span><span class="n">key_enharmonic</span><span class="p">)</span>
+    <span class="n">pitches</span> <span class="o">=</span> <span class="n">real_scale</span><span class="o">.</span><span class="n">getPitches</span><span class="p">()</span>
 
-    scale_name = real_scale.name
-    absolute_intervals = []
-    relative_intervals = []
-    myKeySig = key.KeySignature(scale_sharps)
+    <span class="n">scale_name</span> <span class="o">=</span> <span class="n">real_scale</span><span class="o">.</span><span class="n">name</span>
+    <span class="n">absolute_intervals</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">relative_intervals</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">myKeySig</span> <span class="o">=</span> <span class="n">key</span><span class="o">.</span><span class="n">KeySignature</span><span class="p">(</span><span class="n">scale_sharps</span><span class="p">)</span>
     
-    mystream = stream.Stream()
+    <span class="n">mystream</span> <span class="o">=</span> <span class="n">stream</span><span class="o">.</span><span class="n">Stream</span><span class="p">()</span>
     
-    if ownKey:
-        mystream.append(myKeySig)
+    <span class="k">if</span> <span class="n">ownKey</span><span class="p">:</span>
+        <span class="n">mystream</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">myKeySig</span><span class="p">)</span>
 
-    for cur_pitch in pitches:
-        mynote = note.Note(cur_pitch)
+    <span class="k">for</span> <span class="n">cur_pitch</span> <span class="ow">in</span> <span class="n">pitches</span><span class="p">:</span>
+        <span class="n">mynote</span> <span class="o">=</span> <span class="n">note</span><span class="o">.</span><span class="n">Note</span><span class="p">(</span><span class="n">cur_pitch</span><span class="p">)</span>
 
-        cur_degree = real_scale.getScaleDegreeFromPitch(cur_pitch)
+        <span class="n">cur_degree</span> <span class="o">=</span> <span class="n">real_scale</span><span class="o">.</span><span class="n">getScaleDegreeFromPitch</span><span class="p">(</span><span class="n">cur_pitch</span><span class="p">)</span>
         
-        #previous_or_tonic = real_scale.next(cur_pitch, 'descending') if cur_pitch != real_scale.tonic else real_scale.tonic
+        <span class="c1">#previous_or_tonic = real_scale.next(cur_pitch, &#39;descending&#39;) if cur_pitch != real_scale.tonic else real_scale.tonic</span>
 
-        #absolute_interval = interval.notesToInterval(cur_pitch, mynote).directedName
-        #relative_interval = interval.notesToInterval(pitches[(x-1 if x>0 else 0)], mynote).directedName
-        #relative_interval = interval.notesToInterval(previous_or_tonic, mynote).directedName
+        <span class="c1">#absolute_interval = interval.notesToInterval(cur_pitch, mynote).directedName</span>
+        <span class="c1">#relative_interval = interval.notesToInterval(pitches[(x-1 if x&gt;0 else 0)], mynote).directedName</span>
+        <span class="c1">#relative_interval = interval.notesToInterval(previous_or_tonic, mynote).directedName</span>
 
-        absolute_interval = real_scale.intervalBetweenDegrees(1,cur_degree).name
-        relative_interval = real_scale.intervalBetweenDegrees((cur_degree-1 if cur_degree>1else 1), cur_degree).name
+        <span class="n">absolute_interval</span> <span class="o">=</span> <span class="n">real_scale</span><span class="o">.</span><span class="n">intervalBetweenDegrees</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">cur_degree</span><span class="p">)</span><span class="o">.</span><span class="n">name</span>
+        <span class="n">relative_interval</span> <span class="o">=</span> <span class="n">real_scale</span><span class="o">.</span><span class="n">intervalBetweenDegrees</span><span class="p">((</span><span class="n">cur_degree</span><span class="o">-</span><span class="mi">1</span> <span class="k">if</span> <span class="n">cur_degree</span><span class="o">&gt;</span><span class="mi">1</span><span class="k">else</span> <span class="mi">1</span><span class="p">),</span> <span class="n">cur_degree</span><span class="p">)</span><span class="o">.</span><span class="n">name</span>
         
-        absolute_intervals.append(absolute_interval)
-        relative_intervals.append(relative_interval)
+        <span class="n">absolute_intervals</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">absolute_interval</span><span class="p">)</span>
+        <span class="n">relative_intervals</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">relative_interval</span><span class="p">)</span>
         
-        mynote.addLyric(absolute_interval)
-        mynote.addLyric(relative_interval)
+        <span class="n">mynote</span><span class="o">.</span><span class="n">addLyric</span><span class="p">(</span><span class="n">absolute_interval</span><span class="p">)</span>
+        <span class="n">mynote</span><span class="o">.</span><span class="n">addLyric</span><span class="p">(</span><span class="n">relative_interval</span><span class="p">)</span>
         
-        mystream.append(mynote)
+        <span class="n">mystream</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">mynote</span><span class="p">)</span>
         
-    filename = mystream.write()
+    <span class="n">filename</span> <span class="o">=</span> <span class="n">mystream</span><span class="o">.</span><span class="n">write</span><span class="p">()</span>
         
-    return {
-        'scalename': scale_name,
-        'stream' : mystream,
-        'filename': filename,
-        'ai' : absolute_intervals,
-        'ri' : relative_intervals
-    }
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="s1">&#39;scalename&#39;</span><span class="p">:</span> <span class="n">scale_name</span><span class="p">,</span>
+        <span class="s1">&#39;stream&#39;</span> <span class="p">:</span> <span class="n">mystream</span><span class="p">,</span>
+        <span class="s1">&#39;filename&#39;</span><span class="p">:</span> <span class="n">filename</span><span class="p">,</span>
+        <span class="s1">&#39;ai&#39;</span> <span class="p">:</span> <span class="n">absolute_intervals</span><span class="p">,</span>
+        <span class="s1">&#39;ri&#39;</span> <span class="p">:</span> <span class="n">relative_intervals</span>
+    <span class="p">}</span>
+</pre></div>
+
 </div>
 </div>
 </div>
@@ -23688,8 +23689,10 @@ def returnScale2(tonic='c', mode='major', ownKey = False):
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[45]:</div>
 <div class="inner_cell">
-    <div class="input_area code">
-returnScale2()
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">returnScale2</span><span class="p">()</span>
+</pre></div>
+
 </div>
 </div>
 </div>
@@ -23699,7 +23702,9 @@ returnScale2()
 
 
 <div class="output_area">
+
 <div class="prompt output_prompt">Out[45]:</div>
+
 
 
 
@@ -23721,8 +23726,10 @@ returnScale2()
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[36]:</div>
 <div class="inner_cell">
-    <div class="input_area code">
-sc = scale.MajorScale('c')
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sc</span> <span class="o">=</span> <span class="n">scale</span><span class="o">.</span><span class="n">MajorScale</span><span class="p">(</span><span class="s1">&#39;c&#39;</span><span class="p">)</span>
+</pre></div>
+
 </div>
 </div>
 </div>
@@ -23732,8 +23739,9 @@ sc = scale.MajorScale('c')
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[37]:</div>
 <div class="inner_cell">
-    <div class="input_area code">
-sc.getScaleDegreeFromPitch('a5')
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sc</span><span class="o">.</span><span class="n">getScaleDegreeFromPitch</span><span class="p">(</span><span class="s1">&#39;a5&#39;</span><span class="p">)</span>
+</pre></div>
 
 </div>
 </div>
@@ -23744,7 +23752,9 @@ sc.getScaleDegreeFromPitch('a5')
 
 
 <div class="output_area">
+
 <div class="prompt output_prompt">Out[37]:</div>
+
 
 
 
@@ -23762,8 +23772,10 @@ sc.getScaleDegreeFromPitch('a5')
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[38]:</div>
 <div class="inner_cell">
-    <div class="input_area code">
-sc.intervalBetweenDegrees(1,4)
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sc</span><span class="o">.</span><span class="n">intervalBetweenDegrees</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+
 </div>
 </div>
 </div>
@@ -23773,7 +23785,9 @@ sc.intervalBetweenDegrees(1,4)
 
 
 <div class="output_area">
+
 <div class="prompt output_prompt">Out[38]:</div>
+
 
 
 
@@ -23791,7 +23805,9 @@ sc.intervalBetweenDegrees(1,4)
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
-    <div class="input_area code">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
 
 </div>
 </div>

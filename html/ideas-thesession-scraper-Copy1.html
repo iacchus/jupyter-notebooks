@@ -1,37 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8" />
-<title>ideas-thesession-scraper-Copy1</title><!--<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>-->
-<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>-->
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.19.0/codemirror.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.19.0/mode/python/python.js"></script>
-
-<script>
-$(document).ready(function(){
-	$('.code').each(function() {
-
-	    var $this = $(this),
-		$code = $this.html().trim();
-
-	    $this.empty();
-
-	    var myCodeMirror = CodeMirror(this, {
-		value: $code,
-		mode: 'python',
-		lineNumbers: true,
-		readOnly: true,
-                lineWrapping: true,
-                htmlMode: true,
-                matchClosing: true,       
-                indentWithTabs: true,
-	    });
-
-	});
-});
-</script>
+<title>ideas-thesession-scraper-Copy1</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 <style type="text/css">
     /*!
@@ -23480,9 +23451,7 @@ body {
 div#notebook {
   overflow: visible;
   border-top: none;
-}
-
-@media print {
+}@media print {
   div.cell {
     display: block;
     page-break-inside: avoid;
@@ -23499,18 +23468,35 @@ div#notebook {
 </style>
 
 <!-- Custom stylesheet, it must be in the same directory as the html file -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.19.0/codemirror.css">
 <link rel="stylesheet" href="custom.css">
-<link rel="stylesheet" href="../index_files/custom.css">
 
 <!-- Loading mathjax macro -->
-</head>
+<!-- Load mathjax -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML"></script>
+    <!-- MathJax configuration -->
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            processEscapes: true,
+            processEnvironments: true
+        },
+        // Center justify equations in code and markdown cells. Elsewhere
+        // we use CSS to left justify single line equations in code cells.
+        displayAlign: 'center',
+        "HTML-CSS": {
+            styles: {'.MathJax_Display': {"margin": 0}},
+            linebreaks: { automatic: true }
+        }
+    });
+    </script>
+    <!-- End of mathjax configuration --></head>
 <body>
   <div tabindex="-1" id="notebook" class="border-box-sizing">
     <div class="container" id="notebook-container">
 
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -23530,9 +23516,11 @@ div#notebook {
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
-    <div class="input_area code">
-import scrapy
-import re
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">scrapy</span>
+<span class="kn">import</span> <span class="nn">re</span>
+</pre></div>
+
 </div>
 </div>
 </div>
@@ -23542,50 +23530,52 @@ import re
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
-    <div class="input_area code">
-class TunePipeline(object):
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">TunePipeline</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     
-    def process_item(self, item, spider):
-        print(item)
+    <span class="k">def</span> <span class="nf">process_item</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">,</span> <span class="n">spider</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
 
-class TuneScraper(scrapy.Spider):
-    name = 'thesession-tunes'
-    tunes = []
-    tune = {}
-    custom_settings = {
-        'ITEM_PIPELINES' : 'TunePipeline',
-    }
+<span class="k">class</span> <span class="nc">TuneScraper</span><span class="p">(</span><span class="n">scrapy</span><span class="o">.</span><span class="n">Spider</span><span class="p">):</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;thesession-tunes&#39;</span>
+    <span class="n">tunes</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">tune</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">custom_settings</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;ITEM_PIPELINES&#39;</span> <span class="p">:</span> <span class="s1">&#39;TunePipeline&#39;</span><span class="p">,</span>
+    <span class="p">}</span>
     
-    def __init__(self, *baahrg, **doitbabe):
-        super(TuneScraper, self).__init__(*baahrg, **doitbabe)
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">baahrg</span><span class="p">,</span> <span class="o">**</span><span class="n">doitbabe</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">TuneScraper</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">baahrg</span><span class="p">,</span> <span class="o">**</span><span class="n">doitbabe</span><span class="p">)</span>
         
         
-    def start_requests(self, tune_id):
-        url = "https://thesession.org/tunes/{}".format(tune_id)
+    <span class="k">def</span> <span class="nf">start_requests</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tune_id</span><span class="p">):</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://thesession.org/tunes/</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">tune_id</span><span class="p">)</span>
         
-        yield scrapy.Request(url=url, callback=self.parse)
+        <span class="k">yield</span> <span class="n">scrapy</span><span class="o">.</span><span class="n">Request</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">,</span> <span class="n">callback</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">parse</span><span class="p">)</span>
         
-    def parse(self, response):
+    <span class="k">def</span> <span class="nf">parse</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">response</span><span class="p">):</span>
         
-        abc_list = []
+        <span class="n">abc_list</span> <span class="o">=</span> <span class="p">[]</span>
 
-        name = response.css('//main/div[@class="contents"]/h1/text()').extract()
-        style = response.css('//main/div[@class="contents"]/h1/span/a/text()').extract()
+        <span class="n">name</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">css</span><span class="p">(</span><span class="s1">&#39;//main/div[@class=&quot;contents&quot;]/h1/text()&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">extract</span><span class="p">()</span>
+        <span class="n">style</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">css</span><span class="p">(</span><span class="s1">&#39;//main/div[@class=&quot;contents&quot;]/h1/span/a/text()&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">extract</span><span class="p">()</span>
 
-        for item in response.xpath("//div[@class='notes']"):
-            text = item.extract()
-            abc = re.sub('<[^<]+?>', '', text)
+        <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">response</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s2">&quot;//div[@class=&#39;notes&#39;]&quot;</span><span class="p">):</span>
+            <span class="n">text</span> <span class="o">=</span> <span class="n">item</span><span class="o">.</span><span class="n">extract</span><span class="p">()</span>
+            <span class="n">abc</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s1">&#39;&lt;[^&lt;]+?&gt;&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
             
-            abc_list.append(abc)
+            <span class="n">abc_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">abc</span><span class="p">)</span>
             
-        tune = {
-            'name' : name,
-            'style' : style,
-            'abc_list' : abc_list,
-            }
+        <span class="n">tune</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">&#39;name&#39;</span> <span class="p">:</span> <span class="n">name</span><span class="p">,</span>
+            <span class="s1">&#39;style&#39;</span> <span class="p">:</span> <span class="n">style</span><span class="p">,</span>
+            <span class="s1">&#39;abc_list&#39;</span> <span class="p">:</span> <span class="n">abc_list</span><span class="p">,</span>
+            <span class="p">}</span>
         
-        yield tune
+        <span class="k">yield</span> <span class="n">tune</span>
         
+</pre></div>
+
 </div>
 </div>
 </div>
@@ -23595,8 +23585,10 @@ class TuneScraper(scrapy.Spider):
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
-    <div class="input_area code">
-TuneScraper(10)
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">TuneScraper</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+
 </div>
 </div>
 </div>
@@ -23606,7 +23598,9 @@ TuneScraper(10)
 
 
 <div class="output_area">
+
 <div class="prompt output_prompt">Out[11]:</div>
+
 
 
 
@@ -23624,8 +23618,9 @@ TuneScraper(10)
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
-    <div class="input_area code">
-a = TuneScraper(10)
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">TuneScraper</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
 
 </div>
 </div>
@@ -23636,8 +23631,10 @@ a = TuneScraper(10)
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
-    <div class="input_area code">
-a.tune
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">tune</span>
+</pre></div>
+
 </div>
 </div>
 </div>
@@ -23647,7 +23644,9 @@ a.tune
 
 
 <div class="output_area">
+
 <div class="prompt output_prompt">Out[7]:</div>
+
 
 
 
@@ -23665,7 +23664,9 @@ a.tune
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
-    <div class="input_area code">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
 
 </div>
 </div>

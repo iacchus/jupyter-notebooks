@@ -1,37 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8" />
-<title>midi-wav-midi2audio-music21</title><!--<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>-->
-<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>-->
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.19.0/codemirror.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.19.0/mode/python/python.js"></script>
-
-<script>
-$(document).ready(function(){
-	$('.code').each(function() {
-
-	    var $this = $(this),
-		$code = $this.html().trim();
-
-	    $this.empty();
-
-	    var myCodeMirror = CodeMirror(this, {
-		value: $code,
-		mode: 'python',
-		lineNumbers: true,
-		readOnly: true,
-                lineWrapping: true,
-                htmlMode: true,
-                matchClosing: true,       
-                indentWithTabs: true,
-	    });
-
-	});
-});
-</script>
+<title>midi-wav-midi2audio-music21</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 <style type="text/css">
     /*!
@@ -23480,9 +23451,7 @@ body {
 div#notebook {
   overflow: visible;
   border-top: none;
-}
-
-@media print {
+}@media print {
   div.cell {
     display: block;
     page-break-inside: avoid;
@@ -23499,12 +23468,30 @@ div#notebook {
 </style>
 
 <!-- Custom stylesheet, it must be in the same directory as the html file -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.19.0/codemirror.css">
 <link rel="stylesheet" href="custom.css">
-<link rel="stylesheet" href="../index_files/custom.css">
 
 <!-- Loading mathjax macro -->
-</head>
+<!-- Load mathjax -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML"></script>
+    <!-- MathJax configuration -->
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            processEscapes: true,
+            processEnvironments: true
+        },
+        // Center justify equations in code and markdown cells. Elsewhere
+        // we use CSS to left justify single line equations in code cells.
+        displayAlign: 'center',
+        "HTML-CSS": {
+            styles: {'.MathJax_Display': {"margin": 0}},
+            linebreaks: { automatic: true }
+        }
+    });
+    </script>
+    <!-- End of mathjax configuration --></head>
 <body>
   <div tabindex="-1" id="notebook" class="border-box-sizing">
     <div class="container" id="notebook-container">
@@ -23513,11 +23500,13 @@ div#notebook {
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
-    <div class="input_area code">
-from music21 import *
-from midi2audio import FluidSynth
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">music21</span> <span class="k">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">midi2audio</span> <span class="k">import</span> <span class="n">FluidSynth</span>
 
-from random import randrange
+<span class="kn">from</span> <span class="nn">random</span> <span class="k">import</span> <span class="n">randrange</span>
+</pre></div>
+
 </div>
 </div>
 </div>
@@ -23527,21 +23516,23 @@ from random import randrange
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
-    <div class="input_area code">
-circleOfFifths = [
-  ['C', 'a'],
-  ['G', 'e'],
-  ['D', 'b'],
-  ['A', 'f#'],
-  ['E', 'c#'],
-  ['B', 'g#'],
-  ['F#', 'd#'],
-  ['C#', 'a#'],
-  ['A-', 'f'],
-  ['E-', 'c'],
-  ['B-', 'g'],
-  ['F', 'd'],
-]
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">circleOfFifths</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="p">[</span><span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">],</span>
+  <span class="p">[</span><span class="s1">&#39;G&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">],</span>
+  <span class="p">[</span><span class="s1">&#39;D&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">],</span>
+  <span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;f#&#39;</span><span class="p">],</span>
+  <span class="p">[</span><span class="s1">&#39;E&#39;</span><span class="p">,</span> <span class="s1">&#39;c#&#39;</span><span class="p">],</span>
+  <span class="p">[</span><span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;g#&#39;</span><span class="p">],</span>
+  <span class="p">[</span><span class="s1">&#39;F#&#39;</span><span class="p">,</span> <span class="s1">&#39;d#&#39;</span><span class="p">],</span>
+  <span class="p">[</span><span class="s1">&#39;C#&#39;</span><span class="p">,</span> <span class="s1">&#39;a#&#39;</span><span class="p">],</span>
+  <span class="p">[</span><span class="s1">&#39;A-&#39;</span><span class="p">,</span> <span class="s1">&#39;f&#39;</span><span class="p">],</span>
+  <span class="p">[</span><span class="s1">&#39;E-&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">],</span>
+  <span class="p">[</span><span class="s1">&#39;B-&#39;</span><span class="p">,</span> <span class="s1">&#39;g&#39;</span><span class="p">],</span>
+  <span class="p">[</span><span class="s1">&#39;F&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">],</span>
+<span class="p">]</span>
+</pre></div>
+
 </div>
 </div>
 </div>
@@ -23551,14 +23542,16 @@ circleOfFifths = [
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
-    <div class="input_area code">
-random_index = randrange(0,11)
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">random_index</span> <span class="o">=</span> <span class="n">randrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">11</span><span class="p">)</span>
 
-random_major = circleOfFifths[random_index][0]
-random_minor = circleOfFifths[random_index][1]
+<span class="n">random_major</span> <span class="o">=</span> <span class="n">circleOfFifths</span><span class="p">[</span><span class="n">random_index</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">random_minor</span> <span class="o">=</span> <span class="n">circleOfFifths</span><span class="p">[</span><span class="n">random_index</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
 
-print("Random Major: {}".format(random_major))
-print("Random Minor: {}".format(random_minor))
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Random Major: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">random_major</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Random Minor: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">random_minor</span><span class="p">))</span>
+</pre></div>
+
 </div>
 </div>
 </div>
@@ -23568,7 +23561,9 @@ print("Random Minor: {}".format(random_minor))
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Random Major: B
@@ -23585,17 +23580,19 @@ Random Minor: g#
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
-    <div class="input_area code">
-number_of_keys = 7
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">number_of_keys</span> <span class="o">=</span> <span class="mi">7</span>
 
-for i in range(0, number_of_keys):
-    random_index = randrange(0,11)
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">number_of_keys</span><span class="p">):</span>
+    <span class="n">random_index</span> <span class="o">=</span> <span class="n">randrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">11</span><span class="p">)</span>
 
-    random_major = circleOfFifths[random_index][0]
-    random_minor = circleOfFifths[random_index][1]
+    <span class="n">random_major</span> <span class="o">=</span> <span class="n">circleOfFifths</span><span class="p">[</span><span class="n">random_index</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">random_minor</span> <span class="o">=</span> <span class="n">circleOfFifths</span><span class="p">[</span><span class="n">random_index</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
 
-    print("Random Major: {}".format(random_major))
-    print("Random Minor: {}".format(random_minor))
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Random Major: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">random_major</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Random Minor: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">random_minor</span><span class="p">))</span>
+</pre></div>
+
 </div>
 </div>
 </div>
@@ -23605,7 +23602,9 @@ for i in range(0, number_of_keys):
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Random Major: G
@@ -23634,16 +23633,18 @@ Random Minor: d#
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
-    <div class="input_area code">
-random_index = randrange(0,11)
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">random_index</span> <span class="o">=</span> <span class="n">randrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">11</span><span class="p">)</span>
 
-random_major = circleOfFifths[random_index][0]
-random_minor = circleOfFifths[random_index][1]
+<span class="n">random_major</span> <span class="o">=</span> <span class="n">circleOfFifths</span><span class="p">[</span><span class="n">random_index</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">random_minor</span> <span class="o">=</span> <span class="n">circleOfFifths</span><span class="p">[</span><span class="n">random_index</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
 
-print("Random Major: {}".format(random_major))
-print("Random Minor: {}".format(random_minor))
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Random Major: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">random_major</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Random Minor: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">random_minor</span><span class="p">))</span>
 
-sc = scale.MajorScale(random_major)
+<span class="n">sc</span> <span class="o">=</span> <span class="n">scale</span><span class="o">.</span><span class="n">MajorScale</span><span class="p">(</span><span class="n">random_major</span><span class="p">)</span>
+</pre></div>
+
 </div>
 </div>
 </div>
@@ -23653,7 +23654,9 @@ sc = scale.MajorScale(random_major)
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Random Major: F#
@@ -23670,13 +23673,15 @@ Random Minor: d#
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
-    <div class="input_area code">
-min_pitch = "{}4".format(random_major)
-max_pitch = "{}6".format(random_major)
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">min_pitch</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{}</span><span class="s2">4&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">random_major</span><span class="p">)</span>
+<span class="n">max_pitch</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{}</span><span class="s2">6&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">random_major</span><span class="p">)</span>
 
-pitches_list = sc.getPitches(minPitch=min_pitch, maxPitch=max_pitch)
+<span class="n">pitches_list</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">getPitches</span><span class="p">(</span><span class="n">minPitch</span><span class="o">=</span><span class="n">min_pitch</span><span class="p">,</span> <span class="n">maxPitch</span><span class="o">=</span><span class="n">max_pitch</span><span class="p">)</span>
 
-pitches_list
+<span class="n">pitches_list</span>
+</pre></div>
+
 </div>
 </div>
 </div>
@@ -23686,7 +23691,9 @@ pitches_list
 
 
 <div class="output_area">
+
 <div class="prompt output_prompt">Out[6]:</div>
+
 
 
 
@@ -23718,23 +23725,25 @@ pitches_list
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
-    <div class="input_area code">
-def cadence_i_iv_v_i(pitch_list):
-    cadence_list = [ 1, 4, 5, 1 ]
-    cadence_chords = []
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">cadence_i_iv_v_i</span><span class="p">(</span><span class="n">pitch_list</span><span class="p">):</span>
+    <span class="n">cadence_list</span> <span class="o">=</span> <span class="p">[</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1</span> <span class="p">]</span>
+    <span class="n">cadence_chords</span> <span class="o">=</span> <span class="p">[]</span>
     
-    pl = pitch_list
+    <span class="n">pl</span> <span class="o">=</span> <span class="n">pitch_list</span>
     
-    for cadence in cadence_list:
+    <span class="k">for</span> <span class="n">cadence</span> <span class="ow">in</span> <span class="n">cadence_list</span><span class="p">:</span>
         
-        cd_idx = cadence - 1;
+        <span class="n">cd_idx</span> <span class="o">=</span> <span class="n">cadence</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
         
-        chord_pitches = [ pl[cd_idx], pl[cd_idx+2], pl[cd_idx+4] ]
-        cadence_chord = chord.Chord(chord_pitches)
+        <span class="n">chord_pitches</span> <span class="o">=</span> <span class="p">[</span> <span class="n">pl</span><span class="p">[</span><span class="n">cd_idx</span><span class="p">],</span> <span class="n">pl</span><span class="p">[</span><span class="n">cd_idx</span><span class="o">+</span><span class="mi">2</span><span class="p">],</span> <span class="n">pl</span><span class="p">[</span><span class="n">cd_idx</span><span class="o">+</span><span class="mi">4</span><span class="p">]</span> <span class="p">]</span>
+        <span class="n">cadence_chord</span> <span class="o">=</span> <span class="n">chord</span><span class="o">.</span><span class="n">Chord</span><span class="p">(</span><span class="n">chord_pitches</span><span class="p">)</span>
         
-        cadence_chords.append(cadence_chord)
+        <span class="n">cadence_chords</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">cadence_chord</span><span class="p">)</span>
         
-    return cadence_chords
+    <span class="k">return</span> <span class="n">cadence_chords</span>
+</pre></div>
+
 </div>
 </div>
 </div>
@@ -23744,10 +23753,12 @@ def cadence_i_iv_v_i(pitch_list):
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
-    <div class="input_area code">
-the_cadence = cadence_i_iv_v_i(pitches_list)
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">the_cadence</span> <span class="o">=</span> <span class="n">cadence_i_iv_v_i</span><span class="p">(</span><span class="n">pitches_list</span><span class="p">)</span>
 
-the_cadence
+<span class="n">the_cadence</span>
+</pre></div>
+
 </div>
 </div>
 </div>
@@ -23757,7 +23768,9 @@ the_cadence
 
 
 <div class="output_area">
+
 <div class="prompt output_prompt">Out[9]:</div>
+
 
 
 
@@ -23778,15 +23791,17 @@ the_cadence
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
-    <div class="input_area code">
-cadence_stream = stream.Stream()
-cadence_stream.append(the_cadence)
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cadence_stream</span> <span class="o">=</span> <span class="n">stream</span><span class="o">.</span><span class="n">Stream</span><span class="p">()</span>
+<span class="n">cadence_stream</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">the_cadence</span><span class="p">)</span>
 
-cadence_file = cadence_stream.write()
+<span class="n">cadence_file</span> <span class="o">=</span> <span class="n">cadence_stream</span><span class="o">.</span><span class="n">write</span><span class="p">()</span>
 
-from IPython.display import display, Image, Audio
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="k">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">Image</span><span class="p">,</span> <span class="n">Audio</span>
 
-Image(filename=cadence_file)
+<span class="n">Image</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="n">cadence_file</span><span class="p">)</span>
+</pre></div>
+
 </div>
 </div>
 </div>
@@ -23796,7 +23811,9 @@ Image(filename=cadence_file)
 
 
 <div class="output_area">
+
 <div class="prompt output_prompt">Out[10]:</div>
+
 
 
 
@@ -23870,8 +23887,10 @@ gg==
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
-    <div class="input_area code">
-cadence_midi = cadence_stream.write('midi')
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cadence_midi</span> <span class="o">=</span> <span class="n">cadence_stream</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;midi&#39;</span><span class="p">)</span>
+</pre></div>
+
 </div>
 </div>
 </div>
@@ -23881,9 +23900,11 @@ cadence_midi = cadence_stream.write('midi')
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
-    <div class="input_area code">
-fs = FluidSynth('/usr/share/soundfonts/FluidR3_GM.sf2') # arch
-fs.midi_to_audio(cadence_midi, 'cadence.wav')
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fs</span> <span class="o">=</span> <span class="n">FluidSynth</span><span class="p">(</span><span class="s1">&#39;/usr/share/soundfonts/FluidR3_GM.sf2&#39;</span><span class="p">)</span> <span class="c1"># arch</span>
+<span class="n">fs</span><span class="o">.</span><span class="n">midi_to_audio</span><span class="p">(</span><span class="n">cadence_midi</span><span class="p">,</span> <span class="s1">&#39;cadence.wav&#39;</span><span class="p">)</span>
+</pre></div>
+
 </div>
 </div>
 </div>
@@ -23893,8 +23914,10 @@ fs.midi_to_audio(cadence_midi, 'cadence.wav')
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
-    <div class="input_area code">
-Audio(filename='cadence.wav')
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">Audio</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s1">&#39;cadence.wav&#39;</span><span class="p">)</span>
+</pre></div>
+
 </div>
 </div>
 </div>
@@ -23904,7 +23927,9 @@ Audio(filename='cadence.wav')
 
 
 <div class="output_area">
+
 <div class="prompt output_prompt">Out[13]:</div>
+
 
 
 <div class="output_html rendered_html output_subarea output_execute_result">
@@ -23926,10 +23951,12 @@ Audio(filename='cadence.wav')
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
-    <div class="input_area code">
-%%html
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">html</span>
 
-<marquee><pre class="fa-spin;">:)</pre></marquee>
+&lt;marquee&gt;&lt;pre class=&quot;fa-spin;&quot;&gt;:)&lt;/pre&gt;&lt;/marquee&gt;
+</pre></div>
+
 </div>
 </div>
 </div>
@@ -23939,7 +23966,9 @@ Audio(filename='cadence.wav')
 
 
 <div class="output_area">
+
 <div class="prompt"></div>
+
 
 
 <div class="output_html rendered_html output_subarea ">
@@ -23957,8 +23986,10 @@ Audio(filename='cadence.wav')
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
-    <div class="input_area code">
-the_tempo = tempo.MetronomeMark(number=40)
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">the_tempo</span> <span class="o">=</span> <span class="n">tempo</span><span class="o">.</span><span class="n">MetronomeMark</span><span class="p">(</span><span class="n">number</span><span class="o">=</span><span class="mi">40</span><span class="p">)</span>
+</pre></div>
+
 </div>
 </div>
 </div>
@@ -23968,14 +23999,16 @@ the_tempo = tempo.MetronomeMark(number=40)
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
-    <div class="input_area code">
-cadence_stream.insert(0, the_tempo)
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cadence_stream</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">the_tempo</span><span class="p">)</span>
 
-cadence_midi = cadence_stream.write('midi')
-fs = FluidSynth('/usr/share/soundfonts/FluidR3_GM.sf2') # arch
-fs.midi_to_audio(cadence_midi, 'cadence-40bpm.wav')
+<span class="n">cadence_midi</span> <span class="o">=</span> <span class="n">cadence_stream</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;midi&#39;</span><span class="p">)</span>
+<span class="n">fs</span> <span class="o">=</span> <span class="n">FluidSynth</span><span class="p">(</span><span class="s1">&#39;/usr/share/soundfonts/FluidR3_GM.sf2&#39;</span><span class="p">)</span> <span class="c1"># arch</span>
+<span class="n">fs</span><span class="o">.</span><span class="n">midi_to_audio</span><span class="p">(</span><span class="n">cadence_midi</span><span class="p">,</span> <span class="s1">&#39;cadence-40bpm.wav&#39;</span><span class="p">)</span>
 
-Audio(filename='cadence.wav')
+<span class="n">Audio</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s1">&#39;cadence.wav&#39;</span><span class="p">)</span>
+</pre></div>
+
 </div>
 </div>
 </div>
