@@ -7,7 +7,7 @@ html, body { min-height: 100%; }
 body {
     font-family: 'Roboto', serif;
     font-size: 16px;
-    background-image: url(kassius_girlfriends.jpg);
+    //background-image: url(kassius_girlfriends.jpg);
     background-size: cover;
     background-size: cover;
     background-attachment: fixed;
