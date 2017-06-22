@@ -51,6 +51,7 @@ file_contents = """
     <script src="index_files/jquery-latest.js"></script>
     <script src="index_files/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
 
+
   </head>
   <body>
     <a href="https://github.com/iacchus/jupyter-notebooks/"><img id="github-fork" src="index_files/github-corner-right.svg" /></a>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8" />
-<title>tonejs-tests-001</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>toml-python</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 <style type="text/css">
@@ -23496,16 +23496,71 @@ div#notebook {
   <div tabindex="-1" id="notebook" class="border-box-sizing">
     <div class="container" id="notebook-container">
 
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="TOML-+-Python">TOML + Python<a class="anchor-link" href="#TOML-+-Python">&#182;</a></h1><p>We are currently working on a GitHub hosted Awesome List on free and open sources resources for musicians music (see here: <a href="https://iacchus.github.io/awesome-sheet-music">Awesome Sheet Music</a>) and want to automate the markdown and html generation, so we will be sing toml to handle the data and use a python script to generate the output.</p>
+<p>Pythons Toml side-by-side with the official toml 0.4.0 documentation to achieve our objectives.</p>
+<p>Toml elements we'll be using:</p>
+<ul>
+<li><a href="https://github.com/toml-lang/toml#table">table</a></li>
+<li><a href="https://github.com/toml-lang/toml#keyvalue-pair">key-value pair</a></li>
+<li><a href="https://github.com/toml-lang/toml#string">string</a></li>
+<li><a href="https://github.com/toml-lang/toml#array">array</a></li>
+<li><a href="https://github.com/toml-lang/toml#inline-table">inline table</a></li>
+<li><a href="https://github.com/toml-lang/toml#array-of-tables">array of tables</a></li>
+</ul>
+<p>In this we will be generating 2 types of models: for the <em>items</em> on the list and for the <em>sections and subsections</em> of the list.</p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="nx">javascript</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">toml</span> <span class="k">import</span> <span class="n">loads</span> <span class="c1"># load from string</span>
 
-<span class="c1">//$(&#39;head&#39;).append(&quot;&lt;script src=&#39;http://cdn.tonejs.org/latest/Tone.js?_=1476421023464&#39;&gt;&lt;/script&gt;&quot;)</span>
+<span class="kn">from</span> <span class="nn">pprint</span> <span class="k">import</span> <span class="n">pprint</span>
+</pre></div>
 
-<span class="c1">//$.getScript(&#39;http://cdn.tonejs.org/latest/Tone.js&#39;)</span>
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>First we see what an empty table generates</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">entry</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">[table]</span>
+<span class="s2">&quot;&quot;&quot;</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">loads</span><span class="p">(</span><span class="n">entry</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -23518,21 +23573,13 @@ div#notebook {
 
 <div class="output_area">
 
-<div class="prompt"></div>
+<div class="prompt output_prompt">Out[5]:</div>
 
 
 
 
-
-<div id="452ecdc8-2165-49b9-b314-07ef3614726a"></div>
-<div class="output_subarea output_javascript ">
-<script type="text/javascript">
-var element = $('#452ecdc8-2165-49b9-b314-07ef3614726a');
-
-$('head').append("<script src='http://cdn.tonejs.org/latest/Tone.js?_=1476421023464'></script>")
-
-//$.getScript('http://cdn.tonejs.org/latest/Tone.js')
-</script>
+<div class="output_text output_subarea output_execute_result">
+<pre>{&#39;table&#39;: {}}</pre>
 </div>
 
 </div>
@@ -23540,156 +23587,43 @@ $('head').append("<script src='http://cdn.tonejs.org/latest/Tone.js?_=1476421023
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Then let's generate, to give shape to an entry as we will need in our application</p>
+
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">js</span>
-
-//create a synth and connect it to the master output (your speakers)
-var synth = new Tone.Synth().toMaster();
-
-//play a middle &#39;C&#39; for the duration of an 8th note
-synth.triggerAttackRelease(&quot;C4&quot;, &quot;8n&quot;);
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">entry2</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">[table.test]</span>
+<span class="s2">title = &#39;birdears&#39;</span>
+<span class="s2">section = &quot;Ear Training/Software&quot; # this can be string or list of strings</span>
+<span class="s2">url = &quot;&quot;</span>
+<span class="s2">&quot;&quot;&quot;</span>
 </pre></div>
 
 </div>
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-
-
-
-<div id="eabd0b6d-92b8-4438-a3ec-154bc6f78eaa"></div>
-<div class="output_subarea output_javascript ">
-<script type="text/javascript">
-var element = $('#eabd0b6d-92b8-4438-a3ec-154bc6f78eaa');
-
-//create a synth and connect it to the master output (your speakers)
-var synth = new Tone.Synth().toMaster();
-
-//play a middle 'C' for the duration of an 8th note
-synth.triggerAttackRelease("C4", "8n");
-</script>
-</div>
-
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[56]:</div>
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">js</span>
-
-/*require.config({
-    //make a path to the Tone.js/Tone directory
-    //then include the sources as they are below
-    paths : {
-        &quot;Tone&quot; : &quot;http://cdn.tonejs.org/latest/Tone&quot;,
-    }
-});*/
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span><span class="o">=</span><span class="n">loads</span><span class="p">(</span><span class="n">entry2</span><span class="p">)</span>
 </pre></div>
 
 </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-
-
-
-<div id="3da13dba-17c0-4038-99de-ff5d3396205a"></div>
-<div class="output_subarea output_javascript ">
-<script type="text/javascript">
-var element = $('#3da13dba-17c0-4038-99de-ff5d3396205a');
-
-/*require.config({
-    //make a path to the Tone.js/Tone directory
-    //then include the sources as they are below
-    paths : {
-        "Tone" : "http://cdn.tonejs.org/latest/Tone",
-    }
-});*/
-</script>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[57]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">js</span>
-
-/*require([&quot;Tone&quot;], 
-function(Tone){
-        //window.Tone = Tone
-    var synth = new Tone.Synth().toMaster();
-    synth.triggerAttackRelease(&quot;C4&quot;, &quot;8n&quot;);
-});*/
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-
-
-
-<div id="11b87f9e-6405-4db1-bbfe-3582046627ff"></div>
-<div class="output_subarea output_javascript ">
-<script type="text/javascript">
-var element = $('#11b87f9e-6405-4db1-bbfe-3582046627ff');
-
-/*require(["Tone"], 
-function(Tone){
-        //window.Tone = Tone
-    var synth = new Tone.Synth().toMaster();
-    synth.triggerAttackRelease("C4", "8n");
-});*/
-</script>
-</div>
-
-</div>
-
 </div>
 </div>
 
@@ -23699,12 +23633,7 @@ function(Tone){
 <div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="nx">javascript</span>
-<span class="nx">require</span><span class="p">.</span><span class="nx">config</span><span class="p">({</span>
-  <span class="nx">paths</span><span class="o">:</span> <span class="p">{</span>
-      <span class="nx">d3</span><span class="o">:</span> <span class="s1">&#39;//cdnjs.cloudflare.com/ajax/libs/d3/3.4.8/d3.min&#39;</span>
-  <span class="p">}</span>
-<span class="p">});</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pprint</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -23720,327 +23649,14 @@ function(Tone){
 <div class="prompt"></div>
 
 
-
-
-
-<div id="fa967259-0262-4834-a860-f54fe8006894"></div>
-<div class="output_subarea output_javascript ">
-<script type="text/javascript">
-var element = $('#fa967259-0262-4834-a860-f54fe8006894');
-require.config({
-  paths: {
-      d3: '//cdnjs.cloudflare.com/ajax/libs/d3/3.4.8/d3.min'
-  }
-});
-</script>
-</div>
-
-</div>
-
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>{&#39;table&#39;: {&#39;test&#39;: {&#39;section&#39;: &#39;Ear Training/Software&#39;,
+                    &#39;title&#39;: &#39;birdears&#39;,
+                    &#39;url&#39;: &#39;&#39;}}}
+</pre>
 </div>
 </div>
 
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[28]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">js</span>
-
-require([&#39;d3&#39;],function(d3){window.d3 = d3;})
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-
-
-
-<div id="5063b2b5-efae-4501-adae-39536921fcbf"></div>
-<div class="output_subarea output_javascript ">
-<script type="text/javascript">
-var element = $('#5063b2b5-efae-4501-adae-39536921fcbf');
-
-require(['d3'],function(d3){window.d3 = d3;})
-</script>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[30]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">js</span>
-
-d3.select()
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-
-
-
-<div id="5b3fb890-1317-40f8-ac35-5a121a2a54c8"></div>
-<div class="output_subarea output_javascript ">
-<script type="text/javascript">
-var element = $('#5b3fb890-1317-40f8-ac35-5a121a2a54c8');
-
-d3.select()
-</script>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[35]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">js</span>
-
-Tone
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-
-
-
-<div id="a78d90a3-1dde-4527-9a3e-921fd6b54445"></div>
-<div class="output_subarea output_javascript ">
-<script type="text/javascript">
-var element = $('#a78d90a3-1dde-4527-9a3e-921fd6b54445');
-
-Tone
-</script>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[49]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">js</span>
-
-//require([&#39;Tone&#39;],function(Tone){window.Tone = Tone; return self;})
-
-//this works
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-
-
-
-<div id="b56cc934-7aa8-4f4e-93b9-2053845b32b0"></div>
-<div class="output_subarea output_javascript ">
-<script type="text/javascript">
-var element = $('#b56cc934-7aa8-4f4e-93b9-2053845b32b0');
-
-require(['Tone'],function(Tone){window.Tone = Tone; return self;})
-</script>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">js</span>
-
-Tone
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-
-
-
-<div id="2ab0e7bd-8861-4264-92de-4ea365901147"></div>
-<div class="output_subarea output_javascript ">
-<script type="text/javascript">
-var element = $('#2ab0e7bd-8861-4264-92de-4ea365901147');
-
-Tone
-</script>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[14]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">js</span>
-
-window.Tone = require([&#39;Tone&#39;])
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-
-
-
-<div id="1f0d76bf-c16e-4805-afb5-e031e7f25a0b"></div>
-<div class="output_subarea output_javascript ">
-<script type="text/javascript">
-var element = $('#1f0d76bf-c16e-4805-afb5-e031e7f25a0b');
-
-window.Tone = require(['Tone'])
-</script>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">js</span>
-
-Tone
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-
-
-
-<div id="449e5a26-4831-4900-9512-90d6292b29ef"></div>
-<div class="output_subarea output_javascript ">
-<script type="text/javascript">
-var element = $('#449e5a26-4831-4900-9512-90d6292b29ef');
-
-Tone
-</script>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">js</span>
-
-window.Tone
-</pre></div>
-
-</div>
 </div>
 </div>
 
